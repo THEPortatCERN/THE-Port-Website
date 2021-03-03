@@ -1,0 +1,23 @@
+name: theport
+recipe: drupal9
+config:
+  php: '7.4'
+  composer_version: '2.0.8'
+  webroot: web
+  via: apache:2.4
+  database: mysql:5.7
+  xdebug: false
+  drush: composer
+services:
+  appserver:
+    build:
+      - composer install
+  adminer:
+    type: compose
+    services:
+      image: dehy/adminer
+      command: /bin/s6-svscan /etc/services.d
+    portforward: true
+proxy:
+   adminer:
+      - adminer.theport.lndo.site
