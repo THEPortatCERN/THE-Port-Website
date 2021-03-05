@@ -18,6 +18,13 @@ services:
       image: dehy/adminer
       command: /bin/s6-svscan /etc/services.d
     portforward: true
+  mailhog:
+    type: mailhog:v1.0.0
+    portforward: false
+    hogfrom:
+      - appserver
 proxy:
-   adminer:
-      - adminer.theport.lndo.site
+  adminer:
+    - db.theport.lndo.site
+  mailhog:
+    - mail.theport.lndo.site

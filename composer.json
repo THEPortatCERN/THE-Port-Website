@@ -3,11 +3,7 @@
     "description": "Website for THE Port Association",
     "type": "project",
     "license": "GPL-2.0-or-later",
-    "homepage": "https://www.drupal.org/project/drupal",
-    "support": {
-        "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
-        "chat": "https://www.drupal.org/node/314178"
-    },
+    "homepage": "https://theport.community",
     "repositories": [
         {
             "type": "composer",
@@ -53,25 +49,6 @@
             "web/modules/custom/{$name}": ["type:drupal-custom-module"],
             "web/profiles/custom/{$name}": ["type:drupal-custom-profile"],
             "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
-        },
-        "drupal-core-project-message": {
-            "include-keys": ["homepage", "support"],
-            "post-create-project-cmd-message": [
-                "<bg=blue;fg=white>                                                         </>",
-                "<bg=blue;fg=white>  Congratulations, you’ve installed the Drupal codebase  </>",
-                "<bg=blue;fg=white>  from the drupal/recommended-project template!          </>",
-                "<bg=blue;fg=white>                                                         </>",
-                "",
-                "<bg=yellow;fg=black>Next steps</>:",
-
-                "  * Install the site: https://www.drupal.org/docs/8/install",
-                "  * Read the user guide: https://www.drupal.org/docs/user_guide/en/index.html",
-                "  * Get support: https://www.drupal.org/support",
-                "  * Get involved with the Drupal community:",
-                "      https://www.drupal.org/getting-involved",
-                "  * Remove the plugin that prints this message:",
-                "      composer remove drupal/core-project-message"
-            ]
         }
     }
 }

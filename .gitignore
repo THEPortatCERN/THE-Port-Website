@@ -25,6 +25,7 @@ web/modules/
 web/profiles
 web/sites/README.txt
 web/sites/example.*
+web/sites/development.services.yml
 web/sites/default/files/
 web/sites/default/settings.php
 web/sites/default/default.settings.php
