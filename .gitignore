@@ -7,6 +7,8 @@ data/
 config/
 
 # Default Drupal Installation
+.gitattributes
+.editorconfig
 web/.csslintrc
 web/.eslintignore
 web/.eslintrc.json
@@ -21,6 +23,7 @@ web/robots.txt
 web/update.php
 web/web.config
 web/core
+web/libraries/
 web/modules/
 web/profiles
 web/sites/README.txt
