@@ -1,0 +1,58 @@
+.region {
+    margin: 0;
+    padding: 0;
+    background: url('/sites/default/files/2021-03/hackathon-participants-at-work.jpg');
+    background-repeat: no-repeat;
+    background-position-x: 70%;
+    background-color: black;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+article {
+    width: 50%;
+    min-width: 240px;
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+}
+
+h2 {
+    color: white;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+}
+
+h2 span {
+    display: block;
+}
+
+h2 span:nth-child(1) {
+    font-style: italic;
+}
+
+@media screen and (max-width: 575px) {
+    h2 span:nth-child(1) {
+        font-size: 6vw;
+    }
+
+    h2 span:nth-child(2) {
+        font-size: 10vw;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    h2 span:nth-child(1) {
+        font-size: 3vw;
+    }
+
+    h2 span:nth-child(2) {
+        font-size: 6vw;
+    }
+}

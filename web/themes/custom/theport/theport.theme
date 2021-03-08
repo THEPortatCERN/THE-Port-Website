@@ -4,3 +4,30 @@
  * @file
  * SUBTHEME theme file.
  */
+
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function theport_preprocess_html(&$variables) {
+  $preconnect_google_fonts = [
+    '#tag' => 'link',
+    '#attributes' => [
+      'rel' => 'preconnect',
+      'href' => 'https://fonts.gstatic.com',
+      'crossorigin' => 1,
+    ],
+  ];
+
+  $preload_font_roboto = [
+    '#tag' => 'link',
+    '#attributes' => [
+      'rel' => 'preload',
+      'href' => 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap',
+      'as' => 'style',
+    ],
+  ];
+
+  $variables['page']['#attached']['html_head'][] = [$preconnect_google_fonts, 'preconnect_google_fonts'];
+  $variables['page']['#attached']['html_head'][] = [$preload_font_roboto, 'preload_font_roboto'];
+}

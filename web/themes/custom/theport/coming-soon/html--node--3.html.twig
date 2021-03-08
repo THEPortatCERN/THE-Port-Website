@@ -1,0 +1,10 @@
+{{ attach_library('theport/coming-soon') }}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token }}">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
+  <body>{{ page.content }}</body>
+</html>
