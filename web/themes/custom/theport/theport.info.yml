@@ -7,7 +7,7 @@ core_version_requirement: '^8 || ^9'
 stylesheets-remove:
   - '@bootstrap5/css/style.css'
 libraries:
-  - theport/global-styling
+  - theport/global
 regions:
   header: Header
   nav_branding: 'Navigation branding region'

@@ -11020,7 +11020,7 @@ footer .region-footer {
 .region-sidebar-second,
 .region-footer,
 .region-content {
-  padding: 0 0.5rem;
+  padding: 0;
 }
 
 .tabs-primary {

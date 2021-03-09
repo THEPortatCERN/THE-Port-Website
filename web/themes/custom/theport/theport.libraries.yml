@@ -1,8 +1,12 @@
-global-styling:
+global:
   css:
     theme:
       css/style.css: {}
 coming-soon:
   css:
-    theme:
+    layout:
       coming-soon/coming-soon.css: {}
+copyright:
+  css:
+    component:
+      copyright/copyright.css: {}

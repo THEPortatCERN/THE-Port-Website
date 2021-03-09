@@ -1,0 +1,9 @@
+.copyright .col {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.copyright p {
+    display: inline;
+    color: #cdcdcd;
+}
