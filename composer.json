@@ -13,6 +13,7 @@
     "require": {
         "composer/installers": "^1.9",
         "drupal/bootstrap5": "^1.0@alpha",
+        "drupal/config_ignore": "^2.3",
         "drupal/core-composer-scaffold": "^9.1",
         "drupal/core-project-message": "^9.1",
         "drupal/core-recommended": "^9.1",
