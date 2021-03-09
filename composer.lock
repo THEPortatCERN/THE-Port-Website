@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "17346fca2cf8ff1b1b0d9e6dcc560ad8",
+    "content-hash": "683c59adb2a89ed107f301596d906075",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1873,27 +1873,27 @@
         },
         {
             "name": "drupal/bootstrap5",
-            "version": "1.0.0-alpha2",
+            "version": "1.0.0-alpha3",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/bootstrap5.git",
-                "reference": "1.0.0-alpha2"
+                "reference": "1.0.0-alpha3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap5-1.0.0-alpha2.zip",
-                "reference": "1.0.0-alpha2",
-                "shasum": "e4b687addbb31c8c68e2c2644b001a94c81a13ef"
+                "url": "https://ftp.drupal.org/files/projects/bootstrap5-1.0.0-alpha3.zip",
+                "reference": "1.0.0-alpha3",
+                "shasum": "24fd915bba3bb0300efbdf2b23f0e5519fa205c3"
             },
             "require": {
-                "drupal/core": "^8.9 || ^9.1",
+                "drupal/core": "^8.9 || ^9",
                 "symfony/filesystem": "^3|^4|^5"
             },
             "type": "drupal-theme",
             "extra": {
                 "drupal": {
-                    "version": "1.0.0-alpha2",
-                    "datestamp": "1614259740",
+                    "version": "1.0.0-alpha3",
+                    "datestamp": "1615095284",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -2503,6 +2503,50 @@
             }
         },
         {
+            "name": "drupal/minifyhtml",
+            "version": "1.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/minifyhtml.git",
+                "reference": "8.x-1.10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/minifyhtml-8.x-1.10.zip",
+                "reference": "8.x-1.10",
+                "shasum": "8e5244b454b4226aa8f84497fc3ab0445890ed66"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.10",
+                    "datestamp": "1589484097",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "slydevil",
+                    "homepage": "https://www.drupal.org/user/1846786"
+                }
+            ],
+            "description": "Minify the contents of the Drupal page",
+            "homepage": "https://www.drupal.org/project/minifyhtml",
+            "support": {
+                "source": "https://git.drupalcode.org/project/minifyhtml"
+            }
+        },
+        {
             "name": "drupal/recaptcha_element",
             "version": "1.0.5",
             "source": {
@@ -2669,7 +2713,7 @@
             "extra": {
                 "drupal": {
                     "version": "6.0.2",
-                    "datestamp": "1614791851",
+                    "datestamp": "1614794871",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
