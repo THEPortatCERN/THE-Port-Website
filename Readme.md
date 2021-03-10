@@ -1,5 +1,9 @@
 # THE Port Website
 
+## Project
+
+Development tasks are listed on the [Project Board](https://app.asana.com/0/1200042243165772/board).
+
 ## Local Development
 
 Two steps are necessary to run the website locally
