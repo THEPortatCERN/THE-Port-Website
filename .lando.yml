@@ -12,19 +12,17 @@ services:
   appserver:
     build:
       - composer install
-  adminer:
-    type: compose
-    services:
-      image: dehy/adminer
-      command: /bin/s6-svscan /etc/services.d
-    portforward: true
-  mailhog:
+  db:
+    type: phpmyadmin
+    hosts:
+      - database
+  mail:
     type: mailhog:v1.0.0
     portforward: false
     hogfrom:
       - appserver
 proxy:
-  adminer:
+  db:
     - db.theport.lndo.site
-  mailhog:
+  mail:
     - mail.theport.lndo.site
