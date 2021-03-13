@@ -1,0 +1,10 @@
+{% extends "block.html.twig" %}
+{% block content %}
+<div class="navbar-brand d-flex align-items-center">
+  {% if site_logo %}
+  <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="d-block">
+    <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" width="150" height="60"/>
+  </a>
+  {% endif %}
+</div>
+{% endblock %}
