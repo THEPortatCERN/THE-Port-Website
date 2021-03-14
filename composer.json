@@ -21,6 +21,7 @@
         "drupal/devel": "^4.1",
         "drupal/metatag": "^1.15",
         "drupal/minifyhtml": "^1.10",
+        "drupal/pathauto": "^1.8",
         "drupal/recaptcha_element": "^1.0",
         "drupal/redirect": "^1.6",
         "drupal/webform": "^6.0",
