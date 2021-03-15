@@ -26,6 +26,7 @@
         "drupal/pathauto": "^1.8",
         "drupal/recaptcha_element": "^1.0",
         "drupal/redirect": "^1.6",
+        "drupal/views_bulk_edit": "^2.5",
         "drupal/webform": "^6.0",
         "drush/drush": "^10.3"
     },
