@@ -1,6 +1,6 @@
-name: 'THE Port Bootstrap Theme'
+name: 'THE Port Theme'
 type: theme
-description: 'THE Port Bootstrap Theme based on Bootstrap 5.'
+description: 'THE Port Theme based on Bootstrap 5.'
 core: 8.x
 core_version_requirement: '^8 || ^9'
 'base theme': bootstrap5

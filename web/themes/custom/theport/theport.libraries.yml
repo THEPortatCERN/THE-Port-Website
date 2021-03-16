@@ -1,7 +1,7 @@
 global:
   css:
     theme:
-      css/style.css: {}
+      global.css: {}
 coming-soon:
   css:
     layout:

@@ -12,7 +12,7 @@ To review changes to Bootstrap 5 subtheme easily load style guide page. The link
 Upon configuring variables, you will need to recompile the Sass file:
 
 ```bash
-  sass .\style.scss ..\css\style.css
+  sass .\global.scss .\global.css
 ```
 
 ## Tools

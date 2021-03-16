@@ -1,0 +1,46 @@
+/*
+
+
+
+  💥 Hold on a second! 💥
+  This file contains the global styling for the site that is loaded on every page.
+  To avoid bloat, it is better to style individual components.
+
+  Also, if this file has the ending CSS, then you are in the wrong place. Edit the Scss file instead. 😉
+
+
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+// ============ Configure and Import Bootstrap ============
+
+// Color system
+$light:#fff;
+$red:#ff4200; // same as logo
+$primary: $red;
+
+// Typography
+$font-family-sans-serif: 'Lato', sans-serif;
+
+// Layout
+$region-padding: 0;
+
+@import "../../contrib/bootstrap5/scss/style";
+
+
+// ============ Custom global styling ============
+body {
+    background-image: url('/themes/custom/theport/img/bg.png');
+}
+
+
+.navbar {
+    margin-bottom: $spacer;
+
+    .bg-light {
+        border-bottom: 1px solid #f2f2f2;
+    }
+}
