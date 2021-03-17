@@ -10,3 +10,7 @@ copyright:
   css:
     component:
       components/copyright/copyright.css: {}
+participant:
+  css:
+    component:
+      components/participant/participant.css: {}
