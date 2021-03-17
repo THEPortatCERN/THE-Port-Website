@@ -12,6 +12,7 @@
     ],
     "require": {
         "composer/installers": "^1.9",
+        "drupal/backup_migrate": "^5.0@RC",
         "drupal/bootstrap5": "^1.0@alpha",
         "drupal/config_ignore": "^2.3",
         "drupal/core-composer-scaffold": "^9.1",

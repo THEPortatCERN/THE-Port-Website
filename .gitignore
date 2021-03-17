@@ -2,9 +2,10 @@
 *.sql
 *.sql.gz
 
-vendor/
-data/
 config/
+data/
+private/
+vendor/
 
 # Default Drupal Installation
 .gitattributes
