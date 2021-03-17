@@ -1,12 +1,12 @@
 global:
   css:
     theme:
-      global.css: {}
+      components/global/global.css: {}
 coming-soon:
   css:
     layout:
-      coming-soon/coming-soon.css: {}
+      components/coming-soon/coming-soon.css: {}
 copyright:
   css:
     component:
-      copyright/copyright.css: {}
+      components/copyright/copyright.css: {}

@@ -28,19 +28,19 @@ $font-family-sans-serif: 'Lato', sans-serif;
 // Layout
 $region-padding: 0;
 
-@import "../../contrib/bootstrap5/scss/style";
+@import "../../../../contrib/bootstrap5/scss/style";
 
 
 // ============ Custom global styling ============
 body {
-    background-image: url('/themes/custom/theport/img/bg.png');
+    background-image: url('/themes/custom/theport/components/global/bg.png');
 }
 
 
 .navbar {
     margin-bottom: $spacer;
 
-    .bg-light {
-        border-bottom: 1px solid #f2f2f2;
+    &.bg-light {
+        border-bottom: 1px solid #e7e7e7;
     }
 }
