@@ -2,7 +2,7 @@
 
 
 
-  💥 Hold on a second! 💥
+  💥 Whoop whoop! 💥
   This file contains the global styling for the site that is loaded on every page.
   To avoid bloat, it is better to style individual components.
 
@@ -20,7 +20,7 @@
 // Color system
 $light:#fff;
 $red:#ff4200; // same as logo
-$primary: $red;
+$primary: darken($red, 8%); // increase contrast for better usability
 
 // Typography
 $font-family-sans-serif: 'Lato', sans-serif;

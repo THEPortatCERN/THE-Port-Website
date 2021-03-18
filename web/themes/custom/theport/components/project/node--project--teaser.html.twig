@@ -1,0 +1,18 @@
+{{ attach_library('theport/project-teaser') }}
+
+{#
+  Based upon the Bootstrap Card component.
+  @see https://getbootstrap.com/docs/5.0/components/card/
+#}
+
+{% set image_source = content.field_hero['#items'].entity.field_media_image.entity.fileuri %}
+<article class="card">
+	<div class="card-image-container">
+		{{ drupal_image(image_source, 'large', {class: 'card-image', alt: 'Project Image'|t}) }}
+	</div>
+	<div class="card-body">
+		<h5 class="card-title">{{ label }}</h5>
+		<p class="card-text">{{ node.body.summary }}</p>
+		<a href="{{ url }}" class="card-link">View Project</a>
+	</div>
+</article>

@@ -14,3 +14,7 @@ participant:
   css:
     component:
       components/participant/participant.css: {}
+project-teaser:
+  css:
+    component:
+      components/project/project-teaser.css: {}
