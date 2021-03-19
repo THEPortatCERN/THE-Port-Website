@@ -6,10 +6,10 @@ coming-soon:
   css:
     layout:
       components/coming-soon/coming-soon.css: {}
-copyright:
+footer:
   css:
     component:
-      components/copyright/copyright.css: {}
+      components/footer/copyright.css: {}
 participant:
   css:
     component:

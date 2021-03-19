@@ -11,6 +11,10 @@
  */
 function theport_preprocess_html(&$variables)
 {
+  /*
+    Prefetch and link the fonts so they are non-blocking.
+    @see https://pagespeedchecklist.com/asynchronous-google-fonts#all-together
+  */
   $preconnect_fonts_domain = [
     '#tag' => 'link',
     '#attributes' => [
@@ -20,11 +24,13 @@ function theport_preprocess_html(&$variables)
     ],
   ];
 
+  // Note that we don't provide a 'noscript' fallback here because we can gracefully degrade to the system font.
   $load_font = [
     '#tag' => 'link',
     '#attributes' => [
       'rel' => 'stylesheet',
-      'media' => 'all',
+      'media' => 'print',
+      'onload' => 'this.onload=null;this.removeAttribute(\'media\');',
       'href' => 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap',
     ],
   ];

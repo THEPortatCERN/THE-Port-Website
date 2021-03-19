@@ -60,7 +60,7 @@
         padding-bottom: 66.67%;
     }
 
-    .view-promoted-projects .card-image {
+    .view-promoted-projects .card-image-container img {
         object-fit: contain;
         position: absolute;
         top: 10px;

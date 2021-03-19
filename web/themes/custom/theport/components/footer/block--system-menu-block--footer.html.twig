@@ -1,0 +1,6 @@
+<nav aria-labelledby="{{ heading_id }}"{{ attributes.addClass(classes)|without('role', 'aria-labelledby') }}>
+  <p class="visually-hidden">{{ configuration.label }}</p>
+  {% block content %}
+    {{ content }}
+  {% endblock %}
+</nav>
