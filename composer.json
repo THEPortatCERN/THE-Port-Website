@@ -27,6 +27,7 @@
         "drupal/pathauto": "^1.8",
         "drupal/recaptcha_element": "^1.0",
         "drupal/redirect": "^1.6",
+        "drupal/social_media_links": "^2.8",
         "drupal/summary_word_limit": "^2.0",
         "drupal/twig_tweak": "^3.0",
         "drupal/twig_vardumper": "^3.0",

@@ -10,6 +10,7 @@ footer:
   css:
     component:
       components/footer/copyright.css: {}
+      components/footer/social.css: {}
 participant:
   css:
     component:
