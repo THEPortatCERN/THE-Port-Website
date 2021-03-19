@@ -12,7 +12,11 @@
 
 
 */
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+/*
+
+  Configure Bootstrap variables and import library
+
+*/
 /*!
  * Bootstrap v5.0.0-beta2 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

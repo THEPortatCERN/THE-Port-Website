@@ -1,0 +1,18 @@
+/*
+
+  Configure Bootstrap variables and import library
+
+*/
+
+// Color system
+$light:#fff;
+$red:#ff4200; // same as logo
+$primary: darken($red, 8%); // increase contrast for better usability
+
+// Typography
+$font-family-sans-serif: 'Lato', sans-serif;
+
+// Layout
+$region-padding: 0;
+
+@import "../../../../contrib/bootstrap5/scss/style";

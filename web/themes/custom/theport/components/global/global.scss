@@ -12,30 +12,11 @@
 
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "bootstrap";
 
-
-// ============ Configure and Import Bootstrap ============
-
-// Color system
-$light:#fff;
-$red:#ff4200; // same as logo
-$primary: darken($red, 8%); // increase contrast for better usability
-
-// Typography
-$font-family-sans-serif: 'Lato', sans-serif;
-
-// Layout
-$region-padding: 0;
-
-@import "../../../../contrib/bootstrap5/scss/style";
-
-
-// ============ Custom global styling ============
 body {
     background-image: url('/themes/custom/theport/components/global/bg.png');
 }
-
 
 .navbar {
     margin-bottom: $spacer;
