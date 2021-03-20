@@ -31,6 +31,7 @@
         "drupal/summary_word_limit": "^2.0",
         "drupal/twig_tweak": "^3.0",
         "drupal/twig_vardumper": "^3.0",
+        "drupal/unique_entity_title": "^1.2",
         "drupal/views_bulk_edit": "^2.5",
         "drupal/webform": "^6.0",
         "drush/drush": "^10.3"
