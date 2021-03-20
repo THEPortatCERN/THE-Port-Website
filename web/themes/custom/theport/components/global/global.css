@@ -11914,11 +11914,29 @@ body {
   background-image: url("/themes/custom/theport/components/global/bg.png");
 }
 
+:root {
+  --navbar-height-sm: 64px;
+  --navbar-height-lg: 88px;
+  --navbar-margin: 1rem;
+}
+
 .navbar {
-  margin-bottom: 1rem;
+  margin-bottom: var(--navbar-margin);
 }
 
 .navbar.bg-light {
   border-bottom: 1px solid #e7e7e7;
+}
+
+@media (max-width: 991.98px) {
+  .navbar {
+    height: var(--navbar-height-sm);
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    height: var(--navbar-height-lg);
+  }
 }
 /*# sourceMappingURL=global.css.map */

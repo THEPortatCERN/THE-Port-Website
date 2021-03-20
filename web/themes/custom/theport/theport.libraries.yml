@@ -19,3 +19,7 @@ project-teaser:
   css:
     component:
       components/project/project-teaser.css: {}
+hero:
+  css:
+    component:
+      components/hero/hero.css: {}

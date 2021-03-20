@@ -18,10 +18,24 @@ body {
     background-image: url('/themes/custom/theport/components/global/bg.png');
 }
 
+:root {
+    --navbar-height-sm: 64px;
+    --navbar-height-lg: 88px;
+    --navbar-margin: #{$spacer};
+}
+
 .navbar {
-    margin-bottom: $spacer;
+    margin-bottom: var(--navbar-margin);
 
     &.bg-light {
         border-bottom: 1px solid #e7e7e7;
+    }
+
+    @media (max-width: 991.98px) {
+        height: var(--navbar-height-sm);
+    }
+
+    @media (min-width: 992px) {
+        height: var(--navbar-height-lg);
     }
 }

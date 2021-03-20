@@ -38,3 +38,15 @@ function theport_preprocess_html(&$variables)
   $variables['page']['#attached']['html_head'][] = [$preconnect_fonts_domain, 'preconnect_fonts_domain'];
   $variables['page']['#attached']['html_head'][] = [$load_font, 'load_font'];
 }
+
+function theport_theme_suggestions_block_alter(&$suggestions, $variables)
+{
+  /*
+    Allow theming custom blocks.
+    @see https://drupal.stackexchange.com/questions/152936/are-there-any-custom-block-type-template-naming-conventions
+  */
+  $content = $variables['elements']['content'];
+  if (isset($content['#block_content']) && $content['#block_content'] instanceof \Drupal\block_content\BlockContentInterface) {
+    $suggestions[] = 'block__' . $content['#block_content']->bundle();
+  }
+}
