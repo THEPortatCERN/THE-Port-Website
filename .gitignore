@@ -1,6 +1,7 @@
 *.log
 *.sql
 *.sql.gz
+*.css.map
 
 config/
 data/
