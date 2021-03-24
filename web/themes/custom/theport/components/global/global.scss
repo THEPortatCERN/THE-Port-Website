@@ -39,3 +39,10 @@ body {
         height: var(--navbar-height-lg);
     }
 }
+
+// Visually center the fallback images
+.field--type-image picture img {
+    display: flex;
+    margin: 0 auto;
+    max-width: 100%;
+}

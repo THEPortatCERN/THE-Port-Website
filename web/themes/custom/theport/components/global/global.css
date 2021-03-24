@@ -11939,4 +11939,12 @@ body {
     height: var(--navbar-height-lg);
   }
 }
+
+.field--type-image picture img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  max-width: 100%;
+}
 /*# sourceMappingURL=global.css.map */
