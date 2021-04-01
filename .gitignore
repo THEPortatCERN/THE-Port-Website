@@ -3,6 +3,7 @@
 *.sql.gz
 *.css.map
 
+.vs/
 config/
 data/
 private/

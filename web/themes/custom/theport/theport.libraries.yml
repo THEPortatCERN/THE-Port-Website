@@ -7,6 +7,8 @@ coming-soon:
     layout:
       components/coming-soon/coming-soon.css: {}
 footer:
+  js:
+    components/footer/social.js: {}
   css:
     component:
       components/footer/copyright.css: {}
