@@ -32,11 +32,11 @@ body {
     }
 
     @media (max-width: 991.98px) {
-        height: var(--navbar-height-sm);
+        min-height: var(--navbar-height-sm);
     }
 
     @media (min-width: 992px) {
-        height: var(--navbar-height-lg);
+        min-height: var(--navbar-height-lg);
     }
 }
 
