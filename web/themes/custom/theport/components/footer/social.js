@@ -1,7 +1,9 @@
 /*
   Only load the social media styling when the footer is becoming visible.
  */
-if ("IntersectionObserver" in window) {
+const el = document.getElementById("social");
+
+if (el && "IntersectionObserver" in window) {
   function loadCss() {
     const link = document.createElement("link");
     link.rel = "stylesheet";
@@ -10,10 +12,6 @@ if ("IntersectionObserver" in window) {
     head.parentNode.insertBefore(link, head);
   }
 
-  const options = {
-    threshold: 0.1,
-  };
-
   function onChange(changes, observer) {
     if (changes[0].intersectionRatio > 0) {
       loadCss();
@@ -21,6 +19,10 @@ if ("IntersectionObserver" in window) {
     }
   }
 
+  const options = {
+    threshold: 0.1,
+  };
+
   const observer = new IntersectionObserver(onChange, options);
-  observer.observe(document.getElementById("social"));
+  observer.observe(el);
 }
