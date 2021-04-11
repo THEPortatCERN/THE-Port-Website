@@ -12038,20 +12038,44 @@ code {
   overflow-y: auto;
 }
 
-body {
-  background-color: #fbf9fa;
-}
-
 :root {
   --navbar-margin: 1rem;
 }
 
 .navbar {
   margin-bottom: var(--navbar-margin);
+  padding-top: 0.6rem;
 }
 
-.navbar.bg-light {
+.navbar.bg-primary {
   background-color: #ff4200 !important;
+}
+
+.navbar .nav-item {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.navbar .nav-item:last-child a {
+  padding-right: 0;
+}
+
+@media screen and (max-width: 991.98px) {
+  .navbar .nav-item {
+    text-align: right;
+  }
+}
+
+.navbar.navbar-light .navbar-toggler {
+  border-color: #cc3500;
+}
+
+.navbar .navbar-brand {
+  padding-top: 0.2rem;
+}
+
+.navbar .navbar-nav {
+  margin-top: 0.2rem;
 }
 
 .field--type-image picture img {

@@ -14,19 +14,41 @@
 
 @import "bootstrap";
 
-body {
-    background-color: $light;
-}
-
 :root {
     --navbar-margin: #{$spacer};
 }
 
 .navbar {
     margin-bottom: var(--navbar-margin);
+    padding-top: 0.6rem;
 
-    &.bg-light {
-        background-color: $red !important;
+    &.bg-primary {
+        background-color: $red !important; // use logo color
+    }
+
+    .nav-item {
+        font-weight: bold;
+        font-size: 1.3rem;
+
+        &:last-child a {
+            padding-right: 0;
+        }
+
+        @media screen and (max-width: 991.98px) {
+            text-align: right;
+        }
+    }
+
+    &.navbar-light .navbar-toggler {
+        border-color: darken($red, 10%);
+    }
+
+    .navbar-brand {
+        padding-top: 0.2rem; // visually center logo
+    }
+
+    .navbar-nav {
+        margin-top: 0.2rem; // visually center text navigation
     }
 }
 

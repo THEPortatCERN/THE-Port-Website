@@ -37,7 +37,7 @@ h2 span:nth-child(1) {
     font-style: italic;
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 575.98px) {
     h2 span:nth-child(1) {
         font-size: 6vw;
     }
