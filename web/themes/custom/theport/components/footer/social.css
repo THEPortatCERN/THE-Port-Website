@@ -20,15 +20,26 @@
     padding: 0;
 }
 
-@media (min-width: 575px) {
+.social ul li {
+    width: 8rem;
+    display: inline-block;
+}
+
+@media (min-width: 786px) {
     .social ul li {
-        display: inline-block;
+        width: auto;
     }
 }
 
 .social ul li:not(:last-child) {
-    margin-bottom: 1rem;
-    margin-right: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .social ul li:not(:last-child) {
+        margin-bottom: 1rem;
+        margin-right: 2rem;
+    }
 }
 
 .social ul li a {
@@ -40,9 +51,17 @@
     display: inline-block;
     content: " ";
     background-repeat: no-repeat;
-    width: 24px;
-    height: 24px;
-    margin: 0 4px 0 0;
+    width: 16px;
+    height: 16px;
+    margin: 3px 4px 0 0;
+}
+
+@media (min-width: 768px) {
+    .social ul li a:before {
+        width: 24px;
+        height: 24px;
+        margin-top: 0;
+    }
 }
 
 .social ul li a[href*="linkedin"]:before {
