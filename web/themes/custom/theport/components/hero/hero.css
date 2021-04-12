@@ -1,5 +1,9 @@
-.hero {
+.hero, .hero-inner {
     width: 100%;
+    height: min(60vw, 800px);
+}
+
+.hero {
     margin-top: calc(var(--navbar-margin) * -1);
     margin-bottom: var(--navbar-margin);
     z-index: 0;
@@ -8,20 +12,6 @@
 .hero-inner {
     position: absolute;
     left: 0;
-    width: 100%;
-}
-
-@media (max-width: 991.98px) {
-    .hero, .hero-inner {
-        height: 60vw;
-    }
-}
-
-@media (min-width: 992px) {
-    .hero, .hero-inner {
-        height: 60vw;
-        max-height: 900px;
-    }
 }
 
 .hero .field--name-body {
@@ -52,20 +42,18 @@
     line-height: 1.1;
 }
 
-.hero .field--name-field-hero, .hero .field--name-field-hero img {
+.hero .field--name-field-media-image img {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-}
-
-.hero .field--name-field-hero img {
     object-fit: cover;
 }
 
-#layout-builder .hero, #layout-builder .hero-inner {
+/* Display in the Drupal backend */
+.block-local-tasks-block+.block-system-main-block .hero,
+.block-local-tasks-block+.block-system-main-block .hero-inner,
+.block-local-tasks-block+.block-system-main-block .hero .field--name-field-media-image img {
     position: relative;
-    max-height: 400px;
+    height: 400px;
     margin: 0;
 }

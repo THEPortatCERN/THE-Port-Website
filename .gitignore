@@ -1,6 +1,6 @@
 *.log
 *.sql
-*.sql.gz
+*.gz
 *.css.map
 
 .vs/
