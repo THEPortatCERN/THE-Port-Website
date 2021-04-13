@@ -12066,6 +12066,10 @@ code {
   }
 }
 
+.navbar .nav-link.active {
+  cursor: default;
+}
+
 .navbar.navbar-light .navbar-toggler {
   border-color: #cc3500;
 }

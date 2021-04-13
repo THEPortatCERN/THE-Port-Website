@@ -37,10 +37,10 @@
         @media screen and (max-width: 991.98px) {
             text-align: right;
         }
+    }
 
-        .is-active {
-            cursor: pointer;
-        }
+    .nav-link.active {
+        cursor: default;
     }
 
     &.navbar-light .navbar-toggler {
