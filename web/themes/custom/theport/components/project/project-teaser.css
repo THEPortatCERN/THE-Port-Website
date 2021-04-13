@@ -1,15 +1,15 @@
-.view-promoted-projects {
+.projects {
     margin-bottom: 24px;
 }
 
 @media (max-width: 575.98px) {
-    .view-promoted-projects .views-row {
-        margin-bottom: 24px;
+    .projects .views-row {
+        margin-bottom: 12px;
     }
 }
 
 @media (min-width: 576px) {
-    .view-promoted-projects .view-content {
+    .projects .view-content {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-auto-rows: 1fr;
@@ -19,48 +19,52 @@
 }
 
 @media (min-width: 768px) {
-    .view-promoted-projects .view-content {
+    .projects .view-content {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (min-width: 1200px) {
-    .view-promoted-projects .view-content {
+    .projects .view-content {
         grid-template-columns: repeat(4, 1fr);
     }
 }
 
-.view-promoted-projects .views-row {
+.projects .views-row {
     display: flex;
 }
 
-.view-promoted-projects .card {
+.projects .card {
     width: 100%;
+    min-height: 8rem;
+    border-width: 2px;
+    border-color: #f7f3f5;
 }
 
-.view-promoted-projects .card:hover {
-    box-shadow: 1px 1px 6px 2px rgba(0, 0, 0, 0.1);
+.projects .card:hover {
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.05);
+    border: 2px solid var(--bs-blue);
 }
 
 @media (max-width: 575.98px) {
-    .view-promoted-projects .card {
+    .projects .card {
         flex-direction: row;
     }
 
-    .view-promoted-projects .card-image-container {
+    .projects .card-image-container {
         display: none;
     }
 }
 
 @media (min-width: 576px) {
-    .view-promoted-projects .card-image-container {
+    .projects .card-image-container {
         width: 100%;
         display: block;
         position: relative;
         padding-bottom: 66.67%;
     }
 
-    .view-promoted-projects .card-image-container img {
+    .projects .card-image-container img {
         object-fit: contain;
         position: absolute;
         top: 10px;
@@ -71,12 +75,12 @@
 }
 
 
-.view-promoted-projects .card-text {
+.projects .card-text {
     margin-bottom: 0;
 }
 
 /* Make the link cover the entire card */
-.view-promoted-projects .card-link {
+.projects .card-link {
     cursor: pointer;
     display: block;
     position: absolute;
