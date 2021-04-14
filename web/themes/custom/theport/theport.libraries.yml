@@ -21,6 +21,10 @@ project-teaser:
   css:
     component:
       components/project/project-teaser.css: {}
+event-teaser:
+  css:
+    component:
+      components/event/event-teaser.css: {}
 hero:
   css:
     component:

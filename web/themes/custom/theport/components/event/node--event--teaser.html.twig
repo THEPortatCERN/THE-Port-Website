@@ -1,0 +1,32 @@
+{{ attach_library('theport/event-teaser') }}
+
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    'event-teaser',
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+{{ attach_library('classy/node') }}
+<article{{attributes.addClass(classes)}}>
+	{{ title_prefix }}
+	{% if label and not page %}
+		<h3{{title_attributes}}>{{ label }}</a>
+	</h3>
+{% endif %}
+{{ title_suffix }}
+
+<div{{content_attributes.addClass('node__content')}}>
+	<div class="row">
+		<div class="col-sm-12 col-md-6 col-lg-4">{{content.body}}</div>
+		<div class="col-sm-12 col-md-6 col-lg-8">
+			{{content.field_impressions}}
+		</div>
+	</div>
+
+	{# {{ content }} #}
+</div></article>
