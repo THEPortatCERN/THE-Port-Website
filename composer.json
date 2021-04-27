@@ -34,7 +34,8 @@
         "drupal/views_bulk_edit": "^2.5",
         "drupal/webform": "^6.0",
         "drupal/webp": "^1.0@beta",
-        "drush/drush": "^10.3"
+        "drush/drush": "^10.3",
+        "wikimedia/composer-merge-plugin": "^2.0"
     },
     "require-dev": {
         "drupal/core-dev": "^9.1"
@@ -66,6 +67,11 @@
             "web/modules/custom/{$name}": ["type:drupal-custom-module"],
             "web/profiles/custom/{$name}": ["type:drupal-custom-profile"],
             "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
-        }
+        },
+        "merge-plugin": {
+          "include": [
+              "web/modules/contrib/webform/composer.libraries.json"
+          ]
+      }
     }
 }
