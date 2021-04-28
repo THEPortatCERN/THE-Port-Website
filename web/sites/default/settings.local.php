@@ -34,6 +34,8 @@ $config['system.logging']['error_level'] = 'verbose';
  */
 $config['system.performance']['css']['preprocess'] = FALSE;
 $config['system.performance']['js']['preprocess'] = FALSE;
+$config['minifyhtml.config']['minify'] = FALSE;
+$config['minifyhtml.config']['strip_comments'] = FALSE;
 
 /**
  * Disable the render cache.
