@@ -24,7 +24,11 @@ project-teaser:
 event-teaser:
   css:
     component:
-      components/event/event-teaser.css: {}
+      components/event-teaser/event-teaser.css: {}
+recent-events:
+  css:
+    component:
+      components/recent-events/recent-events.css: {}
 hero:
   css:
     component:

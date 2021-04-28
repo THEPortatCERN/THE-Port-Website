@@ -1,0 +1,59 @@
+.event-teaser {
+    margin: 1rem 0 3rem 0;
+}
+
+.event-teaser h3 {
+    font-size: 1.4rem;
+}
+
+.event-teaser .field--name-body {
+    font-size: 1.2rem;
+}
+
+.event-teaser .field--name-field-impressions>.field__item {
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
+    padding: 8px;
+    border-radius: 2px;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 576px) {
+    .event-teaser .field--name-field-impressions>.field__item {
+        display: block;
+        margin: 0;
+    }
+
+    .event-teaser .field--name-field-impressions {
+        display: grid;
+        grid-auto-rows: 1fr;
+        grid-column-gap: 1rem;
+        grid-row-gap: 1rem;
+        align-items: center;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+    .event-teaser .field--name-field-impressions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .event-teaser .field--name-field-impressions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .event-teaser .field--name-field-impressions {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.event-teaser .field--name-field-impressions .field__item img {
+    margin: 0;
+    padding: 0;
+}
