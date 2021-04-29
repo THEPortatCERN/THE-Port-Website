@@ -8,16 +8,18 @@
   ]
 %}
 <div{{attributes.addClass(classes)}}>
-	<div class="hero">
-		<div class="hero-inner">
-			{{ title_prefix }}
-			{% if label %}
-				<h2{{title_attributes}}>{{ label }}</h2>
-			{% endif %}
-			{{ title_suffix }}
-			{% block content %}
-				{{ content }}
-			{% endblock %}
-		</div>
-	</div>
+  <div class="hero">
+    <div class="hero-inner">
+      {{ title_prefix }}
+      {% if label %}
+        <h2{{title_attributes}}>{{ label }}</h2>
+      {% endif %}
+      {{ title_suffix }}
+      {% block content %}
+        <div{{content_attributes.addClass('content')}}>
+          {{ content }}
+        </div>
+      {% endblock %}
+    </div>
+  </div>
 </div>

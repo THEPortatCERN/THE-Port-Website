@@ -2,6 +2,11 @@ global:
   css:
     theme:
       components/global/global.css: {}
+# ------------ Individual components (blocks, views, nodes) [A-Z] ------------ 
+about:
+  css:
+    theme:
+      about/about.css: {}
 coming-soon:
   css:
     layout:
