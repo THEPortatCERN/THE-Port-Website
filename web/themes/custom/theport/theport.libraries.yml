@@ -22,18 +22,21 @@ participant:
   css:
     component:
       templates/participant/participant.css: {}
+partner:
+  css:
+    component:
+      templates/partner/partners-block.css: {}
+      templates/partner/partners-view.css: {}
+      templates/partner/partner-teaser.css: {}
 project-teaser:
   css:
     component:
       templates/project/project-teaser.css: {}
-event-teaser:
+event:
   css:
     component:
-      templates/event-teaser/event-teaser.css: {}
-recent-events:
-  css:
-    component:
-      templates/recent-events/recent-events.css: {}
+      templates/event/events-block.css: {}
+      templates/event/event-teaser.css: {}
 hero:
   css:
     component:

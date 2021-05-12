@@ -4,7 +4,7 @@
 
 Development tasks are listed on the [Project Board](https://app.asana.com/0/1200042243165772/board).
 
-The technologies in for building the website are the LAMP stack with Debian Linux 9, Apache 2, MySQL 5.7 and PHP 7.4. On top of this stack, the website is using the content management framework [Drupal 9](https://www.drupal.com/).
+The technologies in for building the website are the LAMP stack with Debian Linux 9, Apache 2, MySQL 5 and PHP 7. On top of this stack, the website is using the content management framework [Drupal 9](https://www.drupal.com/).
 
 ## Local Development
 
@@ -40,6 +40,10 @@ The project uses [Composer](https://getcomposer.org/) to manage all dependencies
   lando composer update
   lando drush cache-clear
 ```
+
+## Website Theme
+
+The majority of tasks are accomplished using the Drupal administration interface. For example, a new View should be created and configured there. There is, however, a custom theme that allows a detailed designs of the site. Please refer to the [Readme](./web/themes/custom/theport/Readme.md) in the theme folder.
 
 ## Configuration
 

@@ -35,4 +35,5 @@ The `global.css` file is loaded by Drupal and should be checked into the reposit
 ## Tools
 
 * Use [the Sass compiler](https://sass-lang.com/install) to compile the global SCSS file to CSS.
-* Use [Twig Tweak](https://git.drupalcode.org/project/twig_tweak/-/blob/3.x/docs/cheat-sheet.md) to make using templates simpler.
+* Use the module [Twig Tweak](https://git.drupalcode.org/project/twig_tweak/-/blob/3.x/docs/cheat-sheet.md) to make using templates simpler.
+* Use the module [Twig VarDumper](https://www.drupal.org/project/twig_vardumper) to output template variables.
