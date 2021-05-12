@@ -7,7 +7,7 @@ if (el && "IntersectionObserver" in window) {
   function loadCss() {
     const link = document.createElement("link");
     link.rel = "stylesheet";
-    link.href = "/themes/custom/theport/components/footer/social.css";
+    link.href = "/themes/custom/theport/templates/footer/social.css";
     const head = document.getElementsByTagName("head")[0];
     head.parentNode.insertBefore(link, head);
   }

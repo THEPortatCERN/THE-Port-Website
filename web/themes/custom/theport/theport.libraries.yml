@@ -1,8 +1,8 @@
 global:
   css:
     theme:
-      components/global/global.css: {}
-# ------------ Individual components (blocks, views, nodes) [A-Z] ------------ 
+      templates/global/global.css: {}
+# ------------ Individual templates (blocks, views, nodes) [A-Z] ------------ 
 about:
   css:
     theme:
@@ -10,31 +10,31 @@ about:
 coming-soon:
   css:
     layout:
-      components/coming-soon/coming-soon.css: {}
+      templates/coming-soon/coming-soon.css: {}
 footer:
   js:
-    components/footer/social.js: {}
+    templates/footer/social.js: {}
   css:
     component:
-      components/footer/copyright.css: {}
-      components/footer/social.css: {}
+      templates/footer/copyright.css: {}
+      templates/footer/social.css: {}
 participant:
   css:
     component:
-      components/participant/participant.css: {}
+      templates/participant/participant.css: {}
 project-teaser:
   css:
     component:
-      components/project/project-teaser.css: {}
+      templates/project/project-teaser.css: {}
 event-teaser:
   css:
     component:
-      components/event-teaser/event-teaser.css: {}
+      templates/event-teaser/event-teaser.css: {}
 recent-events:
   css:
     component:
-      components/recent-events/recent-events.css: {}
+      templates/recent-events/recent-events.css: {}
 hero:
   css:
     component:
-      components/hero/hero.css: {}
+      templates/hero/hero.css: {}

@@ -1,22 +1,38 @@
 # THE Port Custom Theme
 
-## Customizations
+This theme is a sub-theme of [Bootstrap 5](https://www.drupal.org/project/bootstrap5). It contains templates for the nodes and blocks used on the website.
 
-To customize look and feel of subtheme override SCSS variables. Full list of variables is in `themes/contrib/bootstrap5/dist/bootstrap/5.0.0-beta1/scss/_variables.scss` or `themes/contrib/bootstrap5/scss/_theme_variables.scss`.
+## Folder Structure
 
-* Bootstrap 5 variables for font-face, font-sizes, colours, etc [Read more](https://getbootstrap.com/docs/5.0/customize/sass/#variable-defaults)
-* Bootstrap 5 Theme specific variables `scss/_theme_variables.scss` for site logo image size, region paddings, etc
+The Twig templates, stylesheets and scripts are grouped into sub-folders within the template directory. For example, the "about" folder contains all the files for styling the About page on the site.
 
-To review changes to Bootstrap 5 subtheme easily load style guide page. The link will be available on `Manage theme` configuration page. Style guide is particular useful for accessibility testing (contrasts of background colours to text colours).
+## File Loading
 
-Upon configuring variables, you will need to recompile the Sass file:
+Drupal loads the Twig templates based on a [naming convention](https://www.drupal.org/docs/theming-drupal/twig-in-drupal/twig-template-naming-conventions). The CSS and JavaScript files are attached in the Twig template. For example, at the top of a Twig file:
+
+```twig
+  {{ attach_library('theport/about') }}
+```
+
+References to the CSS and JS files are then placed in `theport.libraries.yml`. In order to see the changes, it may be necessary to clear the Drupal cache. This can be done either in the Administration area or using Drush:
 
 ```bash
-  sass .\global.scss .\global.css
+  lando drush cr
 ```
+
+## Customizations
+
+The [Bootstrap library](https://getbootstrap.com/docs/5.0/getting-started/introduction/) can be customized using [Sass variables](https://getbootstrap.com/docs/5.0/customize/sass/#variable-defaults).
+
+Upon configuring variables, you will need to recompile the Sass file. From within the `global` directory, run:
+
+```bash
+  sass global.scss global.css
+```
+
+The `global.css` file is loaded by Drupal and should be checked into the repository for convenience. [Sass](https://sass-lang.com/) is otherwise not used in other templates and does not need to be installed.
 
 ## Tools
 
-* Use [the Sass compiler](https://sass-lang.com/install) to compile SCSS to CSS.
-
+* Use [the Sass compiler](https://sass-lang.com/install) to compile the global SCSS file to CSS.
 * Use [Twig Tweak](https://git.drupalcode.org/project/twig_tweak/-/blob/3.x/docs/cheat-sheet.md) to make using templates simpler.
