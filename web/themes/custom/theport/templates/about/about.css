@@ -1,14 +1,24 @@
 /* The class names are applied to each block using the Layout Builder Component Attributes module */
-
 .about h1 {
     text-align: center;
 }
 
 .about .mission blockquote {
     font-size: 1.5rem;
+    line-height: 1.3;
     text-align: center;
     max-width: 38rem;
-    margin: 0 auto;
+    margin: 3rem auto 6rem auto;
+}
+
+.about .pillar {
+    margin-bottom: var(--gutter);
+}
+
+@media (min-width: 640px) {
+    .about .pillar {
+        margin-bottom: 3rem;
+    }
 }
 
 .about .pillar h2:before {
@@ -26,3 +36,4 @@
     margin-top: -0.5em;
     margin-right: 0.2em;
 }
+

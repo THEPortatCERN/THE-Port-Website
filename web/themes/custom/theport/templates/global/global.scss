@@ -16,45 +16,12 @@
 
 :root {
     --navbar-margin: #{$spacer};
+    --gutter: #{$grid-gutter-width};
+    --spacer: #{$spacer};
 }
 
-.navbar {
-    margin-bottom: var(--navbar-margin);
-    padding-top: 0.6rem;
-
-    &.bg-primary {
-        background-color: $red !important; // use logo color
-    }
-
-    .nav-item {
-        font-weight: bold;
-        font-size: 1.3rem;
-
-        &:last-child a {
-            padding-right: 0;
-        }
-
-        @media screen and (max-width: 991.98px) {
-            text-align: right;
-        }
-    }
-
-    .nav-link.active {
-        cursor: default;
-    }
-
-    &.navbar-light .navbar-toggler {
-        border-color: darken($red, 10%);
-    }
-
-    .navbar-brand {
-        padding-top: 0.2rem; // visually center logo
-    }
-
-    .navbar-nav {
-        margin-top: 0.2rem; // visually center text navigation
-    }
-}
+@import "layout-builder-temp-fix";
+@import "navbar";
 
 // Visually center the fallback images
 .field--type-image picture img {

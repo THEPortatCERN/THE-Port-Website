@@ -1,18 +1,18 @@
-.participant {
+.participant-teaser {
     display: flex;
     margin-bottom: 25px;
 }
 
-.participant div:nth-child(1) {
+.participant-teaser div:nth-child(1) {
     flex: 0 0 auto;
 }
 
-.participant div:nth-child(2) {
+.participant-teaser div:nth-child(2) {
     flex: 1 1 auto;
     padding-left: 25px;
 }
 
-.participant-portrait {
+.participant-teaser-portrait {
     padding: 5px;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.15);

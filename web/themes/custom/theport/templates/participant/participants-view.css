@@ -1,0 +1,15 @@
+/* Alumni View */
+.alumni {
+  margin-bottom: 3rem;
+}
+
+.alumni ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-gap: 0.5rem;
+    padding: 0;
+}
+
+.alumni ul li {
+    list-style-type: none;
+}

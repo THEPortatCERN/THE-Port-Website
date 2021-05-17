@@ -6,7 +6,7 @@ global:
 about:
   css:
     theme:
-      about/about.css: {}
+      templates/about/about.css: {}
 coming-soon:
   css:
     layout:
@@ -21,7 +21,9 @@ footer:
 participant:
   css:
     component:
-      templates/participant/participant.css: {}
+      templates/participant/participant-teaser.css: {}
+      templates/participant/participant-collapsed.css: {}
+      templates/participant/participants-view.css: {}
 partner:
   css:
     component:

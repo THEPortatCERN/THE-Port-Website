@@ -1,0 +1,10 @@
+{{ attach_library('theport/participant-collapsed') }}
+{% set image_source = file_url(content.field_image['#items'].entity.uri.value) %}
+{% set about = content.field_about['#items'][0].value %}
+<details class="participant-collapsed">
+  <summary>{{ label }}</summary>
+  <div class="participant-collapsed-info">
+    <img class="participant-collapsed-portrait" src="{{image_source}}" width="100" height="100" alt="{{"Portait of an alumni member"|t}}">
+    <p class="participant-collapsed-about">{{ about }}</p>
+  </div>
+</details>

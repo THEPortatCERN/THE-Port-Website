@@ -1,0 +1,38 @@
+/*
+  This file contains temporary styling for columns created by Layout Builder.
+
+  ☠ This is just a temporary fix. As soon as Bootstrap 5 is finalized,
+  install this module here: https://www.drupal.org/project/bootstrap_layout_builder
+  Then remove this file.
+*/
+
+.layout--twocol-section--50-50 {
+    @media (min-width: 640px) {
+        .layout__region--first {
+            padding-right: $grid-gutter-width / 2;
+
+        }
+
+        .layout__region--second {
+            padding-left: $grid-gutter-width / 2;
+        }
+    }
+}
+
+.layout--threecol-section--33-34-33 {
+    @media (min-width: 640px) {
+        .layout__region--first {
+            padding-right: $grid-gutter-width / 2;
+
+        }
+
+        .layout__region--second {
+            padding-left: $grid-gutter-width / 2;
+            padding-right: $grid-gutter-width / 2;
+        }
+
+        .layout__region--third {
+            padding-left: $grid-gutter-width / 2;
+        }
+    }
+}

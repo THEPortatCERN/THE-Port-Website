@@ -29,8 +29,8 @@
     .event-teaser .field--name-field-impressions {
         display: grid;
         grid-auto-rows: 1fr;
-        grid-column-gap: 1.5rem;
-        grid-row-gap: 1.5rem;
+        grid-column-gap: var(--gutter);
+        grid-row-gap: var(--gutter);
         align-items: center;
     }
 }

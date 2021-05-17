@@ -1,0 +1,12 @@
+.participant-collapsed {
+    border: none;
+    margin: 0;
+}
+
+.participant-collapsed-info {
+    display: flex;
+}
+
+.participant-collapsed-about {
+    padding-left: 0.5rem;
+}
