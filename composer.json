@@ -20,7 +20,7 @@
         "drupal/core-project-message": "^9.1",
         "drupal/core-recommended": "^9.1",
         "drupal/country": "^1.0@RC",
-        "drupal/ctools": "^3.4",
+        "drupal/ctools": "^3.6",
         "drupal/devel": "^4.1",
         "drupal/image_widget_crop": "^2.3",
         "drupal/layout_builder_component_attributes": "^1.2",
