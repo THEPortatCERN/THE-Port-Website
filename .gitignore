@@ -37,3 +37,4 @@ web/sites/default/default.settings.php
 web/sites/default/default.services.yml
 web/themes/README.txt
 web/themes/contrib/
+web/README.md
