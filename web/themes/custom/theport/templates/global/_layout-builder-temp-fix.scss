@@ -6,15 +6,17 @@
   Then remove this file.
 */
 
+@use "sass:math";
+
 .layout--twocol-section--50-50 {
     @media (min-width: 640px) {
         .layout__region--first {
-            padding-right: $grid-gutter-width / 2;
+            padding-right: math.div($grid-gutter-width, 2);
 
         }
 
         .layout__region--second {
-            padding-left: $grid-gutter-width / 2;
+            padding-left: math.div($grid-gutter-width, 2);
         }
     }
 }
@@ -22,17 +24,17 @@
 .layout--threecol-section--33-34-33 {
     @media (min-width: 640px) {
         .layout__region--first {
-            padding-right: $grid-gutter-width / 2;
+            padding-right: math.div($grid-gutter-width, 2);
 
         }
 
         .layout__region--second {
-            padding-left: $grid-gutter-width / 2;
-            padding-right: $grid-gutter-width / 2;
+            padding-left: math.div($grid-gutter-width, 2);
+            padding-right: math.div($grid-gutter-width, 2);
         }
 
         .layout__region--third {
-            padding-left: $grid-gutter-width / 2;
+            padding-left: math.div($grid-gutter-width, 2);
         }
     }
 }
