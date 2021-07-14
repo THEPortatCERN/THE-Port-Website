@@ -1,0 +1,9 @@
+.picture-large {
+    background-color: #fff;
+}
+
+.picture-large .field--name-field-media-image {
+    max-width: 30rem;
+    padding: 1rem;
+    margin: 0 auto;
+}

@@ -30,6 +30,10 @@ partner:
       templates/partner/partners-block.css: {}
       templates/partner/partners-view.css: {}
       templates/partner/partner-teaser.css: {}
+picture-large:
+  css:
+    component:
+      templates/picture/picture-large.css: {}
 project-teaser:
   css:
     component:
