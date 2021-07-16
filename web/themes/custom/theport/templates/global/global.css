@@ -11259,6 +11259,10 @@ code {
   }
 }
 
+.toolbar-tray-open .field--name-thumbnail img {
+  max-width: 100% !important;
+}
+
 .navbar {
   margin-bottom: var(--navbar-margin);
   padding-top: 0.6rem;

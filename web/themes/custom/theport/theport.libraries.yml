@@ -1,4 +1,6 @@
 global:
+  js:
+    templates/global/global.js: {}
   css:
     theme:
       templates/global/global.css: {}
@@ -7,10 +9,10 @@ about:
   css:
     theme:
       templates/about/about.css: {}
-coming-soon:
+banner:
   css:
-    layout:
-      templates/coming-soon/coming-soon.css: {}
+    component:
+      templates/banner/banner.css: {}
 footer:
   js:
     templates/footer/social.js: {}

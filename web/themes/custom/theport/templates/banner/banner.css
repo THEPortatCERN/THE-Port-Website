@@ -1,0 +1,108 @@
+.banner {
+    position: relative;
+}
+
+.banner::after {
+    height: 100%;
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ffcbc2;
+    z-index: 0;
+
+    /*
+      Genius layout math going on here 😑
+      
+      I want the background to extend the width of the browser window,
+      but position it from a relative parent element.
+      
+      The scrollbar width variable is set in JavaScript.
+    */
+    left: calc(-1 * (((100vw - var(--scrollbar-width, 0)) - 100%) / 2));
+    width: calc(100vw - var(--scrollbar-width, 0));
+}
+
+.banner .content {
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 767.98px) {
+    .banner .field--name-body {
+        padding-bottom: var(--gutter);
+    }
+
+    .banner .field--name-field-media {
+        padding-top: var(--gutter);
+        max-width: 240px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .banner .content {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+        grid-gap: var(--gutter);
+    }
+
+    .banner .field--name-body, .banner .field--name-field-media {
+        padding: var(--gutter) 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .banner .field--name-body {
+        flex-basis: 50%;
+    }
+    .banner .field--name-field-media {
+        flex-basis: 50%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .banner .field--name-body {
+        flex-basis: 66%;
+    }
+    .banner .field--name-field-media {
+        flex-basis: 34%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .banner .field--name-body {
+        flex-basis: 70%;
+    }
+    .banner .field--name-field-media {
+        flex-basis: 30%;
+    }
+}
+
+.banner .field--name-body .banner-year {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.banner .field--name-body p {
+    font-size: 1.2rem;
+    max-width: 40em;
+}
+
+.banner .field--name-body .btn:first-child {
+    margin-right: 1rem;
+}
+
+/* Display in the Drupal backend */
+.block-local-tasks-block+.block-system-main-block .banner::after {
+    left: -24px;
+    top: -24px;
+    width: calc(100% + 48px);
+    height: calc(100% + 48px);
+}

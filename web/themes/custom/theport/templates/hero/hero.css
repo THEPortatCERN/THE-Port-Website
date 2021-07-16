@@ -5,7 +5,7 @@
 
 .hero {
     margin-top: calc(var(--navbar-margin) * -1);
-    margin-bottom: var(--navbar-margin);
+    /* margin-bottom: var(--navbar-margin); */
     z-index: 0;
 }
 

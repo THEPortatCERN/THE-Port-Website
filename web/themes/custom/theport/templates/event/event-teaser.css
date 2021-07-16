@@ -10,18 +10,22 @@
     font-size: 1.2rem;
 }
 
-.event-teaser .field--name-field-impressions>.field__item {
-    background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
-    padding: 8px;
-    border-radius: 2px;
-    display: inline-block;
-    margin-bottom: 1rem;
+@media (max-width: 575.98px) {
+    .event-teaser .field--name-field-impressions>.field__item {
+        margin: 1rem 0 1rem 0;
+        display: block;
+    }
 }
 
 @media (min-width: 576px) {
     .event-teaser .field--name-field-impressions>.field__item {
+        background-color: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        box-shadow: 0 1px 3px rgb(0 0 0 / 10%);
+        padding: 8px;
+        border-radius: 2px;
+        display: inline-block;
+        margin-bottom: 1rem;
         display: block;
         margin: 0;
     }
