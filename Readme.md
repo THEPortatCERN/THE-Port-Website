@@ -25,7 +25,7 @@ The initial setup will take a few minutes as all the required software is downlo
 Next we import the database. A recent [GDPR-compliant database dump](https://www.drupal.org/project/drupal_gdpr_team) can be provided to you by one of your team colleagues.
 
 ```bash
-  lando db-import dump.sql.gz
+  lando db-import dump.sql
 ```
 
 Refresh the page and you will then see the website.
