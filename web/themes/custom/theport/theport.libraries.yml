@@ -9,6 +9,12 @@ about:
   css:
     theme:
       templates/about/about.css: {}
+apply:
+  js:
+    templates/apply/apply-webform.js: {}
+  css:
+    component:
+      templates/apply/apply-webform.css: {}
 banner:
   css:
     component:

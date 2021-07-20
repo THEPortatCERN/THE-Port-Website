@@ -1,0 +1,139 @@
+.apply {
+    max-width: 696px;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+}
+
+.apply .title {
+    text-align: center;
+}
+
+.apply .title .title-event {
+    display: block;
+    font-size: 1rem;
+}
+
+.apply .title .title-form {
+    display: block;
+}
+
+.apply hr {
+    margin: 5rem 0 2rem 0;
+}
+
+/* Make checkboxes larger */
+.apply input[type="checkbox"] {
+    zoom: 1.2;
+    vertical-align: middle;
+    margin-top: 0;
+}
+.apply input[type="checkbox"]+label {
+    margin-left: 4px;
+    vertical-align: middle;
+}
+.apply input[type="checkbox"]+label:hover {
+    cursor: pointer;
+}
+
+.apply .form-type-range {
+    margin-bottom: 3rem;
+}
+
+.apply .sdg .webform-options-display-buttons-wrapper {
+    flex: 0 0 166px;
+    height: 166px;
+}
+
+@media (max-width: 767.98px) {
+    .apply .sdg .webform-options-display-buttons {
+        display: flex;
+        margin: 0 -5px;
+    }
+
+    .apply .sdg .webform-options-display-buttons-wrapper {
+        flex: 0 0 120px;
+        height: 120px;
+        margin: 0 5px 10px 5px;
+    }
+}
+
+.apply .sdg .webform-options-display-buttons-wrapper label {
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+}
+
+.apply .sdg .webform-options-display-buttons-wrapper:nth-child(1) label {
+    background-image: url("/sites/default/files/sustainable-development-goals/sdg-01.svg");
+}
+
+.apply .sdg .webform-options-display-buttons-wrapper:nth-child(2) label {
+    background-image: url("/sites/default/files/sustainable-development-goals/sdg-02.svg");
+}
+
+.apply .sdg .webform-options-display-buttons-wrapper:nth-child(3) label {
+    background-image: url("/sites/default/files/sustainable-development-goals/sdg-03.svg");
+}
+
+.apply .sdg .webform-options-display-buttons-wrapper:nth-child(4) label {
+    background-image: url("/sites/default/files/sustainable-development-goals/sdg-04.svg");
+}
+
+.apply .sdg .webform-options-display-buttons-wrapper:nth-child(5) label {
+    background-image: url("/sites/default/files/sustainable-development-goals/sdg-05.svg");
+}
+
+.apply .sdg .webform-options-display-buttons-wrapper:nth-child(6) label {
+    background-image: url("/sites/default/files/sustainable-development-goals/sdg-06.svg");
+}
+
+.apply .sdg .webform-options-display-buttons-wrapper:nth-child(7) label {
+    background-image: url("/sites/default/files/sustainable-development-goals/sdg-07.svg");
+}
+
+.apply .sdg .webform-options-display-buttons-wrapper:nth-child(8) label {
+    background-image: url("/sites/default/files/sustainable-development-goals/sdg-08.svg");
+}
+
+.apply .sdg .webform-options-display-buttons-wrapper:nth-child(9) label {
+    background-image: url("/sites/default/files/sustainable-development-goals/sdg-09.svg");
+}
+
+.apply .sdg .webform-options-display-buttons-wrapper:nth-child(10) label {
+    background-image: url("/sites/default/files/sustainable-development-goals/sdg-10.svg");
+}
+
+.apply .sdg .webform-options-display-buttons-wrapper:nth-child(11) label {
+    background-image: url("/sites/default/files/sustainable-development-goals/sdg-11.svg");
+}
+
+.apply .sdg .webform-options-display-buttons-wrapper:nth-child(12) label {
+    background-image: url("/sites/default/files/sustainable-development-goals/sdg-12.svg");
+}
+
+.apply .sdg .webform-options-display-buttons-wrapper:nth-child(13) label {
+    background-image: url("/sites/default/files/sustainable-development-goals/sdg-13.svg");
+}
+
+.apply .sdg .webform-options-display-buttons-wrapper:nth-child(14) label {
+    background-image: url("/sites/default/files/sustainable-development-goals/sdg-14.svg");
+}
+
+.apply .sdg .webform-options-display-buttons-wrapper:nth-child(15) label {
+    background-image: url("/sites/default/files/sustainable-development-goals/sdg-15.svg");
+}
+
+.apply .sdg .webform-options-display-buttons-wrapper:nth-child(16) label {
+    background-image: url("/sites/default/files/sustainable-development-goals/sdg-16.svg");
+}
+
+.apply .sdg .webform-options-display-buttons-wrapper:nth-child(17) label {
+    background-image: url("/sites/default/files/sustainable-development-goals/sdg-17.svg");
+}
+
+/* Override the default three column webform layout for mobile */
+@media (min-width: 400px) {
+    .apply .webform-options-display-two-columns {
+        column-count: 1;
+    }
+}
