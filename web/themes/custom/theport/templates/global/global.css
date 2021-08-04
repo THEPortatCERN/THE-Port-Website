@@ -10783,6 +10783,16 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.ckeditor-buttons li .cke-icon-only {
+  width: auto;
+}
+.ckeditor-buttons li a {
+  min-height: 28px;
+}
+.ckeditor-buttons .cke_button_icon img {
+  vertical-align: initial;
+}
+
 a.button.button--danger {
   color: #000;
   background-color: #ff4200;
