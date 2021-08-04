@@ -11248,23 +11248,23 @@ code {
   Then remove this file.
 */
 @media (min-width: 640px) {
-  .layout--twocol-section--50-50 .layout__region--first {
+  .layout--twocol-section .layout__region--first {
     padding-right: 0.75rem;
   }
-  .layout--twocol-section--50-50 .layout__region--second {
+  .layout--twocol-section .layout__region--second {
     padding-left: 0.75rem;
   }
 }
 
 @media (min-width: 640px) {
-  .layout--threecol-section--33-34-33 .layout__region--first {
+  .layout--threecol-section .layout__region--first {
     padding-right: 0.75rem;
   }
-  .layout--threecol-section--33-34-33 .layout__region--second {
+  .layout--threecol-section .layout__region--second {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
   }
-  .layout--threecol-section--33-34-33 .layout__region--third {
+  .layout--threecol-section .layout__region--third {
     padding-left: 0.75rem;
   }
 }

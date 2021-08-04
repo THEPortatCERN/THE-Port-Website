@@ -8,11 +8,10 @@
 
 @use "sass:math";
 
-.layout--twocol-section--50-50 {
+.layout--twocol-section {
     @media (min-width: 640px) {
         .layout__region--first {
             padding-right: math.div($grid-gutter-width, 2);
-
         }
 
         .layout__region--second {
@@ -21,11 +20,10 @@
     }
 }
 
-.layout--threecol-section--33-34-33 {
+.layout--threecol-section {
     @media (min-width: 640px) {
         .layout__region--first {
             padding-right: math.div($grid-gutter-width, 2);
-
         }
 
         .layout__region--second {

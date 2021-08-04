@@ -42,6 +42,10 @@ picture-large:
   css:
     component:
       templates/picture/picture-large.css: {}
+project-full:
+  css:
+    theme:
+      templates/project/project-full.css: {}
 project-teaser:
   css:
     component:
