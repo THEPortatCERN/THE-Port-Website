@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "22fd2f61d0114197bec7679e48cabbad",
+    "content-hash": "3f2321423b935a8d3cc8dcba77c1b512",
     "packages": [
         {
             "name": "algolia/places",
@@ -3537,26 +3537,27 @@
         },
         {
             "name": "drupal/svg_image_field",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/svg_image_field.git",
-                "reference": "2.0.0"
+                "reference": "2.1.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/svg_image_field-2.0.0.zip",
-                "reference": "2.0.0",
-                "shasum": "8ca4975ab54498aeb827ead49c3d21b8a2ec6328"
+                "url": "https://ftp.drupal.org/files/projects/svg_image_field-2.1.0.zip",
+                "reference": "2.1.0",
+                "shasum": "abd3b646795cd907aaab20fa516b1a878a35855b"
             },
             "require": {
-                "drupal/core": "^8 || ^9"
+                "drupal/core": "^8 || ^9",
+                "enshrined/svg-sanitize": "~0.13"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.0",
-                    "datestamp": "1620643328",
+                    "version": "2.1.0",
+                    "datestamp": "1628957692",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3565,12 +3566,12 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0-or-later"
+                "GPL-2.0+"
             ],
             "authors": [
                 {
-                    "name": "donne93",
-                    "homepage": "https://www.drupal.org/user/3569136"
+                    "name": "See contributors",
+                    "homepage": "https://www.drupal.org/node/2863622/committers"
                 },
                 {
                     "name": "dunot",
@@ -3593,10 +3594,11 @@
                     "homepage": "https://www.drupal.org/user/2600028"
                 }
             ],
-            "description": "Provides svg image field",
+            "description": "Provides SVG Image field.",
             "homepage": "https://www.drupal.org/project/svg_image_field",
             "support": {
-                "source": "https://git.drupalcode.org/project/svg_image_field"
+                "source": "https://git.drupalcode.org/project/svg_image_field",
+                "issues": "https://www.drupal.org/project/issues/svg_image_field"
             }
         },
         {
@@ -4275,6 +4277,52 @@
                 "source": "https://github.com/enlightn/security-checker/tree/v1.9.0"
             },
             "time": "2021-05-06T09:03:35+00:00"
+        },
+        {
+            "name": "enshrined/svg-sanitize",
+            "version": "0.14.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/darylldoyle/svg-sanitizer.git",
+                "reference": "307b42066fb0b76b5119f5e1f0826e18fefabe95"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/307b42066fb0b76b5119f5e1f0826e18fefabe95",
+                "reference": "307b42066fb0b76b5119f5e1f0826e18fefabe95",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-libxml": "*",
+                "php": "^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "^0.1.2",
+                "phpunit/phpunit": "^6.5 || ^8.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "enshrined\\svgSanitize\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Daryll Doyle",
+                    "email": "daryll@enshrined.co.uk"
+                }
+            ],
+            "description": "An SVG sanitizer for PHP",
+            "support": {
+                "issues": "https://github.com/darylldoyle/svg-sanitizer/issues",
+                "source": "https://github.com/darylldoyle/svg-sanitizer/tree/0.14.1"
+            },
+            "time": "2021-08-09T23:46:54+00:00"
         },
         {
             "name": "google/recaptcha",
