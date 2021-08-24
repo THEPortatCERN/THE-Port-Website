@@ -35,6 +35,13 @@ participant:
       templates/participant/participant-teaser.css: {}
       templates/participant/participant-collapsed.css: {}
       templates/participant/participants-view.css: {}
+participate:
+  js:
+    templates/urgency/urgency-message.js: {}
+  css:
+    component:
+      templates/participate/participate.css: {}
+      templates/urgency/urgency-message.css: {}
 partner:
   css:
     component:
