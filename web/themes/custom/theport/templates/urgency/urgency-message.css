@@ -1,0 +1,8 @@
+.urgent {
+    font-weight: bold;
+}
+
+.btn + .urgent {
+  margin-left: -0.8rem;
+  vertical-align: middle;
+}
