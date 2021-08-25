@@ -24,7 +24,9 @@
         urgentElement.style.display = "none";
       } else if (daysLeft === 0) {
         endDateElement.textContent = "today";
-      } else if (daysLeft > 0) {
+      } else if (daysLeft === 1) {
+        endDateElement.textContent = "tomorrow";
+      } else if (daysLeft > 1) {
         endDateElement.textContent = `in ${daysLeft} days`;
       }
     }
