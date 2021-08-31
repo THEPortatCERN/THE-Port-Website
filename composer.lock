@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3f2321423b935a8d3cc8dcba77c1b512",
+    "content-hash": "0ef98a65e823ca0ac6626b75bc691dbe",
     "packages": [
         {
             "name": "algolia/places",
@@ -146,10 +146,10 @@
         },
         {
             "name": "ckeditor/autogrow",
-            "version": "4.16.1",
+            "version": "4.16.2",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/autogrow/releases/autogrow_4.16.1.zip"
+                "url": "https://download.ckeditor.com/autogrow/releases/autogrow_4.16.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -176,10 +176,10 @@
         },
         {
             "name": "ckeditor/fakeobjects",
-            "version": "4.16.1",
+            "version": "4.16.2",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.16.1.zip"
+                "url": "https://download.ckeditor.com/fakeobjects/releases/fakeobjects_4.16.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -191,10 +191,10 @@
         },
         {
             "name": "ckeditor/image",
-            "version": "4.16.1",
+            "version": "4.16.2",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/image/releases/image_4.16.1.zip"
+                "url": "https://download.ckeditor.com/image/releases/image_4.16.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -206,10 +206,10 @@
         },
         {
             "name": "ckeditor/link",
-            "version": "4.16.1",
+            "version": "4.16.2",
             "dist": {
                 "type": "zip",
-                "url": "https://download.ckeditor.com/link/releases/link_4.16.1.zip"
+                "url": "https://download.ckeditor.com/link/releases/link_4.16.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
@@ -3000,6 +3000,93 @@
                 "source": "https://gitlab.com/drupalspoons/devel",
                 "issues": "https://gitlab.com/drupalspoons/devel/-/issues",
                 "slack": "https://drupal.slack.com/archives/C012WAW1MH6"
+            }
+        },
+        {
+            "name": "drupal/gutenberg",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/gutenberg.git",
+                "reference": "8.x-2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/gutenberg-8.x-2.0.zip",
+                "reference": "8.x-2.0",
+                "shasum": "0577c7db12685a54cd5d56f87875f1f5036a4795"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9",
+                "ext-json": "*",
+                "php": ">=7.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.0",
+                    "datestamp": "1620838167",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Fernandes (marcofernandes)",
+                    "homepage": "https://www.drupal.org/u/marcofernandes"
+                },
+                {
+                    "name": "Thor Andre Gretland (thorandre)",
+                    "homepage": "https://www.drupal.org/u/thorandre"
+                },
+                {
+                    "name": "Roberto Ornelas (roborn)",
+                    "homepage": "https://www.drupal.org/u/roborn"
+                },
+                {
+                    "name": "Paweł Pregiel (ppregiel)",
+                    "homepage": "https://www.drupal.org/u/ppregiel"
+                },
+                {
+                    "name": "codebymikey",
+                    "homepage": "https://www.drupal.org/u/codebymikey"
+                },
+                {
+                    "name": "perandre",
+                    "homepage": "https://www.drupal.org/user/221337"
+                },
+                {
+                    "name": "roborn",
+                    "homepage": "https://www.drupal.org/user/139474"
+                },
+                {
+                    "name": "sayco",
+                    "homepage": "https://www.drupal.org/user/3517832"
+                },
+                {
+                    "name": "szeidler",
+                    "homepage": "https://www.drupal.org/user/767652"
+                },
+                {
+                    "name": "thorandre",
+                    "homepage": "https://www.drupal.org/user/223878"
+                },
+                {
+                    "name": "truls1502",
+                    "homepage": "https://www.drupal.org/user/325866"
+                }
+            ],
+            "description": "Drupal Gutenberg brings the powerful admin features of Gutenberg Editor to Drupal.",
+            "homepage": "https://www.drupal.org/project/gutenberg",
+            "support": {
+                "source": "https://git.drupalcode.org/project/gutenberg",
+                "issues": "https://www.drupal.org/project/issues/gutenberg"
             }
         },
         {
@@ -12750,5 +12837,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.0.0"
 }
