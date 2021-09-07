@@ -1,6 +1,6 @@
 .hero, .hero-inner {
     width: max(200px, 100%);
-    height: clamp(140px, 60vw, 800px);
+    height: clamp(140px, 50vw, 800px);
 }
 
 .hero {
@@ -30,10 +30,16 @@
 @media (min-width: 320px) {
     .hero .field--name-body {
         position: absolute;
-        top: 25%;
+        top: 20%;
         left: 5%;
         max-width: 50%;
     }
+}
+
+@media (min-width: 1200px) {
+  .hero .field--name-body {
+    top: 30%;
+  }
 }
 
 .hero .field--name-body>* {
