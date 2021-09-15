@@ -11305,6 +11305,21 @@ code {
   margin-top: 0.2rem;
 }
 
+/*
+ Make copy as readable as possible by using a serif font and adapting the size to the page.
+*/
+p {
+  font-family: Georgia, Cambria, "Times New Roman", "Bitstream Vera Serif", Times, serif;
+  max-width: 50em;
+  font-size: 110%;
+  text-rendering: optimizelegibility;
+}
+@media screen and (min-width: 992px) {
+  p {
+    font-size: 120%;
+  }
+}
+
 .field--type-image picture img {
   display: flex;
   margin: 0 auto;
