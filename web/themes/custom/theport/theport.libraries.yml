@@ -16,12 +16,9 @@ apply:
     component:
       templates/apply/apply-webform.css: {}
 banner:
-  js:
-    templates/urgency/urgency-message.js: {}
   css:
     component:
       templates/banner/banner.css: {}
-      templates/urgency/urgency-message.css: {}
 footer:
   js:
     templates/footer/social.js: {}
@@ -36,12 +33,9 @@ participant:
       templates/participant/participant-collapsed.css: {}
       templates/participant/participants-view.css: {}
 participate:
-  js:
-    templates/urgency/urgency-message.js: {}
   css:
     component:
       templates/participate/participate.css: {}
-      templates/urgency/urgency-message.css: {}
 partner:
   css:
     component:
