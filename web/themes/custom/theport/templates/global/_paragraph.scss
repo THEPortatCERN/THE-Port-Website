@@ -10,4 +10,8 @@ p {
     @media screen and (min-width: 992px) {
         font-size: 120%;
     }
+
+    .btn {
+      font-family: var(--bs-font-sans-serif);
+    }
 }

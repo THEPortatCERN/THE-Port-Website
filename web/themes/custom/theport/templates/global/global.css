@@ -11319,6 +11319,9 @@ p {
     font-size: 120%;
   }
 }
+p .btn, p a.button {
+  font-family: var(--bs-font-sans-serif);
+}
 
 .field--type-image picture img {
   display: flex;
