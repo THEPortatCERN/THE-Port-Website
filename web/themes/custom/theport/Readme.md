@@ -17,7 +17,7 @@ Drupal loads the Twig templates based on a [naming convention](https://www.drupa
 References to the CSS and JS files are then placed in `theport.libraries.yml`. In order to see the changes, it may be necessary to clear the Drupal cache. This can be done either in the Administration area or using Drush:
 
 ```bash
-  lando drush cr
+  lando drush cache-clear
 ```
 
 ## Customizations
@@ -30,7 +30,7 @@ Upon configuring variables, you will need to recompile the Sass file. From withi
   sass global.scss global.css
 ```
 
-The `global.css` file is loaded by Drupal and should be checked into the repository for convenience. [Sass](https://sass-lang.com/) is otherwise not used in other templates and does not need to be installed.
+The `global.css` file is loaded by Drupal and should be checked into the repository for convenience. [Sass](https://sass-lang.com/) is otherwise _not_ used in other templates and does not need to be installed.
 
 ## Tools
 
