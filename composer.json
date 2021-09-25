@@ -30,7 +30,6 @@
         "drupal/minifyhtml": "^1.10",
         "drupal/node_title_validation": "^1.22",
         "drupal/pathauto": "^1.8",
-        "drupal/recaptcha_element": "^1.0",
         "drupal/redirect": "^1.6",
         "drupal/summary_word_limit": "^2.0",
         "drupal/svg_image_field": "^2.1",

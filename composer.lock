@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f0600dcb194dda22228538181d51f8ce",
+    "content-hash": "e89dabba42938fa763b1bac1076ef49d",
     "packages": [
         {
             "name": "algolia/places",
@@ -3473,60 +3473,6 @@
             }
         },
         {
-            "name": "drupal/recaptcha_element",
-            "version": "1.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/recaptcha_element.git",
-                "reference": "1.0.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/recaptcha_element-1.0.5.zip",
-                "reference": "1.0.5",
-                "shasum": "0b72c1a6511c7562938f9f734e9f61a91fa4c877"
-            },
-            "require": {
-                "drupal/core": "^8.8 || ^9",
-                "google/recaptcha": "^1.2",
-                "php": ">=7.2.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.0.5",
-                    "datestamp": "1612876998",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "bbrala",
-                    "homepage": "https://www.drupal.org/user/3366066"
-                },
-                {
-                    "name": "casey",
-                    "homepage": "https://www.drupal.org/user/32403"
-                },
-                {
-                    "name": "timohuisman",
-                    "homepage": "https://www.drupal.org/user/3558376"
-                }
-            ],
-            "description": "The ReCaptcha Element module provides integration with Google reCaptcha V3.",
-            "homepage": "https://www.drupal.org/project/recaptcha_element",
-            "support": {
-                "source": "https://git.drupalcode.org/project/recaptcha_element"
-            }
-        },
-        {
             "name": "drupal/redirect",
             "version": "1.6.0",
             "source": {
@@ -4415,58 +4361,6 @@
                 "source": "https://github.com/darylldoyle/svg-sanitizer/tree/0.14.1"
             },
             "time": "2021-08-09T23:46:54+00:00"
-        },
-        {
-            "name": "google/recaptcha",
-            "version": "1.2.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/google/recaptcha.git",
-                "reference": "614f25a9038be4f3f2da7cbfd778dc5b357d2419"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/google/recaptcha/zipball/614f25a9038be4f3f2da7cbfd778dc5b357d2419",
-                "reference": "614f25a9038be4f3f2da7cbfd778dc5b357d2419",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.2.20|^2.15",
-                "php-coveralls/php-coveralls": "^2.1",
-                "phpunit/phpunit": "^4.8.36|^5.7.27|^6.59|^7.5.11"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "ReCaptcha\\": "src/ReCaptcha"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "Client library for reCAPTCHA, a free service that protects websites from spam and abuse.",
-            "homepage": "https://www.google.com/recaptcha/",
-            "keywords": [
-                "Abuse",
-                "captcha",
-                "recaptcha",
-                "spam"
-            ],
-            "support": {
-                "forum": "https://groups.google.com/forum/#!forum/recaptcha",
-                "issues": "https://github.com/google/recaptcha/issues",
-                "source": "https://github.com/google/recaptcha"
-            },
-            "time": "2020-03-31T17:50:54+00:00"
         },
         {
             "name": "grasmash/expander",
@@ -12834,8 +12728,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/backup_migrate": 5,
-        "drupal/bootstrap5": 15,
         "drupal/country": 5,
         "drupal/webp": 10
     },
