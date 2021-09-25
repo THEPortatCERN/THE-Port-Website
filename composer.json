@@ -12,11 +12,10 @@
     ],
     "require": {
         "composer/installers": "^1.9",
-        "drupal/backup_migrate": "^5.0@RC",
-        "drupal/bootstrap5": "^1.0@alpha",
+        "drupal/backup_migrate": "^5.0",
+        "drupal/bootstrap5": "^1.0",
         "drupal/captcha": "^1.2",
         "drupal/change_author_action": "1.0",
-        "drupal/ckeditor_details": "^2.0",
         "drupal/config_ignore": "^2.3",
         "drupal/core-composer-scaffold": "^9.1",
         "drupal/core-project-message": "^9.1",
