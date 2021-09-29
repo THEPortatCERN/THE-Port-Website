@@ -7,3 +7,7 @@
     display: inline;
     color: #cdcdcd;
 }
+
+.copyright p small {
+  font-size: 80%;
+}
