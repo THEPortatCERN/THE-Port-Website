@@ -4,7 +4,6 @@
 *.css.map
 
 .vs/
-config/
 data/
 private/
 vendor/

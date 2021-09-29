@@ -11,8 +11,10 @@
 	</div>
 	<div class="card-body">
 		<p class="card-text">{% for key, item in content.field_teams if key|first != '#' %}{% if key != 0%}, {% endif %}{{ item }}{% endfor %}</p>
-		<h3 class="card-title">{{ label }}</h3>
-		<p class="card-text">{{ node.body.summary }}</p>
+		<h3 class="card-title">{{ label[0] }}</h3>
+		{% if content.field_summary[0] is not empty %}
+			<p class="card-text">{{ content.field_summary[0] }}</p>
+		{% endif %}
 		<a href="{{ url }}" class="card-link">{{ 'View Project'|t }}</a>
 	</div>
 </article>
