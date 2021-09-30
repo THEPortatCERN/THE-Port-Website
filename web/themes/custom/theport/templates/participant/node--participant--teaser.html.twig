@@ -1,10 +1,7 @@
 {{ attach_library('theport/participant') }}
-{% set image_source = file_url(content.field_image['#items'].entity.uri.value) %}
 {% set about = content.field_about['#items'][0].value %}
 <article class="participant-teaser">
-	<div>
-		<img class="participant-teaser-portrait" src="{{image_source}}" width="165" height="165" alt="Portait of a team member">
-	</div>
+	{{ content.field_image }}
 	<div>
 		<h3 class="participant-teaser-name">{{ label }}</h3>
 		<p class="participant-teaser-about">{{ about }}</p>
