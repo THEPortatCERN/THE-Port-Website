@@ -12,7 +12,7 @@
     padding-left: 25px;
 }
 
-.participant-teaser-portrait {
+.participant-teaser img, .participant-teaser svg {
     padding: 5px;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.15);
