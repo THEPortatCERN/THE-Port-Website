@@ -26,9 +26,9 @@ The project uses [Lando](https://lando.dev/) to configure and run the developmen
   lando start
 ```
 
-The initial setup will take a few minutes as all the required software is downloaded. A message will be shown in the terminal once completed. Then visit [theport.lndo.site](http://theport.lndo.site/) in your browser and you should see the Drupal installation screen. Go through the steps and you will reach a basic Drupal installation.
+The initial setup will take a few minutes as all the required software is downloaded. A message will be shown in the terminal once completed. Visit [theport.lndo.site](http://theport.lndo.site/) in your browser and you should see the Drupal installation screen. Go through the steps to reach the database configuration. The database name, and password are "drupal9". In the advanced database settings change the connection from "localhost" to "database". Upon completing the Drupal installation, you will reach a basic version of the website without any content.
 
-Next we import the database. A recent [GDPR-compliant database dump](https://www.drupal.org/project/drupal_gdpr_team) can be provided to you by one of the other repo contributors.
+To import content, a recent [GDPR-compliant database dump](https://www.drupal.org/project/drupal_gdpr_team) can be provided to you by one of the other repo contributors.
 
 ```bash
   lando db-import dump.sql
