@@ -12,7 +12,7 @@
   ]
 %}
 {{ attach_library('classy/node') }}
-<article{{ attributes.addClass(classes) }}>
+<div{{ attributes.addClass(classes)|without('role') }}>
   {{ title_prefix }}
   {% if label and not page %}
     <h2{{ title_attributes }}>
@@ -35,4 +35,4 @@
     {{ content }}
   </div>
 
-</article>
+</div>
