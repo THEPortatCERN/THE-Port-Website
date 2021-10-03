@@ -11,13 +11,13 @@
   ]
 %}
 {{ attach_library('classy/node') }}
-<article{{ attributes.addClass(classes) }}>
+<article{{ attributes.addClass(classes)|without('role') }}>
   <div{{ content_attributes.addClass('node__content') }}>
     <div class="row">
       <div class="col-sm-12 col-md-12 col-lg-5">
         {{ title_prefix }}
         {% if label and not page %}
-          <h3{{ title_attributes }}>{{ label }}</a></h3>
+          <h3{{ title_attributes }}>{{ label }}</h3>
         {% endif %}
         {{ title_suffix }}
         <p>{{ node.body.summary }}</p>

@@ -1,5 +1,5 @@
-<nav aria-labelledby="{{ heading_id }}"{{ attributes.addClass(classes)|without('role', 'aria-labelledby') }}>
-  <p class="visually-hidden">{{ configuration.label }}</p>
+<nav aria-labelledby="block-footer-label"{{ attributes.addClass(classes)|without('role', 'aria-labelledby') }}>
+  <p id="block-footer-label" class="visually-hidden">{{ configuration.label }}</p>
   {% block content %}
     {{ content }}
   {% endblock %}

@@ -20,7 +20,7 @@ function theport_preprocess_html(&$variables)
     '#attributes' => [
       'rel' => 'preconnect',
       'href' => 'https://fonts.gstatic.com',
-      'crossorigin' => 1,
+      'crossorigin' => true,
     ],
   ];
 
