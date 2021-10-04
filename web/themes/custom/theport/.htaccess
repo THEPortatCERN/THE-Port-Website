@@ -1,0 +1,5 @@
+# Set logo and icon to expire in a year.
+<IfModule mod_expires.c>
+  ExpiresByType image/vnd.microsoft.icon A31536000
+  ExpiresByType image/svg+xml A31536000
+</IfModule>

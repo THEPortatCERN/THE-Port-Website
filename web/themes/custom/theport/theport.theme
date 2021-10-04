@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\block_content\BlockContentInterface;
+
 /**
  * @file
  * SUBTHEME theme file.
@@ -46,7 +48,7 @@ function theport_theme_suggestions_block_alter(&$suggestions, $variables)
     @see https://drupal.stackexchange.com/questions/152936/are-there-any-custom-block-type-template-naming-conventions
   */
   $content = $variables['elements']['content'];
-  if (isset($content['#block_content']) && $content['#block_content'] instanceof \Drupal\block_content\BlockContentInterface) {
+  if (isset($content['#block_content']) && $content['#block_content'] instanceof BlockContentInterface) {
     $suggestions[] = 'block__' . $content['#block_content']->bundle();
   }
 }
