@@ -54,7 +54,11 @@ project-teaser:
   css:
     component:
       templates/project/project-teaser.css: {}
-event:
+event-full:
+  css:
+    component:
+      templates/event/event-full.css: {}
+event-teaser:
   css:
     component:
       templates/event/events-block.css: {}

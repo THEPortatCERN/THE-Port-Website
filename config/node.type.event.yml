@@ -1,0 +1,17 @@
+uuid: f4402535-aa84-45d9-bcdc-f8cd2376f58a
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Event
+type: event
+description: 'Use events for describing a hackathon that occurred.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,29 @@
+uuid: 09c9e44d-7103-42e4-a884-2e09da97182a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_impressions
+    - media.type.image
+    - node.type.event
+id: node.event.field_impressions
+field_name: field_impressions
+entity_type: node
+bundle: event
+label: Impressions
+description: 'Pictures taken during the event that portrait the culture and the vibe.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: changed
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

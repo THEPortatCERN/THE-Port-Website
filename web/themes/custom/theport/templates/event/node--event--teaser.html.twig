@@ -1,4 +1,5 @@
-{{ attach_library('theport/event') }}
+{{ attach_library('classy/node') }}
+{{ attach_library('theport/event-teaser') }}
 {%
   set classes = [
     'node',
@@ -10,7 +11,6 @@
     view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
   ]
 %}
-{{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes)|without('role') }}>
   <div{{ content_attributes.addClass('node__content') }}>
     <div class="row">
@@ -20,7 +20,7 @@
           <h3{{ title_attributes }}>{{ label }}</h3>
         {% endif %}
         {{ title_suffix }}
-        <p>{{ node.body.summary }}</p>
+        <p>{{ content.field_about[0] }}</p>
       </div>
       <div class="col-sm-12 col-md-12 col-lg-7">{{ content.field_impressions }}</div>
     </div>
