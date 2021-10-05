@@ -12,7 +12,6 @@
     ],
     "require": {
         "composer/installers": "^1.9",
-        "drupal/advagg": "^4.1",
         "drupal/backup_migrate": "^5.0",
         "drupal/bootstrap5": "^1.0",
         "drupal/captcha": "^1.2",
