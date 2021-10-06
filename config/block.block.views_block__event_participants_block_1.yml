@@ -1,0 +1,32 @@
+uuid: 7eae02ce-48bb-44ab-a72c-a69787b6f41f
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.event_participants
+  module:
+    - ctools
+    - views
+  theme:
+    - theport
+id: views_block__event_participants_block_1
+theme: theport
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:event_participants-block_1'
+settings:
+  id: 'views_block:event_participants-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      event: event
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

@@ -1,0 +1,10 @@
+uuid: 9078c8d8-5ead-4e32-a174-756b94d60c4b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.portrait
+label: Portrait
+targetEntityType: node
+cache: true

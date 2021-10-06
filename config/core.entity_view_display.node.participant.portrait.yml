@@ -1,0 +1,43 @@
+uuid: ea325b4e-aa13-4f27-9369-ddd85633e7a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.portrait
+    - field.field.node.participant.field_about
+    - field.field.node.participant.field_country
+    - field.field.node.participant.field_events
+    - field.field.node.participant.field_image
+    - field.field.node.participant.field_participant_roles
+    - field.field.node.participant.field_teams
+    - image.style.portrait
+    - node.type.participant
+  module:
+    - image
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: false
+id: node.participant.portrait
+targetEntityType: node
+bundle: participant
+mode: portrait
+content:
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: portrait
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  field_about: true
+  field_country: true
+  field_events: true
+  field_participant_roles: true
+  field_teams: true
+  links: true

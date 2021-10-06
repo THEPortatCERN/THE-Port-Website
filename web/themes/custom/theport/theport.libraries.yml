@@ -31,7 +31,9 @@ participant:
     component:
       templates/participant/participant-teaser.css: {}
       templates/participant/participant-collapsed.css: {}
-      templates/participant/participants-view.css: {}
+      templates/participant/participant-portrait.css: {}
+      templates/participant/view-alumni-participants.css: {}
+      templates/participant/view-event-participants.css: {}
 participate:
   css:
     component:
