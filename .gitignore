@@ -2,7 +2,7 @@
 *.sql
 *.gz
 *.css.map
-
+.DS_Store
 .vs/
 data/
 private/
