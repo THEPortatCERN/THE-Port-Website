@@ -12,6 +12,14 @@ The tech stack is Linux, Apache 2, MySQL 5 and PHP 7. In addition, the website i
 * [Gutenberg](https://drupalgutenberg.org/)
 * [Bootstrap 5](https://getbootstrap.com/)
 
+## Production Environment
+
+Execute the following Composer command in production to install all dependencies:
+
+```bash
+  composer install --no-dev --optimize-autoloader
+```
+
 ## Local Development
 
 Three steps are necessary to run the website locally:

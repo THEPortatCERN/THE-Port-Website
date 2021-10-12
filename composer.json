@@ -22,7 +22,6 @@
         "drupal/core-recommended": "^9.1",
         "drupal/country": "^1.0@RC",
         "drupal/ctools": "^3.6",
-        "drupal/devel": "^4.1",
         "drupal/gutenberg": "^2.0",
         "drupal/image_widget_crop": "^2.3",
         "drupal/layout_builder_component_attributes": "^1.2",
@@ -34,7 +33,6 @@
         "drupal/summary_word_limit": "^2.0",
         "drupal/svg_image_field": "^2.1",
         "drupal/twig_tweak": "^3.0",
-        "drupal/twig_vardumper": "^3.0",
         "drupal/views_bulk_edit": "^2.5",
         "drupal/webform": "^6.0",
         "drupal/webp": "^1.0@beta",
@@ -42,12 +40,14 @@
         "wikimedia/composer-merge-plugin": "^2.0"
     },
     "require-dev": {
-        "drupal/core-dev": "^9.1"
+        "drupal/core-dev": "^9.1",
+        "drupal/devel": "^4.1",
+        "drupal/twig_vardumper": "^3.0"
     },
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "beta",
     "prefer-stable": true,
     "config": {
         "sort-packages": true
