@@ -2,6 +2,7 @@
 *.sql
 *.gz
 *.css.map
+*.lnk
 .DS_Store
 .vs/
 data/
