@@ -1,4 +1,17 @@
 {{ attach_library('theport/participant') }}
-<div class="participant-portrait" title="{{ label[0] }}">
-  {{ content }}
+{% set field_image = content.field_image|render %}
+<div class="participant-portrait" data-bs-toggle="tooltip" data-bs-placement="top" title="{{ label[0] }}">
+  {% if field_image %}
+    {{ content.field_image }}
+  {% else %}
+    <div>
+      <svg class="img-fluid" xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewbox="0 0 200 200" xml:space="preserve">
+        <linearGradient id="a" gradientunits="userSpaceOnUse" x1="100" y1="0" x2="100" y2="200">
+          <stop offset="0" stop-color="#a9cef8"/>
+          <stop offset="1" stop-color="#c4e0f6"/>
+        </linearGradient>
+        <path fill="url(#a)" d="M0 0h200v200H0z"/>
+      </svg>
+    </div>
+  {% endif %}
 </div>

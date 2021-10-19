@@ -27,6 +27,8 @@ footer:
       templates/footer/copyright.css: {}
       templates/footer/social.css: {}
 participant:
+  js:
+    templates/participant/view-event-participants.js: {}
   css:
     component:
       templates/participant/participant-teaser.css: {}

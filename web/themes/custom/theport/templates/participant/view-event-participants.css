@@ -1,10 +1,6 @@
-.event-participants {
-    margin: 0 0 3rem 0;
-}
-
 .event-participants ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 200px);
+    grid-template-columns: repeat(auto-fit, 100px);
     grid-gap: 0;
     padding: 0;
 }

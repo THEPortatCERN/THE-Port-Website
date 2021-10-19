@@ -16,4 +16,9 @@ $font-family-sans-serif: 'Lato', sans-serif;
 // Layout
 $region-padding: 0;
 
+// Components
+$tooltip-bg: #fff;
+$tooltip-color: $dark;
+$tooltip-font-size: 1rem;
+
 @import "../../../../contrib/bootstrap5/scss/style";

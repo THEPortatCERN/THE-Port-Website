@@ -1,3 +1,5 @@
-.participant-portrait {
-  display: inline-block;
+.participant-portrait img {
+    width: 100px;
+    height: auto;
+    aspect-ratio: attr(width) / attr(height);
 }

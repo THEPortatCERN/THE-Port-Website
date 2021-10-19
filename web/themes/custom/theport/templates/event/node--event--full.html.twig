@@ -1,38 +1,30 @@
-{{ attach_library('classy/node') }}
 {{ attach_library('theport/event-full') }}
+{{ attach_library('theport/project-teaser') }}
+{{ attach_library('theport/participant') }}
+{{ attach_library('theport/partner') }}
 {%
   set classes = [
-    'node',
-    'node--type-' ~ node.bundle|clean_class,
-    'event-full',
-    node.isPromoted() ? 'node--promoted',
-    node.isSticky() ? 'node--sticky',
-    not node.isPublished() ? 'node--unpublished',
-    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'event-full'
   ]
 %}
-<article{{ attributes.addClass(classes)|without('role') }}>
-
-  {{ title_prefix }}
-  {% if label and not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
-  {{ title_suffix }}
-
-  {% if display_submitted %}
-    <footer class="node__meta">
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('node__submitted') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
-
-  <div{{ content_attributes.addClass('node__content') }}>
-    {{ content }}
-  </div>
-
-</article>
+<div{{attributes.addClass(classes)|without('role')}}>
+  <section class="event-full-section">
+    {{ content.body }}
+  </section>
+  <section class="event-full-section">
+    <h2>{% trans %}Projects{% endtrans %}</h2>
+    {{ drupal_view('event_projects', 'block_1') }}
+  </section>
+  <section class="event-full-section">
+    <h2>{% trans %}Impressions{% endtrans %}</h2>
+    {{ content.field_impressions }}
+  </section>
+  <section class="event-full-section">
+    <h2>{% trans %}Participants{% endtrans %}</h2>
+    {{ drupal_view('event_participants', 'block_1') }}
+  </section>
+  <section class="event-full-section">
+    <h2>{% trans %}Partners{% endtrans %}</h2>
+    {{ drupal_view('event_partners', 'block_1') }}
+  </section>
+</div>

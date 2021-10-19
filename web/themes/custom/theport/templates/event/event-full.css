@@ -1,3 +1,7 @@
+.event-full-section {
+  margin: 0 0 3rem 0;
+}
+
 @media (max-width: 575.98px) {
   .event-full .field--name-field-impressions>.field__item {
       margin: 1rem 0 1rem 0;

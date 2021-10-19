@@ -1,6 +1,6 @@
-uuid: 7eae02ce-48bb-44ab-a72c-a69787b6f41f
+uuid: d79f9f6a-6c02-498b-8439-986187d42e1a
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - views.view.event_participants
@@ -22,6 +22,7 @@ settings:
   label_display: visible
   views_label: ''
   items_per_page: none
+  context_mapping: {  }
 visibility:
   'entity_bundle:node':
     id: 'entity_bundle:node'
