@@ -1,0 +1,59 @@
+{# copied from modules/contrib/webform/templates/webform.html.twig #}
+
+{# Custom styling just for this form #}
+<style>
+  .webform-submission-feedback-form h1 {
+    font-size: 3rem;
+  }
+
+  .webform-submission-feedback-form hr {
+    background-color: #cdcdcd;
+  }
+
+  #edit-nps {
+    margin: 1rem 0;
+  }
+
+  #edit-nps .webform-scale-options input:not(:checked) + label {
+    border-color: #ededed;
+  }
+
+  #edit-nps .webform-scale-options input + label.option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  #edit-nps .webform-scale-text-min,
+  #edit-nps .webform-scale-text-max {
+    font-size: 0.8rem;
+    margin-top: -6px;
+  }
+
+  @media(max-width: 575.98px) {
+    #edit-nps .webform-scale-options input + label.option {
+      width: 24px;
+      height: 24px;
+    }
+
+    #edit-nps .webform-scale-large .webform-scale-option:not(:last-child) .form-item {
+      margin-right: 3px;
+    }
+  }
+
+  @media(min-width: 576px) {
+    #edit-nps .webform-scale-large .webform-scale-option:not(:last-child) .form-item {
+      margin-right: 8px;
+    }
+  }
+
+  .webform-submission-feedback-form .form-item-comment .description {
+    font-size: 1rem;
+  }
+</style>
+<form{{attributes}}>
+  {{ title_prefix }}
+  {{ children }}
+  {{ title_suffix }}
+</form>
