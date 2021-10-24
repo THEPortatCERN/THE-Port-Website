@@ -1,0 +1,19 @@
+/* 
+  Custom styling for the Gutenberg editor
+  @see https://www.drupal.org/docs/contributed-modules/gutenberg/add-custom-style-andor-script-to-gutenberg-editor
+*/
+
+/* Overlay custom blocks with green to show they can’t be edited */
+[class^="wp-block-drupalblock-block-content-"]:before,
+[class^="wp-block-drupalblock-views-block-"]:before {
+    z-index: 50;
+    position: absolute;
+    content: "This block has its own custom styling and can’t be edited here.";
+    background-color: rgba(255, 0, 255, 0.5);
+    width: 100%;
+    height: 100%;
+    font-size: small;
+    color: black;
+    text-align: right;
+    font-style: italic;
+}

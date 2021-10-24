@@ -71,3 +71,11 @@ hero:
   css:
     component:
       templates/hero/hero.css: {}
+# ------------ Load styling for Gutenberg Editor ------------
+editor:
+  css:
+    theme:
+      templates/gutenberg-editor.css: {}
+      templates/banner/banner.css: {}
+      templates/event/event-teaser.css: {}
+      templates/partner/partners-view.css: {}
