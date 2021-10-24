@@ -31,8 +31,13 @@
     </footer>
   {% endif %}
 
-  <div{{ content_attributes.addClass('node__content') }}>
+  <section{{ content_attributes.addClass('node__content') }}>
     {{ content }}
-  </div>
+  </section>
+
+  <section>
+    <h2>{% trans %}Project Team{% endtrans %}</h2>
+    {{ drupal_view('project_team', 'block_1') }}
+  </section>
 
 </div>
