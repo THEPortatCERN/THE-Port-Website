@@ -1,36 +1,42 @@
-uuid: 33078886-c13f-467d-bb65-bfedbe0290c3
+uuid: 23d88991-898f-4ca1-85ae-a10efca03e83
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.portrait
+    - core.entity_view_mode.node.collapsed
     - field.field.node.participant.field_about
     - field.field.node.participant.field_country
     - field.field.node.participant.field_events
     - field.field.node.participant.field_image
     - field.field.node.participant.field_participant_roles
     - field.field.node.participant.field_teams
-    - image.style.portrait
+    - image.style.thumbnail
     - node.type.participant
   module:
     - image
     - user
-id: node.participant.portrait
+id: node.participant.collapsed
 targetEntityType: node
 bundle: participant
-mode: portrait
+mode: collapsed
 content:
-  field_image:
-    type: image
-    weight: 0
+  field_about:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
     region: content
+  field_image:
+    weight: 0
     label: hidden
     settings:
-      image_style: portrait
+      image_style: thumbnail
       image_link: ''
     third_party_settings: {  }
+    type: image
+    region: content
 hidden:
-  field_about: true
   field_country: true
   field_events: true
   field_participant_roles: true

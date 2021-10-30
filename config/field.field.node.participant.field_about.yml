@@ -1,18 +1,18 @@
-uuid: 7c9f70b5-d1a6-4432-994e-791b211770a2
+uuid: 1a13175c-6bd8-4466-8c9c-e46dbb585b53
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_about
-    - node.type.event
-id: node.event.field_about
+    - node.type.participant
+id: node.participant.field_about
 field_name: field_about
 entity_type: node
-bundle: event
+bundle: participant
 label: About
 description: ''
-required: true
-translatable: true
+required: false
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }

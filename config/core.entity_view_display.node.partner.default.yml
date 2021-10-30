@@ -1,0 +1,45 @@
+uuid: a11724ec-a327-4a30-89cf-9615698d617e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.partner.body
+    - field.field.node.partner.field_events
+    - field.field.node.partner.field_image
+    - field.field.node.partner.field_link
+    - image.style.logo
+    - node.type.partner
+  module:
+    - image
+    - link
+    - user
+id: node.partner.default
+targetEntityType: node
+bundle: partner
+mode: default
+content:
+  field_image:
+    weight: 0
+    label: above
+    settings:
+      image_style: logo
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_link:
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  body: true
+  field_events: true
+  links: true

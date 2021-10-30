@@ -1,9 +1,9 @@
-uuid: 33078886-c13f-467d-bb65-bfedbe0290c3
+uuid: 9fd49e31-2b64-498e-ada6-d6ae95fbcc4c
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.portrait
+    - core.entity_view_mode.node.teaser
     - field.field.node.participant.field_about
     - field.field.node.participant.field_country
     - field.field.node.participant.field_events
@@ -15,11 +15,18 @@ dependencies:
   module:
     - image
     - user
-id: node.participant.portrait
+id: node.participant.teaser
 targetEntityType: node
 bundle: participant
-mode: portrait
+mode: teaser
 content:
+  field_about:
+    type: basic_string
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
   field_image:
     type: image
     weight: 0
@@ -30,7 +37,6 @@ content:
       image_link: ''
     third_party_settings: {  }
 hidden:
-  field_about: true
   field_country: true
   field_events: true
   field_participant_roles: true

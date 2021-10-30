@@ -10,7 +10,7 @@ id: node.event.field_events
 field_name: field_events
 entity_type: node
 bundle: event
-label: Event
+label: 'Event Tag'
 description: 'Tag the content with the event name. This will allow linking projects, participants and sponsors.'
 required: true
 translatable: true

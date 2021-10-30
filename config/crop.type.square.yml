@@ -1,0 +1,12 @@
+uuid: fb541d0e-c4c2-476b-af7f-dc7d41eef977
+langcode: en
+status: true
+dependencies: {  }
+id: square
+label: 'Portrait cropping'
+description: 'A square crop area of a persons face used for displaying a portrait. The face should be vertically centred and cover at least two thirds of the picture. Horizontally, the eyes should be in the upper half of the picture.'
+aspect_ratio: '1:1'
+soft_limit_width: 200
+soft_limit_height: 200
+hard_limit_width: null
+hard_limit_height: null

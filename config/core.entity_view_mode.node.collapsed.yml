@@ -1,10 +1,10 @@
-uuid: 2a07c338-7428-4f03-8923-66b1ba8eeb2e
+uuid: 648f631e-474c-433f-9c44-ff6423d8cc55
 langcode: en
 status: true
 dependencies:
   module:
     - node
-id: node.portrait
-label: Portrait
+id: node.collapsed
+label: Collapsed
 targetEntityType: node
 cache: true

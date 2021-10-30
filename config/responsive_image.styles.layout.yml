@@ -1,0 +1,37 @@
+uuid: 763e2a45-616f-4e10-8b74-a3e3d30aa872
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.extra_large
+    - image.style.extra_small
+    - image.style.large
+    - image.style.medium
+    - image.style.small
+  theme:
+    - bootstrap5
+id: layout
+label: Default
+image_style_mappings:
+  -
+    breakpoint_id: bootstrap5.screen.xl-min
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: extra_large
+  -
+    breakpoint_id: bootstrap5.screen.lg-min
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: large
+  -
+    breakpoint_id: bootstrap5.screen.md-min
+    multiplier: 2x
+    image_mapping_type: image_style
+    image_mapping: medium
+  -
+    breakpoint_id: bootstrap5.screen.sm-min
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: small
+breakpoint_group: bootstrap5.screen
+fallback_image_style: extra_small

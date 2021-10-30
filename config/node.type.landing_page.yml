@@ -1,0 +1,19 @@
+uuid: bc0c4f58-7b65-4c67-bef9-52a97b6ad6cc
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - footer
+      - main
+    parent: 'main:'
+name: 'Landing Page'
+type: landing_page
+description: 'Use the landing page for unstructured content.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: false

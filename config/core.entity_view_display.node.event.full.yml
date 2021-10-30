@@ -1,4 +1,4 @@
-uuid: 896362e1-1d31-425f-8fc0-d3e81c247988
+uuid: 1d68b155-35ec-4fed-a5d2-80b258dd418d
 langcode: en
 status: true
 dependencies:
@@ -10,13 +10,8 @@ dependencies:
     - field.field.node.event.field_impressions
     - node.type.event
   module:
-    - layout_builder
     - text
     - user
-third_party_settings:
-  layout_builder:
-    allow_custom: false
-    enabled: false
 id: node.event.full
 targetEntityType: node
 bundle: event

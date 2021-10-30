@@ -1,0 +1,46 @@
+uuid: 6e74b347-b49e-4257-be30-64a141464523
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.partner.body
+    - field.field.node.partner.field_events
+    - field.field.node.partner.field_image
+    - field.field.node.partner.field_link
+    - image.style.logo
+    - node.type.partner
+  module:
+    - image
+    - link
+    - user
+id: node.partner.teaser
+targetEntityType: node
+bundle: partner
+mode: teaser
+content:
+  field_image:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: logo
+      image_link: ''
+    third_party_settings: {  }
+  field_link:
+    type: link
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: true
+      target: _blank
+      url_plain: false
+      rel: '0'
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_events: true
+  links: true

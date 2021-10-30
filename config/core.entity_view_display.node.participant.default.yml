@@ -1,0 +1,68 @@
+uuid: d0116c67-5950-4d0b-9b62-3e98e9acee16
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.participant.field_about
+    - field.field.node.participant.field_country
+    - field.field.node.participant.field_events
+    - field.field.node.participant.field_image
+    - field.field.node.participant.field_participant_roles
+    - field.field.node.participant.field_teams
+    - image.style.portrait
+    - node.type.participant
+  module:
+    - country
+    - image
+    - user
+id: node.participant.default
+targetEntityType: node
+bundle: participant
+mode: default
+content:
+  field_about:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_country:
+    type: country_default
+    weight: 1
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_events:
+    weight: 4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_image:
+    weight: 2
+    label: above
+    settings:
+      image_style: portrait
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_teams:
+    weight: 5
+    label: above
+    settings:
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_participant_roles: true
