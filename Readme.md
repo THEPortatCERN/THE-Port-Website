@@ -4,7 +4,7 @@ This repository contains the code to run the website of THE Port Association hos
 
 ## Project
 
-Development tasks are listed on the [Project Board](https://app.asana.com/0/1200042243165772/board).
+Development tasks are listed on the [Project Board](https://github.com/THEPortatCERN/THE-Port-Website/projects/1).
 
 The tech stack is Linux, Apache 2, MySQL 5 and PHP 7. In addition, the website is built with:
 
