@@ -2,42 +2,40 @@
 {{ attach_library('theport/project-full') }}
 {%
   set classes = [
-    'node',
-    'node--type-' ~ node.bundle|clean_class,
-    node.isPromoted() ? 'node--promoted',
-    node.isSticky() ? 'node--sticky',
-    not node.isPublished() ? 'node--unpublished',
-    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
     'project-full'
   ]
 %}
 {{ attach_library('classy/node') }}
-<div{{ attributes.addClass(classes)|without('role') }}>
-  {{ title_prefix }}
-  {% if label and not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
-  {{ title_suffix }}
-
-  {% if display_submitted %}
-    <footer class="node__meta">
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('node__submitted') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
-  {% endif %}
-
-  <section{{ content_attributes.addClass('node__content') }}>
-    {{ content }}
+<div{{attributes.addClass(classes)|without('role')}}>
+  <section>
+    {% if content.field_hero[0] is not empty %}
+      {{ content.field_hero }}
+    {% elseif content.field_drawing[0] is not empty  %}
+      {{ content.field_drawing }}
+    {% endif %}
   </section>
-
+  <section>
+    {{ content.body }}
+  </section>
   <section>
     <h2>{% trans %}Project Team{% endtrans %}</h2>
     {{ drupal_view('project_team', 'block_1') }}
   </section>
-
+  <section>
+    <div class="row">
+      <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
+        {{ content.field_drawing }}
+      </div>
+      <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
+        <h3>{{ drupal_title() }}</h3>
+        {{ content.field_attributes }}
+        {{ content.field_teams }}
+        {{ content.field_events }}
+      </div>
+    </div>
+  </section>
+  {{ attach_library('theport/banner') }}
+  <section class="banner">
+    {{ drupal_entity('block_content', 53) }}
+  </section>
 </div>

@@ -1,3 +1,11 @@
 .project-full .field--name-field-hero {
     background-color: #fff;
 }
+
+.project-full > section:not(:last-child) {
+    margin: 4rem 0;
+}
+
+.project-full > section:last-child {
+    margin-top: 4rem;
+}

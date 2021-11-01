@@ -61,10 +61,10 @@
         width: 100%;
         display: block;
         position: relative;
-        padding-bottom: 66.67%;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
     }
 
-    .projects .card-image-container img {
+    .projects .card-image-container img, .projects .card-image-container svg {
         object-fit: contain;
         position: absolute;
         top: 10px;
