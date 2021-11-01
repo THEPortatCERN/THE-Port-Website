@@ -1,4 +1,4 @@
-uuid: 91db6682-952b-4b38-a984-fdf6d9316d0a
+uuid: c42accf9-61f3-49e7-b007-d004e1682ce1
 langcode: en
 status: true
 dependencies:
@@ -33,5 +33,5 @@ settings:
       field: _none
       direction: ASC
     auto_create: false
-    auto_create_bundle: image
+    auto_create_bundle: audio
 field_type: entity_reference
