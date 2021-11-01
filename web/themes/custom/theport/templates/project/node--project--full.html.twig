@@ -30,6 +30,12 @@
     <h2>{% trans %}Project Team{% endtrans %}</h2>
     {{ drupal_view('project_team', 'block_1') }}
   </section>
+  {% if content.field_links[0] is not empty %}
+    <section>
+      <h2>{{ content.field_links['#title'] }}</h2>
+      {{ content.field_links }}
+    </section>
+  {% endif %}
   <section>
     <h3>{{ drupal_title() }}</h3>
     {% if content.field_drawing[0] is not empty  %}

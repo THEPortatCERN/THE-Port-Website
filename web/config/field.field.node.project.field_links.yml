@@ -1,0 +1,23 @@
+uuid: 215a9b80-d5e0-4225-9a70-87e17466eb77
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_links
+    - node.type.project
+  module:
+    - link
+id: node.project.field_links
+field_name: field_links
+entity_type: node
+bundle: project
+label: Resources
+description: 'Links to external resources such as code repositories or similar projects.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 2
+field_type: link
