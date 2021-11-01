@@ -1,0 +1,8 @@
+uuid: 3ccc9ced-2341-431f-a783-a69274ac9b7d
+langcode: en
+status: true
+dependencies: {  }
+name: 'Participant Roles'
+vid: participant_roles
+description: 'Ways in which a person is active with the organisation. E.g. as an innovator.'
+weight: 0

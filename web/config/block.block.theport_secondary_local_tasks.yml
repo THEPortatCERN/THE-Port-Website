@@ -1,0 +1,22 @@
+uuid: 7747e739-ea0e-4a22-80eb-f4a27def9a85
+langcode: en
+status: false
+dependencies:
+  theme:
+    - theport
+_core:
+  default_config_hash: V7GM1m6Qh500cQE7LWZV8lRuwLqXdjR0S2kSk8pEv6g
+id: theport_secondary_local_tasks
+theme: theport
+region: header
+weight: -7
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  provider: core
+  label_display: '0'
+  primary: false
+  secondary: true
+visibility: {  }

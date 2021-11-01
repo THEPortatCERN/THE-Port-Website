@@ -1,0 +1,19 @@
+uuid: 0176c0a6-b62e-436c-826e-d4b2cac17cb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_summary
+    - node.type.project
+id: node.project.field_summary
+field_name: field_summary
+entity_type: node
+bundle: project
+label: Summary
+description: 'Brief description in 140 characters or less.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

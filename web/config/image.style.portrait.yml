@@ -1,0 +1,25 @@
+uuid: 49f09b0e-0d33-491a-8f61-68e5b570290e
+langcode: en
+status: true
+dependencies:
+  config:
+    - crop.type.square
+  module:
+    - crop
+name: portrait
+label: 'Portrait (200x200)'
+effects:
+  1df73511-2fc9-4195-a5a5-c95f7b51c777:
+    uuid: 1df73511-2fc9-4195-a5a5-c95f7b51c777
+    id: crop_crop
+    weight: 1
+    data:
+      crop_type: square
+  7c40828a-ef31-458d-8734-a1a22a9e1b17:
+    uuid: 7c40828a-ef31-458d-8734-a1a22a9e1b17
+    id: image_scale
+    weight: 2
+    data:
+      width: 200
+      height: 200
+      upscale: true

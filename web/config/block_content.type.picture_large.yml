@@ -1,0 +1,8 @@
+uuid: 6311179f-14a3-4c9f-8d29-9963de7849c2
+langcode: en
+status: true
+dependencies: {  }
+id: picture_large
+label: 'Picture Large'
+revision: 0
+description: 'Displays a large picture with a maximum width on a white background.'

@@ -1,0 +1,25 @@
+uuid: 6811129d-d141-4f27-8c68-aea3978ca2ec
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:85147617-a140-43c1-ac6c-2d2c7aa4b0a3'
+  module:
+    - block_content
+  theme:
+    - theport
+id: copyright
+theme: theport
+region: footer
+weight: -6
+provider: null
+plugin: 'block_content:85147617-a140-43c1-ac6c-2d2c7aa4b0a3'
+settings:
+  id: 'block_content:85147617-a140-43c1-ac6c-2d2c7aa4b0a3'
+  label: Copyright
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: 4548ea46-12a6-4829-ae54-5d125a2fd205
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - theport
+_core:
+  default_config_hash: XMsRP1YhWAcorbrFWZglMYJ_SgWHyF3fyCh5vDXaUN4
+id: theport_breadcrumbs
+theme: theport
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: bbd6d181-e1de-4d19-940c-114a678e6e0d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: participant
+label: Participant
+type: 'canonical_entities:node'
+pattern: 'people/[node:title]'
+selection_criteria:
+  cb45f1ed-7d83-42c1-84b4-bee14d09dfe9:
+    id: node_type
+    bundles:
+      participant: participant
+    negate: false
+    context_mapping:
+      node: node
+    uuid: cb45f1ed-7d83-42c1-84b4-bee14d09dfe9
+selection_logic: and
+weight: -5
+relationships: {  }

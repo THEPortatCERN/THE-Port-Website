@@ -1,0 +1,22 @@
+uuid: 1bcce110-ac50-482e-9952-21c594c82e65
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - theport
+_core:
+  default_config_hash: BL6Gcw5Us0zai1ADadlNYLxlEblMedc_3C3lF0PjtCE
+id: theport_content
+theme: theport
+region: content
+weight: -4
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

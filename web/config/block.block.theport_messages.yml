@@ -1,0 +1,22 @@
+uuid: 03376aca-2186-44a4-a412-ff76a8313155
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - theport
+_core:
+  default_config_hash: KfyaTPRJEcAyy2e5AxEfWQnuHcn4WrfvcWek7lSmHZQ
+id: theport_messages
+theme: theport
+region: header
+weight: -7
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

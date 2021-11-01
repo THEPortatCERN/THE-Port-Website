@@ -1,0 +1,6 @@
+entity_type_groups:
+  node:
+    event:
+      schema_event: schema_event
+    participant:
+      schema_person: schema_person

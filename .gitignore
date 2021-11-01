@@ -38,3 +38,22 @@ web/sites/default/default.services.yml
 web/themes/README.txt
 web/themes/contrib/
 web/README.md
+
+# Configuration
+web/config/automated_cron*
+web/config/backup_migrate*
+web/config/bootstrap5*
+web/config/block.block.bootstrap5*
+web/config/seven*
+web/config/block.block.seven*
+web/config/captcha*
+web/config/comment*
+web/config/core*
+web/config/dblog*
+web/config/editor*
+web/config/system*
+web/config/webform*
+web/config/user*
+web/config/filter*
+web/config/views.view.webform*
+web/config/views.view.watchdog*

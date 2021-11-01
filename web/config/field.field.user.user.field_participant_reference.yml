@@ -1,0 +1,30 @@
+uuid: 07e1d33d-d551-40b8-b2a7-1cf302239f5b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_participant_reference
+    - node.type.participant
+  module:
+    - user
+id: user.user.field_participant_reference
+field_name: field_participant_reference
+entity_type: user
+bundle: user
+label: 'Participant Reference'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      participant: participant
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

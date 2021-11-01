@@ -1,0 +1,8 @@
+uuid: fed32b37-1443-40c7-99c5-25451559cc65
+langcode: en
+status: true
+dependencies: {  }
+id: banner
+label: Banner
+revision: 0
+description: 'A banner contains an image and a body and extends the full width of the content area.'

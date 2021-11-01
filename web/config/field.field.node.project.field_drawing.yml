@@ -1,0 +1,31 @@
+uuid: 36d7a1e0-79ab-4ade-92d7-50e1dea8d7ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_drawing
+    - media.type.image
+    - media.type.vector_image
+    - node.type.project
+id: node.project.field_drawing
+field_name: field_drawing
+entity_type: node
+bundle: project
+label: Drawing
+description: 'The topic drawing associated to the project.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+      vector_image: vector_image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference
