@@ -5,34 +5,52 @@
     'project-full'
   ]
 %}
-{{ attach_library('classy/node') }}
 <div{{attributes.addClass(classes)|without('role')}}>
-  <section>
-    {% if content.field_hero[0] is not empty %}
-      {{ content.field_hero }}
-    {% elseif content.field_drawing[0] is not empty  %}
-      {{ content.field_drawing }}
-    {% endif %}
-  </section>
-  <section>
-    {{ content.body }}
-  </section>
+  {% if content.field_hero[0] is not empty and content.field_drawing[0] is not empty %}
+    <section>
+      {% if content.field_hero[0] is not empty %}
+        {{ content.field_hero }}
+      {% elseif content.field_drawing[0] is not empty  %}
+        {{ content.field_drawing }}
+      {% endif %}
+    </section>
+  {% endif %}
+  {% if content.field_hero[0] is not empty %}
+    <section>
+      {{ content.body }}
+    </section>
+  {% endif %}
+  {% if content.field_impressions[0] is not empty %}
+    <section>
+      <h2>{{ content.field_impressions['#title'] }}</h2>
+      {{ content.field_impressions }}
+    </section>
+  {% endif %}
   <section>
     <h2>{% trans %}Project Team{% endtrans %}</h2>
     {{ drupal_view('project_team', 'block_1') }}
   </section>
   <section>
-    <div class="row">
-      <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
-        {{ content.field_drawing }}
+    <h3>{{ drupal_title() }}</h3>
+    {% if content.field_drawing[0] is not empty  %}
+      <div class="row">
+        <div class="col-sm-5 col-md-4 col-lg-3 col-xl-2">
+          {{ content.field_drawing }}
+        </div>
+        <div
+          class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
+          {# Copy of Info Block #}
+          {{ content.field_attributes }}
+          {{ content.field_teams }}
+          {{ content.field_events }}
+        </div>
       </div>
-      <div class="col-sm-7 col-md-8 col-lg-9 col-xl-10">
-        <h3>{{ drupal_title() }}</h3>
-        {{ content.field_attributes }}
-        {{ content.field_teams }}
-        {{ content.field_events }}
-      </div>
-    </div>
+    {% else %}
+      {# Copy of Info Block #}
+      {{ content.field_attributes }}
+      {{ content.field_teams }}
+      {{ content.field_events }}
+    {% endif %}
   </section>
   {{ attach_library('theport/banner') }}
   <section class="banner">

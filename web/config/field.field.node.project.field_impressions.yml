@@ -1,0 +1,37 @@
+uuid: 91db6682-952b-4b38-a984-fdf6d9316d0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_impressions
+    - media.type.audio
+    - media.type.image
+    - media.type.remote_video
+    - media.type.vector_image
+    - media.type.video
+    - node.type.project
+id: node.project.field_impressions
+field_name: field_impressions
+entity_type: node
+bundle: project
+label: Impressions
+description: 'Media recorded during the creation of the product. E.g. photos of the team at work.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      audio: audio
+      image: image
+      remote_video: remote_video
+      vector_image: vector_image
+      video: video
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference
