@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_hero
     - media.type.image
+    - media.type.vector_image
     - node.type.project
 id: node.project.field_hero
 field_name: field_hero
@@ -21,6 +22,7 @@ settings:
   handler_settings:
     target_bundles:
       image: image
+      vector_image: vector_image
     sort:
       field: _none
       direction: ASC

@@ -1,8 +1,0 @@
-uuid: bb2c1a8b-6e98-4f9d-a7b8-a62e3521b912
-langcode: en
-status: true
-dependencies: {  }
-name: Teams
-vid: teams
-description: 'The different teams that are assembled for projects. Aka "Piers".'
-weight: 0

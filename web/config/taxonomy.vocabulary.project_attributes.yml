@@ -1,8 +1,0 @@
-uuid: d418f4fe-3f93-4aa9-9a58-984b01e9daf8
-langcode: en
-status: true
-dependencies: {  }
-name: 'Project Attributes'
-vid: project_attributes
-description: 'Attributes to group different projects together. E.g. "food" or "tech".'
-weight: 0

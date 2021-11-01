@@ -1,8 +1,0 @@
-uuid: 98c4547c-f544-4bc4-8f3a-c341b4921cd7
-langcode: en
-status: true
-dependencies: {  }
-id: hero
-label: Hero
-revision: 0
-description: 'A hero block contains a large image and a short text.'

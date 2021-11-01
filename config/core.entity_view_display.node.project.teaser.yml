@@ -6,32 +6,42 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.project.body
     - field.field.node.project.field_attributes
+    - field.field.node.project.field_drawing
     - field.field.node.project.field_events
     - field.field.node.project.field_hero
+    - field.field.node.project.field_impressions
+    - field.field.node.project.field_links
     - field.field.node.project.field_summary
     - field.field.node.project.field_teams
-    - image.style.medium
     - node.type.project
   module:
-    - media
     - user
 id: node.project.teaser
 targetEntityType: node
 bundle: project
 mode: teaser
 content:
+  field_drawing:
+    type: entity_reference_entity_view
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
   field_hero:
-    type: media_thumbnail
+    type: entity_reference_entity_view
     weight: 0
     region: content
     label: hidden
     settings:
-      image_style: medium
-      image_link: ''
+      view_mode: default
+      link: false
     third_party_settings: {  }
   field_summary:
     type: string
-    weight: 2
+    weight: 3
     region: content
     label: hidden
     settings:
@@ -39,14 +49,14 @@ content:
     third_party_settings: {  }
   field_teams:
     type: entity_reference_label
-    weight: 1
+    weight: 2
     region: content
     label: hidden
     settings:
       link: false
     third_party_settings: {  }
   links:
-    weight: 3
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -54,3 +64,5 @@ hidden:
   body: true
   field_attributes: true
   field_events: true
+  field_impressions: true
+  field_links: true

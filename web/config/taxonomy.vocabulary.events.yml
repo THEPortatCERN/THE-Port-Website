@@ -1,8 +1,0 @@
-uuid: 65ef3bc5-0408-4a0f-b551-25fe89e74291
-langcode: en
-status: true
-dependencies: {  }
-name: Events
-vid: events
-description: 'Events organised by the port. E.g. "Humanitarian Hackathon 2015"'
-weight: 0
