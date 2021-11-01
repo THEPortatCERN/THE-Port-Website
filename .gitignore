@@ -48,13 +48,12 @@ config/seven*
 config/block.block.seven*
 config/captcha*
 config/comment*
-config/core*
 config/dblog*
 config/editor*
 config/matomo*
 config/system*
-config/webform*
-config/user*
+config/*webform*
+config/*user*
 config/filter*
 config/views.view.webform*
 config/views.view.watchdog*

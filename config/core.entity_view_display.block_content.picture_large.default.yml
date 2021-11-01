@@ -1,0 +1,24 @@
+uuid: a90aa9c1-a034-4b30-9a01-ef5d03991d41
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.picture_large
+    - field.field.block_content.picture_large.body
+    - field.field.block_content.picture_large.field_media
+id: block_content.picture_large.default
+targetEntityType: block_content
+bundle: picture_large
+mode: default
+content:
+  field_media:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true

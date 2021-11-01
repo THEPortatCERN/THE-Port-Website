@@ -1,0 +1,32 @@
+uuid: 72629abe-8b01-48a6-a1b7-c56ee603e44d
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.picture_large
+    - field.field.block_content.picture_large.body
+    - field.field.block_content.picture_large.field_media
+  module:
+    - media_library
+id: block_content.picture_large.default
+targetEntityType: block_content
+bundle: picture_large
+mode: default
+content:
+  field_media:
+    type: media_library_widget
+    weight: 1
+    settings:
+      media_types: {  }
+    third_party_settings: {  }
+    region: content
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  body: true
