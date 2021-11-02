@@ -1,7 +1,9 @@
 /*
  Make copy as readable as possible by using a serif font and adapting the size to the page.
 */
-p {
+p,
+p + ol > li,
+p + ul > li {
     font-family: Georgia, Cambria, "Times New Roman", "Bitstream Vera Serif", Times, serif;
     max-width: 50em;
     font-size: 110%;
@@ -10,8 +12,8 @@ p {
     @media screen and (min-width: 992px) {
         font-size: 120%;
     }
+}
 
-    .btn {
-      font-family: var(--bs-font-sans-serif);
-    }
+p .btn {
+    font-family: var(--bs-font-sans-serif);
 }
