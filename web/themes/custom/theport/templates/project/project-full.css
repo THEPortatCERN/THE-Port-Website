@@ -2,10 +2,11 @@
     background-color: #fff;
 }
 
-.project-full > section:not(:last-child) {
-    margin: 4rem 0;
-}
-
+.project-full,
 .project-full > section:last-child {
     margin-top: 4rem;
+}
+
+.project-full > section:not(:last-child) {
+    margin: 4rem 0;
 }

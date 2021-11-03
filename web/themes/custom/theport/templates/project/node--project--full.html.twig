@@ -7,13 +7,11 @@
 %}
 <div{{attributes.addClass(classes)|without('role')}}>
   {% if content.field_hero[0] is not empty and content.field_drawing[0] is not empty %}
-    <section>
-      {% if content.field_hero[0] is not empty %}
-        {{ content.field_hero }}
-      {% elseif content.field_drawing[0] is not empty  %}
-        {{ content.field_drawing }}
-      {% endif %}
-    </section>
+    {% if content.field_hero[0] is not empty %}
+      {{ content.field_hero }}
+    {% elseif content.field_drawing[0] is not empty  %}
+      {{ content.field_drawing }}
+    {% endif %}
   {% endif %}
   {% if content.body.0['#text']is not empty %}
     <section>
@@ -59,7 +57,7 @@
     {% endif %}
   </section>
   {{ attach_library('theport/banner') }}
-  <section class="banner">
+  <div class="banner">
     {{ drupal_entity('block_content', 53) }}
-  </section>
+  </div>
 </div>
