@@ -1,0 +1,12 @@
+{# Copy of themes/classy/templates/filed/field.html.twig #}
+{{ attach_library('theport/impressions') }}
+{%
+  set classes = [
+    'impressions'
+  ]
+%}
+<div{{attributes.addClass(classes)}}>
+  {% for item in items %}
+    <div{{item.attributes.addClass('impression')}}>{{ item.content }}</div>
+  {% endfor %}
+</div>

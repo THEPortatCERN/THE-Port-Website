@@ -7,7 +7,7 @@ global:
 # ------------ Individual templates (blocks, views, nodes) [A-Z] ------------
 about:
   css:
-    theme:
+    component:
       templates/about/about.css: {}
 apply:
   js:
@@ -19,6 +19,15 @@ banner:
   css:
     component:
       templates/banner/banner.css: {}
+event-full:
+  css:
+    component:
+      templates/event/event-full.css: {}
+event-teaser:
+  css:
+    component:
+      templates/event/events-block.css: {}
+      templates/event/event-teaser.css: {}
 footer:
   js:
     templates/footer/social.js: {}
@@ -26,6 +35,14 @@ footer:
     component:
       templates/footer/copyright.css: {}
       templates/footer/social.css: {}
+hero:
+  css:
+    component:
+      templates/hero/hero.css: {}
+impressions:
+  css:
+    component:
+      templates/impressions/impressions.css: {}
 participant:
   js:
     templates/participant/view-event-participants.js: {}
@@ -46,31 +63,18 @@ partner:
       templates/partner/partners-block.css: {}
       templates/partner/partners-view.css: {}
       templates/partner/partner-teaser.css: {}
-picture-large:
+picture:
   css:
     component:
       templates/picture/picture-large.css: {}
 project-full:
   css:
-    theme:
+    component:
       templates/project/project-full.css: {}
 project-teaser:
   css:
     component:
       templates/project/project-teaser.css: {}
-event-full:
-  css:
-    component:
-      templates/event/event-full.css: {}
-event-teaser:
-  css:
-    component:
-      templates/event/events-block.css: {}
-      templates/event/event-teaser.css: {}
-hero:
-  css:
-    component:
-      templates/hero/hero.css: {}
 # ------------ Load styling for Gutenberg Editor ------------
 editor:
   css:

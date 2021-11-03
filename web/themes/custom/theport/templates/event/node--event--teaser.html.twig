@@ -1,14 +1,7 @@
-{{ attach_library('classy/node') }}
 {{ attach_library('theport/event-teaser') }}
 {%
   set classes = [
-    'node',
-    'node--type-' ~ node.bundle|clean_class,
-    'event-teaser',
-    node.isPromoted() ? 'node--promoted',
-    node.isSticky() ? 'node--sticky',
-    not node.isPublished() ? 'node--unpublished',
-    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'event-teaser'
   ]
 %}
 <article{{attributes.addClass(classes)|without('role')}}>
