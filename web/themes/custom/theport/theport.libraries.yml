@@ -82,6 +82,8 @@ editor:
       templates/gutenberg-editor.css: {}
       templates/banner/banner.css: {}
       templates/event/event-teaser.css: {}
+      templates/impressions/impressions.css: {}
       templates/partner/partners-view.css: {}
       templates/participant/participant-teaser.css: {}
       templates/participant/view-alumni-participants.css: {}
+      templates/project/project-teaser.css: {}
