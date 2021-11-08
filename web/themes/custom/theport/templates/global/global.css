@@ -12,6 +12,34 @@
 
 
 */
+@font-face {
+  font-family: "Lato";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/themes/custom/theport/fonts/lato/LatoLatin-Italic.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Lato";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/themes/custom/theport/fonts/lato/LatoLatin-BoldItalic.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/themes/custom/theport/fonts/lato/LatoLatin-Regular.woff2) format("woff2");
+}
+@font-face {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/themes/custom/theport/fonts/lato/LatoLatin-Bold.woff2) format("woff2");
+}
 /*
 
   Configure Bootstrap variables and import library

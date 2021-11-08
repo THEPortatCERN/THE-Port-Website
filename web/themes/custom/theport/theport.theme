@@ -13,33 +13,28 @@ use Drupal\block_content\BlockContentInterface;
  */
 function theport_preprocess_html(&$variables)
 {
-  /*
-    Prefetch and link the fonts so they are non-blocking.
-    @see https://pagespeedchecklist.com/asynchronous-google-fonts#all-together
-  */
-  $preconnect_fonts_domain = [
-    '#tag' => 'link',
-    '#attributes' => [
-      'rel' => 'preconnect',
-      'href' => 'https://fonts.gstatic.com',
-      'crossorigin' => true,
-    ],
-  ];
-
-  // Note that we don't provide a 'noscript' fallback here because we can gracefully degrade to the system font.
-  $load_font = [
+  $load_font_regular = [
     '#tag' => 'link',
     '#attributes' => [
       'rel' => 'preload',
-      'media' => 'all',
-      'as' => 'style',
-      'onload' => 'this.rel=\'stylesheet\'',
-      'href' => 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap',
+      'href' => '/themes/custom/theport/fonts/lato/LatoLatin-Regular.woff2',
+      'as' => 'font',
+      'type' => 'font/woff2',
     ],
   ];
 
-  $variables['page']['#attached']['html_head'][] = [$preconnect_fonts_domain, 'preconnect_fonts_domain'];
-  $variables['page']['#attached']['html_head'][] = [$load_font, 'load_font'];
+  $load_font_bold = [
+    '#tag' => 'link',
+    '#attributes' => [
+      'rel' => 'preload',
+      'href' => '/themes/custom/theport/fonts/lato/LatoLatin-Bold.woff2',
+      'as' => 'font',
+      'type' => 'font/woff2',
+    ],
+  ];
+
+  $variables['page']['#attached']['html_head'][] = [$load_font_regular, 'load_font_regular'];
+  $variables['page']['#attached']['html_head'][] = [$load_font_bold, 'load_font_bold'];
 }
 
 function theport_theme_suggestions_block_alter(&$suggestions, $variables)
