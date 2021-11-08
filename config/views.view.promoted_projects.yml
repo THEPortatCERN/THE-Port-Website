@@ -190,7 +190,7 @@ display:
           entity_field: promote
           plugin_id: boolean
       sorts: {  }
-      title: 'Promoted Projects'
+      title: 'Today’s Promoted Projects'
       header: {  }
       footer: {  }
       empty: {  }

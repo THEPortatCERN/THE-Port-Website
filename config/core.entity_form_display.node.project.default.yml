@@ -16,6 +16,7 @@ dependencies:
   module:
     - link
     - media_library
+    - path
     - text
 id: node.project.default
 targetEntityType: node
@@ -61,7 +62,12 @@ content:
   field_impressions:
     weight: 5
     settings:
-      media_types: {  }
+      media_types:
+        - image
+        - vector_image
+        - remote_video
+        - video
+        - audio
     third_party_settings: {  }
     type: media_library_widget
     region: content
@@ -91,6 +97,12 @@ content:
     third_party_settings: {  }
     type: entity_reference_autocomplete
     region: content
+  path:
+    type: path
+    weight: 13
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   promote:
     type: boolean_checkbox
     settings:
@@ -120,6 +132,5 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
-  path: true
   sticky: true
   uid: true

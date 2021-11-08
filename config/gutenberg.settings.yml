@@ -77,6 +77,7 @@ landing_page_allowed_drupal_blocks:
   page_title_block: page_title_block
   'block_content:9be75e1e-7b35-48fe-a3a9-ac0a81f64034': 'block_content:9be75e1e-7b35-48fe-a3a9-ac0a81f64034'
   'block_content:94240373-6fdb-453c-8c1f-7796627e4c30': 'block_content:94240373-6fdb-453c-8c1f-7796627e4c30'
+  'block_content:1ab3d49a-5c78-41f7-8bf0-7902477aa010': 0
   'block_content:85147617-a140-43c1-ac6c-2d2c7aa4b0a3': 0
   'block_content:dbaa31bc-8035-4069-a04b-85238de22bb0': 0
   user_login_block: 0
@@ -85,12 +86,12 @@ landing_page_allowed_drupal_blocks:
   'views_block:organisers-block_1': 'views_block:organisers-block_1'
   'views_block:partners-block_1': 'views_block:partners-block_1'
   'views_block:alumni-block_1': 'views_block:alumni-block_1'
+  'views_block:promoted_projects-block_1': 'views_block:promoted_projects-block_1'
   'views_block:recent_events-block_1': 'views_block:recent_events-block_1'
   'views_block:event_participants-block_1': 0
   'views_block:event_partners-block_1': 0
   'views_block:event_projects-block_1': 0
   'views_block:project_team-block_1': 0
-  'views_block:promoted_projects-block_1': 0
   'views_block:comments_recent-block_1': 0
   'system_menu_block:footer': 0
   'system_menu_block:main': 0
@@ -117,6 +118,7 @@ project_allowed_blocks:
   core/column: core/column
   core/embed: core/embed
   core/file: core/file
+  core/html: core/html
   core/separator: core/separator
   core/block: core/block
   core/spacer: core/spacer
@@ -129,7 +131,6 @@ project_allowed_blocks:
   core/button: 0
   core/cover: 0
   core/freeform: 0
-  core/html: 0
   core/media-text: 0
   core/navigation: 0
   core/preformatted: 0
@@ -179,12 +180,16 @@ project_allowed_drupal_blocks:
   'entity_view:webform': 0
   'entity_view:webform_submission': 0
   page_title_block: 0
+  'block_content:1ab3d49a-5c78-41f7-8bf0-7902477aa010': 0
   'block_content:85147617-a140-43c1-ac6c-2d2c7aa4b0a3': 0
   'block_content:dbaa31bc-8035-4069-a04b-85238de22bb0': 0
   'block_content:9be75e1e-7b35-48fe-a3a9-ac0a81f64034': 0
+  'block_content:94240373-6fdb-453c-8c1f-7796627e4c30': 0
   user_login_block: 0
   help_block: 0
   'views_block:event_participants-block_1': 0
+  'views_block:event_partners-block_1': 0
+  'views_block:event_projects-block_1': 0
   'views_block:executive_committee-block_1': 0
   'views_block:organisers-block_1': 0
   'views_block:partners-block_1': 0

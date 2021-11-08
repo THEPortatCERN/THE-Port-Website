@@ -1,0 +1,60 @@
+_core:
+  default_config_hash: o4-eDkmTmVdUICtL1VxWD3S9Ze8kNq_lHj6DskF8U8o
+report-only:
+  enable: false
+  directives:
+    script-src:
+      base: self
+    script-src-attr:
+      flags:
+        - unsafe-inline
+      base: self
+    script-src-elem:
+      base: self
+    style-src:
+      sources:
+        - 'https://fonts.googleapis.com'
+      base: self
+    style-src-attr:
+      flags:
+        - unsafe-inline
+      base: self
+    style-src-elem:
+      sources:
+        - 'https://fonts.googleapis.com'
+      base: self
+    frame-ancestors:
+      base: self
+  reporting:
+    plugin: none
+enforce:
+  enable: true
+  directives:
+    script-src:
+      flags:
+        - unsafe-eval
+      base: self
+    script-src-attr:
+      flags:
+        - unsafe-inline
+      base: self
+    script-src-elem:
+      base: self
+    style-src:
+      sources:
+        - 'https://fonts.googleapis.com'
+      base: self
+    style-src-attr:
+      flags:
+        - unsafe-inline
+      base: self
+    style-src-elem:
+      sources:
+        - 'https://fonts.googleapis.com'
+      base: self
+    frame-ancestors:
+      sources:
+        - 'https://cds.cern.ch/'
+      base: self
+  reporting:
+    plugin: sitelog

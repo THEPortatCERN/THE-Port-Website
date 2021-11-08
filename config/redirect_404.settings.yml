@@ -1,5 +1,5 @@
 row_limit: 10000
-pages: "/wp-sitemap-posts-member-1.xml\r\n/wp-sitemap-posts-x-portfolio-1.xml\r\n/wp-sitemap-posts-page-1.xml\r\n/wp-sitemap-taxonomies-post_tag-1.xml\r\n/wp-sitemap-taxonomies-category-1.xml\r\n/wp-sitemap-users-1.xml\r\n/wp-sitemap-posts-post-1.xml\r\n/wp-admin/css\r\n/wp-sitemap-taxonomies-post_format-1.xml\r\n/xmlrpc.php\r\n/images\r\n/files\r\n/comments/feed\r\n/upload.php\n"
+pages: "/wp-sitemap-posts-member-1.xml\r\n/wp-sitemap-posts-x-portfolio-1.xml\r\n/wp-sitemap-posts-page-1.xml\r\n/wp-sitemap-taxonomies-post_tag-1.xml\r\n/wp-sitemap-taxonomies-category-1.xml\r\n/wp-sitemap-users-1.xml\r\n/wp-sitemap-posts-post-1.xml\r\n/wp-admin/css\r\n/wp-sitemap-taxonomies-post_format-1.xml\r\n/xmlrpc.php\r\n/images\r\n/files\r\n/comments/feed\r\n/upload.php\r\n/uploads\r\n/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php\n"
 suppress_404: false
 _core:
   default_config_hash: FgPCEDevf9dhNU_QB_fo-4AWxi0rrSZ2SGfd7bLNzLM

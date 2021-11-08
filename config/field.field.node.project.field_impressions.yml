@@ -6,7 +6,6 @@ dependencies:
     - field.storage.node.field_impressions
     - media.type.audio
     - media.type.image
-    - media.type.remote_video
     - media.type.vector_image
     - media.type.video
     - node.type.project
@@ -26,7 +25,6 @@ settings:
     target_bundles:
       audio: audio
       image: image
-      remote_video: remote_video
       vector_image: vector_image
       video: video
     sort:
