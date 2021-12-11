@@ -701,15 +701,15 @@ progress {
   display: flex;
   flex-wrap: wrap;
   margin-top: calc(-1 * var(--bs-gutter-y));
-  margin-right: calc(-.5 * var(--bs-gutter-x));
-  margin-left: calc(-.5 * var(--bs-gutter-x));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
 }
 .row > * {
   flex-shrink: 0;
   width: 100%;
   max-width: 100%;
-  padding-right: calc(var(--bs-gutter-x) * .5);
-  padding-left: calc(var(--bs-gutter-x) * .5);
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-top: var(--bs-gutter-y);
 }
 
@@ -6615,15 +6615,15 @@ fieldset.form-item > .list-group + .card-footer {
 }
 
 .ratio-4x3 {
-  --bs-aspect-ratio: calc(3 / 4 * 100%);
+  --bs-aspect-ratio: 75%;
 }
 
 .ratio-16x9 {
-  --bs-aspect-ratio: calc(9 / 16 * 100%);
+  --bs-aspect-ratio: 56.25%;
 }
 
 .ratio-21x9 {
-  --bs-aspect-ratio: calc(9 / 21 * 100%);
+  --bs-aspect-ratio: 42.8571428571%;
 }
 
 .fixed-top {
@@ -12113,8 +12113,8 @@ tr.region-title td {
   display: flex;
   flex-wrap: wrap;
   margin-top: calc(-1 * var(--bs-gutter-y));
-  margin-right: calc(-.5 * var(--bs-gutter-x));
-  margin-left: calc(-.5 * var(--bs-gutter-x));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
   position: relative;
 }
 .view-media-library .media-library-views-form .form-actions,
@@ -12159,7 +12159,7 @@ tr.region-title td {
   margin: 0;
 }
 .view-media-library .media-library-views-form .media-library-item--grid .views-field-rendered-entity {
-  height: calc(100% - $spacer);
+  height: calc(100% - 1rem);
   padding-top: 3rem;
   margin: 0.5rem;
 }
@@ -12175,8 +12175,8 @@ tr.region-title td {
   display: flex;
   flex-wrap: wrap;
   margin-top: calc(-1 * var(--bs-gutter-y));
-  margin-right: calc(-.5 * var(--bs-gutter-x));
-  margin-left: calc(-.5 * var(--bs-gutter-x));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
   align-items: flex-end;
 }
 .media-library-view--widget .view-filters .form--inline > div,
@@ -12199,8 +12199,8 @@ tr.region-title td {
   display: flex;
   flex-wrap: wrap;
   margin-top: calc(-1 * var(--bs-gutter-y));
-  margin-right: calc(-.5 * var(--bs-gutter-x));
-  margin-left: calc(-.5 * var(--bs-gutter-x));
+  margin-right: calc(-0.5 * var(--bs-gutter-x));
+  margin-left: calc(-0.5 * var(--bs-gutter-x));
 }
 .media-library-selection .media-library-item.media-library-item--grid {
   position: relative;
@@ -12213,14 +12213,14 @@ tr.region-title td {
   .media-library-selection .media-library-item.media-library-item--grid {
     flex: 0 0 auto;
     width: 50%;
-    width: calc(50% - $spacer);
+    width: calc(50% - 1rem);
   }
 }
 @media (min-width: 992px) {
   .media-library-selection .media-library-item.media-library-item--grid {
     flex: 0 0 auto;
     width: 25%;
-    width: calc(25% - $spacer);
+    width: calc(25% - 1rem);
   }
 }
 #media-library-add-form-wrapper .item-list ul {
