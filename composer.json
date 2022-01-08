@@ -37,6 +37,7 @@
         "drupal/twig_tweak": "^3.0",
         "drupal/views_bulk_edit": "^2.5",
         "drupal/webform": "^6.0",
+        "drupal/webform_spam_words": "^2.0",
         "drupal/webp": "^1.0@beta",
         "drush/drush": "^10.3",
         "wikimedia/composer-merge-plugin": "^2.0"
