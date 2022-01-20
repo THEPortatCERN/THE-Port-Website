@@ -11928,6 +11928,14 @@ table {
   caption-side: unset;
 }
 
+.progress {
+  display: block;
+  height: unset;
+  overflow: unset;
+  font-size: unset;
+  background-color: unset;
+}
+
 .region-title__action a.button {
   color: #fff;
   background-color: #d63700;
