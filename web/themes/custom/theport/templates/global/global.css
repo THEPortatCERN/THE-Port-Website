@@ -12264,39 +12264,6 @@ code {
   --spacer: 1rem;
 }
 
-/*
-  This file contains temporary styling for columns created by Layout Builder.
-
-  ☠ This is just a temporary fix. As soon as Bootstrap 5 is finalized,
-  install this module here: https://www.drupal.org/project/bootstrap_layout_builder
-  Then remove this file.
-*/
-@media (min-width: 640px) {
-  .layout--twocol-section .layout__region--first {
-    padding-right: 0.75rem;
-  }
-  .layout--twocol-section .layout__region--second {
-    padding-left: 0.75rem;
-  }
-}
-
-@media (min-width: 640px) {
-  .layout--threecol-section .layout__region--first {
-    padding-right: 0.75rem;
-  }
-  .layout--threecol-section .layout__region--second {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
-  .layout--threecol-section .layout__region--third {
-    padding-left: 0.75rem;
-  }
-}
-
-.toolbar-tray-open .field--name-thumbnail img {
-  max-width: 100% !important;
-}
-
 .navbar {
   margin-bottom: var(--navbar-margin);
   padding-top: 0.6rem;
