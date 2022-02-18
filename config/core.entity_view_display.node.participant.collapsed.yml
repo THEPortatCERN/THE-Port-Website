@@ -21,20 +21,20 @@ bundle: participant
 mode: collapsed
 content:
   field_about:
-    weight: 1
+    type: basic_string
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    weight: 1
     region: content
   field_image:
-    weight: 0
+    type: image
     label: hidden
     settings:
-      image_style: thumbnail
       image_link: ''
+      image_style: thumbnail
     third_party_settings: {  }
-    type: image
+    weight: 0
     region: content
 hidden:
   field_country: true

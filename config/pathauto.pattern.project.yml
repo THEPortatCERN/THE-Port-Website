@@ -11,12 +11,12 @@ pattern: 'projects/[node:field_teams:entity]'
 selection_criteria:
   61e9b0c8-28af-4e7e-a60f-770511bccfd5:
     id: node_type
-    bundles:
-      project: project
     negate: false
+    uuid: 61e9b0c8-28af-4e7e-a60f-770511bccfd5
     context_mapping:
       node: node
-    uuid: 61e9b0c8-28af-4e7e-a60f-770511bccfd5
+    bundles:
+      project: project
 selection_logic: and
 weight: -5
 relationships: {  }

@@ -21,25 +21,25 @@ mode: teaser
 content:
   field_image:
     type: image
-    weight: 0
-    region: content
     label: hidden
     settings:
-      image_style: logo
       image_link: ''
+      image_style: logo
     third_party_settings: {  }
+    weight: 0
+    region: content
   field_link:
     type: link
-    weight: 1
-    region: content
     label: hidden
     settings:
       trim_length: 80
       url_only: true
-      target: _blank
       url_plain: false
       rel: '0'
+      target: _blank
     third_party_settings: {  }
+    weight: 1
+    region: content
 hidden:
   body: true
   field_events: true

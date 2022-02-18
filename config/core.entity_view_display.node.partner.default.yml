@@ -19,16 +19,16 @@ bundle: partner
 mode: default
 content:
   field_image:
-    weight: 0
+    type: image
     label: above
     settings:
-      image_style: logo
       image_link: ''
+      image_style: logo
     third_party_settings: {  }
-    type: image
+    weight: 0
     region: content
   field_link:
-    weight: 1
+    type: link
     label: hidden
     settings:
       trim_length: 80
@@ -37,7 +37,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    type: link
+    weight: 1
     region: content
 hidden:
   body: true

@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: PBJAPRAqH-w00jAUXbD9qV6frVT38tI1oXZiBIjV8gU
 image_captcha_fonts_preview_map_cache:
   41c10afec522f4850ec2a21eeac3cc590a8d3800c3065f7293101d63f580d3eb:
     uri: modules/contrib/captcha/image_captcha/fonts/Tuffy/Tuffy.ttf
@@ -16,17 +18,15 @@ image_captcha_fonts:
   beb303ea885be54ffe92e63d6f4827457599f2adc94df1cca6640914f98009c0: beb303ea885be54ffe92e63d6f4827457599f2adc94df1cca6640914f98009c0
 image_captcha_font_size: 30
 image_captcha_character_spacing: '1'
-image_captcha_image_allowed_chars: aAbBCdEeFfGHhijKLMmNPQRrSTtWXYZ23456789
-image_captcha_code_length: 4
+image_captcha_image_allowed_chars: 'aAbBCdEeFfGHhijKLMmNPQRrSTtWXYZ23456789+@!?'
+image_captcha_code_length: 6
 image_captcha_rtl_support: 0
 image_captcha_background_color: '#ffffff'
 image_captcha_foreground_color: '#000000'
 image_captcha_foreground_color_randomness: 100
 image_captcha_file_format: 1
-image_captcha_distortion_amplitude: 1
-image_captcha_bilinear_interpolation: 0
+image_captcha_distortion_amplitude: 3
+image_captcha_bilinear_interpolation: 1
 image_captcha_dot_noise: 1
 image_captcha_line_noise: 0
 image_captcha_noise_level: 1
-_core:
-  default_config_hash: PBJAPRAqH-w00jAUXbD9qV6frVT38tI1oXZiBIjV8gU

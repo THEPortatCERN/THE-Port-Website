@@ -16,10 +16,10 @@ content:
   field_media:
     type: media_library_widget
     weight: 1
+    region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
-    region: content
   info:
     type: string_textfield
     weight: 0

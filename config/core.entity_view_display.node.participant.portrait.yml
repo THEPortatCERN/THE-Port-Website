@@ -22,13 +22,13 @@ mode: portrait
 content:
   field_image:
     type: image
-    weight: 0
-    region: content
     label: hidden
     settings:
-      image_style: portrait
       image_link: ''
+      image_style: portrait
     third_party_settings: {  }
+    weight: 0
+    region: content
 hidden:
   field_about: true
   field_country: true

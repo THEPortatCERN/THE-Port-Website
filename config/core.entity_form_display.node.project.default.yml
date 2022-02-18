@@ -26,41 +26,43 @@ content:
   body:
     type: text_textarea_with_summary
     weight: 2
+    region: content
     settings:
       rows: 9
       summary_rows: 3
       placeholder: ''
       show_summary: false
     third_party_settings: {  }
-    region: content
   field_attributes:
+    type: options_buttons
     weight: 10
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_buttons
-    region: content
   field_drawing:
     type: media_library_widget
     weight: 3
+    region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
-    region: content
   field_events:
+    type: options_buttons
     weight: 8
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_buttons
-    region: content
   field_hero:
     type: media_library_widget
     weight: 4
+    region: content
     settings:
       media_types: {  }
     third_party_settings: {  }
-    region: content
   field_impressions:
+    type: media_library_widget
     weight: 5
+    region: content
     settings:
       media_types:
         - image
@@ -69,16 +71,14 @@ content:
         - video
         - audio
     third_party_settings: {  }
-    type: media_library_widget
-    region: content
   field_links:
+    type: link_default
     weight: 9
+    region: content
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
-    type: link_default
-    region: content
   field_summary:
     type: string_textfield
     weight: 1
@@ -88,15 +88,15 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_teams:
+    type: entity_reference_autocomplete
     weight: 7
+    region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   path:
     type: path
     weight: 13
@@ -105,17 +105,17 @@ content:
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 12
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    settings:
-      display_label: true
     weight: 6
     region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield

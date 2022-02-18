@@ -20,57 +20,57 @@ bundle: participant
 mode: default
 content:
   field_about:
+    type: string_textarea
     weight: 3
+    region: content
     settings:
       rows: 5
       placeholder: 'John Smith is a journalist from Toronto, Canada.'
     third_party_settings: {  }
-    type: string_textarea
-    region: content
   field_country:
-    weight: 2
-    settings: {  }
-    third_party_settings: {  }
     type: country_default
+    weight: 2
     region: content
-  field_events:
-    weight: 4
     settings: {  }
     third_party_settings: {  }
+  field_events:
     type: options_buttons
+    weight: 4
     region: content
+    settings: {  }
+    third_party_settings: {  }
   field_image:
+    type: image_widget_crop
     weight: 1
+    region: content
     settings:
-      show_crop_area: true
-      show_default_crop: true
-      warn_multiple_usages: true
+      progress_indicator: throbber
       preview_image_style: ''
       crop_preview_image_style: small
       crop_list:
         - square
       crop_types_required:
         - square
-      progress_indicator: throbber
+      warn_multiple_usages: true
+      show_crop_area: true
+      show_default_crop: true
     third_party_settings: {  }
-    type: image_widget_crop
-    region: content
   field_participant_roles:
+    type: options_buttons
     weight: 6
+    region: content
     settings: {  }
     third_party_settings: {  }
-    type: options_buttons
-    region: content
   field_teams:
+    type: entity_reference_autocomplete
     weight: 5
+    region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: entity_reference_autocomplete
-    region: content
   path:
     type: path
     weight: 7

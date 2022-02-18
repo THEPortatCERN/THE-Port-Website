@@ -17,8 +17,8 @@ plugin: 'block_content:dbaa31bc-8035-4069-a04b-85238de22bb0'
 settings:
   id: 'block_content:dbaa31bc-8035-4069-a04b-85238de22bb0'
   label: 'Follow on Social Media'
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full

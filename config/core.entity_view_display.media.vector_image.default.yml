@@ -15,19 +15,19 @@ bundle: vector_image
 mode: default
 content:
   field_media_svg:
+    type: svg_image_field_formatter
     label: hidden
-    weight: 0
     settings:
+      inline: false
+      apply_dimensions: false
       width: 400
       height: 400
       enable_alt: true
       enable_title: true
       link: ''
-      inline: false
-      apply_dimensions: false
       force_fill: false
     third_party_settings: {  }
-    type: svg_image_field_formatter
+    weight: 0
     region: content
 hidden:
   created: true

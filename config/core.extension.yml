@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
   action: 0
   backup_migrate: 0
@@ -66,6 +68,7 @@ module:
   views_bulk_edit: 0
   views_ui: 0
   webform: 0
+  webform_spam_words: 0
   webform_submission_export_import: 0
   webform_ui: 0
   webp: 0
@@ -80,5 +83,3 @@ theme:
   bootstrap5: 0
   theport: 0
 profile: standard
-_core:
-  default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc

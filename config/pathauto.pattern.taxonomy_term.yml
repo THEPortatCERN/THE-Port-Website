@@ -12,14 +12,14 @@ pattern: 'taxonomy/term/[term:name]'
 selection_criteria:
   7b60381f-2f19-410e-a669-c1c322473bec:
     id: 'entity_bundle:taxonomy_term'
+    negate: false
+    uuid: 7b60381f-2f19-410e-a669-c1c322473bec
+    context_mapping:
+      taxonomy_term: taxonomy_term
     bundles:
       events: events
       project_attributes: project_attributes
       teams: teams
-    negate: false
-    context_mapping:
-      taxonomy_term: taxonomy_term
-    uuid: 7b60381f-2f19-410e-a669-c1c322473bec
 selection_logic: and
 weight: -5
 relationships: {  }

@@ -1,3 +1,5 @@
+_core:
+  default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
 ignored_config_entities:
   - 'backup_migrate.*'
   - 'bootstrap5.*'
@@ -11,5 +13,3 @@ ignored_config_entities:
   - 'matomo.*'
   - 'user.*'
   - 'filter.*'
-_core:
-  default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk
