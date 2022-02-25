@@ -1,0 +1,4 @@
+name: 'Projects Page'
+type: module
+description: 'The Projects page allows the listing and filtering of projects.'
+core_version_requirement: '^8 || ^9'

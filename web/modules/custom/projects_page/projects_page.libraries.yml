@@ -1,0 +1,7 @@
+dist:
+  version: 1.x
+  css:
+    layout:
+      dist/style.css: {}
+  js:
+    dist/code.js: {}

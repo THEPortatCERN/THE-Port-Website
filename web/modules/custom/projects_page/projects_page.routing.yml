@@ -1,0 +1,7 @@
+projects_page.projects.list:
+  path: /projects/list
+  defaults:
+    _title: Projects
+    _controller: '\Drupal\projects_page\Controller\ProjectsListController::content'
+  requirements:
+    _access: 'TRUE'
