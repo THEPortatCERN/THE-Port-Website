@@ -8,6 +8,7 @@
 data/
 private/
 vendor/
+node_modules/
 
 # Default Drupal Installation
 .gitattributes

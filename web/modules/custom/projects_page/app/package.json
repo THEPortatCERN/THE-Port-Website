@@ -1,0 +1,20 @@
+{
+  "name": "projects_page",
+  "version": "1.0.0",
+  "description": "The Projects page allows the listing and filtering of projects",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild App.jsx --bundle --minify --outfile=/dist/bundle.js --target=chrome58,firefox57,safari11,edge16",
+    "dev": "esbuild App.jsx --bundle --outfile=/dist/bundle.js --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.14.23"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}

@@ -2,6 +2,6 @@ dist:
   version: 1.x
   css:
     layout:
-      dist/style.css: {}
+      app/dist/bundle.css: {}
   js:
-    dist/code.js: {}
+    app/dist/bundle.js: {}
