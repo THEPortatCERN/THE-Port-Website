@@ -53,6 +53,7 @@ config/comment*
 config/dblog*
 config/editor*
 config/matomo*
+config/sendinblue*
 config/system*
 config/*webform*
 config/*user*
