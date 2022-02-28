@@ -1,0 +1,8 @@
+uuid: fb74dd95-18db-4494-a163-507fbf7b94df
+langcode: en
+status: true
+dependencies: {  }
+name: 'Sustainable Development Goals'
+vid: sustainable_development_goals
+description: 'Goals as defined by the United Nations'
+weight: 0

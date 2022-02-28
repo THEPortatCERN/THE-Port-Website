@@ -1,0 +1,29 @@
+uuid: 7179f211-b872-4904-81c6-2a33f6a53d55
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_development_goals
+    - node.type.project
+    - taxonomy.vocabulary.sustainable_development_goals
+id: node.project.field_development_goals
+field_name: field_development_goals
+entity_type: node
+bundle: project
+label: 'Sustainable Development Goals'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sustainable_development_goals: sustainable_development_goals
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
