@@ -4,4 +4,10 @@ projects_page.projects.list:
     _title: Projects
     _controller: '\Drupal\projects_page\Controller\ProjectsListController::content'
   requirements:
-    _access: 'TRUE'
+    _access: "TRUE"
+projects_page.projects.json:
+  path: /projects/list.json
+  defaults:
+    _controller: '\Drupal\projects_page\Controller\ProjectsListController::json'
+  requirements:
+    _access: "TRUE"
