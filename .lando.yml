@@ -1,8 +1,8 @@
 name: theport
 recipe: drupal9
 config:
-  php: '7.4'
-  composer_version: '2.0.8'
+  php: '8.0'
+  composer_version: '2.2.7'
   webroot: web
   via: apache:2.4
   database: mysql:5.7
