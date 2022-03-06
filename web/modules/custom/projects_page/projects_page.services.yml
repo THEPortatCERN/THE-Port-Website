@@ -1,4 +1,4 @@
 services:
   project_list.list:
-    class: Drupal\projects_page\ProjectListService
+    class: Drupal\projects_page\Service\ProjectListService
     arguments: ['@entity_type.manager', '@file_url_generator']

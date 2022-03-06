@@ -3,13 +3,13 @@
 namespace Drupal\projects_page\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
-use Drupal\projects_page\ProjectListService;
+use Drupal\projects_page\Service\ProjectListService;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class ProjectsListController extends ControllerBase {
 
-  /** @var \Drupal\project_list\ProjectListService */
+  /** @var \Drupal\project_list\Service\ProjectListService */
   protected $projectListService;
 
   public function __construct(ProjectListService $projectListService) {

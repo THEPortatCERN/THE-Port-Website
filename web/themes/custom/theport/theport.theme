@@ -20,6 +20,7 @@ function theport_preprocess_html(&$variables)
       'href' => '/themes/custom/theport/fonts/lato/LatoLatin-Regular.woff2',
       'as' => 'font',
       'type' => 'font/woff2',
+      'crossorigin' => '',
     ],
   ];
 
@@ -30,6 +31,7 @@ function theport_preprocess_html(&$variables)
       'href' => '/themes/custom/theport/fonts/lato/LatoLatin-Bold.woff2',
       'as' => 'font',
       'type' => 'font/woff2',
+      'crossorigin' => '',
     ],
   ];
 

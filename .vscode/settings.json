@@ -37,5 +37,6 @@
   },
   "php.suggest.basic": false,
   "intelephense.environment.documentRoot": "web/core/index.php",
+  "intelephense.diagnostics.undefinedTypes": false,
   "intelephense.format.braces": "k&r"
 }

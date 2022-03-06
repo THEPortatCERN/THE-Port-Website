@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\projects_page;
+namespace Drupal\projects_page\Service;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\File\FileUrlGeneratorInterface;
@@ -79,7 +79,7 @@ class ProjectListService {
         'title' => $node->getTitle(),
         'summary' => $summary,
         'page_url' => $node->toUrl()->toString(),
-        'image_url' => $image_url,
+        'image_src' => $image_url,
         'teams' => $teams,
         'attributes' => $attributes,
         'events' => $events,
