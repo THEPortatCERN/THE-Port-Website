@@ -4,6 +4,7 @@ namespace Drupal\projects_page\Service;
 
 use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\Core\File\FileUrlGeneratorInterface;
+use Drupal\image\Entity\ImageStyle;
 
 class ProjectListService {
 
@@ -46,13 +47,14 @@ class ProjectListService {
       $image_alt = '';
       $field_hero_entity = $node->get('field_hero')->entity;
       $field_drawing_entity = $node->get('field_drawing')->entity;
+      $image_style = ImageStyle::load('extra_small');
       if (!empty($field_hero_entity)) {
         $image_uri = $field_hero_entity->field_media_image->entity->getFileUri();
-        $image_url = $this->file_url_generator->generateString($image_uri);
+        $image_url = $image_style->buildUrl($image_uri);
         $image_alt = $field_hero_entity->field_media_image->alt;
       } elseif (!empty($field_drawing_entity)) {
         $image_uri = $field_drawing_entity->field_media_image->entity->getFileUri();
-        $image_url = $this->file_url_generator->generateString($image_uri);
+        $image_url = $image_style->buildUrl($image_uri);
         $image_alt = $field_drawing_entity->field_media_image->alt;
       }
 
