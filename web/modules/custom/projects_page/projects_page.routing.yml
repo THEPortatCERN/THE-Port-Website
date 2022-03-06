@@ -1,4 +1,4 @@
-projects_page.projects.list:
+projects_page.projects.content:
   path: /projects/list
   defaults:
     _title: Projects
