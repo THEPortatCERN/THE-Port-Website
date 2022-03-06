@@ -43,12 +43,17 @@ class ProjectListService {
       $summary = $field_summary->getValue()[0]['value'];
 
       $image_url = '';
-      if (!empty($node->get('field_hero')->entity)) {
-        $image_uri = $node->get('field_hero')->entity->field_media_image->entity->getFileUri();
+      $image_alt = '';
+      $field_hero_entity = $node->get('field_hero')->entity;
+      $field_drawing_entity = $node->get('field_drawing')->entity;
+      if (!empty($field_hero_entity)) {
+        $image_uri = $field_hero_entity->field_media_image->entity->getFileUri();
         $image_url = $this->file_url_generator->generateString($image_uri);
-      } elseif (!empty($node->get('field_drawing')->entity)) {
-        $image_uri = $node->get('field_drawing')->entity->field_media_image->entity->getFileUri();
+        $image_alt = $field_hero_entity->field_media_image->alt;
+      } elseif (!empty($field_drawing_entity)) {
+        $image_uri = $field_drawing_entity->field_media_image->entity->getFileUri();
         $image_url = $this->file_url_generator->generateString($image_uri);
+        $image_alt = $field_drawing_entity->field_media_image->alt;
       }
 
       /** @var \Drupal\Core\Field\EntityReferenceFieldItemListInterface $field_attributes */
@@ -80,6 +85,7 @@ class ProjectListService {
         'summary' => $summary,
         'page_url' => $node->toUrl()->toString(),
         'image_src' => $image_url,
+        'image_alt' => $image_alt,
         'teams' => $teams,
         'attributes' => $attributes,
         'events' => $events,
