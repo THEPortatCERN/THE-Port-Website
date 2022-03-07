@@ -85,7 +85,7 @@ class ProjectListService {
       array_push($data, [
         'title' => $node->getTitle(),
         'summary' => $summary,
-        'page_url' => $node->toUrl()->toString(TRUE),
+        'page_url' => $node->toUrl()->toString(TRUE)->getGeneratedUrl(),
         'image_src' => $image_url,
         'image_alt' => $image_alt,
         'teams' => $teams,

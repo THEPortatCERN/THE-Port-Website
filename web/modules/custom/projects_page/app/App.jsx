@@ -38,7 +38,7 @@ function App() {
             <article className="card">
               <div className="card-image-container">
                 {project.image_src ? (
-                  <img className="img-fluid" lazy alt={project.image_alt} src={project.image_src} />
+                  <img className="img-fluid" loading="lazy" alt={project.image_alt} src={project.image_src} />
                 ) : (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
