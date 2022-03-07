@@ -27,7 +27,7 @@ The [Bootstrap library](https://getbootstrap.com/docs/5.0/getting-started/introd
 Upon configuring variables, you will need to recompile the Sass file. From within the `global` directory, run:
 
 ```bash
-  sass global.scss global.css
+  sass global.scss global.css --style compressed
 ```
 
 The `global.css` file is loaded by Drupal and should be checked into the repository for convenience. [Sass](https://sass-lang.com/) is otherwise _not_ used in other templates and does not need to be installed.

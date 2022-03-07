@@ -1,6 +1,4 @@
 global:
-  js:
-    templates/global/global.js: {}
   css:
     theme:
       templates/global/global.css: {}

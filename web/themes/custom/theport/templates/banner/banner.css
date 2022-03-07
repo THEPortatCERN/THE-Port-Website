@@ -18,10 +18,10 @@
       I want the background to extend the width of the browser window,
       but position it from a relative parent element.
       
-      The scrollbar width variable is set in JavaScript.
+      The scrollbar width is set to 17px.
     */
-    left: calc(-1 * (((100vw - var(--scrollbar-width, 0)) - 100%) / 2));
-    width: calc(100vw - var(--scrollbar-width, 0));
+    left: calc(-1 * (((100vw - 17px) - 100%) / 2));
+    width: calc(100vw - 17px);
 }
 
 .banner .content {
