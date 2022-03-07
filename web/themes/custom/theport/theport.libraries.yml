@@ -29,8 +29,6 @@ event-teaser:
       templates/event/events-block.css: {}
       templates/event/event-teaser.css: {}
 footer:
-  js:
-    templates/footer/social.js: {}
   css:
     component:
       templates/footer/copyright.css: {}
