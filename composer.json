@@ -13,7 +13,7 @@
     "require": {
         "composer/installers": "^1.9",
         "drupal/backup_migrate": "^5.0",
-        "drupal/bootstrap5": "^1.0",
+        "drupal/bootstrap5": "^1.1",
         "drupal/captcha": "^1.2",
         "drupal/change_author_action": "1.0",
         "drupal/config_ignore": "^2.3",
