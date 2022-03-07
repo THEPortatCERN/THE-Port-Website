@@ -1,7 +1,7 @@
 dist:
-  version: 1.x
+  version: 1.0
   css:
     layout:
-      app/dist/bundle.css: {}
+      app/dist/projects_page.css: {}
   js:
-    app/dist/bundle.js: {}
+    app/dist/projects_page.js: {}
