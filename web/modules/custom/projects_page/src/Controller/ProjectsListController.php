@@ -4,8 +4,9 @@ namespace Drupal\projects_page\Controller;
 
 use Drupal\Core\Url;
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Cache\CacheableJsonResponse;
+use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\projects_page\Service\ProjectListService;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class ProjectsListController extends ControllerBase {
@@ -48,6 +49,14 @@ class ProjectsListController extends ControllerBase {
   }
 
   public function json() {
-    return new JsonResponse($this->projectListService->getTeaserData());
+    $data = $this->projectListService->getTeaserData();
+
+    $cacheMetaData = new CacheableMetadata();
+    $cacheMetaData->setCacheMaxAge(3600);
+    $cacheMetaData->setCacheContexts(['url']);
+
+    $response = new CacheableJsonResponse($data);
+    $response->addCacheableDependency($cacheMetaData);
+    return $response;
   }
 }

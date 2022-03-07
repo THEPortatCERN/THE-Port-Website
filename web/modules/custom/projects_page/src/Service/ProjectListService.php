@@ -31,14 +31,6 @@ class ProjectListService {
     /** @var \Drupal\node\NodeInterface $node */
     foreach ($nodes as $node) {
 
-      /** @var \Drupal\Core\Field\EntityReferenceFieldItemListInterface $field_teams */
-      $field_teams = $node->get('field_teams');
-      $teams = [];
-      /** @var Drupal\taxonomy\Entity\Term $term */
-      foreach ($field_teams->referencedEntities() as $term) {
-        array_push($teams, $term->getName());
-      }
-
       /** @var \Drupal\Core\Field\FieldItemListInterface $field_summary */
       $field_summary = $node->get('field_summary');
       $summary = $field_summary->getValue()[0]['value'];
@@ -56,6 +48,14 @@ class ProjectListService {
         $image_uri = $field_drawing_entity->field_media_image->entity->getFileUri();
         $image_url = $image_style->buildUrl($image_uri);
         $image_alt = $field_drawing_entity->field_media_image->alt;
+      }
+
+      /** @var \Drupal\Core\Field\EntityReferenceFieldItemListInterface $field_teams */
+      $field_teams = $node->get('field_teams');
+      $teams = [];
+      /** @var Drupal\taxonomy\Entity\Term $term */
+      foreach ($field_teams->referencedEntities() as $term) {
+        array_push($teams, $term->getName());
       }
 
       /** @var \Drupal\Core\Field\EntityReferenceFieldItemListInterface $field_attributes */
@@ -85,7 +85,7 @@ class ProjectListService {
       array_push($data, [
         'title' => $node->getTitle(),
         'summary' => $summary,
-        'page_url' => $node->toUrl()->toString(),
+        'page_url' => $node->toUrl()->toString(TRUE),
         'image_src' => $image_url,
         'image_alt' => $image_alt,
         'teams' => $teams,
