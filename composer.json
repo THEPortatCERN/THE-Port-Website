@@ -53,6 +53,7 @@
     "minimum-stability": "beta",
     "prefer-stable": true,
     "config": {
+        "process-timeout": 6000,
         "sort-packages": true,
         "allow-plugins": {
             "composer/installers": true,
