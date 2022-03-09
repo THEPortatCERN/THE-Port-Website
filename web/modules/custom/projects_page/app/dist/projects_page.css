@@ -21,11 +21,6 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
-@media (min-width: 1200px) {
-  .projects .view-content {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
 .projects .views-row {
   display: flex;
 }
@@ -78,6 +73,13 @@
   left: 0;
   overflow: hidden;
   text-indent: -999px;
+}
+.projects-and-filters {
+  display: flex;
+}
+section {
+  background-color: rgb(240, 238, 238);
+  padding: 1rem 2rem;
 }
 
 /* styles/TagInput.css */
@@ -181,4 +183,25 @@
 .react-tags__suggestions li.is-disabled {
   opacity: 0.5;
   cursor: auto;
+}
+
+/* styles/SDGlist.css */
+.sdg-div {
+  display: flex;
+  min-width: 285px;
+  max-width: 285px;
+  flex-direction: column;
+  margin: 1rem;
+}
+.sdg-logo {
+  width: 100%;
+}
+.sdg-list {
+  display: flex;
+  gap: 0.05rem;
+  flex-wrap: wrap;
+  margin: 0.1rem auto;
+}
+.sdg-icon {
+  width: 33%;
 }

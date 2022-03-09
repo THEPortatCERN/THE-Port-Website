@@ -2440,11 +2440,11 @@
       if (true) {
         (function() {
           "use strict";
-          var React5 = require_react();
+          var React6 = require_react();
           var _assign = require_object_assign();
           var Scheduler = require_scheduler();
           var tracing = require_tracing();
-          var ReactSharedInternals = React5.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React6.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           function warn(format) {
             {
               for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -2476,7 +2476,7 @@
               Function.prototype.apply.call(console[level], console, argsWithFormat);
             }
           }
-          if (!React5) {
+          if (!React6) {
             {
               throw Error("ReactDOM was loaded before React. Make sure you load the React package before loading ReactDOM.");
             }
@@ -3692,7 +3692,7 @@
           var didWarnInvalidChild = false;
           function flattenChildren(children) {
             var content = "";
-            React5.Children.forEach(children, function(child) {
+            React6.Children.forEach(children, function(child) {
               if (child == null) {
                 return;
               }
@@ -3703,7 +3703,7 @@
           function validateProps(element, props) {
             {
               if (typeof props.children === "object" && props.children !== null) {
-                React5.Children.forEach(props.children, function(child) {
+                React6.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -10896,7 +10896,7 @@
           }
           var fakeInternalInstance = {};
           var isArray = Array.isArray;
-          var emptyRefsObject = new React5.Component().refs;
+          var emptyRefsObject = new React6.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -21108,12 +21108,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     "node_modules/react-tag-autocomplete/dist/ReactTags.umd.js"(exports, module) {
       (function(global, factory) {
         typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory(require_react(), require_prop_types()) : typeof define === "function" && define.amd ? define(["react", "prop-types"], factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, global.ReactTags = factory(global.React, global.PropTypes));
-      })(exports, function(React5, PropTypes) {
+      })(exports, function(React6, PropTypes) {
         "use strict";
         function _interopDefaultLegacy(e) {
           return e && typeof e === "object" && "default" in e ? e : { "default": e };
         }
-        var React__default = /* @__PURE__ */ _interopDefaultLegacy(React5);
+        var React__default = /* @__PURE__ */ _interopDefaultLegacy(React6);
         var PropTypes__default = /* @__PURE__ */ _interopDefaultLegacy(PropTypes);
         function Tag(props) {
           return React__default["default"].createElement("button", { type: "button", className: props.classNames.selectedTag, title: props.removeButtonText, onClick: props.onDelete }, React__default["default"].createElement("span", { className: props.classNames.selectedTagName }, props.tag.name));
@@ -21523,7 +21523,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   });
 
   // App.jsx
-  var import_react4 = __toESM(require_react());
+  var import_react5 = __toESM(require_react());
   var import_react_dom = __toESM(require_react_dom());
 
   // helper-functions/fetchProjects.jsx
@@ -21637,18 +21637,131 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   };
   var TagInput_default = TagInput;
 
+  // components/SDGlist.jsx
+  var import_react4 = __toESM(require_react());
+
+  // components/SDGdata.jsx
+  var baseURL = "https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-";
+  var endURL = "-1024x1024.png";
+  var sdg01 = `${baseURL}01${endURL}`;
+  var sdg02 = `${baseURL}02${endURL}`;
+  var sdg03 = `${baseURL}03${endURL}`;
+  var sdg04 = `${baseURL}04${endURL}`;
+  var sdg05 = `${baseURL}05${endURL}`;
+  var sdg06 = `${baseURL}06${endURL}`;
+  var sdg07 = `${baseURL}07${endURL}`;
+  var sdg08 = `${baseURL}08${endURL}`;
+  var sdg09 = `${baseURL}09${endURL}`;
+  var sdg10 = `${baseURL}10${endURL}`;
+  var sdg11 = `${baseURL}11${endURL}`;
+  var sdg12 = `${baseURL}12${endURL}`;
+  var sdg13 = `${baseURL}13${endURL}`;
+  var sdg14 = `${baseURL}14${endURL}`;
+  var sdg15 = `${baseURL}15${endURL}`;
+  var sdg16 = `${baseURL}16${endURL}`;
+  var sdg17 = `${baseURL}17${endURL}`;
+  var sdgData = [
+    {
+      imgSrc: sdg01,
+      goal: "No Poverty"
+    },
+    {
+      imgSrc: sdg02,
+      goal: "Zero Hunger"
+    },
+    {
+      imgSrc: sdg03,
+      goal: "Good Health and Well-being"
+    },
+    {
+      imgSrc: sdg04,
+      goal: "Quality Education"
+    },
+    {
+      imgSrc: sdg05,
+      goal: "Gender Equality"
+    },
+    {
+      imgSrc: sdg06,
+      goal: "Clean Water and Sanitation"
+    },
+    {
+      imgSrc: sdg07,
+      goal: "Affordable and Clean Energy"
+    },
+    {
+      imgSrc: sdg08,
+      goal: "Decent Work and Economic Growth"
+    },
+    {
+      imgSrc: sdg09,
+      goal: "Industry, Innovation and Infrastructure"
+    },
+    {
+      imgSrc: sdg10,
+      goal: "Reduced Inequality"
+    },
+    {
+      imgSrc: sdg11,
+      goal: "Sustainable Cities and Communities"
+    },
+    {
+      imgSrc: sdg12,
+      goal: "Responsible Consumption and Production"
+    },
+    {
+      imgSrc: sdg13,
+      goal: "Climate Action"
+    },
+    {
+      imgSrc: sdg14,
+      goal: "Life Below Water"
+    },
+    {
+      imgSrc: sdg15,
+      goal: "Life on Land"
+    },
+    {
+      imgSrc: sdg16,
+      goal: "Peace and Justice Strong Institutions"
+    },
+    {
+      imgSrc: sdg17,
+      goal: "Partnerships to achieve the Goal"
+    }
+  ];
+
+  // components/SDGlist.jsx
+  var sdgLogoTemp = "https://www.un.org/sustainabledevelopment/wp-content/uploads/2020/05/SDG_website_E_v3_200px.png";
+  var SDG = () => {
+    return /* @__PURE__ */ import_react4.default.createElement("div", {
+      className: "sdg-div"
+    }, /* @__PURE__ */ import_react4.default.createElement("img", {
+      className: "sdg-logo",
+      src: sdgLogoTemp,
+      alt: "united nations sustainable development goals"
+    }), /* @__PURE__ */ import_react4.default.createElement("div", {
+      className: "sdg-list"
+    }, sdgData.map((sdg) => /* @__PURE__ */ import_react4.default.createElement("img", {
+      src: sdg.imgSrc,
+      alt: sdg.goal,
+      className: "sdg-icon"
+    }))));
+  };
+  var SDGlist_default = SDG;
+
   // App.jsx
   function App() {
-    const [isLoading, setIsLoading] = (0, import_react4.useState)(true);
-    const [projectList, setProjectList] = (0, import_react4.useState)([]);
-    const [tags, setTags] = (0, import_react4.useState)([]);
-    (0, import_react4.useEffect)(async () => {
+    const [isLoading, setIsLoading] = (0, import_react5.useState)(true);
+    const [projectList, setProjectList] = (0, import_react5.useState)([]);
+    const [tags, setTags] = (0, import_react5.useState)([]);
+    (0, import_react5.useEffect)(async () => {
       const projects = await fetchProjects();
       setProjectList(projects);
       setIsLoading(false);
     }, []);
     if (isLoading)
-      return /* @__PURE__ */ import_react4.default.createElement("p", null, "Loading\u2026");
+      return /* @__PURE__ */ import_react5.default.createElement("p", null, "Loading\u2026");
     const matchesTag = (project, tag) => project.attributes.includes(tag.name);
     const matchesTags = (project, tags2) => tags2.reduce((previousTag, currentTag) => previousTag && matchesTag(project, currentTag), true);
     const doesProjectMatch = (project, tags2) => {
@@ -21656,21 +21769,25 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       return projectMatchesTags;
     };
     const filteredList = tags.length > 0 ? projectList.filter((project) => doesProjectMatch(project, tags)) : projectList;
-    return /* @__PURE__ */ import_react4.default.createElement("section", null, /* @__PURE__ */ import_react4.default.createElement(TagInput_default, {
+    return /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "projects-and-filters"
+    }, /* @__PURE__ */ import_react5.default.createElement(SDGlist_default, null), /* @__PURE__ */ import_react5.default.createElement("section", {
+      className: "projects-and-taginput"
+    }, /* @__PURE__ */ import_react5.default.createElement(TagInput_default, {
       tags,
       setTags
-    }), /* @__PURE__ */ import_react4.default.createElement("div", {
+    }), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "projects"
-    }, /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "view-content"
-    }, filteredList.map((project, index) => /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, filteredList.map((project, index) => /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "views-row",
       key: index
-    }, /* @__PURE__ */ import_react4.default.createElement(ProjectCard_default, {
+    }, /* @__PURE__ */ import_react5.default.createElement(ProjectCard_default, {
       ...project
-    }))))));
+    })))))));
   }
-  import_react_dom.default.render(import_react4.default.createElement(App), document.getElementById("app"));
+  import_react_dom.default.render(import_react5.default.createElement(App), document.getElementById("app"));
 })();
 /*
 object-assign

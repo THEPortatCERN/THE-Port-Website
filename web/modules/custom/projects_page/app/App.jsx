@@ -5,6 +5,7 @@ import "./styles/App.css";
 import { fetchProjects } from "./helper-functions/fetchProjects";
 import ProjectCard from "./components/ProjectCard";
 import TagInput from './components/TagInput';
+import SDGlist from './components/SDGlist';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -36,7 +37,9 @@ function App() {
   //---------------------------------------------------------------------------------------------------------------------------------//
 
   return (
-    <section>
+   <div className="projects-and-filters">
+    <SDGlist />
+    <section className="projects-and-taginput">
       <TagInput tags={tags} setTags={setTags} />
       <div className="projects">
         <div className="view-content">
@@ -48,6 +51,7 @@ function App() {
         </div>
       </div>
     </section>
+   </div>
   );
 }
 
