@@ -7,7 +7,9 @@
   
   It does not get loaded by default.
   Include it at the very end of the settings.php file like this:
-  # include $app_root . '/' . $site_path . '/settings.local.php';
+
+    include $app_root . '/sites/settings.local.php';
+
 
 
 
@@ -19,7 +21,7 @@ assert_options(ASSERT_ACTIVE, TRUE);
 /**
  * Enable local development services.
  */
-$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
+$settings['container_yamls'][] = $app_root . '/sites/development.services.yml';
 
 /**
  * Show all error messages, with backtrace information.
