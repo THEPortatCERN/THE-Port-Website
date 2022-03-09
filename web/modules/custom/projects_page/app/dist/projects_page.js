@@ -21601,10 +21601,16 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var import_react_tag_autocomplete = __toESM(require_ReactTags_umd());
   var TagInput = ({ setTags, tags }) => {
     const suggestions = [
-      { id: 1, name: "Human rights" },
+      { id: 1, name: "Human Rights" },
       { id: 2, name: "Food" },
+      { id: 3, name: "Communication" },
+      { id: 4, name: "Health" },
+      { id: 5, name: "Infrastructure" },
+      { id: 6, name: "Medical" },
       { id: 7, name: "Education" },
-      { id: 8, name: "Food" }
+      { id: 8, name: "Hardware" },
+      { id: 9, name: "Software" },
+      { id: 10, name: "Enviromental" }
     ];
     const reactTags = (0, import_react3.useRef)();
     const onDelete = (0, import_react3.useCallback)((tagIndex) => {
@@ -21643,6 +21649,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }, []);
     if (isLoading)
       return /* @__PURE__ */ import_react4.default.createElement("p", null, "Loading\u2026");
+    const matchesTag = (project, tag) => project.attributes.includes(tag.name);
+    const matchesTags = (project, tags2) => tags2.reduce((previousTag, currentTag) => previousTag && matchesTag(project, currentTag), true);
+    const doesProjectMatch = (project, tags2) => {
+      const projectMatchesTags = matchesTags(project, tags2);
+      return projectMatchesTags;
+    };
+    const filteredList = tags.length > 0 ? projectList.filter((project) => doesProjectMatch(project, tags)) : projectList;
     return /* @__PURE__ */ import_react4.default.createElement("section", null, /* @__PURE__ */ import_react4.default.createElement(TagInput_default, {
       tags,
       setTags
@@ -21650,7 +21663,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       className: "projects"
     }, /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "view-content"
-    }, projectList.map((project, index) => /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, filteredList.map((project, index) => /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "views-row",
       key: index
     }, /* @__PURE__ */ import_react4.default.createElement(ProjectCard_default, {
