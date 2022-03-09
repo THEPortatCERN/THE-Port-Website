@@ -1,0 +1,22 @@
+.sdg-div {
+  display: flex;
+  min-width: 285px;
+  max-width: 285px;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.sdg-logo {
+  width: 100%;
+}
+
+.sdg-list {
+  display: flex;
+  gap: 0.05rem;
+  flex-wrap: wrap;
+  margin: 0.1rem auto;
+}
+
+.sdg-icon {
+  width: 33%;
+}
