@@ -1,5 +1,6 @@
 import React, { useCallback, useRef } from 'react'
 import ReactTags from 'react-tag-autocomplete'
+import "../styles/TagInput.css"
 
 const TagInput = ({ setTags, tags }) => {
   
