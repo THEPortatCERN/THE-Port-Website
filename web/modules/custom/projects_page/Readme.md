@@ -29,3 +29,4 @@ Running `npm run build` will start a watch process so that the bundles get gener
 5. go to lando/site/user/login (login as super user) -> go to content, extend, find projects-page + install
 
 6. data-dump.
+   Running `npm run dev` inside the app folder will start a watch process so that the bundles get generate whenever a file is saved.

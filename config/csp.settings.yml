@@ -34,24 +34,10 @@ enforce:
       base: self
       flags:
         - unsafe-eval
-    script-src-attr:
-      base: self
-      flags:
-        - unsafe-inline
-    script-src-elem:
-      base: self
     style-src:
       base: self
-      sources:
-        - 'https://fonts.googleapis.com'
-    style-src-attr:
-      base: self
       flags:
         - unsafe-inline
-    style-src-elem:
-      base: self
-      sources:
-        - 'https://fonts.googleapis.com'
     frame-ancestors:
       base: self
       sources:

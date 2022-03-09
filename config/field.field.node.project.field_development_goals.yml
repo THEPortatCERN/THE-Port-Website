@@ -1,4 +1,4 @@
-uuid: 7179f211-b872-4904-81c6-2a33f6a53d55
+uuid: d081e6c9-f2b0-4c23-be53-b95f012e4efa
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ field_name: field_development_goals
 entity_type: node
 bundle: project
 label: 'Sustainable Development Goals'
-description: ''
+description: 'Select an SDG as defined by the UN at https://sdgs.un.org'
 required: false
 translatable: false
 default_value: {  }

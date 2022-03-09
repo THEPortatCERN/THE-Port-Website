@@ -2,7 +2,6 @@ _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc
 module:
   action: 0
-  backup_migrate: 0
   block: 0
   block_content: 0
   breakpoint: 0
@@ -32,19 +31,18 @@ module:
   image_captcha: 0
   image_widget_crop: 0
   link: 0
-  matomo: 0
   media: 0
   media_library: 0
   menu_link_content: 0
   menu_ui: 0
   metatag: 0
-  minifyhtml: 0
   node: 0
   node_title_validation: 0
   options: 0
   page_cache: 0
   path: 0
   path_alias: 0
+  projects_page: 0
   quickedit: 0
   rdf: 0
   redirect: 0
@@ -63,6 +61,7 @@ module:
   token: 0
   toolbar: 0
   twig_tweak: 0
+  twig_vardumper: 0
   update: 0
   user: 0
   views_bulk_edit: 0
