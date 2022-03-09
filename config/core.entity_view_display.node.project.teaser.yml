@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.project.body
     - field.field.node.project.field_attributes
+    - field.field.node.project.field_development_goals
     - field.field.node.project.field_drawing
     - field.field.node.project.field_events
     - field.field.node.project.field_hero
@@ -63,6 +64,7 @@ content:
 hidden:
   body: true
   field_attributes: true
+  field_development_goals: true
   field_events: true
   field_impressions: true
   field_links: true

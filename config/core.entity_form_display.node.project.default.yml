@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.project.body
     - field.field.node.project.field_attributes
+    - field.field.node.project.field_development_goals
     - field.field.node.project.field_drawing
     - field.field.node.project.field_events
     - field.field.node.project.field_hero
@@ -34,6 +35,12 @@ content:
       show_summary: false
     third_party_settings: {  }
   field_attributes:
+    type: options_buttons
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_development_goals:
     type: options_buttons
     weight: 10
     region: content
@@ -99,13 +106,13 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 12
+    weight: 13
     region: content
     settings:
       display_label: true
@@ -126,7 +133,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 11
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
