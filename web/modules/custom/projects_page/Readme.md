@@ -14,4 +14,4 @@ npm run build
 
 The resulting JavaScript and CSS bundles are written into the "dist" directory. *These bundles should be checked into the repo*, as they are part of the Drupal module.
 
-Running `npm run build` will start a watch process so that the bundles get generate whenever a file is saved.
+Running `npm run dev` inside the app folder will start a watch process so that the bundles get generate whenever a file is saved.
