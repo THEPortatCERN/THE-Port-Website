@@ -9,9 +9,13 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [projects, setProjects] = useState([]);
 
-  useEffect(() => fetchProjects(setIsLoading, setProjects), []);
+  useEffect(async () => {
+    const projects = await fetchProjects()
+    setProjects(projects)
+    setIsLoading(false)
+  }, []);
   if (isLoading) return <p>Loading…</p>;
-
+  
   return (
     <div className="projects">
       <div className="view-content">
