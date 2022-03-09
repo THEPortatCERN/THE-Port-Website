@@ -18,12 +18,29 @@ function App() {
   }, []);
   if (isLoading) return <p>Loading…</p>;
 
+  //-------------------------functionality for filtering projects by attributes using tag input component --------------------------//
+  //checks if one project matches one tag
+  const matchesTag = (project, tag) => project.attributes.includes(tag.name)
+  //checks if one project matches multiple tags
+  const matchesTags = (project, tags) => tags.reduce((previousTag, currentTag) => previousTag && matchesTag(project, currentTag), true)
+  
+  //middle-man -- it can later be used to also filter projects by SDGs or other perameters
+  const doesProjectMatch = (project, tags) => {
+    const projectMatchesTags = matchesTags(project, tags)
+    return projectMatchesTags
+  }
+  // creates new array of projects when tags are added to tag input
+  const filteredList = tags.length > 0 
+    ? projectList.filter(project => doesProjectMatch(project, tags)) 
+    : projectList  
+  //---------------------------------------------------------------------------------------------------------------------------------//
+
   return (
     <section>
       <TagInput tags={tags} setTags={setTags} />
       <div className="projects">
         <div className="view-content">
-          {projectList.map((project, index) => (
+          {filteredList.map((project, index) => (
             <div className="views-row" key={index}>
               <ProjectCard {...project}/>
             </div>
