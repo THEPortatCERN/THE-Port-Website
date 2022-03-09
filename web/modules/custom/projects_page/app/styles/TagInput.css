@@ -23,7 +23,7 @@
   display: inline;
 }
 
-.react-tags__selected-tag {
+.react-tags__selected button {
   display: inline-block;
   box-sizing: border-box;
   margin: 0 6px 6px 0;
@@ -37,14 +37,14 @@
   line-height: inherit;
 }
 
-.react-tags__selected-tag:after {
+.react-tags__selected button:after {
   content: "\2715";
   color: #aaa;
   margin-left: 8px;
 }
 
-.react-tags__selected-tag:hover,
-.react-tags__selected-tag:focus {
+.react-tags__selected button:hover,
+.react-tags__selected button:focus {
   border-color: #b1b1b1;
 }
 
