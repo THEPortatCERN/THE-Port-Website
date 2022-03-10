@@ -190,7 +190,23 @@ display:
         type: node_rss
         options: {  }
       display_extenders: {  }
-      path: feed.xml
+      path: feed
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  page_1:
+    id: page_1
+    display_title: Page
+    display_plugin: page
+    position: 3
+    display_options:
+      display_extenders: {  }
+      path: blog
     cache_metadata:
       max-age: -1
       contexts:

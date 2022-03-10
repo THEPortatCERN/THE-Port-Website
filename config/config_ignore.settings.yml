@@ -13,3 +13,6 @@ ignored_config_entities:
   - 'matomo.*'
   - 'user.*'
   - 'filter.*'
+  - 'system.*'
+  - 'minifyhtml.*'
+  - core.extension
