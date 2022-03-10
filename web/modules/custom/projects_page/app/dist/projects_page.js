@@ -21526,7 +21526,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var import_react5 = __toESM(require_react());
   var import_react_dom = __toESM(require_react_dom());
 
-  // helper-functions/fetchProjects.jsx
+  // helper-functions/fetchAndFilterProjects.jsx
   var import_react = __toESM(require_react());
   var fetchProjects = async () => {
     const fail = (error) => console.error(error);
@@ -21540,6 +21540,15 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     } catch (error) {
       fail(error);
     }
+  };
+  var matchesTag = (project, tag) => project.attributes.includes(tag.name);
+  var matchesTags = (project, tags) => tags.reduce((previousTag, currentTag) => previousTag && matchesTag(project, currentTag), true);
+  var matchesSDG = (project, sdg) => project.sdgs.includes(sdg);
+  var matchesSDGs = (project, chosenSDGs) => chosenSDGs.reduce((previousSDG, currentSDG) => previousSDG && matchesSDG(project, currentSDG), true);
+  var doesProjectMatch = (project, tags, chosenSDGs) => {
+    const projectMatchesTags = matchesTags(project, tags);
+    const projectMatchesSDGs = matchesSDGs(project, chosenSDGs);
+    return projectMatchesTags && projectMatchesSDGs;
   };
 
   // components/ProjectCard.jsx
@@ -21698,87 +21707,87 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var sdgData = [
     {
       imgSrc: sdg01_default,
-      goal: "No Poverty",
+      goal: "Goal 01: No Poverty",
       id: "01"
     },
     {
       imgSrc: sdg02_default,
-      goal: "Zero Hunger",
+      goal: "Goal 02: Zero Hunger",
       id: "02"
     },
     {
       imgSrc: sdg03_default,
-      goal: "Good Health and Well-being",
+      goal: "Goal 03: Good health and well-being",
       id: "03"
     },
     {
       imgSrc: sdg04_default,
-      goal: "Quality Education",
+      goal: "Goal 04: Quality Education",
       id: "04"
     },
     {
       imgSrc: sdg05_default,
-      goal: "Gender Equality",
+      goal: "Goal 05: Gender Equality",
       id: "05"
     },
     {
       imgSrc: sdg06_default,
-      goal: "Clean Water and Sanitation",
+      goal: "Goal 06: Clean Water and Sanitation",
       id: "06"
     },
     {
       imgSrc: sdg07_default,
-      goal: "Affordable and Clean Energy",
+      goal: "Goal 07: Affordable and Clean Energy",
       id: "07"
     },
     {
       imgSrc: sdg08_default,
-      goal: "Decent Work and Economic Growth",
+      goal: "Goal 08: Decent Work and Economic Growth",
       id: "08"
     },
     {
       imgSrc: sdg09_default,
-      goal: "Industry, Innovation and Infrastructure",
+      goal: "Goal 09: Industry, Innovation and Infrastructure",
       id: "09"
     },
     {
       imgSrc: sdg10_default,
-      goal: "Reduced Inequality",
+      goal: "Goal 10: Reduced Inequality",
       id: "10"
     },
     {
       imgSrc: sdg11_default,
-      goal: "Sustainable Cities and Communities",
+      goal: "Goal 11: Sustainable Cities and Communities",
       id: "11"
     },
     {
       imgSrc: sdg12_default,
-      goal: "Responsible Consumption and Production",
+      goal: "Goal 12: Responsible Consumption and Production",
       id: "12"
     },
     {
       imgSrc: sdg13_default,
-      goal: "Climate Action",
+      goal: "Goal 13: Climate action",
       id: "13"
     },
     {
       imgSrc: sdg14_default,
-      goal: "Life Below Water",
+      goal: "Goal 14: Life Below Water",
       id: "14"
     },
     {
       imgSrc: sdg15_default,
-      goal: "Life on Land",
+      goal: "Goal 15: Life on Land",
       id: "15"
     },
     {
       imgSrc: sdg16_default,
-      goal: "Peace and Justice Strong Institutions",
+      goal: "Goal 16: Peace and Justice Strong Institutions",
       id: "16"
     },
     {
       imgSrc: sdg17_default,
-      goal: "Partnerships to achieve the Goal",
+      goal: "Goal 17: Partnerships to achieve the Goal",
       id: "17"
     }
   ];
@@ -21792,7 +21801,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       const newSDG = e.target.alt;
       setChosenSDGs([...chosenSDGs, newSDG]);
     }, [setChosenSDGs, chosenSDGs]);
-    console.log(chosenSDGs);
+    console.log("chosen sdgs", chosenSDGs);
     return /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "sdg-div"
     }, /* @__PURE__ */ import_react4.default.createElement("img", {
@@ -21832,13 +21841,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }, []);
     if (isLoading)
       return /* @__PURE__ */ import_react5.default.createElement("p", null, "Loading\u2026");
-    const matchesTag = (project, tag) => project.attributes.includes(tag.name);
-    const matchesTags = (project, tags2) => tags2.reduce((previousTag, currentTag) => previousTag && matchesTag(project, currentTag), true);
-    const doesProjectMatch = (project, tags2) => {
-      const projectMatchesTags = matchesTags(project, tags2);
-      return projectMatchesTags;
-    };
-    const filteredList = tags.length > 0 ? projectList.filter((project) => doesProjectMatch(project, tags)) : projectList;
+    const filteredList = tags.length > 0 || chosenSDGs.length > 0 ? projectList.filter((project) => doesProjectMatch(project, tags, chosenSDGs)) : projectList;
     return /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "projects-and-filters"
     }, /* @__PURE__ */ import_react5.default.createElement("section", {
@@ -21853,12 +21856,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       className: "projects"
     }, /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "view-content"
-    }, filteredList.map((project, index) => /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, filteredList.length > 0 ? filteredList.map((project, index) => /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "views-row",
       key: index
     }, /* @__PURE__ */ import_react5.default.createElement(ProjectCard_default, {
       ...project
-    }))))));
+    }))) : /* @__PURE__ */ import_react5.default.createElement("h2", null, "Currently, no projects match your search."))));
   }
   import_react_dom.default.render(import_react5.default.createElement(App), document.getElementById("app"));
 })();

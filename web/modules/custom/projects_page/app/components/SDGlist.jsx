@@ -14,7 +14,7 @@ const SDG = ({ setChosenSDGs, chosenSDGs }) => {
     setChosenSDGs([...chosenSDGs, newSDG])
   },  [setChosenSDGs, chosenSDGs])
 
-  console.log(chosenSDGs)
+  console.log('chosen sdgs', chosenSDGs)
 
   return (
     <div className='sdg-div'>
