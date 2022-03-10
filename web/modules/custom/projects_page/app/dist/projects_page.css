@@ -1,6 +1,11 @@
 /* styles/App.css */
+main .container {
+  padding: 0px;
+  margin: 0px;
+  max-width: 100%;
+}
 .projects {
-  margin-bottom: 24px;
+  margin: 0 24px 24px 24px;
 }
 @media (max-width: 575.98px) {
   .projects .views-row {
@@ -19,6 +24,11 @@
 @media (min-width: 768px) {
   .projects .view-content {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .projects .view-content {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 .projects .views-row {
@@ -77,9 +87,12 @@
 .projects-and-filters {
   display: flex;
 }
-section {
+.filters-section {
+  display: flex;
+  flex-direction: column;
   background-color: rgb(240, 238, 238);
-  padding: 1rem 2rem;
+  padding: 1rem;
+  gap: 1rem;
 }
 
 /* styles/TagInput.css */
@@ -89,7 +102,6 @@ section {
   border: 1px solid #d1d1d1;
   border-radius: 10px;
   background-color: white;
-  margin-bottom: 20px;
   z-index: 1;
   font-size: 1em;
   line-height: 1.2;
@@ -191,7 +203,6 @@ section {
   min-width: 285px;
   max-width: 285px;
   flex-direction: column;
-  margin: 1rem;
 }
 .sdg-logo {
   width: 100%;

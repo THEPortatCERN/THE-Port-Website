@@ -1,5 +1,11 @@
+main .container {
+  padding: 0px;
+  margin: 0px;
+  max-width: 100%;
+}
+
 .projects {
-  margin-bottom: 24px;
+  margin: 0 24px 24px 24px;
 }
 
 @media (max-width: 575.98px) {
@@ -24,11 +30,11 @@
   }
 }
 
-/* @media (min-width: 1200px) {
+@media (min-width: 1200px) {
   .projects .view-content {
     grid-template-columns: repeat(4, 1fr);
   }
-} */
+}
 
 .projects .views-row {
   display: flex;
@@ -97,7 +103,10 @@
   display: flex;
 }
 
-section {
+.filters-section {
+  display: flex;
+  flex-direction: column;
   background-color: rgb(240, 238, 238);
-  padding: 1rem 2rem;
+  padding: 1rem;
+  gap: 1rem;
 }
