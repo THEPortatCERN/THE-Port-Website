@@ -1,0 +1,23 @@
+{{ attach_library('theport/article') }}
+
+<article class="article-teaser">
+  <div class="row">
+    <div class="col-sm-8 col-lg-10">
+      <p>
+        <small>{{ date }}</small>
+      </p>
+      <h3>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h3>
+      <p class="article-summary">{{ content.field_summary[0] }}</p>
+    </div>
+    <div class="col-sm-4 col-lg-2">
+      {{ content.field_hero }}
+    </div>
+    <div class="row">
+      <p>
+        <a class="btn btn-primary" href="{{ url }}" rel="bookmark">{% trans %}Read More{% endtrans %}</a>
+      </p>
+    </div>
+  </div>
+</article>

@@ -1,40 +1,48 @@
-uuid: 5c635eeb-89a5-4e91-91a7-386aab19878f
+uuid: 1672abb4-a642-45be-9ccc-057f4e9f8771
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_display.comment.comment.default
+    - core.entity_view_mode.node.full
     - field.field.node.article.body
     - field.field.node.article.comment
     - field.field.node.article.field_hero
     - field.field.node.article.field_summary
     - field.field.node.article.field_tags
-    - image.style.extra_small
     - node.type.article
   module:
-    - media
+    - comment
+    - text
     - user
 _core:
-  default_config_hash: 4NcL2hSQZBpJbYtNuh5jC6kyQTcAc1m5bQpTegEWEso
-id: node.article.teaser
+  default_config_hash: ChmU3AVqDKU32A_fyChG0W9dTRKmVBR58B6OClCLvZI
+id: node.article.full
 targetEntityType: node
 bundle: article
-mode: teaser
+mode: full
 content:
-  field_hero:
-    type: media_thumbnail
+  body:
+    type: text_default
     label: hidden
-    settings:
-      image_link: ''
-      image_style: extra_small
+    settings: {  }
     third_party_settings: {  }
     weight: 0
     region: content
-  field_summary:
-    type: string
-    label: hidden
+  comment:
+    type: comment_default
+    label: above
     settings:
-      link_to_entity: false
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
     third_party_settings: {  }
     weight: 1
     region: content
@@ -44,6 +52,5 @@ content:
     weight: 2
     region: content
 hidden:
-  body: true
-  comment: true
-  field_tags: true
+  field_hero: true
+  field_summary: true

@@ -84,6 +84,8 @@ landing_page_allowed_drupal_blocks:
   'block_content:dbaa31bc-8035-4069-a04b-85238de22bb0': 'block_content:dbaa31bc-8035-4069-a04b-85238de22bb0'
   'block_content:9be75e1e-7b35-48fe-a3a9-ac0a81f64034': 'block_content:9be75e1e-7b35-48fe-a3a9-ac0a81f64034'
   'block_content:94240373-6fdb-453c-8c1f-7796627e4c30': 'block_content:94240373-6fdb-453c-8c1f-7796627e4c30'
+  drupalblock/all_devel: 0
+  devel_switch_user: 0
   drupalblock/all_forms: 0
   user_login_block: 0
   drupalblock/all_help: 0
@@ -93,6 +95,7 @@ landing_page_allowed_drupal_blocks:
   'views_block:partners-block_1': 'views_block:partners-block_1'
   'views_block:alumni-block_1': 'views_block:alumni-block_1'
   'views_block:promoted_projects-block_1': 'views_block:promoted_projects-block_1'
+  'views_block:recent_articles-block_1': 'views_block:recent_articles-block_1'
   'views_block:recent_events-block_1': 'views_block:recent_events-block_1'
   drupalblock/all_lists_views_: 0
   'views_block:event_participants-block_1': 0
@@ -101,6 +104,7 @@ landing_page_allowed_drupal_blocks:
   'views_block:project_team-block_1': 0
   'views_block:comments_recent-block_1': 0
   drupalblock/all_menus: 0
+  'system_menu_block:devel': 0
   'system_menu_block:footer': 0
   'system_menu_block:main': 0
   'system_menu_block:account': 0

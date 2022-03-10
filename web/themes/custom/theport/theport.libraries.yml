@@ -13,6 +13,11 @@ apply:
   css:
     component:
       templates/apply/apply-webform.css: {}
+article:
+  css:
+    component:
+      templates/article/article-teaser.css: {}
+      templates/article/articles-view.css: {}
 banner:
   css:
     component:

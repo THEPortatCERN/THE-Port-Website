@@ -1,0 +1,14 @@
+.article-teaser h3 {
+  font-size: 1.4rem;
+}
+
+.article-teaser h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (max-width: 575.98px) {
+  .article-teaser .btn {
+    margin-top: 10px;
+  }
+}
