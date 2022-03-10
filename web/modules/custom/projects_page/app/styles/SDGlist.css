@@ -16,6 +16,24 @@
   margin: 0.1rem auto;
 }
 
-.sdg-icon {
+.sdg-icon-grey,
+.sdg-icon-colour {
   width: 33%;
+}
+
+.sdg-icon-grey {
+  filter: gray;
+  -webkit-filter: grayscale(1); /* Old WebKit */
+  -webkit-filter: grayscale(100%); /* New WebKit */
+  filter: grayscale(100%); /* Current draft standard */
+}
+
+.sdg-icon-grey:hover,
+.sdg-icon-colour:hover {
+  filter: none;
+  -webkit-filter: none; /* Old WebKit */
+  -webkit-filter: none; /* New WebKit */
+  filter: none; /* Current draft standard */
+  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.05);
+  border: 2px solid white;
 }

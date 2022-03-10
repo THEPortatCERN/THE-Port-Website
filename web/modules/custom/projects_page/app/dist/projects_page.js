@@ -21815,15 +21815,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       alt: sdg.goal,
       onClick: onAddition,
       key: sdg.id,
-      className: "sdg-icon",
-      id: "grey-sdg"
+      className: "sdg-icon-grey"
     }) : /* @__PURE__ */ import_react4.default.createElement("img", {
       src: sdg.imgSrc,
       alt: sdg.goal,
       onClick: onDelete,
       key: sdg.id,
-      className: "sdg-icon",
-      id: "color-sdg"
+      className: "sdg-icon-colour"
     }))));
   };
   var SDGlist_default = SDG;
