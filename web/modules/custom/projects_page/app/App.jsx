@@ -11,6 +11,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [projectList, setProjectList] = useState([]); 
   const [tags, setTags] = useState([])
+  const [chosenSDGs, setChosenSDGs] = useState([])
 
   useEffect(async () => {
     const projects = await fetchProjects()
@@ -38,19 +39,19 @@ function App() {
 
   return (
    <div className="projects-and-filters">
-    <SDGlist />
-    <section className="projects-and-taginput">
+    <section className="filters-section">
       <TagInput tags={tags} setTags={setTags} />
-      <div className="projects">
-        <div className="view-content">
-          {filteredList.map((project, index) => (
-            <div className="views-row" key={index}>
-              <ProjectCard {...project}/>
-            </div>
-          ))}
-        </div>
-      </div>
+      <SDGlist chosenSDGs={chosenSDGs} setChosenSDGs={setChosenSDGs}/>
     </section>
+    <div className="projects">
+      <div className="view-content">
+        {filteredList.map((project, index) => (
+          <div className="views-row" key={index}>
+            <ProjectCard {...project}/>
+          </div>
+        ))}
+      </div>
+    </div>
    </div>
   );
 }
