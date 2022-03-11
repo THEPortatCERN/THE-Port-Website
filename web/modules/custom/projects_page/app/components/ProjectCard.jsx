@@ -11,7 +11,6 @@ const ProjectCard = ({
   sdgs
 }) => {
 
-  // const sdgNums = sdgs.map(sdg => sdg.charAt(5) === '0' ? sdg.slice(6, 7) : sdg.slice(5,7)) -- if you want just the numer instead of sdg icon.
   const sdgNums = sdgs.map(sdg => sdg.slice(5,7))
 
   return (

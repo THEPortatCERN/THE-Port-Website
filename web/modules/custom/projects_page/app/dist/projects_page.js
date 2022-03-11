@@ -21648,7 +21648,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       suggestions,
       onDelete,
       onAddition,
-      tagComponent
+      tagComponent,
+      placeholderText: "Search by tag"
     });
   };
   var TagInput_default = TagInput;
