@@ -6,8 +6,13 @@ const ProjectCard = ({
   teams,
   title,
   summary,
-  page_url
+  page_url,
+  attributes,
+  sdgs
 }) => {
+
+  // const sdgNums = sdgs.map(sdg => sdg.charAt(5) === '0' ? sdg.slice(6, 7) : sdg.slice(5,7)) -- if you want just the numer instead of sdg icon.
+  const sdgNums = sdgs.map(sdg => sdg.slice(5,7))
 
   return (
     <article className="card">
@@ -42,6 +47,18 @@ const ProjectCard = ({
         <a href={page_url} className="card-link">
           View project
         </a>
+        <ul>
+          {attributes.map(attribute => (
+            <li>{attribute}</li>
+          ))}
+        </ul>
+        <ul className='sdg-nums'>
+          {sdgNums.map(num => (
+            <li>
+              <img src={`https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-${num}-1024x1024.png`}/>
+            </li>
+          ))}
+        </ul>
       </div>
     </article>
   )

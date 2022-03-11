@@ -99,6 +99,28 @@ main .container {
   text-indent: -999px;
 }
 
+/* -- style the attribute and sdg lists -- */
+.card ul {
+  list-style: none;
+  text-align: left;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.sdg-nums {
+  display: flex;
+  gap: 10px;
+}
+.sdg-nums li {
+  width: 40px;
+  height: 40px;
+}
+.sdg-nums li img {
+  width: 40px;
+}
+/* --------------------------------------- */
+
+/* style the filtering section of the page */
 .projects-and-filters {
   display: flex;
 }

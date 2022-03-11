@@ -21559,8 +21559,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     teams,
     title,
     summary,
-    page_url
+    page_url,
+    attributes,
+    sdgs
   }) => {
+    const sdgNums = sdgs.map((sdg) => sdg.slice(5, 7));
     return /* @__PURE__ */ import_react2.default.createElement("article", {
       className: "card"
     }, /* @__PURE__ */ import_react2.default.createElement("div", {
@@ -21601,7 +21604,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }, summary), /* @__PURE__ */ import_react2.default.createElement("a", {
       href: page_url,
       className: "card-link"
-    }, "View project")));
+    }, "View project"), /* @__PURE__ */ import_react2.default.createElement("ul", null, attributes.map((attribute) => /* @__PURE__ */ import_react2.default.createElement("li", null, attribute))), /* @__PURE__ */ import_react2.default.createElement("ul", {
+      className: "sdg-nums"
+    }, sdgNums.map((num) => /* @__PURE__ */ import_react2.default.createElement("li", null, /* @__PURE__ */ import_react2.default.createElement("img", {
+      src: `https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-${num}-1024x1024.png`
+    }))))));
   };
   var ProjectCard_default = ProjectCard;
 
