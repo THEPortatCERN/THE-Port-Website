@@ -1,104 +1,86 @@
-import sdg01 from '../images/sdg01.png'
-import sdg02 from '../images/sdg02.png'
-import sdg03 from '../images/sdg03.png'
-import sdg04 from '../images/sdg04.png'
-import sdg05 from '../images/sdg05.png'
-import sdg06 from '../images/sdg06.png'
-import sdg07 from '../images/sdg07.png'
-import sdg08 from '../images/sdg08.png'
-import sdg09 from '../images/sdg09.png'
-import sdg10 from '../images/sdg10.png'
-import sdg11 from '../images/sdg11.png'
-import sdg12 from '../images/sdg12.png'
-import sdg13 from '../images/sdg13.png'
-import sdg14 from '../images/sdg14.png'
-import sdg15 from '../images/sdg15.png'
-import sdg16 from '../images/sdg16.png'
-import sdg17 from '../images/sdg17.png'
-
 export const sdgData = [
   {
-    imgSrc: sdg01,
+    imgSrc: '/modules/custom/projects_page/app/images/sdg01.png',
     goal: 'Goal 01: No Poverty',
     id: '01'
   },
   {
-    imgSrc: sdg02,
+    imgSrc: '/modules/custom/projects_page/app/images/sdg02.png',
     goal: 'Goal 02: Zero Hunger',
     id: '02'
   },
   {
-    imgSrc: sdg03,
+    imgSrc: '/modules/custom/projects_page/app/images/sdg03.png',
     goal: 'Goal 03: Good health and well-being',
     id: '03'
   },
   {
-    imgSrc: sdg04,
+    imgSrc: '/modules/custom/projects_page/app/images/sdg04.png',
     goal: 'Goal 04: Quality Education',
     id: '04'
   },
   {
-    imgSrc: sdg05,
+    imgSrc: '/modules/custom/projects_page/app/images/sdg05.png',
     goal: 'Goal 05: Gender Equality',
     id: '05'
   },
   {
-    imgSrc: sdg06,
+    imgSrc: '/modules/custom/projects_page/app/images/sdg06.png',
     goal: 'Goal 06: Clean Water and Sanitation',
     id: '06'
   },
   {
-    imgSrc: sdg07,
+    imgSrc: '/modules/custom/projects_page/app/images/sdg07.png',
     goal: 'Goal 07: Affordable and Clean Energy',
     id: '07'
   },
   {
-    imgSrc: sdg08,
+    imgSrc: '/modules/custom/projects_page/app/images/sdg08.png',
     goal: 'Goal 08: Decent Work and Economic Growth',
     id: '08'
   },
   {
-    imgSrc: sdg09,
+    imgSrc: '/modules/custom/projects_page/app/images/sdg09.png',
     goal: 'Goal 09: Industry, Innovation and Infrastructure',
     id: '09'
   },
   {
-    imgSrc: sdg10,
+    imgSrc: '/modules/custom/projects_page/app/images/sdg10.png',
     goal: 'Goal 10: Reduced Inequality',
     id: '10'
   },
   {
-    imgSrc: sdg11,
+    imgSrc: '/modules/custom/projects_page/app/images/sdg11.png',
     goal: 'Goal 11: Sustainable Cities and Communities',
     id: '11'
   },
   {
-    imgSrc: sdg12,
+    imgSrc: '/modules/custom/projects_page/app/images/sdg12.png',
     goal: 'Goal 12: Responsible Consumption and Production',
     id: '12'
   },
   {
-    imgSrc: sdg13,
+    imgSrc: '/modules/custom/projects_page/app/images/sdg13.png',
     goal: 'Goal 13: Climate action',
     id: '13'
   },
   {
-    imgSrc: sdg14,
+    imgSrc: '/modules/custom/projects_page/app/images/sdg14.png',
     goal: 'Goal 14: Life Below Water',
     id: '14'
   },
   {
-    imgSrc: sdg15,
+    imgSrc: '/modules/custom/projects_page/app/images/sdg15.png',
     goal: 'Goal 15: Life on Land',
     id: '15'
   },
   {
-    imgSrc: sdg16,
+    imgSrc: '/modules/custom/projects_page/app/images/sdg16.png',
     goal: 'Goal 16: Peace and Justice Strong Institutions',
     id: '16'
   },
   {
-    imgSrc: sdg17,
+    imgSrc: '/modules/custom/projects_page/app/images/sdg17.png',
     goal: 'Goal 17: Partnerships to achieve the Goal',
     id: '17'
   },
