@@ -1,11 +1,11 @@
-import React from "react";
+import settings from "./settings";
 
 // ----------------- fetch all projects ----------------- //
 export const fetchProjects = async () => {
   const fail = (error) => console.error(error);
   
   try {
-    const request = new Request(window.drupalSettings.projects_page.endpoint);
+    const request = new Request(settings.endpoint);
 
     const response = await fetch(request);
     if (!response.ok) throw new Error(response.statusText);

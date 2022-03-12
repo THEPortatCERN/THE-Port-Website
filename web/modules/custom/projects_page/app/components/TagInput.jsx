@@ -1,22 +1,10 @@
-import React, { useCallback, useRef } from 'react'
-import ReactTags from 'react-tag-autocomplete'
-import "../styles/TagInput.css"
+import React, { useCallback, useRef } from 'react';
+import ReactTags from 'react-tag-autocomplete';
+import "../styles/TagInput.css";
+import settings from '../helper-functions/settings';
+
 
 const TagInput = ({ setTags, tags }) => {
-  
-  const suggestions = [
-    { id: 1, name: "Human Rights" },
-    { id: 2, name: "Food" },
-    { id: 3, name: "Communication" },
-    { id: 4, name: "Health" },
-    { id: 5, name: "Infrastructure" },
-    { id: 6, name: "Medical" },
-    { id: 7, name: "Education" },
-    { id: 8, name: "Hardware" },
-    { id: 9, name: "Software" },
-    { id: 10, name: "Enviromental" },
-  ]
-
   const reactTags = useRef()
 
   const onDelete = useCallback((tagIndex) => {
@@ -39,7 +27,7 @@ const TagInput = ({ setTags, tags }) => {
     <ReactTags
       ref={reactTags}
       tags={tags}
-      suggestions={suggestions}
+      suggestions={settings.attributes}
       onDelete={onDelete}
       onAddition={onAddition}
       tagComponent={tagComponent}

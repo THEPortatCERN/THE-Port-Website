@@ -6,38 +6,46 @@ use Drupal\Core\Url;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Cache\CacheableJsonResponse;
 use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\projects_page\Service\ProjectAttributesService;
 use Drupal\projects_page\Service\ProjectListService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class ProjectsListController extends ControllerBase {
 
   /** @var \Drupal\project_list\Service\ProjectListService */
   protected $projectListService;
 
-  public function __construct(ProjectListService $projectListService) {
+  /** @var \Drupal\project_list\Service\ProjectAttributesService */
+  protected $projectAttributesService;
+
+  public function __construct(ProjectListService $projectListService, ProjectAttributesService $projectAttributesService) {
     $this->projectListService = $projectListService;
+    $this->projectAttributesService = $projectAttributesService;
   }
 
   public static function create(ContainerInterface $container) {
-    return new static($container->get('project_list.list'));
+    return new static($container->get('project_list.list'), $container->get('project_list.attributes'));
   }
 
-  public function content() {
+  public function page() {
     $page = [];
 
     // Preload the JSON and include it in the Drupal settings JavaScript object
-    $jsonEndpointUrl = Url::fromRoute('projects_page.projects.json')->toString();
+    $projectsAllRoute = Url::fromRoute('projects_page.projects.all')->toString();
+
     $preload_json = [
       '#tag' => 'link',
       '#attributes' => [
         'rel' => 'preload',
-        'href' => $jsonEndpointUrl,
+        'href' => $projectsAllRoute,
         'as' => 'fetch',
         'crossorigin' => '',
       ],
     ];
     $page['#attached']['html_head'][] = [$preload_json, 'preload_json'];
-    $page['#attached']['drupalSettings']['projects_page']['endpoint'] = $jsonEndpointUrl;
+    $page['#attached']['drupalSettings']['projects_page']['endpoint'] = $projectsAllRoute;
+    $page['#attached']['drupalSettings']['projects_page']['attributes'] = $this->projectAttributesService->getAttributes();
 
     $page['#attached']['library'][] = 'projects_page/dist';
     $page['#attached']['library'][] = 'core/drupalSettings';
@@ -48,7 +56,7 @@ class ProjectsListController extends ControllerBase {
     return $page;
   }
 
-  public function json() {
+  public function all() {
     $data = $this->projectListService->getTeaserData();
 
     $cacheMetaData = new CacheableMetadata();
@@ -58,5 +66,10 @@ class ProjectsListController extends ControllerBase {
     $response = new CacheableJsonResponse($data);
     $response->addCacheableDependency($cacheMetaData);
     return $response;
+  }
+
+  public function attributes() {
+    $data = $this->projectAttributesService->getAttributes();
+    return new JsonResponse($data);
   }
 }

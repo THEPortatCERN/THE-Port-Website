@@ -1,13 +1,19 @@
-projects_page.projects.content:
+projects_page.projects.page:
   path: /projects/list
   defaults:
     _title: Projects
-    _controller: '\Drupal\projects_page\Controller\ProjectsListController::content'
+    _controller: '\Drupal\projects_page\Controller\ProjectsListController::page'
   requirements:
     _access: "TRUE"
-projects_page.projects.json:
-  path: /projects/list.json
+projects_page.projects.all:
+  path: /projects/all.json
   defaults:
-    _controller: '\Drupal\projects_page\Controller\ProjectsListController::json'
+    _controller: '\Drupal\projects_page\Controller\ProjectsListController::all'
+  requirements:
+    _access: "TRUE"
+projects_page.projects.attributes:
+  path: /projects/attributes.json
+  defaults:
+    _controller: '\Drupal\projects_page\Controller\ProjectsListController::attributes'
   requirements:
     _access: "TRUE"
