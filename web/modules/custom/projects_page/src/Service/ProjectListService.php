@@ -26,7 +26,8 @@ class ProjectListService {
         'type' => 'project',
         'status' => 1,
       ]);
-
+      
+    $image_style = ImageStyle::load('extra_small');
     $data = [];
     /** @var \Drupal\node\NodeInterface $node */
     foreach ($nodes as $node) {
@@ -39,7 +40,6 @@ class ProjectListService {
       $image_alt = '';
       $field_hero_entity = $node->get('field_hero')->entity;
       $field_drawing_entity = $node->get('field_drawing')->entity;
-      $image_style = ImageStyle::load('extra_small');
       if (!empty($field_hero_entity)) {
         $image_uri = $field_hero_entity->field_media_image->entity->getFileUri();
         $image_url = $image_style->buildUrl($image_uri);

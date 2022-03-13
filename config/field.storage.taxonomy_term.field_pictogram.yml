@@ -1,0 +1,20 @@
+uuid: ac756bed-65b6-4e8b-9857-13153f2cec7b
+langcode: en
+status: true
+dependencies:
+  module:
+    - media
+    - taxonomy
+id: taxonomy_term.field_pictogram
+field_name: field_pictogram
+entity_type: taxonomy_term
+type: entity_reference
+settings:
+  target_type: media
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

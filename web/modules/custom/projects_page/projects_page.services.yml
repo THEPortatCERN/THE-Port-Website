@@ -2,6 +2,6 @@ services:
   project_list.list:
     class: Drupal\projects_page\Service\ProjectListService
     arguments: ["@entity_type.manager", "@file_url_generator"]
-  project_list.attributes:
-    class: Drupal\projects_page\Service\ProjectAttributesService
+  project_list.taxonomy:
+    class: Drupal\projects_page\Service\ProjectTaxonomyService
     arguments: ["@entity_type.manager"]

@@ -7,7 +7,7 @@ use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Cache\CacheableJsonResponse;
 use Drupal\Core\Cache\CacheableMetadata;
-use Drupal\projects_page\Service\ProjectAttributesService;
+use Drupal\projects_page\Service\ProjectTaxonomyService;
 use Drupal\projects_page\Service\ProjectListService;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -15,22 +15,22 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 class ProjectsListController extends ControllerBase {
 
   /** @var \Drupal\project_list\Service\ProjectListService */
-  protected $projectListService;
+  protected $listService;
 
-  /** @var \Drupal\project_list\Service\ProjectAttributesService */
-  protected $projectAttributesService;
+  /** @var \Drupal\project_list\Service\ProjectTaxonomyService */
+  protected $taxonomyService;
 
   /** @var Drupal\Core\Extension\ModuleHandlerInterface */
   protected $moduleHandler;
 
-  public function __construct(ProjectListService $projectListService, ProjectAttributesService $projectAttributesService, ModuleHandlerInterface $moduleHandler) {
-    $this->projectListService = $projectListService;
-    $this->projectAttributesService = $projectAttributesService;
+  public function __construct(ProjectListService $listService, ProjectTaxonomyService $taxonomyService, ModuleHandlerInterface $moduleHandler) {
+    $this->listService = $listService;
+    $this->taxonomyService = $taxonomyService;
     $this->moduleHandler = $moduleHandler;
   }
 
   public static function create(ContainerInterface $container) {
-    return new static($container->get('project_list.list'), $container->get('project_list.attributes'), $container->get('module_handler'));
+    return new static($container->get('project_list.list'), $container->get('project_list.taxonomy'), $container->get('module_handler'));
   }
 
   public function page() {
@@ -52,7 +52,8 @@ class ProjectsListController extends ControllerBase {
     $page['#attached']['drupalSettings']['projects_page'] = [
       'baseUrl' => '/' . $this->moduleHandler->getModule('projects_page')->getPath() . '/app/',
       'endpoint' => $projectsAllRoute,
-      'attributes' => $this->projectAttributesService->getAttributes(),
+      'attributes' => $this->taxonomyService->getAttributes(),
+      'sdgs' => $this->taxonomyService->getSustainableDevelopmentGoals(),
     ];
 
     $page['#attached']['library'][] = 'projects_page/dist';
@@ -65,7 +66,7 @@ class ProjectsListController extends ControllerBase {
   }
 
   public function all() {
-    $data = $this->projectListService->getTeaserData();
+    $data = $this->listService->getTeaserData();
 
     $cacheMetaData = new CacheableMetadata();
     $cacheMetaData->setCacheMaxAge(3600);
@@ -77,7 +78,10 @@ class ProjectsListController extends ControllerBase {
   }
 
   public function attributes() {
-    $data = $this->projectAttributesService->getAttributes();
-    return new JsonResponse($data);
+    return new JsonResponse($this->taxonomyService->getAttributes());
+  }
+
+  public function sdgs() {
+    return new JsonResponse($this->taxonomyService->getSustainableDevelopmentGoals());
   }
 }

@@ -1,0 +1,31 @@
+uuid: 4ad2d981-b19f-4c38-843c-246958446044
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.sustainable_development_goals.field_pictogram
+    - taxonomy.vocabulary.sustainable_development_goals
+  module:
+    - text
+id: taxonomy_term.sustainable_development_goals.default
+targetEntityType: taxonomy_term
+bundle: sustainable_development_goals
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_pictogram:
+    type: entity_reference_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

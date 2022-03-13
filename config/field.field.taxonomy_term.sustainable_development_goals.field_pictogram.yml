@@ -1,0 +1,31 @@
+uuid: e5a5fe42-4b6c-4d69-a368-a59f7532852e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_pictogram
+    - media.type.image
+    - media.type.vector_image
+    - taxonomy.vocabulary.sustainable_development_goals
+id: taxonomy_term.sustainable_development_goals.field_pictogram
+field_name: field_pictogram
+entity_type: taxonomy_term
+bundle: sustainable_development_goals
+label: Pictogram
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+      vector_image: vector_image
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

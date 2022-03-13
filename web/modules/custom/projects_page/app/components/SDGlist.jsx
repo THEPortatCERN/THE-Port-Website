@@ -1,6 +1,5 @@
 import React, { useState, useCallback } from 'react'
-import { sdgData } from './SDGdata';
-import settings from "../helper-functions/settings";
+import settings from '../helper-functions/settings';
 import "../styles/SDGlist.css";
 
 const SDG = ({ setChosenSDGs, chosenSDGs }) => {
@@ -20,18 +19,18 @@ const SDG = ({ setChosenSDGs, chosenSDGs }) => {
     <div className='sdg-div'>
       <img className='sdg-logo' src={`${settings.baseUrl}images/sdg_logo.png`} alt='united nations sustainable development goals' />
       <div className='sdg-list'>
-        {sdgData.map(sdg => (
-          !chosenSDGs.includes(sdg.goal) ?
+        {settings.sdgs.map(sdg => (
+          !chosenSDGs.includes(sdg.name) ?
           (<img 
             src={sdg.imgSrc} 
-            alt={sdg.goal} 
+            alt={sdg.name} 
             onClick={onAddition} 
             key={sdg.id} 
             className='sdg-icon-grey'
           />) :
           (<img 
             src={sdg.imgSrc} 
-            alt={sdg.goal} 
+            alt={sdg.name} 
             onClick={onDelete} 
             key={sdg.id} 
             className='sdg-icon-colour'
