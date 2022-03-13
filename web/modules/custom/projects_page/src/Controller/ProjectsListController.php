@@ -3,6 +3,7 @@
 namespace Drupal\projects_page\Controller;
 
 use Drupal\Core\Url;
+use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Cache\CacheableJsonResponse;
 use Drupal\Core\Cache\CacheableMetadata;
@@ -19,13 +20,17 @@ class ProjectsListController extends ControllerBase {
   /** @var \Drupal\project_list\Service\ProjectAttributesService */
   protected $projectAttributesService;
 
-  public function __construct(ProjectListService $projectListService, ProjectAttributesService $projectAttributesService) {
+  /** @var Drupal\Core\Extension\ModuleHandlerInterface */
+  protected $moduleHandler;
+
+  public function __construct(ProjectListService $projectListService, ProjectAttributesService $projectAttributesService, ModuleHandlerInterface $moduleHandler) {
     $this->projectListService = $projectListService;
     $this->projectAttributesService = $projectAttributesService;
+    $this->moduleHandler = $moduleHandler;
   }
 
   public static function create(ContainerInterface $container) {
-    return new static($container->get('project_list.list'), $container->get('project_list.attributes'));
+    return new static($container->get('project_list.list'), $container->get('project_list.attributes'), $container->get('module_handler'));
   }
 
   public function page() {
@@ -44,8 +49,11 @@ class ProjectsListController extends ControllerBase {
       ],
     ];
     $page['#attached']['html_head'][] = [$preload_json, 'preload_json'];
-    $page['#attached']['drupalSettings']['projects_page']['endpoint'] = $projectsAllRoute;
-    $page['#attached']['drupalSettings']['projects_page']['attributes'] = $this->projectAttributesService->getAttributes();
+    $page['#attached']['drupalSettings']['projects_page'] = [
+      'baseUrl' => '/' . $this->moduleHandler->getModule('projects_page')->getPath() . '/app/',
+      'endpoint' => $projectsAllRoute,
+      'attributes' => $this->projectAttributesService->getAttributes(),
+    ];
 
     $page['#attached']['library'][] = 'projects_page/dist';
     $page['#attached']['library'][] = 'core/drupalSettings';

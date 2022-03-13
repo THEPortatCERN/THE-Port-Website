@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import { sdgData } from './SDGdata';
+import settings from "../helper-functions/settings";
 import "../styles/SDGlist.css";
 
 const SDG = ({ setChosenSDGs, chosenSDGs }) => {
@@ -17,7 +18,7 @@ const SDG = ({ setChosenSDGs, chosenSDGs }) => {
 
   return (
     <div className='sdg-div'>
-      <img className='sdg-logo' src="/modules/custom/projects_page/app/images/sdg_logo.png" alt='united nations sustainable development goals' />
+      <img className='sdg-logo' src={`${settings.baseUrl}images/sdg_logo.png`} alt='united nations sustainable development goals' />
       <div className='sdg-list'>
         {sdgData.map(sdg => (
           !chosenSDGs.includes(sdg.goal) ?
