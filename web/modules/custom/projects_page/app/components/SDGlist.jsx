@@ -29,7 +29,7 @@ const SDG = ({ setChosenSDGs, chosenSDGs }) => {
             className='sdg-icon-grey'
           />) :
           (<img 
-            src={sdg.imgSrc} 
+            src={sdg.image_src} 
             alt={sdg.name} 
             onClick={onDelete} 
             key={sdg.id} 
