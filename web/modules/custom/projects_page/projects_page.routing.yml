@@ -17,6 +17,12 @@ projects_page.projects.attributes:
     _controller: '\Drupal\projects_page\Controller\ProjectsListController::attributes'
   requirements:
     _access: "TRUE"
+projects_page.projects.events:
+  path: /projects/events.json
+  defaults:
+    _controller: '\Drupal\projects_page\Controller\ProjectsListController::events'
+  requirements:
+    _access: "TRUE"
 projects_page.projects.sdgs:
   path: /projects/sdgs.json
   defaults:

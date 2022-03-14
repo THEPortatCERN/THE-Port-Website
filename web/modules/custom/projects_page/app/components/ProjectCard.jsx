@@ -1,4 +1,5 @@
-import React from 'react'
+import React from "react";
+import settings from "../helper-functions/settings";
 
 const ProjectCard = ({
   image_src,
@@ -6,33 +7,25 @@ const ProjectCard = ({
   teams,
   title,
   summary,
-  page_url
+  page_url,
 }) => {
-
   return (
     <article className="card">
       <div className="card-image-container">
         {image_src ? (
-          <img className="img-fluid" loading="lazy" alt={image_alt} src={image_src} />
+          <img
+            className="img-fluid"
+            loading="lazy"
+            alt={image_alt}
+            src={image_src}
+          />
         ) : (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewbox="0 0 1600 900"
-            xml:space="preserve"
-          >
-            <linearGradient
-              id="a"
-              gradientunits="userSpaceOnUse"
-              x1="800"
-              y1="0"
-              x2="800"
-              y2="900"
-            >
-              <stop offset="0" stop-color="#fbfaf7" />
-              <stop offset="1" stop-color="#f3f2ef" />
-            </linearGradient>
-            <path fill="url(#a)" d="M0 0h1600v900H0z" />
-          </svg>
+          <img
+            className="img-fluid"
+            loading="lazy"
+            alt="Empty"
+            src={`${settings.baseUrl}images/empty.svg`}
+          />
         )}
       </div>
       <div className="card-body">
@@ -44,7 +37,7 @@ const ProjectCard = ({
         </a>
       </div>
     </article>
-  )
-}
+  );
+};
 
-export default ProjectCard
+export default ProjectCard;

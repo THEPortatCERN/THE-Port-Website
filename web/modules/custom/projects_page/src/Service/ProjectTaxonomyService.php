@@ -29,6 +29,9 @@ class ProjectTaxonomyService {
     $this->moduleHandler = $moduleHandler;
   }
 
+  /**
+   * Get all project attributes.
+   */
   public function getAttributes() {
     $terms = $this->entity_type_manager
       ->getStorage('taxonomy_term')
@@ -49,7 +52,33 @@ class ProjectTaxonomyService {
     return $data;
   }
 
-  public function getSustainableDevelopmentGoals() {
+  /**
+   * Get all events taxonomy terms.
+   */
+  public function getEvents() {
+    $terms = $this->entity_type_manager
+      ->getStorage('taxonomy_term')
+      ->loadByProperties([
+        'vid' => 'events',
+      ]);
+
+    $data = [];
+
+    /** @var \Drupal\taxonomy\TermInterface $term */
+    foreach ($terms as $term) {
+      $data[] = [
+        'id' => $term->id(),
+        'name' => $term->getName()
+      ];
+    }
+
+    return $data;
+  }
+
+  /**
+   * Get all "Sustainable Development Goals" (SDGs) taxonomy terms.
+   */
+  public function getSDGs() {
     $terms = $this->entity_type_manager
       ->getStorage('taxonomy_term')
       ->loadByProperties([

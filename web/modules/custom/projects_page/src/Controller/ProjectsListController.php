@@ -53,7 +53,8 @@ class ProjectsListController extends ControllerBase {
       'baseUrl' => '/' . $this->moduleHandler->getModule('projects_page')->getPath() . '/app/',
       'endpoint' => $projectsAllRoute,
       'attributes' => $this->taxonomyService->getAttributes(),
-      'sdgs' => $this->taxonomyService->getSustainableDevelopmentGoals(),
+      'events' => $this->taxonomyService->getEvents(),
+      'sdgs' => $this->taxonomyService->getSDGs(),
     ];
 
     $page['#attached']['library'][] = 'projects_page/dist';
@@ -81,7 +82,11 @@ class ProjectsListController extends ControllerBase {
     return new JsonResponse($this->taxonomyService->getAttributes());
   }
 
+  public function events() {
+    return new JsonResponse($this->taxonomyService->getEvents());
+  }
+
   public function sdgs() {
-    return new JsonResponse($this->taxonomyService->getSustainableDevelopmentGoals());
+    return new JsonResponse($this->taxonomyService->getSDGs());
   }
 }
