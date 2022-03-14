@@ -22,7 +22,7 @@ const SDG = ({ setChosenSDGs, chosenSDGs }) => {
         {settings.sdgs.map(sdg => (
           !chosenSDGs.includes(sdg.name) ?
           (<img 
-            src={sdg.imgSrc} 
+            src={sdg.image_src}
             alt={sdg.name} 
             onClick={onAddition} 
             key={sdg.id} 

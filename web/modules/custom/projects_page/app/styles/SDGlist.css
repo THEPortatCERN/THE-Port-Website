@@ -26,6 +26,7 @@
   -webkit-filter: grayscale(1); /* Old WebKit */
   -webkit-filter: grayscale(100%); /* New WebKit */
   filter: grayscale(100%); /* Current draft standard */
+  border: 2px solid transparent;
 }
 
 .sdg-icon-grey:hover,

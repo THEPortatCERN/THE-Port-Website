@@ -8,11 +8,11 @@ use Drupal\image\Entity\ImageStyle;
 
 class ProjectListService {
 
-  /** @var \Drupal\Core\File\FileUrlGeneratorInterface */
-  protected $file_url_generator;
-
   /** @var Drupal\Core\Entity\EntityTypeManagerInterface */
   protected $entity_type_manager;
+
+  /** @var \Drupal\Core\File\FileUrlGeneratorInterface */
+  protected $file_url_generator;
 
   public function __construct(EntityTypeManagerInterface $entity_type_manager, FileUrlGeneratorInterface $file_url_generator) {
     $this->entity_type_manager = $entity_type_manager;
@@ -26,7 +26,7 @@ class ProjectListService {
         'type' => 'project',
         'status' => 1,
       ]);
-      
+
     $image_style = ImageStyle::load('extra_small');
     $data = [];
     /** @var \Drupal\node\NodeInterface $node */
