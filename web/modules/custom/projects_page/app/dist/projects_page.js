@@ -21639,7 +21639,6 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         onClick: onDelete2
       }, tag.name);
     };
-    console.log("suggestions list", settings_default.attributes);
     return /* @__PURE__ */ import_react2.default.createElement(import_react_tag_autocomplete.default, {
       ref: reactTags,
       tags,
@@ -21662,7 +21661,6 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       const newSDG = e.target.alt;
       setChosenSDGs([...chosenSDGs, newSDG]);
     }, [setChosenSDGs, chosenSDGs]);
-    console.log("chosen sdgs", chosenSDGs);
     return /* @__PURE__ */ import_react3.default.createElement("div", {
       className: "sdg-div"
     }, /* @__PURE__ */ import_react3.default.createElement("img", {
@@ -21709,12 +21707,21 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       "data-bs-toggle": "offcanvas",
       "data-bs-target": "#offcanvasRight",
       "aria-controls": "offcanvasRight"
-    }, "Filter Projects"), /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, "Filters"), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "offcanvas offcanvas-end",
       tabindex: "-1",
       id: "offcanvasRight",
       "aria-labelledby": "offcanvasRightLabel"
     }, /* @__PURE__ */ import_react4.default.createElement("div", {
+      className: "offcanvas-header"
+    }, /* @__PURE__ */ import_react4.default.createElement("h5", {
+      id: "offcanvasRightLabel"
+    }, "Choose Filters"), /* @__PURE__ */ import_react4.default.createElement("button", {
+      type: "button",
+      className: "btn-close text-reset",
+      "data-bs-dismiss": "offcanvas",
+      "aria-label": "Close"
+    })), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "offcanvas-body filters-section"
     }, /* @__PURE__ */ import_react4.default.createElement(TagInput_default, {
       tags,

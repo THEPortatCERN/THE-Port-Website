@@ -208,6 +208,9 @@
   }
 }
 @media (min-width: 576px) {
+  .offcanvas .offcanvas-header {
+    display: none;
+  }
   .projects .view-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
