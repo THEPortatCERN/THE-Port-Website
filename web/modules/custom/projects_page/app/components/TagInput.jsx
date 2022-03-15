@@ -22,8 +22,6 @@ const TagInput = ({ setTags, tags }) => {
     )
   }
   
-  console.log('suggestions list', settings.attributes)
-
   return (
     <ReactTags
       ref={reactTags}
