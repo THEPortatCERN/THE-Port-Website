@@ -1,6 +1,5 @@
 import React, { useState, useCallback } from 'react'
 import settings from '../helper-functions/settings';
-import "../styles/SDGlist.css";
 
 const SDG = ({ setChosenSDGs, chosenSDGs }) => {
   
