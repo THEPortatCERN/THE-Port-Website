@@ -1,7 +1,9 @@
+@import "colors"; // reusable colors.
+
 .react-tags {
   position: relative;
   padding: 6px 0 0 6px;
-  border: 1px solid #d1d1d1;
+  border: 1px solid $mid-pale-grey;
   border-radius: 10px;
   background-color: white;
   z-index: 1;
@@ -15,7 +17,7 @@
 }
 
 .react-tags.is-focused {
-  border-color: #b1b1b1;
+  border-color: $mid-grey;
 }
 
 .react-tags__selected {
@@ -25,9 +27,9 @@
     box-sizing: border-box;
     margin: 0 6px 6px 0;
     padding: 6px 8px;
-    border: 1px solid #d1d1d1;
+    border: 1px solid $mid-pale-grey;
     border-radius: 2px;
-    background: #f1f1f1;
+    background: $pale-grey;
 
     /* match the font styles */
     font-size: inherit;
@@ -35,13 +37,12 @@
   }
   button:after {
     content: "\2715";
-    color: #aaa;
+    color: $mid-grey;
     margin-left: 8px;
   }
-
   button:hover,
   button:focus {
-    border-color: #b1b1b1;
+    border-color: $mid-dark-grey;
   }
 }
 
@@ -92,11 +93,11 @@
     padding: 0;
     list-style: none;
     background: white;
-    border: 1px solid #d1d1d1;
+    border: 1px solid $mid-pale-grey;
     border-radius: 2px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     li {
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid $pale-grey;
       padding: 6px 8px;
       mark {
         text-decoration: underline;
@@ -106,11 +107,11 @@
     }
     li:hover {
       cursor: pointer;
-      background: #eee;
+      background: $pale-grey;
     }
 
     li.is-active {
-      background: #b7cfe0;
+      background: $pale-blue;
     }
 
     li.is-disabled {

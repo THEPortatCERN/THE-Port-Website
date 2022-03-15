@@ -19,7 +19,7 @@
 }
 
 .grey {
-  filter: gray;
+  filter: $mid-dark-grey;
   -webkit-filter: grayscale(1); /* Old WebKit */
   -webkit-filter: grayscale(100%); /* New WebKit */
   filter: grayscale(100%); /* Current draft standard */

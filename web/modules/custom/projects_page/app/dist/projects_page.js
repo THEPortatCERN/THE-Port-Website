@@ -21600,7 +21600,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       className: "card-body"
     }, /* @__PURE__ */ import_react.default.createElement("p", {
       className: "card-text"
-    }, teams.pop(", ")), /* @__PURE__ */ import_react.default.createElement("h3", {
+    }, teams.join(", ")), /* @__PURE__ */ import_react.default.createElement("h3", {
       className: "card-title"
     }, title), /* @__PURE__ */ import_react.default.createElement("p", {
       className: "card-text"
@@ -21608,11 +21608,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       href: page_url,
       className: "card-link"
     }, "View project"), /* @__PURE__ */ import_react.default.createElement("ul", null, attributes.map((attribute, index) => /* @__PURE__ */ import_react.default.createElement("li", {
-      className: "badge bg-secondary",
+      className: "badge",
       key: index
-    }, attribute))), /* @__PURE__ */ import_react.default.createElement("ul", {
-      className: "card-sdgs"
-    }, sdgNums.map((num, index) => /* @__PURE__ */ import_react.default.createElement("li", {
+    }, attribute))), /* @__PURE__ */ import_react.default.createElement("ul", null, sdgNums.map((num, index) => /* @__PURE__ */ import_react.default.createElement("li", {
       key: index
     }, /* @__PURE__ */ import_react.default.createElement("img", {
       src: `https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-${num}-1024x1024.png`
