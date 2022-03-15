@@ -42,7 +42,7 @@ const ProjectCard = ({
         </a>
         <ul>
           {attributes.map((attribute, index) => (
-            <li key={index} className="badge bg-success">{attribute}</li>
+            <span className="badge bg-secondary" key={index} >{attribute} hello</span>
           ))}
         </ul>
         <ul className='sdg-nums'>
