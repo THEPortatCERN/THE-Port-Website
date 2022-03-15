@@ -4,14 +4,15 @@
   "description": "The Projects page allows the listing and filtering of projects",
   "main": "index.js",
   "scripts": {
-    "build": "esbuild App.jsx --bundle --minify --outfile=./dist/projects_page.js --target=chrome58,firefox57,safari11,edge18",
-    "dev": "esbuild App.jsx --bundle --outfile=./dist/projects_page.js --watch"
+    "build": "node ./build.js",
+    "dev": "node ./build.js --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "esbuild": "^0.14.23"
+    "esbuild": "^0.14.23",
+    "esbuild-sass-plugin": "^2.2.4"
   },
   "dependencies": {
     "prop-types": "^15.8.1",
