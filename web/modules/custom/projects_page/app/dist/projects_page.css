@@ -132,33 +132,37 @@
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.05);
   border: 2px solid white;
 }
-main .container {
-  padding: 0px;
-  margin: 0px;
-  max-width: 100%;
-}
 .projects-and-filters {
   display: flex;
+  flex-direction: column;
+}
+.projects-and-filters .btn {
+  margin: 0 0 1rem 0;
+  color: white;
+  align-self: flex-end;
+  background-color: #ff4200;
+}
+.projects-and-filters .btn:hover {
+  font-size: 1.1rem;
+  color: white;
+  transition: 0.5s;
 }
 .filters-section {
   display: flex;
   flex-direction: column;
-  background-color: #f1f1f1;
   padding: 1rem;
   gap: 1rem;
+  background-color: #f1f1f1;
 }
-.filters-section .sdg-div,
-.filters-section .react-tags {
-  min-width: 285px;
-  max-width: 285px;
+.filters-section .sdg-div {
+  max-width: 90%;
+  align-self: center;
 }
 .projects {
-  margin: 0 24px 24px 24px;
-}
-.projects .views-row {
-  display: flex;
+  margin-bottom: 24px;
 }
 .projects .card {
+  display: flex;
   width: 100%;
   min-height: 8rem;
   border-width: 2px;
@@ -181,6 +185,7 @@ main .container {
 }
 .projects .card ul {
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
   text-align: left;
   padding: 0;
@@ -198,7 +203,7 @@ main .container {
   border: 2px solid var(--bs-blue);
 }
 @media (max-width: 575.98px) {
-  .projects .views-row {
+  .projects .card {
     margin-bottom: 12px;
   }
 }

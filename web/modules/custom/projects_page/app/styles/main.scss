@@ -5,37 +5,48 @@
 @import "SDGlist";
 
 // --------- universal styles (for projects page) --------- //
-main .container {
-  padding: 0px;
-  margin: 0px;
-  max-width: 100%;
-}
+// main .container {
+//   padding: 0px;
+//   margin: 0px;
+//   max-width: 100%;
+// }
 
 .projects-and-filters {
   display: flex;
+  flex-direction: column;
 }
 
 // -------------- filtering section styles ---------------- //
+.projects-and-filters .btn {
+  margin: 0 0 1rem 0;
+  color: white;
+  align-self: flex-end;
+  background-color: $port-red;
+}
+.projects-and-filters .btn:hover {
+  font-size: 1.1rem;
+  color: white;
+  transition: 0.5s;
+}
+
 .filters-section {
   display: flex;
   flex-direction: column;
-  background-color: $pale-grey;
   padding: 1rem;
   gap: 1rem;
-  .sdg-div,
-  .react-tags {
-    min-width: 285px;
-    max-width: 285px;
+  background-color: $pale-grey;
+  .sdg-div {
+    max-width: 90%;
+    align-self: center;
   }
 }
 
 // ----------------- project list styles ------------------ //
 .projects {
-  margin: 0 24px 24px 24px;
-  .views-row {
-    display: flex;
-  }
+  // margin: 0 24px 24px 24px;
+  margin-bottom: 24px;
   .card {
+    display: flex;
     width: 100%;
     min-height: 8rem;
     border-width: 2px;
@@ -58,6 +69,7 @@ main .container {
     }
     ul {
       display: flex;
+      flex-wrap: wrap;
       list-style: none;
       text-align: left;
       padding: 0;
@@ -79,8 +91,10 @@ main .container {
 
 // ------------- project list media queries --------------- //
 @media (max-width: 575.98px) {
-  .projects .views-row {
-    margin-bottom: 12px;
+  .projects {
+    .card {
+      margin-bottom: 12px;
+    }
   }
 }
 
