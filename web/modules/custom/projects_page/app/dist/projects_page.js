@@ -21561,9 +21561,16 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     teams,
     title,
     summary,
-    page_url
+    page_url,
+    attributes,
+    sdgs
   }) => {
+<<<<<<< HEAD
     return /* @__PURE__ */ import_react.default.createElement("article", {
+=======
+    const sdgNums = sdgs.map((sdg) => sdg.slice(5, 7));
+    return /* @__PURE__ */ import_react2.default.createElement("article", {
+>>>>>>> aer-custom-projects-page-filter-02
       className: "card"
     }, /* @__PURE__ */ import_react.default.createElement("div", {
       className: "card-image-container"
@@ -21588,7 +21595,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }, summary), /* @__PURE__ */ import_react.default.createElement("a", {
       href: page_url,
       className: "card-link"
-    }, "View project")));
+    }, "View project"), /* @__PURE__ */ import_react2.default.createElement("ul", null, attributes.map((attribute) => /* @__PURE__ */ import_react2.default.createElement("li", null, attribute))), /* @__PURE__ */ import_react2.default.createElement("ul", {
+      className: "sdg-nums"
+    }, sdgNums.map((num) => /* @__PURE__ */ import_react2.default.createElement("li", null, /* @__PURE__ */ import_react2.default.createElement("img", {
+      src: `https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-${num}-1024x1024.png`
+    }))))));
   };
   var ProjectCard_default = ProjectCard;
 
@@ -21616,7 +21627,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       suggestions: settings_default.attributes,
       onDelete,
       onAddition,
-      tagComponent
+      tagComponent,
+      placeholderText: "Search by tag"
     });
   };
   var TagInput_default = TagInput;

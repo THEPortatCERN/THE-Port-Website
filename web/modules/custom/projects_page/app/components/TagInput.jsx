@@ -31,6 +31,7 @@ const TagInput = ({ setTags, tags }) => {
       onDelete={onDelete}
       onAddition={onAddition}
       tagComponent={tagComponent}
+      placeholderText='Search by tag'
     />
   )
 }
