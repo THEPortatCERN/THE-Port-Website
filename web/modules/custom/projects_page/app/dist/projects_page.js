@@ -21593,9 +21593,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }, summary), /* @__PURE__ */ import_react.default.createElement("a", {
       href: page_url,
       className: "card-link"
-    }, "View project"), /* @__PURE__ */ import_react.default.createElement("ul", null, attributes.map((attribute) => /* @__PURE__ */ import_react.default.createElement("li", null, attribute))), /* @__PURE__ */ import_react.default.createElement("ul", {
+    }, "View project"), /* @__PURE__ */ import_react.default.createElement("ul", null, attributes.map((attribute, index) => /* @__PURE__ */ import_react.default.createElement("li", {
+      key: index
+    }, attribute))), /* @__PURE__ */ import_react.default.createElement("ul", {
       className: "sdg-nums"
-    }, sdgNums.map((num) => /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("img", {
+    }, sdgNums.map((num, index) => /* @__PURE__ */ import_react.default.createElement("li", {
+      key: index
+    }, /* @__PURE__ */ import_react.default.createElement("img", {
       src: `https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-${num}-1024x1024.png`
     }))))));
   };
@@ -21619,6 +21623,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         onClick: onDelete2
       }, tag.name);
     };
+    console.log("suggestions list", settings_default.attributes);
     return /* @__PURE__ */ import_react2.default.createElement(import_react_tag_autocomplete.default, {
       ref: reactTags,
       tags,
