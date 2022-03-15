@@ -29,18 +29,20 @@ function App() {
 
   return (
    <div className="projects-and-filters">
-    <section className="filters-section">
-      <TagInput tags={tags} setTags={setTags} className='single-filter-system'/>
-      <SDGlist chosenSDGs={chosenSDGs} setChosenSDGs={setChosenSDGs} className='single-filter-system'/>
-    </section>
+    <button type="button" className="btn filter-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Filter Projects</button>
+    <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div className="offcanvas-body filters-section">
+        <TagInput tags={tags} setTags={setTags} className='single-filter-system'/>
+        <SDGlist chosenSDGs={chosenSDGs} setChosenSDGs={setChosenSDGs} className='single-filter-system'/>
+      </div>
+    </div>
+    {/* ---------------------------------------------------------------------------------------------------------------------------- */}
     <div className="projects">
       <div className="view-content">
         {
           filteredList.length > 0 ?
           filteredList.map((project, index) => (
-            <div className="views-row" key={index}>
-              <ProjectCard {...project}/>
-            </div>
+            <ProjectCard {...project} key={index}/>
           ))
           : (<h2>Currently, no projects match your search.</h2>)
         }

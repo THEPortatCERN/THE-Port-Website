@@ -1,7 +1,9 @@
 (() => {
   var __create = Object.create;
   var __defProp = Object.defineProperty;
+  var __defProps = Object.defineProperties;
   var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
   var __getOwnPropNames = Object.getOwnPropertyNames;
   var __getOwnPropSymbols = Object.getOwnPropertySymbols;
   var __getProtoOf = Object.getPrototypeOf;
@@ -19,6 +21,7 @@
       }
     return a;
   };
+  var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   var __markAsModule = (target) => __defProp(target, "__esModule", { value: true });
   var __commonJS = (cb, mod) => function __require() {
     return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
@@ -21644,7 +21647,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       onDelete,
       onAddition,
       tagComponent,
-      placeholderText: "Search by tag"
+      placeholderText: "Add tags"
     });
   };
   var TagInput_default = TagInput;
@@ -21700,8 +21703,19 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     const filteredList = tags.length > 0 || chosenSDGs.length > 0 ? projectList.filter((project) => doesProjectMatch(project, tags, chosenSDGs)) : projectList;
     return /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "projects-and-filters"
-    }, /* @__PURE__ */ import_react4.default.createElement("section", {
-      className: "filters-section"
+    }, /* @__PURE__ */ import_react4.default.createElement("button", {
+      type: "button",
+      className: "btn filter-button",
+      "data-bs-toggle": "offcanvas",
+      "data-bs-target": "#offcanvasRight",
+      "aria-controls": "offcanvasRight"
+    }, "Filter Projects"), /* @__PURE__ */ import_react4.default.createElement("div", {
+      className: "offcanvas offcanvas-end",
+      tabindex: "-1",
+      id: "offcanvasRight",
+      "aria-labelledby": "offcanvasRightLabel"
+    }, /* @__PURE__ */ import_react4.default.createElement("div", {
+      className: "offcanvas-body filters-section"
     }, /* @__PURE__ */ import_react4.default.createElement(TagInput_default, {
       tags,
       setTags,
@@ -21710,14 +21724,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       chosenSDGs,
       setChosenSDGs,
       className: "single-filter-system"
-    })), /* @__PURE__ */ import_react4.default.createElement("div", {
+    }))), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "projects"
     }, /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "view-content"
-    }, filteredList.length > 0 ? filteredList.map((project, index) => /* @__PURE__ */ import_react4.default.createElement("div", {
-      className: "views-row",
+    }, filteredList.length > 0 ? filteredList.map((project, index) => /* @__PURE__ */ import_react4.default.createElement(ProjectCard_default, __spreadProps(__spreadValues({}, project), {
       key: index
-    }, /* @__PURE__ */ import_react4.default.createElement(ProjectCard_default, __spreadValues({}, project)))) : /* @__PURE__ */ import_react4.default.createElement("h2", null, "Currently, no projects match your search."))));
+    }))) : /* @__PURE__ */ import_react4.default.createElement("h2", null, "Currently, no projects match your search."))));
   }
   import_react_dom.default.render(import_react4.default.createElement(App), document.getElementById("app"));
 })();
