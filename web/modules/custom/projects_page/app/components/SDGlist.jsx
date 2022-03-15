@@ -12,8 +12,6 @@ const SDG = ({ setChosenSDGs, chosenSDGs }) => {
     setChosenSDGs([...chosenSDGs, newSDG])
   },  [setChosenSDGs, chosenSDGs])
 
-  console.log('chosen sdgs', chosenSDGs)
-
   return (
     <div className='sdg-div'>
       <img className='sdg-logo' src={`${settings.baseUrl}images/sdg_logo.png`} alt='united nations sustainable development goals' />

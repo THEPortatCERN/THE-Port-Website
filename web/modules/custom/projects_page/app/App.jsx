@@ -29,8 +29,12 @@ function App() {
 
   return (
    <div className="projects-and-filters">
-    <button type="button" className="btn filter-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Filter Projects</button>
+    <button type="button" className="btn filter-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Filters</button>
     <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div className="offcanvas-header">
+        <h5 id="offcanvasRightLabel">Choose Filters</h5>
+        <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
       <div className="offcanvas-body filters-section">
         <TagInput tags={tags} setTags={setTags} className='single-filter-system'/>
         <SDGlist chosenSDGs={chosenSDGs} setChosenSDGs={setChosenSDGs} className='single-filter-system'/>
