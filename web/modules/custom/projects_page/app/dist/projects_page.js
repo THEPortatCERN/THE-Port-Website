@@ -21526,14 +21526,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var import_react4 = __toESM(require_react());
   var import_react_dom = __toESM(require_react_dom());
 
-  // helper-functions/settings.jsx
-  var settings_default = settings = window.drupalSettings.projects_page;
-
   // helper-functions/fetchAndFilterProjects.jsx
   var fetchProjects = async () => {
     const fail = (error) => console.error(error);
     try {
-      const request = new Request(settings_default.endpoint);
+      const request = new Request(settings.endpoint);
       const response = await fetch(request);
       if (!response.ok)
         throw new Error(response.statusText);
@@ -21555,6 +21552,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // components/ProjectCard.jsx
   var import_react = __toESM(require_react());
+
+  // helper-functions/settings.jsx
+  var settings_default = settings = window.drupalSettings.projects_page;
+
+  // components/ProjectCard.jsx
   var ProjectCard = ({
     image_src,
     image_alt,
@@ -21565,12 +21567,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     attributes,
     sdgs
   }) => {
-<<<<<<< HEAD
-    return /* @__PURE__ */ import_react.default.createElement("article", {
-=======
     const sdgNums = sdgs.map((sdg) => sdg.slice(5, 7));
-    return /* @__PURE__ */ import_react2.default.createElement("article", {
->>>>>>> aer-custom-projects-page-filter-02
+    return /* @__PURE__ */ import_react.default.createElement("article", {
       className: "card"
     }, /* @__PURE__ */ import_react.default.createElement("div", {
       className: "card-image-container"
@@ -21595,9 +21593,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }, summary), /* @__PURE__ */ import_react.default.createElement("a", {
       href: page_url,
       className: "card-link"
-    }, "View project"), /* @__PURE__ */ import_react2.default.createElement("ul", null, attributes.map((attribute) => /* @__PURE__ */ import_react2.default.createElement("li", null, attribute))), /* @__PURE__ */ import_react2.default.createElement("ul", {
+    }, "View project"), /* @__PURE__ */ import_react.default.createElement("ul", null, attributes.map((attribute) => /* @__PURE__ */ import_react.default.createElement("li", null, attribute))), /* @__PURE__ */ import_react.default.createElement("ul", {
       className: "sdg-nums"
-    }, sdgNums.map((num) => /* @__PURE__ */ import_react2.default.createElement("li", null, /* @__PURE__ */ import_react2.default.createElement("img", {
+    }, sdgNums.map((num) => /* @__PURE__ */ import_react.default.createElement("li", null, /* @__PURE__ */ import_react.default.createElement("img", {
       src: `https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-${num}-1024x1024.png`
     }))))));
   };

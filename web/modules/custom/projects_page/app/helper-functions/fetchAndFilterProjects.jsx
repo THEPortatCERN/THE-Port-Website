@@ -1,5 +1,3 @@
-import settings from "./settings";
-
 // ----------------- fetch all projects ----------------- //
 export const fetchProjects = async () => {
   const fail = (error) => console.error(error);

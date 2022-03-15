@@ -5,6 +5,8 @@
   border-radius: 10px;
   background-color: white;
   z-index: 1;
+  min-width: 285px;
+  max-width: 285px;
 
   /* shared font styles */
   font-size: 1em;

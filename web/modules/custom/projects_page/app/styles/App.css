@@ -99,7 +99,7 @@ main .container {
   text-indent: -999px;
 }
 
-/* -- style the attribute and sdg lists -- */
+/* attribute / sdg lists on the project cards */
 .card ul {
   list-style: none;
   text-align: left;
