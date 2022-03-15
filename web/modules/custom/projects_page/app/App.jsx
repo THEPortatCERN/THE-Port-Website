@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
-import "./styles/App.css";
+import "./styles/main.scss";
 
 import { fetchProjects, doesProjectMatch } from "./helper-functions/fetchAndFilterProjects";
 import ProjectCard from "./components/ProjectCard";
