@@ -30,8 +30,8 @@ function App() {
   return (
    <div className="projects-and-filters">
     <section className="filters-section">
-      <TagInput tags={tags} setTags={setTags} />
-      <SDGlist chosenSDGs={chosenSDGs} setChosenSDGs={setChosenSDGs}/>
+      <TagInput tags={tags} setTags={setTags} className='single-filter-system'/>
+      <SDGlist chosenSDGs={chosenSDGs} setChosenSDGs={setChosenSDGs} className='single-filter-system'/>
     </section>
     <div className="projects">
       <div className="view-content">

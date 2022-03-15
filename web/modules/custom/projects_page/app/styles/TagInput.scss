@@ -5,8 +5,6 @@
   border-radius: 10px;
   background-color: white;
   z-index: 1;
-  min-width: 285px;
-  max-width: 285px;
 
   /* shared font styles */
   font-size: 1em;
@@ -22,31 +20,29 @@
 
 .react-tags__selected {
   display: inline;
-}
+  button {
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0 6px 6px 0;
+    padding: 6px 8px;
+    border: 1px solid #d1d1d1;
+    border-radius: 2px;
+    background: #f1f1f1;
 
-.react-tags__selected button {
-  display: inline-block;
-  box-sizing: border-box;
-  margin: 0 6px 6px 0;
-  padding: 6px 8px;
-  border: 1px solid #d1d1d1;
-  border-radius: 2px;
-  background: #f1f1f1;
+    /* match the font styles */
+    font-size: inherit;
+    line-height: inherit;
+  }
+  button:after {
+    content: "\2715";
+    color: #aaa;
+    margin-left: 8px;
+  }
 
-  /* match the font styles */
-  font-size: inherit;
-  line-height: inherit;
-}
-
-.react-tags__selected button:after {
-  content: "\2715";
-  color: #aaa;
-  margin-left: 8px;
-}
-
-.react-tags__selected button:hover,
-.react-tags__selected button:focus {
-  border-color: #b1b1b1;
+  button:hover,
+  button:focus {
+    border-color: #b1b1b1;
+  }
 }
 
 .react-tags__search {
@@ -91,45 +87,41 @@
   top: 100%;
   left: 0;
   width: 100%;
+  ul {
+    margin: 4px -1px;
+    padding: 0;
+    list-style: none;
+    background: white;
+    border: 1px solid #d1d1d1;
+    border-radius: 2px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    li {
+      border-bottom: 1px solid #ddd;
+      padding: 6px 8px;
+      mark {
+        text-decoration: underline;
+        background: none;
+        font-weight: 600;
+      }
+    }
+    li:hover {
+      cursor: pointer;
+      background: #eee;
+    }
+
+    li.is-active {
+      background: #b7cfe0;
+    }
+
+    li.is-disabled {
+      opacity: 0.5;
+      cursor: auto;
+    }
+  }
 }
 
 @media screen and (min-width: 30em) {
   .react-tags__suggestions {
     width: 240px;
   }
-}
-
-.react-tags__suggestions ul {
-  margin: 4px -1px;
-  padding: 0;
-  list-style: none;
-  background: white;
-  border: 1px solid #d1d1d1;
-  border-radius: 2px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
-
-.react-tags__suggestions li {
-  border-bottom: 1px solid #ddd;
-  padding: 6px 8px;
-}
-
-.react-tags__suggestions li mark {
-  text-decoration: underline;
-  background: none;
-  font-weight: 600;
-}
-
-.react-tags__suggestions li:hover {
-  cursor: pointer;
-  background: #eee;
-}
-
-.react-tags__suggestions li.is-active {
-  background: #b7cfe0;
-}
-
-.react-tags__suggestions li.is-disabled {
-  opacity: 0.5;
-  cursor: auto;
 }

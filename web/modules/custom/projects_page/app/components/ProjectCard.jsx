@@ -42,10 +42,10 @@ const ProjectCard = ({
         </a>
         <ul>
           {attributes.map((attribute, index) => (
-            <span className="badge bg-secondary" key={index} >{attribute} hello</span>
+            <li className="badge bg-secondary" key={index} >{attribute}</li>
           ))}
         </ul>
-        <ul className='sdg-nums'>
+        <ul className='card-sdgs'>
           {sdgNums.map((num, index) => (
             <li key={index}>
               <img src={`https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-${num}-1024x1024.png`}/>
