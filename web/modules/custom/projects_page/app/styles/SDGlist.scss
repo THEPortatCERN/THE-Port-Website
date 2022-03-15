@@ -1,7 +1,5 @@
 .sdg-div {
   display: flex;
-  min-width: 285px;
-  max-width: 285px;
   flex-direction: column;
 }
 
@@ -16,21 +14,19 @@
   margin: 0.1rem auto;
 }
 
-.sdg-icon-grey,
-.sdg-icon-colour {
+.sdg-icon {
   width: 33%;
 }
 
-.sdg-icon-grey {
-  filter: gray;
+.grey {
+  filter: $mid-dark-grey;
   -webkit-filter: grayscale(1); /* Old WebKit */
   -webkit-filter: grayscale(100%); /* New WebKit */
   filter: grayscale(100%); /* Current draft standard */
-  border: 2px solid transparent;
 }
 
-.sdg-icon-grey:hover,
-.sdg-icon-colour:hover {
+.grey:hover,
+.colour:hover {
   filter: none;
   -webkit-filter: none; /* Old WebKit */
   -webkit-filter: none; /* New WebKit */

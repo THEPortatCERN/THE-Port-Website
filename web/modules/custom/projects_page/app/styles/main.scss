@@ -1,19 +1,100 @@
-@import "SDGlist";
+@import "colors"; // reusable colors.
+
+//components
 @import "Taginput";
+@import "SDGlist";
 
-main .container {
-  padding: 0px;
-  margin: 0px;
-  max-width: 100%;
+// --------- universal styles (for projects page) --------- //
+// main .container {
+//   padding: 0px;
+//   margin: 0px;
+//   max-width: 100%;
+// }
+
+.projects-and-filters {
+  display: flex;
+  flex-direction: column;
 }
 
+// -------------- filtering section styles ---------------- //
+.projects-and-filters .btn {
+  margin: 0 0 1rem 0;
+  color: white;
+  align-self: flex-end;
+  background-color: $port-red;
+}
+.projects-and-filters .btn:hover {
+  font-size: 1.1rem;
+  color: white;
+  transition: 0.5s;
+}
+
+.filters-section {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  background-color: $pale-grey;
+  .sdg-div {
+    max-width: 90%;
+    align-self: center;
+  }
+}
+
+// ----------------- project list styles ------------------ //
 .projects {
-  margin: 0 24px 24px 24px;
+  // margin: 0 24px 24px 24px;
+  margin-bottom: 24px;
+  .card {
+    display: flex;
+    width: 100%;
+    min-height: 8rem;
+    border-width: 2px;
+    border-color: $pale-grey;
+    .card-text {
+      margin-bottom: 10px;
+    }
+    /* Make the link cover the entire card */
+    .card-link {
+      cursor: pointer;
+      display: block;
+      position: absolute;
+      background-color: transparent;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      text-indent: -999px;
+    }
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+      text-align: left;
+      padding: 0;
+      margin: 10px 0;
+      gap: 5px;
+      .badge {
+        background: $port-red;
+      }
+      img {
+        width: 40px;
+      }
+    }
+  }
+  .card:hover {
+    box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.05);
+    border: 2px solid var(--bs-blue);
+  }
 }
 
+// ------------- project list media queries --------------- //
 @media (max-width: 575.98px) {
-  .projects .views-row {
-    margin-bottom: 12px;
+  .projects {
+    .card {
+      margin-bottom: 12px;
+    }
   }
 }
 
@@ -39,29 +120,14 @@ main .container {
   }
 }
 
-.projects .views-row {
-  display: flex;
-}
-
-.projects .card {
-  width: 100%;
-  min-height: 8rem;
-  border-width: 2px;
-  border-color: #f7f3f5;
-}
-
-.projects .card:hover {
-  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.05);
-  border: 2px solid var(--bs-blue);
-}
-
 @media (max-width: 575.98px) {
-  .projects .card {
-    flex-direction: row;
-  }
-
-  .projects .card-image-container {
-    display: none;
+  .projects {
+    .card {
+      flex-direction: row;
+    }
+    .card-image-container {
+      display: none;
+    }
   }
 }
 
@@ -71,67 +137,14 @@ main .container {
     display: block;
     position: relative;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    img,
+    svg {
+      object-fit: contain;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: calc(100% - 20px);
+      height: calc(100% - 20px);
+    }
   }
-
-  .projects .card-image-container img,
-  .projects .card-image-container svg {
-    object-fit: contain;
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: calc(100% - 20px);
-    height: calc(100% - 20px);
-  }
-}
-
-.projects .card-text {
-  margin-bottom: 0;
-}
-
-/* Make the link cover the entire card */
-.projects .card-link {
-  cursor: pointer;
-  display: block;
-  position: absolute;
-  background-color: transparent;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-  text-indent: -999px;
-}
-
-/* attribute / sdg lists on the project cards */
-.card ul {
-  list-style: none;
-  text-align: left;
-  padding: 0;
-  margin: 10px 0;
-}
-
-.sdg-nums {
-  display: flex;
-  gap: 10px;
-}
-.sdg-nums li {
-  width: 40px;
-  height: 40px;
-}
-.sdg-nums li img {
-  width: 40px;
-}
-/* --------------------------------------- */
-
-/* style the filtering section of the page */
-.projects-and-filters {
-  display: flex;
-}
-
-.filters-section {
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(240, 238, 238);
-  padding: 1rem;
-  gap: 1rem;
 }

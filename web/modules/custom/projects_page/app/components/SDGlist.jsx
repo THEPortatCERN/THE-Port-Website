@@ -25,14 +25,14 @@ const SDG = ({ setChosenSDGs, chosenSDGs }) => {
             alt={sdg.name} 
             onClick={onAddition} 
             key={sdg.id} 
-            className='sdg-icon-grey'
+            className='sdg-icon grey'
           />) :
           (<img 
             src={sdg.image_src} 
             alt={sdg.name} 
             onClick={onDelete} 
             key={sdg.id} 
-            className='sdg-icon-colour'
+            className='sdg-icon colour'
           />)
         ))}
       </div>
