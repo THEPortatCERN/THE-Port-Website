@@ -7,6 +7,7 @@
   border-radius: 10px;
   background-color: white;
   z-index: 1;
+  color: $mid-grey;
 
   /* shared font styles */
   font-size: 1em;
@@ -16,8 +17,14 @@
   cursor: text;
 }
 
+.react-tags:hover {
+  border-color: $dark-grey;
+  color: $dark-grey;
+}
+
 .react-tags.is-focused {
-  border-color: $mid-grey;
+  border-color: $dark-grey;
+  color: black;
 }
 
 .react-tags__selected {

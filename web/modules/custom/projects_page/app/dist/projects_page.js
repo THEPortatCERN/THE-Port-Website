@@ -21630,18 +21630,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       const search = e.target.value.toLowerCase();
       setTitleSearch(search);
     };
-    return /* @__PURE__ */ import_react2.default.createElement("form", {
-      onChange
-    }, /* @__PURE__ */ import_react2.default.createElement("input", {
+    return /* @__PURE__ */ import_react2.default.createElement("input", {
       type: "text",
       name: "project-title-search",
       placeholder: "Enter a Project Name",
       className: "title-search"
-    }), /* @__PURE__ */ import_react2.default.createElement("input", {
-      type: "submit",
-      value: "Search",
-      className: "title-search-submit"
-    }));
+    });
   };
   var TitleSearch_default = TitleSearch;
 

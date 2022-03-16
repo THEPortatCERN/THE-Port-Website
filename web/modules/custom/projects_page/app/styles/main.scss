@@ -29,25 +29,20 @@
   height: 47px;
   max-width: 214px;
   border: 1px solid $mid-pale-grey;
-  border-right: none;
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px;
+  color: $mid-grey;
+}
+
+.title-search:hover {
+  outline: none;
+  border: 1px solid $dark-grey;
   color: $dark-grey;
 }
 
 .title-search:focus {
   outline: none;
-  border: 1px solid $mid-grey;
+  border: 1px solid $dark-grey;
   color: black;
-}
-
-.title-search-submit {
-  // padding: 0 12px;
-  height: 47px;
-  width: 70px;
-  border: 1px solid $mid-grey;
-  border-radius: 0 10px 10px 0;
-  color: $dark-grey;
-  transition: 0.5s;
 }
 
 // filters button style
@@ -138,11 +133,8 @@
   .limit-search {
     flex-direction: column;
     gap: 1rem;
-    form {
-      width: 100%;
-      .title-search {
-        max-width: 100%;
-      }
+    .title-search {
+      max-width: 100%;
     }
   }
 

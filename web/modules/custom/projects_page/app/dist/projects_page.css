@@ -8,12 +8,18 @@
   border-radius: 10px;
   background-color: white;
   z-index: 1;
+  color: #b1b1b1;
   font-size: 1em;
   line-height: 1.2;
   cursor: text;
 }
+.react-tags:hover {
+  border-color: #7f7f7f;
+  color: #7f7f7f;
+}
 .react-tags.is-focused {
-  border-color: #b1b1b1;
+  border-color: #7f7f7f;
+  color: black;
 }
 .react-tags__selected {
   display: inline;
@@ -147,22 +153,18 @@
   height: 47px;
   max-width: 214px;
   border: 1px solid #d1d1d1;
-  border-right: none;
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px;
+  color: #b1b1b1;
+}
+.title-search:hover {
+  outline: none;
+  border: 1px solid #7f7f7f;
   color: #7f7f7f;
 }
 .title-search:focus {
   outline: none;
-  border: 1px solid #b1b1b1;
+  border: 1px solid #7f7f7f;
   color: black;
-}
-.title-search-submit {
-  height: 47px;
-  width: 70px;
-  border: 1px solid #b1b1b1;
-  border-radius: 0 10px 10px 0;
-  color: #7f7f7f;
-  transition: 0.5s;
 }
 .projects-and-filters .btn {
   color: white;
@@ -243,10 +245,7 @@
     flex-direction: column;
     gap: 1rem;
   }
-  .limit-search form {
-    width: 100%;
-  }
-  .limit-search form .title-search {
+  .limit-search .title-search {
     max-width: 100%;
   }
   .projects .card {
