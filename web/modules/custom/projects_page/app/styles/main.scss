@@ -17,16 +17,60 @@
 }
 
 // -------------- filtering section styles ---------------- //
-.projects-and-filters .btn {
+.limit-search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   margin: 0 0 1rem 0;
+}
+
+.title-search {
+  padding: 0 12px;
+  height: 47px;
+  max-width: 214px;
+  border: 1px solid $mid-pale-grey;
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+  color: $dark-grey;
+}
+
+.title-search:focus {
+  outline: none;
+  border: 1px solid $mid-grey;
+  color: black;
+}
+
+.title-search-submit {
+  // padding: 0 12px;
+  height: 47px;
+  width: 70px;
+  border: 1px solid $mid-grey;
+  border-radius: 0 10px 10px 0;
+  color: $dark-grey;
+  transition: 0.5s;
+}
+
+// filters button style
+.projects-and-filters .btn {
   color: white;
   align-self: flex-end;
+  padding: 0 12px;
+  height: 47px;
+  width: 70px;
+  margin: 0;
+  border-radius: 6px;
   background-color: $port-red;
 }
 .projects-and-filters .btn:hover {
-  font-size: 1.1rem;
+  // font-size: 1.1rem;
+  background-color: $dark-port-red;
   color: white;
-  transition: 0.5s;
+  transition: 0.2s;
+}
+// remove bootstraps box shadow on the filters button
+.projects-and-filters .btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .filters-section {
@@ -91,6 +135,17 @@
 
 // ------------- project list media queries --------------- //
 @media (max-width: 575.98px) {
+  .limit-search {
+    flex-direction: column;
+    gap: 1rem;
+    form {
+      width: 100%;
+      .title-search {
+        max-width: 100%;
+      }
+    }
+  }
+
   .projects {
     .card {
       margin-bottom: 12px;

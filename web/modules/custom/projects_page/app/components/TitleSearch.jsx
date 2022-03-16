@@ -8,12 +8,10 @@ const TitleSearch = ({ setTitleSearch }) => {
   }
 
   return (
-    <div>
-      <form onChange={onChange}>
-        <input type='text' name='project-title-search' placeholder="Enter a Project Name" />
-        <input type='submit' value='Search' />
-      </form> 
-    </div>
+    <form onChange={onChange}>
+      <input type='text' name='project-title-search' placeholder="Enter a Project Name" className='title-search'/>
+      <input type='submit' value='Search' className='title-search-submit'/>
+    </form> 
   )
 }
 

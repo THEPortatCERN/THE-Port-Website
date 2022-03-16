@@ -32,9 +32,11 @@ function App() {
 
   return (
    <div className="projects-and-filters">
-    <TitleSearch setTitleSearch={setTitleSearch}/>
+     <div className="limit-search">
+      <TitleSearch setTitleSearch={setTitleSearch}/>
+      <button type="button" className="btn filter-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Filters</button>
+     </div>
     {/* --------------------------------------------------- filter section ------------------------------------------------------- */}
-    <button type="button" className="btn filter-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Filters</button>
     <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
       <div className="offcanvas-header">
         <h5 id="offcanvasRightLabel">Choose Filters</h5>

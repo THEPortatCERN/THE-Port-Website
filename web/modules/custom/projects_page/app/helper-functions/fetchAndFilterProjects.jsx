@@ -30,7 +30,7 @@ const matchesSDG = (project, sdg) => project.sdgs.includes(sdg)
 //checks if one project matches multiple sdgs
 const matchesSDGs = (project, chosenSDGs) => chosenSDGs.reduce((previousSDG, currentSDG) => previousSDG && matchesSDG(project, currentSDG), true)
  
- //middle-man -- checks for all filters
+//middle-man -- checks for all filters
 export const doesProjectMatch = (project, tags, chosenSDGs, titleSearch) => {
    const projectMatchesTags = matchesTags(project, tags)
    const projectMatchesSDGs = matchesSDGs(project, chosenSDGs)

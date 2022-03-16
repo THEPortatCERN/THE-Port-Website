@@ -21630,16 +21630,18 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       const search = e.target.value.toLowerCase();
       setTitleSearch(search);
     };
-    return /* @__PURE__ */ import_react2.default.createElement("div", null, /* @__PURE__ */ import_react2.default.createElement("form", {
+    return /* @__PURE__ */ import_react2.default.createElement("form", {
       onChange
     }, /* @__PURE__ */ import_react2.default.createElement("input", {
       type: "text",
       name: "project-title-search",
-      placeholder: "Enter a Project Name"
+      placeholder: "Enter a Project Name",
+      className: "title-search"
     }), /* @__PURE__ */ import_react2.default.createElement("input", {
       type: "submit",
-      value: "Search"
-    })));
+      value: "Search",
+      className: "title-search-submit"
+    }));
   };
   var TitleSearch_default = TitleSearch;
 
@@ -21725,6 +21727,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     const filteredList = tags.length > 0 || chosenSDGs.length > 0 || titleSearch.length > 1 ? projectList.filter((project) => doesProjectMatch(project, tags, chosenSDGs, titleSearch)) : projectList;
     return /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "projects-and-filters"
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "limit-search"
     }, /* @__PURE__ */ import_react5.default.createElement(TitleSearch_default, {
       setTitleSearch
     }), /* @__PURE__ */ import_react5.default.createElement("button", {
@@ -21733,7 +21737,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       "data-bs-toggle": "offcanvas",
       "data-bs-target": "#offcanvasRight",
       "aria-controls": "offcanvasRight"
-    }, "Filters"), /* @__PURE__ */ import_react5.default.createElement("div", {
+    }, "Filters")), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "offcanvas offcanvas-end",
       tabindex: "-1",
       id: "offcanvasRight",
