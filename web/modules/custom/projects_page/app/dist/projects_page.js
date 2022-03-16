@@ -2457,11 +2457,11 @@
       if (true) {
         (function() {
           "use strict";
-          var React5 = require_react();
+          var React6 = require_react();
           var _assign = require_object_assign();
           var Scheduler = require_scheduler();
           var tracing = require_tracing();
-          var ReactSharedInternals = React5.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React6.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           function warn(format) {
             {
               for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -2493,7 +2493,7 @@
               Function.prototype.apply.call(console[level], console, argsWithFormat);
             }
           }
-          if (!React5) {
+          if (!React6) {
             {
               throw Error("ReactDOM was loaded before React. Make sure you load the React package before loading ReactDOM.");
             }
@@ -3709,7 +3709,7 @@
           var didWarnInvalidChild = false;
           function flattenChildren(children) {
             var content = "";
-            React5.Children.forEach(children, function(child) {
+            React6.Children.forEach(children, function(child) {
               if (child == null) {
                 return;
               }
@@ -3720,7 +3720,7 @@
           function validateProps(element, props) {
             {
               if (typeof props.children === "object" && props.children !== null) {
-                React5.Children.forEach(props.children, function(child) {
+                React6.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -10913,7 +10913,7 @@
           }
           var fakeInternalInstance = {};
           var isArray = Array.isArray;
-          var emptyRefsObject = new React5.Component().refs;
+          var emptyRefsObject = new React6.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -21125,12 +21125,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     "node_modules/react-tag-autocomplete/dist/ReactTags.umd.js"(exports, module) {
       (function(global, factory) {
         typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory(require_react(), require_prop_types()) : typeof define === "function" && define.amd ? define(["react", "prop-types"], factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, global.ReactTags = factory(global.React, global.PropTypes));
-      })(exports, function(React5, PropTypes) {
+      })(exports, function(React6, PropTypes) {
         "use strict";
         function _interopDefaultLegacy(e) {
           return e && typeof e === "object" && "default" in e ? e : { "default": e };
         }
-        var React__default = /* @__PURE__ */ _interopDefaultLegacy(React5);
+        var React__default = /* @__PURE__ */ _interopDefaultLegacy(React6);
         var PropTypes__default = /* @__PURE__ */ _interopDefaultLegacy(PropTypes);
         function Tag(props) {
           return React__default["default"].createElement("button", { type: "button", className: props.classNames.selectedTag, title: props.removeButtonText, onClick: props.onDelete }, React__default["default"].createElement("span", { className: props.classNames.selectedTagName }, props.tag.name));
@@ -21540,7 +21540,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   });
 
   // App.jsx
-  var import_react4 = __toESM(require_react());
+  var import_react5 = __toESM(require_react());
   var import_react_dom = __toESM(require_react_dom());
 
   // helper-functions/fetchAndFilterProjects.jsx
@@ -21557,14 +21557,16 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       fail(error);
     }
   };
+  var matchesTitleSearch = (project, titleSearch) => project.title.toLowerCase().includes(titleSearch);
   var matchesTag = (project, tag) => project.attributes.includes(tag.name);
   var matchesTags = (project, tags) => tags.reduce((previousTag, currentTag) => previousTag && matchesTag(project, currentTag), true);
   var matchesSDG = (project, sdg) => project.sdgs.includes(sdg);
   var matchesSDGs = (project, chosenSDGs) => chosenSDGs.reduce((previousSDG, currentSDG) => previousSDG && matchesSDG(project, currentSDG), true);
-  var doesProjectMatch = (project, tags, chosenSDGs) => {
+  var doesProjectMatch = (project, tags, chosenSDGs, titleSearch) => {
     const projectMatchesTags = matchesTags(project, tags);
     const projectMatchesSDGs = matchesSDGs(project, chosenSDGs);
-    return projectMatchesTags && projectMatchesSDGs;
+    const projectMatchesTitleSearch = matchesTitleSearch(project, titleSearch);
+    return projectMatchesTags && projectMatchesSDGs && projectMatchesTitleSearch;
   };
 
   // components/ProjectCard.jsx
@@ -21621,25 +21623,43 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   };
   var ProjectCard_default = ProjectCard;
 
-  // components/TagInput.jsx
+  // components/TitleSearch.jsx
   var import_react2 = __toESM(require_react());
+  var TitleSearch = ({ setTitleSearch }) => {
+    const onChange = (e) => {
+      const search = e.target.value.toLowerCase();
+      setTitleSearch(search);
+    };
+    return /* @__PURE__ */ import_react2.default.createElement("input", {
+      type: "text",
+      name: "project-title-search",
+      placeholder: "Enter a Project Name",
+      className: "title-search",
+      onChange,
+      autoComplete: "off"
+    });
+  };
+  var TitleSearch_default = TitleSearch;
+
+  // components/TagInput.jsx
+  var import_react3 = __toESM(require_react());
   var import_react_tag_autocomplete = __toESM(require_ReactTags_umd());
   var TagInput = ({ setTags, tags }) => {
-    const reactTags = (0, import_react2.useRef)();
-    const onDelete = (0, import_react2.useCallback)((tagIndex) => {
+    const reactTags = (0, import_react3.useRef)();
+    const onDelete = (0, import_react3.useCallback)((tagIndex) => {
       setTags(tags.filter((_, i) => i !== tagIndex));
     }, [setTags, tags]);
-    const onAddition = (0, import_react2.useCallback)((newTag) => {
+    const onAddition = (0, import_react3.useCallback)((newTag) => {
       setTags([...tags, newTag]);
     }, [setTags, tags]);
     const tagComponent = ({ tag, removeButtonText, onDelete: onDelete2 }) => {
-      return /* @__PURE__ */ import_react2.default.createElement("button", {
+      return /* @__PURE__ */ import_react3.default.createElement("button", {
         type: "button",
         title: removeButtonText,
         onClick: onDelete2
       }, tag.name);
     };
-    return /* @__PURE__ */ import_react2.default.createElement(import_react_tag_autocomplete.default, {
+    return /* @__PURE__ */ import_react3.default.createElement(import_react_tag_autocomplete.default, {
       ref: reactTags,
       tags,
       suggestions: settings_default.attributes,
@@ -21652,30 +21672,30 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var TagInput_default = TagInput;
 
   // components/SDGlist.jsx
-  var import_react3 = __toESM(require_react());
+  var import_react4 = __toESM(require_react());
   var SDG = ({ setChosenSDGs, chosenSDGs }) => {
-    const onDelete = (0, import_react3.useCallback)((e) => {
+    const onDelete = (0, import_react4.useCallback)((e) => {
       setChosenSDGs(chosenSDGs.filter((sdg) => sdg !== e.target.alt));
     }, [setChosenSDGs, chosenSDGs]);
-    const onAddition = (0, import_react3.useCallback)((e) => {
+    const onAddition = (0, import_react4.useCallback)((e) => {
       const newSDG = e.target.alt;
       setChosenSDGs([...chosenSDGs, newSDG]);
     }, [setChosenSDGs, chosenSDGs]);
-    return /* @__PURE__ */ import_react3.default.createElement("div", {
+    return /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "sdg-div"
-    }, /* @__PURE__ */ import_react3.default.createElement("img", {
+    }, /* @__PURE__ */ import_react4.default.createElement("img", {
       className: "sdg-logo",
       src: `${settings_default.baseUrl}images/sdg_logo.png`,
       alt: "united nations sustainable development goals"
-    }), /* @__PURE__ */ import_react3.default.createElement("div", {
+    }), /* @__PURE__ */ import_react4.default.createElement("div", {
       className: "sdg-list"
-    }, settings_default.sdgs.map((sdg) => !chosenSDGs.includes(sdg.name) ? /* @__PURE__ */ import_react3.default.createElement("img", {
+    }, settings_default.sdgs.map((sdg) => !chosenSDGs.includes(sdg.name) ? /* @__PURE__ */ import_react4.default.createElement("img", {
       src: sdg.image_src,
       alt: sdg.name,
       onClick: onAddition,
       key: sdg.id,
       className: "sdg-icon grey"
-    }) : /* @__PURE__ */ import_react3.default.createElement("img", {
+    }) : /* @__PURE__ */ import_react4.default.createElement("img", {
       src: sdg.image_src,
       alt: sdg.name,
       onClick: onDelete,
@@ -21687,59 +21707,65 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // App.jsx
   function App() {
-    const [isLoading, setIsLoading] = (0, import_react4.useState)(true);
-    const [projectList, setProjectList] = (0, import_react4.useState)([]);
-    const [tags, setTags] = (0, import_react4.useState)([]);
-    const [chosenSDGs, setChosenSDGs] = (0, import_react4.useState)([]);
-    (0, import_react4.useEffect)(async () => {
+    const [isLoading, setIsLoading] = (0, import_react5.useState)(true);
+    const [projectList, setProjectList] = (0, import_react5.useState)([]);
+    const [tags, setTags] = (0, import_react5.useState)([]);
+    const [chosenSDGs, setChosenSDGs] = (0, import_react5.useState)([]);
+    const [titleSearch, setTitleSearch] = (0, import_react5.useState)("");
+    (0, import_react5.useEffect)(async () => {
       const projects = await fetchProjects();
       setProjectList(projects);
       setIsLoading(false);
     }, []);
     if (isLoading)
-      return /* @__PURE__ */ import_react4.default.createElement("p", null, "Loading\u2026");
-    const filteredList = tags.length > 0 || chosenSDGs.length > 0 ? projectList.filter((project) => doesProjectMatch(project, tags, chosenSDGs)) : projectList;
-    return /* @__PURE__ */ import_react4.default.createElement("div", {
+      return /* @__PURE__ */ import_react5.default.createElement("p", null, "Loading\u2026");
+    console.log("title search", titleSearch);
+    const filteredList = tags.length > 0 || chosenSDGs.length > 0 || titleSearch.length > 1 ? projectList.filter((project) => doesProjectMatch(project, tags, chosenSDGs, titleSearch)) : projectList;
+    return /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "projects-and-filters"
-    }, /* @__PURE__ */ import_react4.default.createElement("button", {
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "limit-search"
+    }, /* @__PURE__ */ import_react5.default.createElement(TitleSearch_default, {
+      setTitleSearch
+    }), /* @__PURE__ */ import_react5.default.createElement("button", {
       type: "button",
       className: "btn filter-button",
       "data-bs-toggle": "offcanvas",
       "data-bs-target": "#offcanvasRight",
       "aria-controls": "offcanvasRight"
-    }, "Filters"), /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, "Filters")), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "offcanvas offcanvas-end",
       tabindex: "-1",
       id: "offcanvasRight",
       "aria-labelledby": "offcanvasRightLabel"
-    }, /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "offcanvas-header"
-    }, /* @__PURE__ */ import_react4.default.createElement("h5", {
+    }, /* @__PURE__ */ import_react5.default.createElement("h5", {
       id: "offcanvasRightLabel"
-    }, "Choose Filters"), /* @__PURE__ */ import_react4.default.createElement("button", {
+    }, "Choose Filters"), /* @__PURE__ */ import_react5.default.createElement("button", {
       type: "button",
       className: "btn-close text-reset",
       "data-bs-dismiss": "offcanvas",
       "aria-label": "Close"
-    })), /* @__PURE__ */ import_react4.default.createElement("div", {
+    })), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "offcanvas-body filters-section"
-    }, /* @__PURE__ */ import_react4.default.createElement(TagInput_default, {
+    }, /* @__PURE__ */ import_react5.default.createElement(TagInput_default, {
       tags,
       setTags,
       className: "single-filter-system"
-    }), /* @__PURE__ */ import_react4.default.createElement(SDGlist_default, {
+    }), /* @__PURE__ */ import_react5.default.createElement(SDGlist_default, {
       chosenSDGs,
       setChosenSDGs,
       className: "single-filter-system"
-    }))), /* @__PURE__ */ import_react4.default.createElement("div", {
+    }))), /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "projects"
-    }, /* @__PURE__ */ import_react4.default.createElement("div", {
+    }, /* @__PURE__ */ import_react5.default.createElement("div", {
       className: "view-content"
-    }, filteredList.length > 0 ? filteredList.map((project, index) => /* @__PURE__ */ import_react4.default.createElement(ProjectCard_default, __spreadProps(__spreadValues({}, project), {
+    }, filteredList.length > 0 ? filteredList.map((project, index) => /* @__PURE__ */ import_react5.default.createElement(ProjectCard_default, __spreadProps(__spreadValues({}, project), {
       key: index
-    }))) : /* @__PURE__ */ import_react4.default.createElement("h2", null, "Currently, no projects match your search."))));
+    }))) : /* @__PURE__ */ import_react5.default.createElement("h2", null, "Currently, no projects match your search."))));
   }
-  import_react_dom.default.render(import_react4.default.createElement(App), document.getElementById("app"));
+  import_react_dom.default.render(import_react5.default.createElement(App), document.getElementById("app"));
 })();
 /*
 object-assign

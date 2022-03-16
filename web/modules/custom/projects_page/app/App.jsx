@@ -4,6 +4,7 @@ import "./styles/main.scss";
 
 import { fetchProjects, doesProjectMatch } from "./helper-functions/fetchAndFilterProjects";
 import ProjectCard from "./components/ProjectCard";
+import TitleSearch from "./components/TitleSearch";
 import TagInput from './components/TagInput';
 import SDGlist from './components/SDGlist';
 
@@ -12,6 +13,7 @@ function App() {
   const [projectList, setProjectList] = useState([]); 
   const [tags, setTags] = useState([])
   const [chosenSDGs, setChosenSDGs] = useState([])
+  const [titleSearch, setTitleSearch] = useState('')
 
   useEffect(async () => {
     const projects = await fetchProjects()
@@ -21,15 +23,20 @@ function App() {
   if (isLoading) return <p>Loading…</p>;
 
   //------------------------ filter projects -------------------------//
+  console.log('title search', titleSearch)
   // creates new array of projects when tags are added to tag input
-  const filteredList = tags.length > 0 || chosenSDGs.length > 0
-    ? projectList.filter(project => doesProjectMatch(project, tags, chosenSDGs)) 
+  const filteredList = tags.length > 0 || chosenSDGs.length > 0 || titleSearch.length > 1
+    ? projectList.filter(project => doesProjectMatch(project, tags, chosenSDGs, titleSearch)) 
     : projectList  
   //------------------------------------------------------------------//
 
   return (
    <div className="projects-and-filters">
-    <button type="button" className="btn filter-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Filters</button>
+     <div className="limit-search">
+      <TitleSearch setTitleSearch={setTitleSearch}/>
+      <button type="button" className="btn filter-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Filters</button>
+     </div>
+    {/* --------------------------------------------------- filter section ------------------------------------------------------- */}
     <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
       <div className="offcanvas-header">
         <h5 id="offcanvasRightLabel">Choose Filters</h5>
@@ -40,7 +47,7 @@ function App() {
         <SDGlist chosenSDGs={chosenSDGs} setChosenSDGs={setChosenSDGs} className='single-filter-system'/>
       </div>
     </div>
-    {/* ---------------------------------------------------------------------------------------------------------------------------- */}
+    {/* --------------------------------------------------- project list ----------------------------------------------------------- */}
     <div className="projects">
       <div className="view-content">
         {
