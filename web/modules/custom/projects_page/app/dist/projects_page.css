@@ -8,7 +8,7 @@
   border-radius: 10px;
   background-color: white;
   z-index: 1;
-  color: #b1b1b1;
+  color: #7f7f7f;
   font-size: 1em;
   line-height: 1.2;
   cursor: text;
@@ -154,7 +154,7 @@
   max-width: 214px;
   border: 1px solid #d1d1d1;
   border-radius: 10px;
-  color: #b1b1b1;
+  color: #7f7f7f;
 }
 .title-search:hover {
   outline: none;

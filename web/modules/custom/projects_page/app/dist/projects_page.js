@@ -21634,7 +21634,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       type: "text",
       name: "project-title-search",
       placeholder: "Enter a Project Name",
-      className: "title-search"
+      className: "title-search",
+      onChange,
+      autoComplete: "off"
     });
   };
   var TitleSearch_default = TitleSearch;

@@ -8,7 +8,14 @@ const TitleSearch = ({ setTitleSearch }) => {
   }
 
   return (
-    <input type='text' name='project-title-search' placeholder="Enter a Project Name" className='title-search'/>
+    <input 
+    type='text' 
+    name='project-title-search' 
+    placeholder="Enter a Project Name" 
+    className='title-search'
+    onChange={onChange}
+    autoComplete='off'
+    />
   )
 }
 
