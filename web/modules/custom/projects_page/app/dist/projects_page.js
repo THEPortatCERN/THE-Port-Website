@@ -21565,11 +21565,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var matchesTags = (project, tags) => tags.reduce((previousTag, currentTag) => previousTag && matchesTag(project, currentTag), true);
   var matchesSDG = (project, sdg) => project.sdgs.includes(sdg);
   var matchesSDGs = (project, chosenSDGs) => chosenSDGs.reduce((previousSDG, currentSDG) => previousSDG && matchesSDG(project, currentSDG), true);
-  var doesProjectMatch = (project, tags, chosenSDGs, titleSearch, teamSearch) => {
+  var doesProjectMatch = (project, tags, chosenSDGs, teamSearch, titleSearch) => {
     const projectMatchesTags = matchesTags(project, tags);
     const projectMatchesSDGs = matchesSDGs(project, chosenSDGs);
-    const projectMatchesTitleSearch = matchesTitleSearch(project, titleSearch);
     const projectMatchesTeamSearch = matchesTeamSearch(project, teamSearch);
+    const projectMatchesTitleSearch = matchesTitleSearch(project, titleSearch);
     return projectMatchesTags && projectMatchesSDGs && projectMatchesTitleSearch && projectMatchesTeamSearch;
   };
 
@@ -21638,7 +21638,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       type: "text",
       name: "project-title-search",
       placeholder: "Enter a Project Name",
-      className: "title-search",
+      className: "project-search-input",
       onChange,
       autoComplete: "off"
     });
@@ -21652,14 +21652,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       const search = e.target.value.toLowerCase();
       setTeamSearch(search);
     };
-    return /* @__PURE__ */ import_react3.default.createElement("div", null, /* @__PURE__ */ import_react3.default.createElement("input", {
+    return /* @__PURE__ */ import_react3.default.createElement("input", {
       type: "text",
-      name: "team-title-search",
+      name: "team-search",
       placeholder: "Enter a Pier Number",
-      className: "title-search",
+      className: "project-search-input",
       onChange,
       autoComplete: "off"
-    }));
+    });
   };
   var TeamSearch_default = TeamSearch;
 
@@ -21735,7 +21735,6 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     const [chosenSDGs, setChosenSDGs] = (0, import_react6.useState)([]);
     const [titleSearch, setTitleSearch] = (0, import_react6.useState)("");
     const [teamSearch, setTeamSearch] = (0, import_react6.useState)("");
-    console.log(projectList);
     (0, import_react6.useEffect)(async () => {
       const projects = await fetchProjects();
       setProjectList(projects);
@@ -21743,15 +21742,15 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }, []);
     if (isLoading)
       return /* @__PURE__ */ import_react6.default.createElement("p", null, "Loading\u2026");
-    const filteredList = tags.length > 0 || chosenSDGs.length > 0 || titleSearch.length > 1 || teamSearch.length > 1 ? projectList.filter((project) => doesProjectMatch(project, tags, chosenSDGs, titleSearch, teamSearch)) : projectList;
+    const filteredList = tags.length > 0 || chosenSDGs.length > 0 || titleSearch.length > 1 || teamSearch.length > 1 ? projectList.filter((project) => doesProjectMatch(project, tags, chosenSDGs, teamSearch, titleSearch)) : projectList;
     return /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "projects-and-filters"
     }, /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "limit-search"
-    }, /* @__PURE__ */ import_react6.default.createElement(TitleSearch_default, {
-      setTitleSearch
-    }), /* @__PURE__ */ import_react6.default.createElement(TeamSearch_default, {
+    }, /* @__PURE__ */ import_react6.default.createElement(TeamSearch_default, {
       setTeamSearch
+    }), /* @__PURE__ */ import_react6.default.createElement(TitleSearch_default, {
+      setTitleSearch
     }), /* @__PURE__ */ import_react6.default.createElement("button", {
       type: "button",
       className: "btn filter-button",

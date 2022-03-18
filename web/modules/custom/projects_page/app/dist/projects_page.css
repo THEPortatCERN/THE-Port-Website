@@ -145,10 +145,11 @@
 .limit-search {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 16px;
   margin: 0 0 1rem 0;
 }
-.title-search {
+.project-search-input {
   padding: 0 12px;
   height: 47px;
   max-width: 214px;
@@ -156,12 +157,12 @@
   border-radius: 10px;
   color: #7f7f7f;
 }
-.title-search:hover {
+.project-search-input:hover {
   outline: none;
   border: 1px solid #7f7f7f;
   color: #7f7f7f;
 }
-.title-search:focus {
+.project-search-input:focus {
   outline: none;
   border: 1px solid #7f7f7f;
   color: black;

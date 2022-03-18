@@ -8,16 +8,14 @@ const TeamSearch = ({ setTeamSearch }) => {
   }
 
   return (
-    <div>
-      <input 
-      type='text' 
-      name='team-title-search' 
-      placeholder="Enter a Pier Number" 
-      className='title-search'
-      onChange={onChange}
-      autoComplete='off'
-      />
-    </div>
+    <input 
+    type='text' 
+    name='team-search' 
+    placeholder="Enter a Pier Number" 
+    className='project-search-input'
+    onChange={onChange}
+    autoComplete='off'
+    />
   )
 }
 
