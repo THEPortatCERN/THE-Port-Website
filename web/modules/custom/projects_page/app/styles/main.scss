@@ -20,11 +20,12 @@
 .limit-search {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 16px;
   margin: 0 0 1rem 0;
 }
 
-.title-search {
+.project-search-input {
   padding: 0 12px;
   height: 47px;
   max-width: 214px;
@@ -33,13 +34,13 @@
   color: $dark-grey;
 }
 
-.title-search:hover {
+.project-search-input:hover {
   outline: none;
   border: 1px solid $dark-grey;
   color: $dark-grey;
 }
 
-.title-search:focus {
+.project-search-input:focus {
   outline: none;
   border: 1px solid $dark-grey;
   color: black;

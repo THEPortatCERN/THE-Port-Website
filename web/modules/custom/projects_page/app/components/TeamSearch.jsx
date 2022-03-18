@@ -1,17 +1,17 @@
 import React from 'react'
 
-const TitleSearch = ({ setTitleSearch }) => {
+const TeamSearch = ({ setTeamSearch }) => {
 
   const onChange = (e) => {
     const search = e.target.value.toLowerCase()
-    setTitleSearch(search)
+    setTeamSearch(search)
   }
 
   return (
     <input 
     type='text' 
-    name='project-title-search' 
-    placeholder="Enter a Project Name" 
+    name='team-search' 
+    placeholder="Enter a Pier Number" 
     className='project-search-input'
     onChange={onChange}
     autoComplete='off'
@@ -19,4 +19,4 @@ const TitleSearch = ({ setTitleSearch }) => {
   )
 }
 
-export default TitleSearch
+export default TeamSearch

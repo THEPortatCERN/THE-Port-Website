@@ -5,6 +5,7 @@ import "./styles/main.scss";
 import { fetchProjects, doesProjectMatch } from "./helper-functions/fetchAndFilterProjects";
 import ProjectCard from "./components/ProjectCard";
 import TitleSearch from "./components/TitleSearch";
+import TeamSearch from "./components/TeamSearch";
 import TagInput from './components/TagInput';
 import SDGlist from './components/SDGlist';
 
@@ -14,6 +15,7 @@ function App() {
   const [tags, setTags] = useState([])
   const [chosenSDGs, setChosenSDGs] = useState([])
   const [titleSearch, setTitleSearch] = useState('')
+  const [teamSearch, setTeamSearch] = useState('')
 
   useEffect(async () => {
     const projects = await fetchProjects()
@@ -23,16 +25,16 @@ function App() {
   if (isLoading) return <p>Loading…</p>;
 
   //------------------------ filter projects -------------------------//
-  console.log('title search', titleSearch)
   // creates new array of projects when tags are added to tag input
-  const filteredList = tags.length > 0 || chosenSDGs.length > 0 || titleSearch.length > 1
-    ? projectList.filter(project => doesProjectMatch(project, tags, chosenSDGs, titleSearch)) 
+  const filteredList = tags.length > 0 || chosenSDGs.length > 0 || titleSearch.length > 1 || teamSearch.length > 1
+    ? projectList.filter(project => doesProjectMatch(project, tags, chosenSDGs, teamSearch, titleSearch)) 
     : projectList  
   //------------------------------------------------------------------//
 
   return (
    <div className="projects-and-filters">
      <div className="limit-search">
+      <TeamSearch setTeamSearch={setTeamSearch} />
       <TitleSearch setTitleSearch={setTitleSearch}/>
       <button type="button" className="btn filter-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Filters</button>
      </div>
