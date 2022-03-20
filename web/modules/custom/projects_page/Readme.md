@@ -30,3 +30,19 @@ Running `npm run build` will start a watch process so that the bundles get gener
 
 6. data-dump.
    Running `npm run dev` inside the app folder will start a watch process so that the bundles get generate whenever a file is saved.
+
+## Using Jest with ES6
+
+https://jestjs.io/docs/ecmascript-modules
+https://jestjs.io/docs/configuration#extensionstotreatasesm-arraystring
+
+In package.json
+
+```
+"jest": {
+  "extensionsToTreatAsEsm": [".jsx"],
+  "testEnvironment": "jest-environment-node",
+  "transform": {}
+},
+"type": "module"
+```

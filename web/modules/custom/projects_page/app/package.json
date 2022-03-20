@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node ./build.js",
     "dev": "node ./build.js --watch",
-    "test": "jest"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "keywords": [],
   "author": "",
@@ -17,10 +17,19 @@
     "jest": "^27.5.1"
   },
   "dependencies": {
+    "@types/jest": "^27.4.1",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-tag-autocomplete": "^6.3.0",
     "sass": "^1.49.9"
-  }
+  },
+  "jest": {
+    "extensionsToTreatAsEsm": [
+      ".jsx"
+    ],
+    "testEnvironment": "jest-environment-node",
+    "transform": {}
+  },
+  "type": "module"
 }
