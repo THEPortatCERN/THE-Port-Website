@@ -39,7 +39,7 @@ function App() {
       <TeamSearch setTeamSearch={setTeamSearch} />
       <TitleSearch setTitleSearch={setTitleSearch}/>
       <EventSearch setEventSearch={setEventSearch}/>
-      <button type="button" className="btn filter-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Filters</button>
+      <button type="button" className="btn filter-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">More filters</button>
      </div>
     {/* --------------------------------------------------- filter section ------------------------------------------------------- */}
     <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">

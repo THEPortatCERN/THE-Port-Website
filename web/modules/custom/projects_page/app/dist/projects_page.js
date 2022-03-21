@@ -21789,7 +21789,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       "data-bs-toggle": "offcanvas",
       "data-bs-target": "#offcanvasRight",
       "aria-controls": "offcanvasRight"
-    }, "Filters")), /* @__PURE__ */ import_react7.default.createElement("div", {
+    }, "More filters")), /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "offcanvas offcanvas-end",
       tabindex: "-1",
       id: "offcanvasRight",
