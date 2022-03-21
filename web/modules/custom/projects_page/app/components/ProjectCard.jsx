@@ -9,7 +9,8 @@ const ProjectCard = ({
   summary,
   page_url,
   attributes,
-  sdgs
+  sdgs,
+  events
 }) => {
 
   const sdgNums = sdgs.map(sdg => sdg.slice(5,7))
@@ -49,6 +50,13 @@ const ProjectCard = ({
           {sdgNums.map((num, index) => (
             <li key={index}>
               <img src={`https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-${num}-1024x1024.png`}/>
+            </li>
+          ))}
+        </ul>
+        <ul>
+          {events.map((event, index) => (
+            <li key={index}>
+              {event}
             </li>
           ))}
         </ul>

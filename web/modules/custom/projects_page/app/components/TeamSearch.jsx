@@ -3,7 +3,7 @@ import React from 'react'
 const TeamSearch = ({ setTeamSearch }) => {
 
   const onChange = (e) => {
-    const search = e.target.value.toLowerCase()
+    const search = e.target.value
     setTeamSearch(search)
   }
 
