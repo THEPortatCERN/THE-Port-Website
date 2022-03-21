@@ -3,14 +3,14 @@ import settings from '../helper-functions/settings';
 
 const SDG = ({ setChosenSDG, chosenSDG }) => {
   
-  const onDelete = useCallback((e) => {
+  const onDelete = (e) => {
     setChosenSDG('')
-  })
+  }
 
-  const onAddition = useCallback((e) => {
+  const onAddition = (e) => {
     const newSDG = e.target.alt
     setChosenSDG(newSDG)
-  })
+  }
 
   return (
     <div className='sdg-div'>

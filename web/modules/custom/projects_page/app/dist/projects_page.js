@@ -21568,14 +21568,17 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   };
   var matchesTag = (project, tag) => project.attributes.includes(tag.name);
   var matchesTags = (project, tags) => tags.reduce((previousTag, currentTag) => previousTag && matchesTag(project, currentTag), true);
-  var matchesSDG = (project, sdg) => project.sdgs.includes(sdg);
+  var matchesSDG = (project, chosenSDG) => {
+    const booleanArray = project.sdgs.map((sdg) => sdg.includes(chosenSDG));
+    return booleanArray.includes(true);
+  };
   var doesProjectMatch = (project, tags, chosenSDG, teamSearch, titleSearch, eventSearch) => {
     const projectMatchesTags = matchesTags(project, tags);
-    const projectMatchesSDGs = matchesSDG(project, chosenSDG);
+    const projectMatchesSDG = matchesSDG(project, chosenSDG);
     const projectMatchesTeamSearch = matchesTeamSearch(project, teamSearch);
     const projectMatchesTitleSearch = matchesTitleSearch(project, titleSearch);
     const projectMatchesEventSearch = matchesEventSearch(project, eventSearch);
-    return projectMatchesTags && projectMatchesSDGs && projectMatchesTeamSearch && projectMatchesTitleSearch && projectMatchesEventSearch;
+    return projectMatchesTags && projectMatchesSDG && projectMatchesTeamSearch && projectMatchesTitleSearch && projectMatchesEventSearch;
   };
 
   // components/ProjectCard.jsx
@@ -21722,13 +21725,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   // components/SDGlist.jsx
   var import_react6 = __toESM(require_react());
   var SDG = ({ setChosenSDG, chosenSDG }) => {
-    const onDelete = (0, import_react6.useCallback)((e) => {
+    const onDelete = (e) => {
       setChosenSDG("");
-    });
-    const onAddition = (0, import_react6.useCallback)((e) => {
+    };
+    const onAddition = (e) => {
       const newSDG = e.target.alt;
       setChosenSDG(newSDG);
-    });
+    };
     return /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "sdg-div"
     }, /* @__PURE__ */ import_react6.default.createElement("img", {

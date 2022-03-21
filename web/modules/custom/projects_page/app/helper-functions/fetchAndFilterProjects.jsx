@@ -38,15 +38,19 @@ export const matchesTags = (project, tags) => tags.reduce((previousTag, currentT
 
 //-------------------------------------- & for filtering projects by SDGs using SDG component -----------------------------------------//
 //checks if one project matches one sdg
-export const matchesSDG = (project, sdg) => project.sdgs.includes(sdg)
- 
+//export const matchesSDG = (project, chosenSdg) => project.sdgs.includes(chosenSdg)
+const matchesSDG = (project, chosenSDG) => {
+  const booleanArray = project.sdgs.map(sdg => sdg.includes(chosenSDG))
+  return booleanArray.includes(true)
+}
+
 //middle-man -- checks for all filters
 export const doesProjectMatch = (project, tags, chosenSDG, teamSearch, titleSearch, eventSearch) => {
   const projectMatchesTags = matchesTags(project, tags)
-  const projectMatchesSDGs = matchesSDG(project, chosenSDG)
+  const projectMatchesSDG = matchesSDG(project, chosenSDG)
   const projectMatchesTeamSearch = matchesTeamSearch(project, teamSearch)
   const projectMatchesTitleSearch = matchesTitleSearch(project, titleSearch)
   const projectMatchesEventSearch = matchesEventSearch(project, eventSearch)
 
-  return projectMatchesTags && projectMatchesSDGs && projectMatchesTeamSearch && projectMatchesTitleSearch && projectMatchesEventSearch
+  return projectMatchesTags && projectMatchesSDG && projectMatchesTeamSearch && projectMatchesTitleSearch && projectMatchesEventSearch
 } 
