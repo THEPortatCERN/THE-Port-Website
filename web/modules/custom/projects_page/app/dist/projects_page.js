@@ -2457,11 +2457,11 @@
       if (true) {
         (function() {
           "use strict";
-          var React7 = require_react();
+          var React8 = require_react();
           var _assign = require_object_assign();
           var Scheduler = require_scheduler();
           var tracing = require_tracing();
-          var ReactSharedInternals = React7.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React8.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           function warn(format) {
             {
               for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -2493,7 +2493,7 @@
               Function.prototype.apply.call(console[level], console, argsWithFormat);
             }
           }
-          if (!React7) {
+          if (!React8) {
             {
               throw Error("ReactDOM was loaded before React. Make sure you load the React package before loading ReactDOM.");
             }
@@ -3709,7 +3709,7 @@
           var didWarnInvalidChild = false;
           function flattenChildren(children) {
             var content = "";
-            React7.Children.forEach(children, function(child) {
+            React8.Children.forEach(children, function(child) {
               if (child == null) {
                 return;
               }
@@ -3720,7 +3720,7 @@
           function validateProps(element, props) {
             {
               if (typeof props.children === "object" && props.children !== null) {
-                React7.Children.forEach(props.children, function(child) {
+                React8.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -10913,7 +10913,7 @@
           }
           var fakeInternalInstance = {};
           var isArray = Array.isArray;
-          var emptyRefsObject = new React7.Component().refs;
+          var emptyRefsObject = new React8.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -21125,12 +21125,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     "node_modules/react-tag-autocomplete/dist/ReactTags.umd.js"(exports, module) {
       (function(global, factory) {
         typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory(require_react(), require_prop_types()) : typeof define === "function" && define.amd ? define(["react", "prop-types"], factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, global.ReactTags = factory(global.React, global.PropTypes));
-      })(exports, function(React7, PropTypes) {
+      })(exports, function(React8, PropTypes) {
         "use strict";
         function _interopDefaultLegacy(e) {
           return e && typeof e === "object" && "default" in e ? e : { "default": e };
         }
-        var React__default = /* @__PURE__ */ _interopDefaultLegacy(React7);
+        var React__default = /* @__PURE__ */ _interopDefaultLegacy(React8);
         var PropTypes__default = /* @__PURE__ */ _interopDefaultLegacy(PropTypes);
         function Tag(props) {
           return React__default["default"].createElement("button", { type: "button", className: props.classNames.selectedTag, title: props.removeButtonText, onClick: props.onDelete }, React__default["default"].createElement("span", { className: props.classNames.selectedTagName }, props.tag.name));
@@ -21540,7 +21540,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   });
 
   // App.jsx
-  var import_react6 = __toESM(require_react());
+  var import_react7 = __toESM(require_react());
   var import_react_dom = __toESM(require_react_dom());
 
   // helper-functions/fetchAndFilterProjects.jsx
@@ -21557,6 +21557,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       fail(error);
     }
   };
+  var matchesEventSearch = (project, eventSearch) => {
+    return project.events.reduce((prevevent, event) => prevevent && event.toLowerCase().includes(eventSearch), true);
+  };
   var matchesTeamSearch = (project, teamSearch) => {
     return project.teams.reduce((prevTeam, team) => prevTeam && team.includes(teamSearch), true);
   };
@@ -21565,12 +21568,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var matchesTags = (project, tags) => tags.reduce((previousTag, currentTag) => previousTag && matchesTag(project, currentTag), true);
   var matchesSDG = (project, sdg) => project.sdgs.includes(sdg);
   var matchesSDGs = (project, chosenSDGs) => chosenSDGs.reduce((previousSDG, currentSDG) => previousSDG && matchesSDG(project, currentSDG), true);
-  var doesProjectMatch = (project, tags, chosenSDGs, teamSearch, titleSearch) => {
+  var doesProjectMatch = (project, tags, chosenSDGs, teamSearch, titleSearch, eventSearch) => {
     const projectMatchesTags = matchesTags(project, tags);
     const projectMatchesSDGs = matchesSDGs(project, chosenSDGs);
     const projectMatchesTeamSearch = matchesTeamSearch(project, teamSearch);
     const projectMatchesTitleSearch = matchesTitleSearch(project, titleSearch);
-    return projectMatchesTags && projectMatchesSDGs && projectMatchesTeamSearch && projectMatchesTitleSearch;
+    const projectMatchesEventSearch = matchesEventSearch(project, eventSearch);
+    return projectMatchesTags && projectMatchesSDGs && projectMatchesTeamSearch && projectMatchesTitleSearch && projectMatchesEventSearch;
   };
 
   // components/ProjectCard.jsx
@@ -21588,7 +21592,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     summary,
     page_url,
     attributes,
-    sdgs
+    sdgs,
+    events
   }) => {
     const sdgNums = sdgs.map((sdg) => sdg.slice(5, 7));
     return /* @__PURE__ */ import_react.default.createElement("article", {
@@ -21623,36 +21628,20 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       key: index
     }, /* @__PURE__ */ import_react.default.createElement("img", {
       src: `https://www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E-Goal-${num}-1024x1024.png`
-    }))))));
+    })))), /* @__PURE__ */ import_react.default.createElement("ul", null, events.map((event, index) => /* @__PURE__ */ import_react.default.createElement("li", {
+      key: index
+    }, event)))));
   };
   var ProjectCard_default = ProjectCard;
 
-  // components/TitleSearch.jsx
-  var import_react2 = __toESM(require_react());
-  var TitleSearch = ({ setTitleSearch }) => {
-    const onChange = (e) => {
-      const search = e.target.value.toLowerCase();
-      setTitleSearch(search);
-    };
-    return /* @__PURE__ */ import_react2.default.createElement("input", {
-      type: "text",
-      name: "project-title-search",
-      placeholder: "Enter a Project Name",
-      className: "project-search-input",
-      onChange,
-      autoComplete: "off"
-    });
-  };
-  var TitleSearch_default = TitleSearch;
-
   // components/TeamSearch.jsx
-  var import_react3 = __toESM(require_react());
+  var import_react2 = __toESM(require_react());
   var TeamSearch = ({ setTeamSearch }) => {
     const onChange = (e) => {
-      const search = e.target.value.toLowerCase();
+      const search = e.target.value;
       setTeamSearch(search);
     };
-    return /* @__PURE__ */ import_react3.default.createElement("input", {
+    return /* @__PURE__ */ import_react2.default.createElement("input", {
       type: "text",
       name: "team-search",
       placeholder: "Enter a Pier Number",
@@ -21663,25 +21652,61 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   };
   var TeamSearch_default = TeamSearch;
 
-  // components/TagInput.jsx
+  // components/TitleSearch.jsx
+  var import_react3 = __toESM(require_react());
+  var TitleSearch = ({ setTitleSearch }) => {
+    const onChange = (e) => {
+      const search = e.target.value.toLowerCase();
+      setTitleSearch(search);
+    };
+    return /* @__PURE__ */ import_react3.default.createElement("input", {
+      type: "text",
+      name: "project-title-search",
+      placeholder: "Enter a Project Name",
+      className: "project-search-input",
+      onChange,
+      autoComplete: "off"
+    });
+  };
+  var TitleSearch_default = TitleSearch;
+
+  // components/EventSearch.jsx
   var import_react4 = __toESM(require_react());
+  var EventSearch = ({ setEventSearch }) => {
+    const onChange = (e) => {
+      const search = e.target.value.toLowerCase();
+      setEventSearch(search);
+    };
+    return /* @__PURE__ */ import_react4.default.createElement("input", {
+      type: "text",
+      name: "event-search",
+      placeholder: "Enter a year",
+      className: "project-search-input",
+      onChange,
+      autoComplete: "off"
+    });
+  };
+  var EventSearch_default = EventSearch;
+
+  // components/TagInput.jsx
+  var import_react5 = __toESM(require_react());
   var import_react_tag_autocomplete = __toESM(require_ReactTags_umd());
   var TagInput = ({ setTags, tags }) => {
-    const reactTags = (0, import_react4.useRef)();
-    const onDelete = (0, import_react4.useCallback)((tagIndex) => {
+    const reactTags = (0, import_react5.useRef)();
+    const onDelete = (0, import_react5.useCallback)((tagIndex) => {
       setTags(tags.filter((_, i) => i !== tagIndex));
     }, [setTags, tags]);
-    const onAddition = (0, import_react4.useCallback)((newTag) => {
+    const onAddition = (0, import_react5.useCallback)((newTag) => {
       setTags([...tags, newTag]);
     }, [setTags, tags]);
     const tagComponent = ({ tag, removeButtonText, onDelete: onDelete2 }) => {
-      return /* @__PURE__ */ import_react4.default.createElement("button", {
+      return /* @__PURE__ */ import_react5.default.createElement("button", {
         type: "button",
         title: removeButtonText,
         onClick: onDelete2
       }, tag.name);
     };
-    return /* @__PURE__ */ import_react4.default.createElement(import_react_tag_autocomplete.default, {
+    return /* @__PURE__ */ import_react5.default.createElement(import_react_tag_autocomplete.default, {
       ref: reactTags,
       tags,
       suggestions: settings_default.attributes,
@@ -21694,30 +21719,30 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var TagInput_default = TagInput;
 
   // components/SDGlist.jsx
-  var import_react5 = __toESM(require_react());
+  var import_react6 = __toESM(require_react());
   var SDG = ({ setChosenSDGs, chosenSDGs }) => {
-    const onDelete = (0, import_react5.useCallback)((e) => {
+    const onDelete = (0, import_react6.useCallback)((e) => {
       setChosenSDGs(chosenSDGs.filter((sdg) => sdg !== e.target.alt));
     }, [setChosenSDGs, chosenSDGs]);
-    const onAddition = (0, import_react5.useCallback)((e) => {
+    const onAddition = (0, import_react6.useCallback)((e) => {
       const newSDG = e.target.alt;
       setChosenSDGs([...chosenSDGs, newSDG]);
     }, [setChosenSDGs, chosenSDGs]);
-    return /* @__PURE__ */ import_react5.default.createElement("div", {
+    return /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "sdg-div"
-    }, /* @__PURE__ */ import_react5.default.createElement("img", {
+    }, /* @__PURE__ */ import_react6.default.createElement("img", {
       className: "sdg-logo",
       src: `${settings_default.baseUrl}images/sdg_logo.png`,
       alt: "united nations sustainable development goals"
-    }), /* @__PURE__ */ import_react5.default.createElement("div", {
+    }), /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "sdg-list"
-    }, settings_default.sdgs.map((sdg) => !chosenSDGs.includes(sdg.name) ? /* @__PURE__ */ import_react5.default.createElement("img", {
+    }, settings_default.sdgs.map((sdg) => !chosenSDGs.includes(sdg.name) ? /* @__PURE__ */ import_react6.default.createElement("img", {
       src: sdg.image_src,
       alt: sdg.name,
       onClick: onAddition,
       key: sdg.id,
       className: "sdg-icon grey"
-    }) : /* @__PURE__ */ import_react5.default.createElement("img", {
+    }) : /* @__PURE__ */ import_react6.default.createElement("img", {
       src: sdg.image_src,
       alt: sdg.name,
       onClick: onDelete,
@@ -21729,67 +21754,70 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // App.jsx
   function App() {
-    const [isLoading, setIsLoading] = (0, import_react6.useState)(true);
-    const [projectList, setProjectList] = (0, import_react6.useState)([]);
-    const [tags, setTags] = (0, import_react6.useState)([]);
-    const [chosenSDGs, setChosenSDGs] = (0, import_react6.useState)([]);
-    const [teamSearch, setTeamSearch] = (0, import_react6.useState)("");
-    const [titleSearch, setTitleSearch] = (0, import_react6.useState)("");
-    (0, import_react6.useEffect)(async () => {
+    const [isLoading, setIsLoading] = (0, import_react7.useState)(true);
+    const [projectList, setProjectList] = (0, import_react7.useState)([]);
+    const [tags, setTags] = (0, import_react7.useState)([]);
+    const [chosenSDGs, setChosenSDGs] = (0, import_react7.useState)([]);
+    const [teamSearch, setTeamSearch] = (0, import_react7.useState)("");
+    const [titleSearch, setTitleSearch] = (0, import_react7.useState)("");
+    const [eventSearch, setEventSearch] = (0, import_react7.useState)("");
+    (0, import_react7.useEffect)(async () => {
       const projects = await fetchProjects();
       setProjectList(projects);
       setIsLoading(false);
     }, []);
     if (isLoading)
-      return /* @__PURE__ */ import_react6.default.createElement("p", null, "Loading\u2026");
-    const filteredList = tags.length > 0 || chosenSDGs.length > 0 || teamSearch.length > 1 || titleSearch.length > 1 ? projectList.filter((project) => doesProjectMatch(project, tags, chosenSDGs, teamSearch, titleSearch)) : projectList;
-    return /* @__PURE__ */ import_react6.default.createElement("div", {
+      return /* @__PURE__ */ import_react7.default.createElement("p", null, "Loading\u2026");
+    const filteredList = tags.length > 0 || chosenSDGs.length > 0 || teamSearch.length > 0 || titleSearch.length > 0 || eventSearch.length > 0 ? projectList.filter((project) => doesProjectMatch(project, tags, chosenSDGs, teamSearch, titleSearch, eventSearch)) : projectList;
+    return /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "projects-and-filters"
-    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "limit-search"
-    }, /* @__PURE__ */ import_react6.default.createElement(TeamSearch_default, {
+    }, /* @__PURE__ */ import_react7.default.createElement(TeamSearch_default, {
       setTeamSearch
-    }), /* @__PURE__ */ import_react6.default.createElement(TitleSearch_default, {
+    }), /* @__PURE__ */ import_react7.default.createElement(TitleSearch_default, {
       setTitleSearch
-    }), /* @__PURE__ */ import_react6.default.createElement("button", {
+    }), /* @__PURE__ */ import_react7.default.createElement(EventSearch_default, {
+      setEventSearch
+    }), /* @__PURE__ */ import_react7.default.createElement("button", {
       type: "button",
       className: "btn filter-button",
       "data-bs-toggle": "offcanvas",
       "data-bs-target": "#offcanvasRight",
       "aria-controls": "offcanvasRight"
-    }, "Filters")), /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, "Filters")), /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "offcanvas offcanvas-end",
       tabindex: "-1",
       id: "offcanvasRight",
       "aria-labelledby": "offcanvasRightLabel"
-    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "offcanvas-header"
-    }, /* @__PURE__ */ import_react6.default.createElement("h5", {
+    }, /* @__PURE__ */ import_react7.default.createElement("h5", {
       id: "offcanvasRightLabel"
-    }, "Choose Filters"), /* @__PURE__ */ import_react6.default.createElement("button", {
+    }, "Choose Filters"), /* @__PURE__ */ import_react7.default.createElement("button", {
       type: "button",
       className: "btn-close text-reset",
       "data-bs-dismiss": "offcanvas",
       "aria-label": "Close"
-    })), /* @__PURE__ */ import_react6.default.createElement("div", {
+    })), /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "offcanvas-body filters-section"
-    }, /* @__PURE__ */ import_react6.default.createElement(TagInput_default, {
+    }, /* @__PURE__ */ import_react7.default.createElement(TagInput_default, {
       tags,
       setTags,
       className: "single-filter-system"
-    }), /* @__PURE__ */ import_react6.default.createElement(SDGlist_default, {
+    }), /* @__PURE__ */ import_react7.default.createElement(SDGlist_default, {
       chosenSDGs,
       setChosenSDGs,
       className: "single-filter-system"
-    }))), /* @__PURE__ */ import_react6.default.createElement("div", {
+    }))), /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "projects"
-    }, /* @__PURE__ */ import_react6.default.createElement("div", {
+    }, /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "view-content"
-    }, filteredList.length > 0 ? filteredList.map((project, index) => /* @__PURE__ */ import_react6.default.createElement(ProjectCard_default, __spreadProps(__spreadValues({}, project), {
+    }, filteredList.length > 0 ? filteredList.map((project, index) => /* @__PURE__ */ import_react7.default.createElement(ProjectCard_default, __spreadProps(__spreadValues({}, project), {
       key: index
-    }))) : /* @__PURE__ */ import_react6.default.createElement("h2", null, "Currently, no projects match your search."))));
+    }))) : /* @__PURE__ */ import_react7.default.createElement("h2", null, "Currently, no projects match your search."))));
   }
-  import_react_dom.default.render(import_react6.default.createElement(App), document.getElementById("app"));
+  import_react_dom.default.render(import_react7.default.createElement(App), document.getElementById("app"));
 })();
 /*
 object-assign
