@@ -21561,7 +21561,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     return project.events.reduce((prevevent, event) => prevevent && event.toLowerCase().includes(eventSearch), true);
   };
   var matchesTeamSearch = (project, teamSearch) => {
-    return project.teams.reduce((prevTeam, team) => prevTeam && team.includes(teamSearch), true);
+    const booleanArray = project.teams.map((team) => team.includes(teamSearch));
+    return booleanArray.includes(true);
   };
   var matchesTitleSearch = (project, titleSearch) => project.title.toLowerCase().includes(titleSearch);
   var matchesTag = (project, tag) => project.attributes.includes(tag.name);

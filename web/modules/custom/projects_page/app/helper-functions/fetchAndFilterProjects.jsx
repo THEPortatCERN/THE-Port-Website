@@ -22,7 +22,8 @@ const matchesEventSearch = (project, eventSearch) => {
 
 //------------------------- functionality for filtering projects by team using TeamSearch component ----------------------------------//
 const matchesTeamSearch = (project, teamSearch) => {
-  return project.teams.reduce((prevTeam, team) => prevTeam && team.includes(teamSearch), true) 
+  const booleanArray = project.teams.map(team => team.includes(teamSearch))
+  return booleanArray.includes(true)
 }
 
 //------------------------- & for filtering projects by title using TitleSearch component ----------------------------------//
@@ -49,4 +50,4 @@ export const doesProjectMatch = (project, tags, chosenSDGs, teamSearch, titleSea
   const projectMatchesEventSearch = matchesEventSearch(project, eventSearch)
 
   return projectMatchesTags && projectMatchesSDGs && projectMatchesTeamSearch && projectMatchesTitleSearch && projectMatchesEventSearch
-}
+} 
