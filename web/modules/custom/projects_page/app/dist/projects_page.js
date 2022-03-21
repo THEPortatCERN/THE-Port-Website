@@ -21557,14 +21557,15 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       fail(error);
     }
   };
-  var matchesEventSearch = (project, eventSearch) => {
-    return project.events.reduce((prevevent, event) => prevevent && event.toLowerCase().includes(eventSearch), true);
-  };
   var matchesTeamSearch = (project, teamSearch) => {
     const booleanArray = project.teams.map((team) => team.includes(teamSearch));
     return booleanArray.includes(true);
   };
   var matchesTitleSearch = (project, titleSearch) => project.title.toLowerCase().includes(titleSearch);
+  var matchesEventSearch = (project, eventSearch) => {
+    const booleanArray = project.events.map((event) => event.includes(eventSearch));
+    return booleanArray.includes(true);
+  };
   var matchesTag = (project, tag) => project.attributes.includes(tag.name);
   var matchesTags = (project, tags) => tags.reduce((previousTag, currentTag) => previousTag && matchesTag(project, currentTag), true);
   var matchesSDG = (project, sdg) => project.sdgs.includes(sdg);

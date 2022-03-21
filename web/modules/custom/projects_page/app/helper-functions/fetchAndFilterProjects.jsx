@@ -16,18 +16,19 @@ export const fetchProjects = async () => {
 };
 
 //------------------------- functionality for filtering projects by team using TeamSearch component ----------------------------------//
-const matchesEventSearch = (project, eventSearch) => {
-  return project.events.reduce((prevevent, event) => prevevent && event.toLowerCase().includes(eventSearch), true) 
-}
-
-//------------------------- functionality for filtering projects by team using TeamSearch component ----------------------------------//
 const matchesTeamSearch = (project, teamSearch) => {
   const booleanArray = project.teams.map(team => team.includes(teamSearch))
   return booleanArray.includes(true)
 }
 
-//------------------------- & for filtering projects by title using TitleSearch component ----------------------------------//
+//----------------------------- & for filtering projects by title using TitleSearch component ----------------------------------------//
 export const matchesTitleSearch = (project, titleSearch) => project.title.toLowerCase().includes(titleSearch)
+
+//-------------------------------- & for filtering projects by team using TeamSearch component ---------------------------------------//
+const matchesEventSearch = (project, eventSearch) => {
+  const booleanArray = project.events.map(event => event.includes(eventSearch))
+  return booleanArray.includes(true) 
+}
 
 //------------------------------ & for for filtering projects by attributes using tag input component ---------------------------------//
  //checks if one project matches one tag
