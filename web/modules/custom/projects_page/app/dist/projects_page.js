@@ -21570,7 +21570,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     const projectMatchesSDGs = matchesSDGs(project, chosenSDGs);
     const projectMatchesTeamSearch = matchesTeamSearch(project, teamSearch);
     const projectMatchesTitleSearch = matchesTitleSearch(project, titleSearch);
-    return projectMatchesTags && projectMatchesSDGs && projectMatchesTitleSearch && projectMatchesTeamSearch;
+    return projectMatchesTags && projectMatchesSDGs && projectMatchesTeamSearch && projectMatchesTitleSearch;
   };
 
   // components/ProjectCard.jsx
@@ -21733,8 +21733,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     const [projectList, setProjectList] = (0, import_react6.useState)([]);
     const [tags, setTags] = (0, import_react6.useState)([]);
     const [chosenSDGs, setChosenSDGs] = (0, import_react6.useState)([]);
-    const [titleSearch, setTitleSearch] = (0, import_react6.useState)("");
     const [teamSearch, setTeamSearch] = (0, import_react6.useState)("");
+    const [titleSearch, setTitleSearch] = (0, import_react6.useState)("");
     (0, import_react6.useEffect)(async () => {
       const projects = await fetchProjects();
       setProjectList(projects);
@@ -21742,7 +21742,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }, []);
     if (isLoading)
       return /* @__PURE__ */ import_react6.default.createElement("p", null, "Loading\u2026");
-    const filteredList = tags.length > 0 || chosenSDGs.length > 0 || titleSearch.length > 1 || teamSearch.length > 1 ? projectList.filter((project) => doesProjectMatch(project, tags, chosenSDGs, teamSearch, titleSearch)) : projectList;
+    const filteredList = tags.length > 0 || chosenSDGs.length > 0 || teamSearch.length > 1 || titleSearch.length > 1 ? projectList.filter((project) => doesProjectMatch(project, tags, chosenSDGs, teamSearch, titleSearch)) : projectList;
     return /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "projects-and-filters"
     }, /* @__PURE__ */ import_react6.default.createElement("div", {
