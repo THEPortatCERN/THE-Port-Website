@@ -16,7 +16,9 @@ export const fetchProjects = async () => {
 };
 
 //------------------------- functionality for filtering projects by team using TeamSearch component ----------------------------------//
-export const matchesTeamSearch = (project, teamSearch) => project.teams.includes(teamSearch) 
+const matchesTeamSearch = (project, teamSearch) => {
+  return project.teams.reduce((prevTeam, team) => prevTeam && team.includes(teamSearch), true) 
+}
 
 //------------------------- & for filtering projects by title using TitleSearch component ----------------------------------//
 export const matchesTitleSearch = (project, titleSearch) => project.title.toLowerCase().includes(titleSearch)
@@ -37,7 +39,9 @@ export const matchesSDGs = (project, chosenSDGs) => chosenSDGs.reduce((previousS
 export const doesProjectMatch = (project, tags, chosenSDGs, teamSearch, titleSearch) => {
   const projectMatchesTags = matchesTags(project, tags)
   const projectMatchesSDGs = matchesSDGs(project, chosenSDGs)
+  // one of these two searches is returning false for all projects
   const projectMatchesTeamSearch = matchesTeamSearch(project, teamSearch)
   const projectMatchesTitleSearch = matchesTitleSearch(project, titleSearch)
-  return projectMatchesTags && projectMatchesSDGs && projectMatchesTitleSearch && projectMatchesTeamSearch 
+
+  return projectMatchesTags && projectMatchesSDGs && projectMatchesTeamSearch && projectMatchesTitleSearch
 }

@@ -14,8 +14,9 @@ function App() {
   const [projectList, setProjectList] = useState([]); 
   const [tags, setTags] = useState([])
   const [chosenSDGs, setChosenSDGs] = useState([])
-  const [titleSearch, setTitleSearch] = useState('')
   const [teamSearch, setTeamSearch] = useState('')
+  const [titleSearch, setTitleSearch] = useState('')
+  
 
   useEffect(async () => {
     const projects = await fetchProjects()
@@ -26,7 +27,7 @@ function App() {
 
   //------------------------ filter projects -------------------------//
   // creates new array of projects when tags are added to tag input
-  const filteredList = tags.length > 0 || chosenSDGs.length > 0 || titleSearch.length > 1 || teamSearch.length > 1
+  const filteredList = tags.length > 0 || chosenSDGs.length > 0 || teamSearch.length > 1 || titleSearch.length > 1
     ? projectList.filter(project => doesProjectMatch(project, tags, chosenSDGs, teamSearch, titleSearch)) 
     : projectList  
   //------------------------------------------------------------------//
