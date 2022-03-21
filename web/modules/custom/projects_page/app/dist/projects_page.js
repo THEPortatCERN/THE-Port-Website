@@ -21569,10 +21569,9 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var matchesTag = (project, tag) => project.attributes.includes(tag.name);
   var matchesTags = (project, tags) => tags.reduce((previousTag, currentTag) => previousTag && matchesTag(project, currentTag), true);
   var matchesSDG = (project, sdg) => project.sdgs.includes(sdg);
-  var matchesSDGs = (project, chosenSDGs) => chosenSDGs.reduce((previousSDG, currentSDG) => previousSDG && matchesSDG(project, currentSDG), true);
-  var doesProjectMatch = (project, tags, chosenSDGs, teamSearch, titleSearch, eventSearch) => {
+  var doesProjectMatch = (project, tags, chosenSDG, teamSearch, titleSearch, eventSearch) => {
     const projectMatchesTags = matchesTags(project, tags);
-    const projectMatchesSDGs = matchesSDGs(project, chosenSDGs);
+    const projectMatchesSDGs = matchesSDG(project, chosenSDG);
     const projectMatchesTeamSearch = matchesTeamSearch(project, teamSearch);
     const projectMatchesTitleSearch = matchesTitleSearch(project, titleSearch);
     const projectMatchesEventSearch = matchesEventSearch(project, eventSearch);
@@ -21722,14 +21721,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // components/SDGlist.jsx
   var import_react6 = __toESM(require_react());
-  var SDG = ({ setChosenSDGs, chosenSDGs }) => {
+  var SDG = ({ setChosenSDG, chosenSDG }) => {
     const onDelete = (0, import_react6.useCallback)((e) => {
-      setChosenSDGs(chosenSDGs.filter((sdg) => sdg !== e.target.alt));
-    }, [setChosenSDGs, chosenSDGs]);
+      setChosenSDG("");
+    });
     const onAddition = (0, import_react6.useCallback)((e) => {
       const newSDG = e.target.alt;
-      setChosenSDGs([...chosenSDGs, newSDG]);
-    }, [setChosenSDGs, chosenSDGs]);
+      setChosenSDG(newSDG);
+    });
     return /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "sdg-div"
     }, /* @__PURE__ */ import_react6.default.createElement("img", {
@@ -21738,7 +21737,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       alt: "united nations sustainable development goals"
     }), /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "sdg-list"
-    }, settings_default.sdgs.map((sdg) => !chosenSDGs.includes(sdg.name) ? /* @__PURE__ */ import_react6.default.createElement("img", {
+    }, settings_default.sdgs.map((sdg) => sdg.name !== chosenSDG ? /* @__PURE__ */ import_react6.default.createElement("img", {
       src: sdg.image_src,
       alt: sdg.name,
       onClick: onAddition,
@@ -21759,7 +21758,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     const [isLoading, setIsLoading] = (0, import_react7.useState)(true);
     const [projectList, setProjectList] = (0, import_react7.useState)([]);
     const [tags, setTags] = (0, import_react7.useState)([]);
-    const [chosenSDGs, setChosenSDGs] = (0, import_react7.useState)([]);
+    const [chosenSDG, setChosenSDG] = (0, import_react7.useState)("");
     const [teamSearch, setTeamSearch] = (0, import_react7.useState)("");
     const [titleSearch, setTitleSearch] = (0, import_react7.useState)("");
     const [eventSearch, setEventSearch] = (0, import_react7.useState)("");
@@ -21770,7 +21769,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }, []);
     if (isLoading)
       return /* @__PURE__ */ import_react7.default.createElement("p", null, "Loading\u2026");
-    const filteredList = tags.length > 0 || chosenSDGs.length > 0 || teamSearch.length > 0 || titleSearch.length > 0 || eventSearch.length > 0 ? projectList.filter((project) => doesProjectMatch(project, tags, chosenSDGs, teamSearch, titleSearch, eventSearch)) : projectList;
+    const filteredList = tags.length > 0 || chosenSDG.length > 0 || teamSearch.length > 0 || titleSearch.length > 0 || eventSearch.length > 0 ? projectList.filter((project) => doesProjectMatch(project, tags, chosenSDG, teamSearch, titleSearch, eventSearch)) : projectList;
     return /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "projects-and-filters"
     }, /* @__PURE__ */ import_react7.default.createElement("div", {
@@ -21808,8 +21807,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       setTags,
       className: "single-filter-system"
     }), /* @__PURE__ */ import_react7.default.createElement(SDGlist_default, {
-      chosenSDGs,
-      setChosenSDGs,
+      chosenSDG,
+      setChosenSDG,
       className: "single-filter-system"
     }))), /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "projects"
