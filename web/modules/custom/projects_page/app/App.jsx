@@ -14,7 +14,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [projectList, setProjectList] = useState([]); 
   const [tags, setTags] = useState([])
-  const [chosenSDGs, setChosenSDGs] = useState([])
+  const [chosenSDG, setChosenSDG] = useState('')
   const [teamSearch, setTeamSearch] = useState('')
   const [titleSearch, setTitleSearch] = useState('')
   const [eventSearch, setEventSearch] = useState('')
@@ -28,8 +28,8 @@ function App() {
 
   //------------------------ filter projects -------------------------//
   // creates new array of projects when tags are added to tag input
-  const filteredList = (tags.length > 0) || (chosenSDGs.length > 0) || (teamSearch.length > 0) || (titleSearch.length > 0) || (eventSearch.length > 0)
-    ? projectList.filter(project => doesProjectMatch(project, tags, chosenSDGs, teamSearch, titleSearch, eventSearch)) 
+  const filteredList = (tags.length > 0) || (chosenSDG.length > 0) || (teamSearch.length > 0) || (titleSearch.length > 0) || (eventSearch.length > 0)
+    ? projectList.filter(project => doesProjectMatch(project, tags, chosenSDG, teamSearch, titleSearch, eventSearch)) 
     : projectList  
   //------------------------------------------------------------------//
 
@@ -49,7 +49,7 @@ function App() {
       </div>
       <div className="offcanvas-body filters-section">
         <TagInput tags={tags} setTags={setTags} className='single-filter-system'/>
-        <SDGlist chosenSDGs={chosenSDGs} setChosenSDGs={setChosenSDGs} className='single-filter-system'/>
+        <SDGlist chosenSDG={chosenSDG} setChosenSDG={setChosenSDG} className='single-filter-system'/>
       </div>
     </div>
     {/* --------------------------------------------------- project list ----------------------------------------------------------- */}

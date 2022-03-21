@@ -1,23 +1,23 @@
 import React, { useState, useCallback } from 'react'
 import settings from '../helper-functions/settings';
 
-const SDG = ({ setChosenSDGs, chosenSDGs }) => {
+const SDG = ({ setChosenSDG, chosenSDG }) => {
   
   const onDelete = useCallback((e) => {
-    setChosenSDGs(chosenSDGs.filter(sdg => sdg !== e.target.alt))
-  },  [setChosenSDGs, chosenSDGs])
+    setChosenSDG('')
+  })
 
   const onAddition = useCallback((e) => {
     const newSDG = e.target.alt
-    setChosenSDGs([...chosenSDGs, newSDG])
-  },  [setChosenSDGs, chosenSDGs])
+    setChosenSDG(newSDG)
+  })
 
   return (
     <div className='sdg-div'>
       <img className='sdg-logo' src={`${settings.baseUrl}images/sdg_logo.png`} alt='united nations sustainable development goals' />
       <div className='sdg-list'>
         {settings.sdgs.map(sdg => (
-          !chosenSDGs.includes(sdg.name) ?
+          sdg.name !== chosenSDG ?
           (<img 
             src={sdg.image_src}
             alt={sdg.name} 
