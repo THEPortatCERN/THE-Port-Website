@@ -24,7 +24,7 @@ const matchesTeamSearch = (project, teamSearch) => {
 //----------------------------- & for filtering projects by title using TitleSearch component ----------------------------------------//
 export const matchesTitleSearch = (project, titleSearch) => project.title.toLowerCase().includes(titleSearch)
 
-//-------------------------------- & for filtering projects by team using TeamSearch component ---------------------------------------//
+//-------------------------------- & for filtering projects by event using EventSearch component ---------------------------------------//
 const matchesEventSearch = (project, eventSearch) => {
   const booleanArray = project.events.map(event => event.includes(eventSearch))
   return booleanArray.includes(true) 
