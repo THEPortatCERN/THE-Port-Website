@@ -1,7 +1,6 @@
-import React, { useCallback, useRef } from 'react';
+import { useCallback, useRef } from 'react';
 import ReactTags from 'react-tag-autocomplete';
 import settings from '../helper-functions/settings';
-
 
 const TagInput = ({ setTags, tags }) => {
   const reactTags = useRef()

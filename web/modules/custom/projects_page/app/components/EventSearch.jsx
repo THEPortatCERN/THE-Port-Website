@@ -1,6 +1,3 @@
-import React from 'react'
-import settings from '../helper-functions/settings'
-
 const EventSearch = ({setEventSearch}) => {
 
   const onChange = (e) => {
@@ -20,4 +17,4 @@ const EventSearch = ({setEventSearch}) => {
   )
 }
 
-export default EventSearch
+export default EventSearch;
