@@ -1,3 +1,5 @@
+import React from 'react';
+
 const EventSearch = ({setEventSearch}) => {
 
   const onChange = (e) => {

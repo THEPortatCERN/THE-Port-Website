@@ -16,21 +16,24 @@
 
 .sdg-icon {
   width: 33%;
+  height: auto;
 }
 
-.grey {
+.sdg-icon.grey {
   filter: $mid-dark-grey;
   -webkit-filter: grayscale(1); /* Old WebKit */
   -webkit-filter: grayscale(100%); /* New WebKit */
   filter: grayscale(100%); /* Current draft standard */
 }
 
-.grey:hover,
-.colour:hover {
+.sdg-icon.grey:hover {
+  border: 2px solid #fff;
+}
+
+.sdg-icon.colour {
   filter: none;
   -webkit-filter: none; /* Old WebKit */
   -webkit-filter: none; /* New WebKit */
   filter: none; /* Current draft standard */
   box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.05);
-  border: 2px solid white;
 }

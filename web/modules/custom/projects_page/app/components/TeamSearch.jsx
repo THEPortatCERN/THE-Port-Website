@@ -1,3 +1,5 @@
+import React from 'react';
+
 const TeamSearch = ({ setTeamSearch }) => {
 
   const onChange = (e) => {

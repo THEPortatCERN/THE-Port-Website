@@ -1,4 +1,4 @@
-import { useCallback, useRef } from 'react';
+import React, { useCallback, useRef } from 'react';
 import ReactTags from 'react-tag-autocomplete';
 import settings from '../helper-functions/settings';
 

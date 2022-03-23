@@ -1,3 +1,5 @@
+import React from 'react';
+
 const TitleSearch = ({ setTitleSearch }) => {
 
   const onChange = (e) => {

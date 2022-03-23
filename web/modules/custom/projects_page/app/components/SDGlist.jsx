@@ -1,3 +1,4 @@
+import React from 'react';
 import settings from '../helper-functions/settings';
 
 const SDG = ({ setChosenSDG, chosenSDG }) => {
