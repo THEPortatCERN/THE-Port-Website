@@ -1,5 +1,5 @@
 projects_page.projects.page:
-  path: /projects/list
+  path: /projects
   defaults:
     _title: Projects
     _controller: '\Drupal\projects_page\Controller\ProjectsListController::page'
