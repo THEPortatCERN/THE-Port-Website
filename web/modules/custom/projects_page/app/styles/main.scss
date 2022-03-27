@@ -26,47 +26,48 @@
   width: 100%;
   gap: 1rem;
   margin: 0 0 1rem 0;
-}
+  .project-search-input,
+  .clear-filters-button {
+    padding: 0 12px;
+    height: 47px;
+    max-width: 214px;
+    border: 1px solid $mid-pale-grey;
+    border-radius: 10px;
+    color: $dark-grey;
+  }
 
-.project-search-input {
-  padding: 0 12px;
-  height: 47px;
-  max-width: 214px;
-  border: 1px solid $mid-pale-grey;
-  border-radius: 10px;
-  color: $dark-grey;
-}
+  .project-search-input:hover,
+  .clear-filters-button:hover {
+    outline: none;
+    border: 1px solid $dark-grey;
+    color: $dark-grey;
+  }
 
-.project-search-input:hover {
-  outline: none;
-  border: 1px solid $dark-grey;
-  color: $dark-grey;
-}
+  .project-search-input:focus {
+    outline: none;
+    border: 1px solid $dark-grey;
+    color: black;
+  }
 
-.project-search-input:focus {
-  outline: none;
-  border: 1px solid $dark-grey;
-  color: black;
-}
-
-// filters button style
-.projects-and-filters .btn {
-  color: white;
-  padding: 0 12px;
-  height: 47px;
-  margin: 0;
-  border-radius: 6px;
-  background-color: $port-red;
-}
-.projects-and-filters .btn:hover {
-  background-color: $dark-port-red;
-  color: white;
-  transition: 0.2s;
-}
-// remove bootstraps box shadow on the filters button
-.projects-and-filters .btn:focus {
-  outline: none !important;
-  box-shadow: none !important;
+  // filters button style
+  .btn {
+    color: white;
+    padding: 0 12px;
+    height: 47px;
+    margin: 0;
+    border-radius: 6px;
+    background-color: $port-red;
+  }
+  .btn:hover {
+    background-color: $dark-port-red;
+    color: white;
+    transition: 0.2s;
+  }
+  // remove bootstraps box shadow on the filters button
+  .btn:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
 }
 
 .filters-section {

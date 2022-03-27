@@ -152,7 +152,8 @@
   gap: 1rem;
   margin: 0 0 1rem 0;
 }
-.project-search-input {
+.limit-search .project-search-input,
+.limit-search .clear-filters-button {
   padding: 0 12px;
   height: 47px;
   max-width: 214px;
@@ -160,17 +161,18 @@
   border-radius: 10px;
   color: #7f7f7f;
 }
-.project-search-input:hover {
+.limit-search .project-search-input:hover,
+.limit-search .clear-filters-button:hover {
   outline: none;
   border: 1px solid #7f7f7f;
   color: #7f7f7f;
 }
-.project-search-input:focus {
+.limit-search .project-search-input:focus {
   outline: none;
   border: 1px solid #7f7f7f;
   color: black;
 }
-.projects-and-filters .btn {
+.limit-search .btn {
   color: white;
   padding: 0 12px;
   height: 47px;
@@ -178,12 +180,12 @@
   border-radius: 6px;
   background-color: #ff4200;
 }
-.projects-and-filters .btn:hover {
+.limit-search .btn:hover {
   background-color: #9c2c03;
   color: white;
   transition: 0.2s;
 }
-.projects-and-filters .btn:focus {
+.limit-search .btn:focus {
   outline: none !important;
   box-shadow: none !important;
 }

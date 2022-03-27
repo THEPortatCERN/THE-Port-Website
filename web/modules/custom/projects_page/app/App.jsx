@@ -33,14 +33,30 @@ function App() {
     : projectList  
   //------------------------------------------------------------------//
 
+  const onClearFitlers = () => {
+    setTags([])
+    setChosenSDG('')
+    setTeamSearch('')
+    setTitleSearch('')
+    setEventSearch('')
+  }
+
   return (
-   <div className="projects-and-filters">
-     <div className="limit-search">
-      <TeamSearch setTeamSearch={setTeamSearch} />
-      <TitleSearch setTitleSearch={setTitleSearch}/>
-      <EventSearch setEventSearch={setEventSearch}/>
-      <button type="button" className="btn filter-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">More filters</button>
-     </div>
+    <div className="projects-and-filters">
+      <div className="limit-search">
+        <TeamSearch setTeamSearch={setTeamSearch} />
+        <TitleSearch setTitleSearch={setTitleSearch}/>
+        <EventSearch setEventSearch={setEventSearch}/>
+        {
+          (tags.length <= 0) && (chosenSDG.length <= 0) ?
+          <button type="button" className="btn filter-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+            More filters
+          </button>
+          : <button type="button" className="clear-filters-button" onClick={onClearFitlers}>
+              Clear Filters
+            </button>
+        }
+      </div>
     {/* --------------------------------------------------- filter section ------------------------------------------------------- */}
     <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
       <div className="offcanvas-header">

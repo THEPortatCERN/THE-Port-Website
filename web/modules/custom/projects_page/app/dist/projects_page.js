@@ -21773,6 +21773,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     if (isLoading)
       return /* @__PURE__ */ import_react7.default.createElement("p", null, "Loading\u2026");
     const filteredList = tags.length > 0 || chosenSDG.length > 0 || teamSearch.length > 0 || titleSearch.length > 0 || eventSearch.length > 0 ? projectList.filter((project) => doesProjectMatch(project, tags, chosenSDG, teamSearch, titleSearch, eventSearch)) : projectList;
+    const onClearFitlers = () => {
+      setTags([]);
+      setChosenSDG("");
+      setTeamSearch("");
+      setTitleSearch("");
+      setEventSearch("");
+    };
     return /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "projects-and-filters"
     }, /* @__PURE__ */ import_react7.default.createElement("div", {
@@ -21783,13 +21790,17 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       setTitleSearch
     }), /* @__PURE__ */ import_react7.default.createElement(EventSearch_default, {
       setEventSearch
-    }), /* @__PURE__ */ import_react7.default.createElement("button", {
+    }), tags.length <= 0 && chosenSDG.length <= 0 ? /* @__PURE__ */ import_react7.default.createElement("button", {
       type: "button",
       className: "btn filter-button",
       "data-bs-toggle": "offcanvas",
       "data-bs-target": "#offcanvasRight",
       "aria-controls": "offcanvasRight"
-    }, "More filters")), /* @__PURE__ */ import_react7.default.createElement("div", {
+    }, "More filters") : /* @__PURE__ */ import_react7.default.createElement("button", {
+      type: "button",
+      className: "clear-filters-button",
+      onClick: onClearFitlers
+    }, "Clear Filters")), /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "offcanvas offcanvas-end",
       tabindex: "-1",
       id: "offcanvasRight",
