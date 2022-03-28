@@ -21825,6 +21825,16 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       setChosenSDG,
       className: "single-filter-system"
     }))), /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "filters-section big-screen-filters"
+    }, /* @__PURE__ */ import_react7.default.createElement(TagInput_default, {
+      tags,
+      setTags,
+      className: "single-filter-system"
+    }), /* @__PURE__ */ import_react7.default.createElement(SDGlist_default, {
+      chosenSDG,
+      setChosenSDG,
+      className: "single-filter-system"
+    })), /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "projects"
     }, /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "view-content"

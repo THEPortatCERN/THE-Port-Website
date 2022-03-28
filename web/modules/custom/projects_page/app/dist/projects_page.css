@@ -295,8 +295,40 @@
     margin: 0 0 0 auto;
   }
 }
+@media (max-width: 1199.99px) {
+  .big-screen-filters {
+    display: none;
+  }
+}
 @media (min-width: 1200px) {
-  .view-content {
-    grid-template-columns: repeat(4, 1fr);
+  main .container {
+    padding: 0 0 1rem 1rem;
+    margin: 0px;
+    max-width: 100%;
+  }
+  .projects-and-filters {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .projects-and-filters .filter-button {
+    display: none;
+  }
+  .projects-and-filters .limit-search {
+    flex-basis: 100%;
+  }
+  .projects-and-filters .offcanvas {
+    display: none;
+  }
+  .projects-and-filters .filters-section {
+    position: relative;
+    top: -79px;
+    flex-basis: 25%;
+    order: 2;
+  }
+  .projects-and-filters .projects {
+    margin-right: auto;
+    flex-basis: 74%;
+    order: 1;
   }
 }

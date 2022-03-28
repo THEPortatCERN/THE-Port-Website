@@ -19,6 +19,7 @@ function App() {
   const [titleSearch, setTitleSearch] = useState('')
   const [eventSearch, setEventSearch] = useState('')
 
+  // -------- fetch and set project list on page first load --------//
   useEffect(async () => {
     const projects = await fetchProjects()
     setProjectList(projects)
@@ -58,7 +59,7 @@ function App() {
           : <></>
         }
       </div>
-      {/* --------------------------------------------------- filter section ------------------------------------------------------- */}
+      {/* ----------------------------------------- filter section small screens ------------------------------------------ */}
       <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div className="offcanvas-header">
           <h5 id="offcanvasRightLabel">Choose Filters</h5>
@@ -68,6 +69,11 @@ function App() {
           <TagInput tags={tags} setTags={setTags} className='single-filter-system'/>
           <SDGlist chosenSDG={chosenSDG} setChosenSDG={setChosenSDG} className='single-filter-system'/>
         </div>
+      </div>
+      {/* --------------------------------------- filter section big screen view ------------------------------------------- */}
+      <div className="filters-section big-screen-filters">
+        <TagInput tags={tags} setTags={setTags} className='single-filter-system'/>
+        <SDGlist chosenSDG={chosenSDG} setChosenSDG={setChosenSDG} className='single-filter-system'/>
       </div>
       {/* --------------------------------------------------- project list ----------------------------------------------------------- */}
       <div className="projects">
