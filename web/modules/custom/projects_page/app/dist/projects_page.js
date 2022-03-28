@@ -21790,17 +21790,17 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       setTitleSearch
     }), /* @__PURE__ */ import_react7.default.createElement(EventSearch_default, {
       setEventSearch
-    }), tags.length <= 0 && chosenSDG.length <= 0 ? /* @__PURE__ */ import_react7.default.createElement("button", {
+    }), /* @__PURE__ */ import_react7.default.createElement("button", {
       type: "button",
       className: "btn filter-button",
       "data-bs-toggle": "offcanvas",
       "data-bs-target": "#offcanvasRight",
       "aria-controls": "offcanvasRight"
-    }, "More filters") : /* @__PURE__ */ import_react7.default.createElement("button", {
+    }, "More filters"), tags.length > 0 || chosenSDG.length > 0 ? /* @__PURE__ */ import_react7.default.createElement("button", {
       type: "button",
       className: "clear-filters-button",
       onClick: onClearFitlers
-    }, "Clear Filters")), /* @__PURE__ */ import_react7.default.createElement("div", {
+    }, "Clear Filters") : /* @__PURE__ */ import_react7.default.createElement(import_react7.default.Fragment, null)), /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "offcanvas offcanvas-end",
       tabindex: "-1",
       id: "offcanvasRight",

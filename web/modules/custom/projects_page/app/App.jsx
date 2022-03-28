@@ -47,14 +47,15 @@ function App() {
         <TeamSearch setTeamSearch={setTeamSearch} />
         <TitleSearch setTitleSearch={setTitleSearch}/>
         <EventSearch setEventSearch={setEventSearch}/>
-        {
-          (tags.length <= 0) && (chosenSDG.length <= 0) ?
-          <button type="button" className="btn filter-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+        <button type="button" className="btn filter-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
             More filters
+        </button>
+        {
+          (tags.length > 0) || (chosenSDG.length > 0) ?
+          <button type="button" className="clear-filters-button" onClick={onClearFitlers}>
+            Clear Filters
           </button>
-          : <button type="button" className="clear-filters-button" onClick={onClearFitlers}>
-              Clear Filters
-            </button>
+          : <></>
         }
       </div>
     {/* --------------------------------------------------- filter section ------------------------------------------------------- */}
