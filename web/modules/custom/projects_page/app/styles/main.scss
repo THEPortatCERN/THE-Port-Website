@@ -28,7 +28,8 @@
   margin: 0 0 1rem 0;
 }
 
-.project-search-input {
+.project-search-input,
+.clear-filters-button {
   padding: 0 12px;
   height: 47px;
   max-width: 214px;
@@ -37,7 +38,8 @@
   color: $dark-grey;
 }
 
-.project-search-input:hover {
+.project-search-input:hover,
+.clear-filters-button:hover {
   outline: none;
   border: 1px solid $dark-grey;
   color: $dark-grey;
