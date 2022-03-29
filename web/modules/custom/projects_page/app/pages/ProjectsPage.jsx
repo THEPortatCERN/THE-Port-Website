@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+// import { useSearchParams } from 'react-router-dom';
 import "../styles/main.scss";
 
 import { fetchProjects, doesProjectMatch } from "../helper-functions/fetchAndFilterProjects";
@@ -12,6 +13,8 @@ import SDGlist from "../components/SDGlist";
 const ProjectsPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [projectList, setProjectList] = useState([]); 
+  // const [queries, setQueries] = useSearchParams({})
+
   const [tags, setTags] = useState([])
   const [chosenSDG, setChosenSDG] = useState('')
   const [teamSearch, setTeamSearch] = useState('')

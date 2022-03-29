@@ -1,12 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import ProjectsPage from "./pages/ProjectsPage";
 
 function App() {
 
   return (
-    <ProjectsPage />
+    <Router>
+      <Routes>
+        <Route path="/projects/list" element={<ProjectsPage />}/>
+        {/* <Route index element={<ProjectsPage />}/> */}
+      </Routes>
+    </Router>
   );
 }
 
