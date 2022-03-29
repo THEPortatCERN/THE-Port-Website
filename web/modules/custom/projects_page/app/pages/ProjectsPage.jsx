@@ -21,22 +21,32 @@ const ProjectsPage = () => {
   const [teamSearch, setTeamSearch] = useState('')
   const [titleSearch, setTitleSearch] = useState('')
   const [eventSearch, setEventSearch] = useState('')
-  const [allFilters, setAllFilters] = useState([])
 
-   // ----- listen for change in filters and update search params -----//
-   useEffect(() => {
-    const allFilters = 
-      [...tags, chosenSDG, teamSearch, titleSearch, eventSearch]
-      .filter(item => item.length > 0)
-    setAllFilters(allFilters)
-  }, [tags, chosenSDG, teamSearch, titleSearch, eventSearch])
-
+  // ----- listen for change in filters and update search params -----//
   useEffect(() => {
-    if(allFilters.length > 0){
-      setSearchParams({filter: [...allFilters]})
+    let searchObj = {}
+    if(tags.length > 0){
+      const tagNames = tags.map(tag => tag.name)
+      searchObj = {...searchObj, tags_filter: [...tagNames]}
     }
-  }, [allFilters])
-
+    if(chosenSDG.length > 0){
+      searchObj = {...searchObj, sdg_filter: chosenSDG}
+    }
+    if(teamSearch.length > 1){
+      searchObj = {...searchObj, team_filter: teamSearch}
+    }
+    if(titleSearch.length > 3){
+      searchObj = {...searchObj, title_filter: titleSearch}
+    }
+    if(eventSearch.length > 1){
+      searchObj = {...searchObj, event_filter: eventSearch}
+    }
+    console.log('search obj', searchObj)
+    // setSearchObj(searchObj)
+    Object.keys(searchObj).length > 0 ?
+    setSearchParams(searchObj)
+    : setSearchParams({})
+  }, [tags, chosenSDG, teamSearch, titleSearch, eventSearch])
 
   // -------- fetch and set project list on page first load --------//
   useEffect(async () => {

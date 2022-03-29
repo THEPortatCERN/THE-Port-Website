@@ -22753,16 +22753,27 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     const [teamSearch, setTeamSearch] = (0, import_react9.useState)("");
     const [titleSearch, setTitleSearch] = (0, import_react9.useState)("");
     const [eventSearch, setEventSearch] = (0, import_react9.useState)("");
-    const [allFilters, setAllFilters] = (0, import_react9.useState)([]);
     (0, import_react9.useEffect)(() => {
-      const allFilters2 = [...tags, chosenSDG, teamSearch, titleSearch, eventSearch].filter((item) => item.length > 0);
-      setAllFilters(allFilters2);
-    }, [tags, chosenSDG, teamSearch, titleSearch, eventSearch]);
-    (0, import_react9.useEffect)(() => {
-      if (allFilters.length > 0) {
-        setSearchParams({ filter: [...allFilters] });
+      let searchObj = {};
+      if (tags.length > 0) {
+        const tagNames = tags.map((tag) => tag.name);
+        searchObj = __spreadProps(__spreadValues({}, searchObj), { tags_filter: [...tagNames] });
       }
-    }, [allFilters]);
+      if (chosenSDG.length > 0) {
+        searchObj = __spreadProps(__spreadValues({}, searchObj), { sdg_filter: chosenSDG });
+      }
+      if (teamSearch.length > 1) {
+        searchObj = __spreadProps(__spreadValues({}, searchObj), { team_filter: teamSearch });
+      }
+      if (titleSearch.length > 3) {
+        searchObj = __spreadProps(__spreadValues({}, searchObj), { title_filter: titleSearch });
+      }
+      if (eventSearch.length > 1) {
+        searchObj = __spreadProps(__spreadValues({}, searchObj), { event_filter: eventSearch });
+      }
+      console.log("search obj", searchObj);
+      Object.keys(searchObj).length > 0 ? setSearchParams(searchObj) : setSearchParams({});
+    }, [tags, chosenSDG, teamSearch, titleSearch, eventSearch]);
     (0, import_react9.useEffect)(async () => {
       const projects = await fetchProjects();
       setProjectList(projects);
