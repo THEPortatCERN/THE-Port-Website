@@ -1,6 +1,6 @@
 import React from 'react';
 
-const EventSearch = ({setEventSearch}) => {
+const EventSearch = ({setEventSearch, eventSearch}) => {
 
   const onChange = (e) => {
     const search = e.target.value.toLowerCase()
@@ -12,6 +12,7 @@ const EventSearch = ({setEventSearch}) => {
     type='text' 
     name='event-search' 
     placeholder="Enter a year" 
+    value={eventSearch}
     className='project-search-input'
     onChange={onChange}
     autoComplete='off'
