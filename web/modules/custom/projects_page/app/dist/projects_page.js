@@ -22,21 +22,18 @@
     return a;
   };
   var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-  var __markAsModule = (target) => __defProp(target, "__esModule", { value: true });
   var __commonJS = (cb, mod) => function __require() {
     return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
   };
-  var __reExport = (target, module, copyDefault, desc) => {
-    if (module && typeof module === "object" || typeof module === "function") {
-      for (let key of __getOwnPropNames(module))
-        if (!__hasOwnProp.call(target, key) && (copyDefault || key !== "default"))
-          __defProp(target, key, { get: () => module[key], enumerable: !(desc = __getOwnPropDesc(module, key)) || desc.enumerable });
+  var __copyProps = (to, from, except, desc) => {
+    if (from && typeof from === "object" || typeof from === "function") {
+      for (let key of __getOwnPropNames(from))
+        if (!__hasOwnProp.call(to, key) && key !== except)
+          __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
     }
-    return target;
+    return to;
   };
-  var __toESM = (module, isNodeMode) => {
-    return __reExport(__markAsModule(__defProp(module != null ? __create(__getProtoOf(module)) : {}, "default", !isNodeMode && module && module.__esModule ? { get: () => module.default, enumerable: true } : { value: module, enumerable: true })), module);
-  };
+  var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target, mod));
 
   // node_modules/object-assign/index.js
   var require_object_assign = __commonJS({
@@ -2457,11 +2454,11 @@
       if (true) {
         (function() {
           "use strict";
-          var React8 = require_react();
+          var React9 = require_react();
           var _assign = require_object_assign();
           var Scheduler = require_scheduler();
           var tracing = require_tracing();
-          var ReactSharedInternals = React8.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+          var ReactSharedInternals = React9.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
           function warn(format) {
             {
               for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
@@ -2493,7 +2490,7 @@
               Function.prototype.apply.call(console[level], console, argsWithFormat);
             }
           }
-          if (!React8) {
+          if (!React9) {
             {
               throw Error("ReactDOM was loaded before React. Make sure you load the React package before loading ReactDOM.");
             }
@@ -3709,7 +3706,7 @@
           var didWarnInvalidChild = false;
           function flattenChildren(children) {
             var content = "";
-            React8.Children.forEach(children, function(child) {
+            React9.Children.forEach(children, function(child) {
               if (child == null) {
                 return;
               }
@@ -3720,7 +3717,7 @@
           function validateProps(element, props) {
             {
               if (typeof props.children === "object" && props.children !== null) {
-                React8.Children.forEach(props.children, function(child) {
+                React9.Children.forEach(props.children, function(child) {
                   if (child == null) {
                     return;
                   }
@@ -10913,7 +10910,7 @@
           }
           var fakeInternalInstance = {};
           var isArray = Array.isArray;
-          var emptyRefsObject = new React8.Component().refs;
+          var emptyRefsObject = new React9.Component().refs;
           var didWarnAboutStateAssignmentForComponent;
           var didWarnAboutUninitializedState;
           var didWarnAboutGetSnapshotBeforeUpdateWithoutDidUpdate;
@@ -21125,12 +21122,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     "node_modules/react-tag-autocomplete/dist/ReactTags.umd.js"(exports, module) {
       (function(global, factory) {
         typeof exports === "object" && typeof module !== "undefined" ? module.exports = factory(require_react(), require_prop_types()) : typeof define === "function" && define.amd ? define(["react", "prop-types"], factory) : (global = typeof globalThis !== "undefined" ? globalThis : global || self, global.ReactTags = factory(global.React, global.PropTypes));
-      })(exports, function(React8, PropTypes) {
+      })(exports, function(React9, PropTypes) {
         "use strict";
         function _interopDefaultLegacy(e) {
           return e && typeof e === "object" && "default" in e ? e : { "default": e };
         }
-        var React__default = /* @__PURE__ */ _interopDefaultLegacy(React8);
+        var React__default = /* @__PURE__ */ _interopDefaultLegacy(React9);
         var PropTypes__default = /* @__PURE__ */ _interopDefaultLegacy(PropTypes);
         function Tag(props) {
           return React__default["default"].createElement("button", { type: "button", className: props.classNames.selectedTag, title: props.removeButtonText, onClick: props.onDelete }, React__default["default"].createElement("span", { className: props.classNames.selectedTagName }, props.tag.name));
@@ -21540,8 +21537,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   });
 
   // App.jsx
-  var import_react7 = __toESM(require_react());
+  var import_react8 = __toESM(require_react());
   var import_react_dom = __toESM(require_react_dom());
+
+  // pages/ProjectsPage.jsx
+  var import_react7 = __toESM(require_react());
 
   // helper-functions/fetchAndFilterProjects.jsx
   var fetchProjects = async () => {
@@ -21759,8 +21759,8 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   };
   var SDGlist_default = SDG;
 
-  // App.jsx
-  function App() {
+  // pages/ProjectsPage.jsx
+  var ProjectsPage = () => {
     const [isLoading, setIsLoading] = (0, import_react7.useState)(true);
     const [projectList, setProjectList] = (0, import_react7.useState)([]);
     const [tags, setTags] = (0, import_react7.useState)([]);
@@ -21847,8 +21847,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }, filteredList.length > 0 ? filteredList.map((project, index) => /* @__PURE__ */ import_react7.default.createElement(ProjectCard_default, __spreadProps(__spreadValues({}, project), {
       key: index
     }))) : /* @__PURE__ */ import_react7.default.createElement("h2", null, "Currently, no projects match your search."))));
+  };
+  var ProjectsPage_default = ProjectsPage;
+
+  // App.jsx
+  function App() {
+    return /* @__PURE__ */ import_react8.default.createElement(ProjectsPage_default, null);
   }
-  import_react_dom.default.render(import_react7.default.createElement(App), document.getElementById("app"));
+  import_react_dom.default.render(import_react8.default.createElement(App), document.getElementById("app"));
 })();
 /*
 object-assign
