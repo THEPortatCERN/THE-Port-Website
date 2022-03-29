@@ -22336,6 +22336,16 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   }
   var _excluded = ["onClick", "reloadDocument", "replace", "state", "target", "to"];
   var _excluded2 = ["aria-current", "caseSensitive", "className", "end", "style", "to", "children"];
+  function warning3(cond, message) {
+    if (!cond) {
+      if (typeof console !== "undefined")
+        console.warn(message);
+      try {
+        throw new Error(message);
+      } catch (e) {
+      }
+    }
+  }
   function BrowserRouter(_ref) {
     let {
       basename,
@@ -22482,6 +22492,36 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         });
       }
     }, [location, navigate, path, replaceProp, state, target, to]);
+  }
+  function useSearchParams(defaultInit) {
+    true ? warning3(typeof URLSearchParams !== "undefined", "You cannot use the `useSearchParams` hook in a browser that does not support the URLSearchParams API. If you need to support Internet Explorer 11, we recommend you load a polyfill such as https://github.com/ungap/url-search-params\n\nIf you're unsure how to load polyfills, we recommend you check out https://polyfill.io/v3/ which provides some recommendations about how to load polyfills only for users that need them, instead of for every user.") : void 0;
+    let defaultSearchParamsRef = (0, import_react2.useRef)(createSearchParams(defaultInit));
+    let location = useLocation();
+    let searchParams = (0, import_react2.useMemo)(() => {
+      let searchParams2 = createSearchParams(location.search);
+      for (let key of defaultSearchParamsRef.current.keys()) {
+        if (!searchParams2.has(key)) {
+          defaultSearchParamsRef.current.getAll(key).forEach((value) => {
+            searchParams2.append(key, value);
+          });
+        }
+      }
+      return searchParams2;
+    }, [location.search]);
+    let navigate = useNavigate();
+    let setSearchParams = (0, import_react2.useCallback)((nextInit, navigateOptions) => {
+      navigate("?" + createSearchParams(nextInit), navigateOptions);
+    }, [navigate]);
+    return [searchParams, setSearchParams];
+  }
+  function createSearchParams(init) {
+    if (init === void 0) {
+      init = "";
+    }
+    return new URLSearchParams(typeof init === "string" || Array.isArray(init) || init instanceof URLSearchParams ? init : Object.keys(init).reduce((memo, key) => {
+      let value = init[key];
+      return memo.concat(Array.isArray(value) ? value.map((v) => [key, v]) : [[key, value]]);
+    }, []));
   }
 
   // pages/ProjectsPage.jsx
@@ -22707,11 +22747,22 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var ProjectsPage = () => {
     const [isLoading, setIsLoading] = (0, import_react9.useState)(true);
     const [projectList, setProjectList] = (0, import_react9.useState)([]);
+    const [searchParams, setSearchParams] = useSearchParams({});
     const [tags, setTags] = (0, import_react9.useState)([]);
     const [chosenSDG, setChosenSDG] = (0, import_react9.useState)("");
     const [teamSearch, setTeamSearch] = (0, import_react9.useState)("");
     const [titleSearch, setTitleSearch] = (0, import_react9.useState)("");
     const [eventSearch, setEventSearch] = (0, import_react9.useState)("");
+    const [allFilters, setAllFilters] = (0, import_react9.useState)([]);
+    (0, import_react9.useEffect)(() => {
+      const allFilters2 = [...tags, chosenSDG, teamSearch, titleSearch, eventSearch].filter((item) => item.length > 0);
+      setAllFilters(allFilters2);
+    }, [tags, chosenSDG, teamSearch, titleSearch, eventSearch]);
+    (0, import_react9.useEffect)(() => {
+      if (allFilters.length > 0) {
+        setSearchParams({ filter: [...allFilters] });
+      }
+    }, [allFilters]);
     (0, import_react9.useEffect)(async () => {
       const projects = await fetchProjects();
       setProjectList(projects);

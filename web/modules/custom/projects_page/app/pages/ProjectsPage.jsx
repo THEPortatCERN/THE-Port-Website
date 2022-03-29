@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-// import { useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import "../styles/main.scss";
 
 import { fetchProjects, doesProjectMatch } from "../helper-functions/fetchAndFilterProjects";
@@ -13,13 +13,30 @@ import SDGlist from "../components/SDGlist";
 const ProjectsPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [projectList, setProjectList] = useState([]); 
-  // const [queries, setQueries] = useSearchParams({})
+  const [searchParams, setSearchParams] = useSearchParams({})
 
+  //------------- storing filters individually in state ------------//
   const [tags, setTags] = useState([])
   const [chosenSDG, setChosenSDG] = useState('')
   const [teamSearch, setTeamSearch] = useState('')
   const [titleSearch, setTitleSearch] = useState('')
   const [eventSearch, setEventSearch] = useState('')
+  const [allFilters, setAllFilters] = useState([])
+
+   // ----- listen for change in filters and update search params -----//
+   useEffect(() => {
+    const allFilters = 
+      [...tags, chosenSDG, teamSearch, titleSearch, eventSearch]
+      .filter(item => item.length > 0)
+    setAllFilters(allFilters)
+  }, [tags, chosenSDG, teamSearch, titleSearch, eventSearch])
+
+  useEffect(() => {
+    if(allFilters.length > 0){
+      setSearchParams({filter: [...allFilters]})
+    }
+  }, [allFilters])
+
 
   // -------- fetch and set project list on page first load --------//
   useEffect(async () => {
