@@ -21640,7 +21640,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // components/TeamSearch.jsx
   var import_react2 = __toESM(require_react());
-  var TeamSearch = ({ setTeamSearch }) => {
+  var TeamSearch = ({ setTeamSearch, teamSearch }) => {
     const onChange = (e) => {
       const search = e.target.value;
       setTeamSearch(search);
@@ -21649,6 +21649,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       type: "text",
       name: "team-search",
       placeholder: "Enter a Pier Number",
+      value: teamSearch,
       className: "project-search-input",
       onChange,
       autoComplete: "off"
@@ -21658,7 +21659,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // components/TitleSearch.jsx
   var import_react3 = __toESM(require_react());
-  var TitleSearch = ({ setTitleSearch }) => {
+  var TitleSearch = ({ setTitleSearch, titleSearch }) => {
     const onChange = (e) => {
       const search = e.target.value.toLowerCase();
       setTitleSearch(search);
@@ -21667,6 +21668,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       type: "text",
       name: "project-title-search",
       placeholder: "Enter a Project Name",
+      value: titleSearch,
       className: "project-search-input",
       onChange,
       autoComplete: "off"
@@ -21676,7 +21678,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // components/EventSearch.jsx
   var import_react4 = __toESM(require_react());
-  var EventSearch = ({ setEventSearch }) => {
+  var EventSearch = ({ setEventSearch, eventSearch }) => {
     const onChange = (e) => {
       const search = e.target.value.toLowerCase();
       setEventSearch(search);
@@ -21685,6 +21687,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       type: "text",
       name: "event-search",
       placeholder: "Enter a year",
+      value: eventSearch,
       className: "project-search-input",
       onChange,
       autoComplete: "off"
@@ -21785,18 +21788,21 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }, /* @__PURE__ */ import_react7.default.createElement("div", {
       className: "limit-search"
     }, /* @__PURE__ */ import_react7.default.createElement(TeamSearch_default, {
-      setTeamSearch
+      setTeamSearch,
+      teamSearch
     }), /* @__PURE__ */ import_react7.default.createElement(TitleSearch_default, {
-      setTitleSearch
+      setTitleSearch,
+      titleSearch
     }), /* @__PURE__ */ import_react7.default.createElement(EventSearch_default, {
-      setEventSearch
+      setEventSearch,
+      eventSearch
     }), /* @__PURE__ */ import_react7.default.createElement("button", {
       type: "button",
       className: "btn filter-button",
       "data-bs-toggle": "offcanvas",
       "data-bs-target": "#offcanvasRight",
       "aria-controls": "offcanvasRight"
-    }, "More filters"), tags.length > 0 || chosenSDG.length > 0 ? /* @__PURE__ */ import_react7.default.createElement("button", {
+    }, "More filters"), filteredList !== projectList ? /* @__PURE__ */ import_react7.default.createElement("button", {
       type: "button",
       className: "clear-filters-button",
       onClick: onClearFitlers

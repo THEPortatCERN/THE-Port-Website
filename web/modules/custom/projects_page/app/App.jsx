@@ -45,14 +45,14 @@ function App() {
   return (
     <div className="projects-and-filters">
       <div className="limit-search">
-        <TeamSearch setTeamSearch={setTeamSearch} />
-        <TitleSearch setTitleSearch={setTitleSearch}/>
-        <EventSearch setEventSearch={setEventSearch}/>
+        <TeamSearch setTeamSearch={setTeamSearch} teamSearch={teamSearch}/>
+        <TitleSearch setTitleSearch={setTitleSearch} titleSearch={titleSearch}/>
+        <EventSearch setEventSearch={setEventSearch} eventSearch={eventSearch}/>
         <button type="button" className="btn filter-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
             More filters
         </button>
         {
-          (tags.length > 0) || (chosenSDG.length > 0) ?
+          filteredList !== projectList ?
           <button type="button" className="clear-filters-button" onClick={onClearFitlers}>
             Clear Filters
           </button>

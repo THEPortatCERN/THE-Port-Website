@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TeamSearch = ({ setTeamSearch }) => {
+const TeamSearch = ({ setTeamSearch, teamSearch }) => {
 
   const onChange = (e) => {
     const search = e.target.value
@@ -12,6 +12,7 @@ const TeamSearch = ({ setTeamSearch }) => {
     type='text' 
     name='team-search' 
     placeholder="Enter a Pier Number" 
+    value={teamSearch}
     className='project-search-input'
     onChange={onChange}
     autoComplete='off'
