@@ -22754,6 +22754,35 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     const [titleSearch, setTitleSearch] = (0, import_react9.useState)("");
     const [eventSearch, setEventSearch] = (0, import_react9.useState)("");
     (0, import_react9.useEffect)(() => {
+      const tagsSearchParam = searchParams.getAll("tags_filter");
+      const objectsArrayFromTagsSearchParam = tagsSearchParam.map((tag, index) => {
+        return {
+          id: index,
+          name: tag
+        };
+      });
+      console.log("tags search params array", objectsArrayFromTagsSearchParam);
+      if (tagsSearchParam !== null) {
+        setTags(objectsArrayFromTagsSearchParam);
+      }
+      const sdgSearchParam = searchParams.get("sdg_filter");
+      if (sdgSearchParam !== null) {
+        setChosenSDG(sdgSearchParam);
+      }
+      const teamSearchParam = searchParams.get("team_filter");
+      if (teamSearchParam !== null) {
+        setTeamSearch(teamSearchParam);
+      }
+      const titleSearchParam = searchParams.get("title_filter");
+      if (titleSearchParam !== null) {
+        setTitleSearch(titleSearchParam);
+      }
+      const eventSearchParam = searchParams.get("event_filter");
+      if (eventSearchParam !== null) {
+        setEventSearch(eventSearchParam);
+      }
+    }, []);
+    (0, import_react9.useEffect)(() => {
       let searchObj = {};
       if (tags.length > 0) {
         const tagNames = tags.map((tag) => tag.name);
@@ -22762,16 +22791,15 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       if (chosenSDG.length > 0) {
         searchObj = __spreadProps(__spreadValues({}, searchObj), { sdg_filter: chosenSDG });
       }
-      if (teamSearch.length > 1) {
+      if (teamSearch.length >= 1) {
         searchObj = __spreadProps(__spreadValues({}, searchObj), { team_filter: teamSearch });
       }
       if (titleSearch.length > 3) {
         searchObj = __spreadProps(__spreadValues({}, searchObj), { title_filter: titleSearch });
       }
-      if (eventSearch.length > 1) {
+      if (eventSearch.length >= 2) {
         searchObj = __spreadProps(__spreadValues({}, searchObj), { event_filter: eventSearch });
       }
-      console.log("search obj", searchObj);
       Object.keys(searchObj).length > 0 ? setSearchParams(searchObj) : setSearchParams({});
     }, [tags, chosenSDG, teamSearch, titleSearch, eventSearch]);
     (0, import_react9.useEffect)(async () => {

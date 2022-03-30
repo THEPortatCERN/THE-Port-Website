@@ -22,6 +22,38 @@ const ProjectsPage = () => {
   const [titleSearch, setTitleSearch] = useState('')
   const [eventSearch, setEventSearch] = useState('')
 
+  //- listen to search params on page load and set filters accordingly -//
+  useEffect(() => {
+    const tagsSearchParam = searchParams.getAll('tags_filter')
+    const objectsArrayFromTagsSearchParam = 
+    tagsSearchParam.map((tag, index) => {
+       return {
+        id: index,
+        name: tag
+       }
+    })
+    console.log('tags search params array', objectsArrayFromTagsSearchParam)
+    if(tagsSearchParam !== null){
+      setTags(objectsArrayFromTagsSearchParam)
+    }
+    const sdgSearchParam = searchParams.get('sdg_filter')
+    if(sdgSearchParam !== null){
+      setChosenSDG(sdgSearchParam)
+    }
+    const teamSearchParam = searchParams.get('team_filter')
+    if(teamSearchParam !== null){
+      setTeamSearch(teamSearchParam)
+    }
+    const titleSearchParam = searchParams.get('title_filter')
+    if(titleSearchParam !== null){
+      setTitleSearch(titleSearchParam)
+    }
+    const eventSearchParam = searchParams.get('event_filter')
+    if(eventSearchParam !== null){
+      setEventSearch(eventSearchParam)
+    }
+  }, [])
+
   // ----- listen for change in filters and update search params -----//
   useEffect(() => {
     let searchObj = {}
@@ -32,17 +64,15 @@ const ProjectsPage = () => {
     if(chosenSDG.length > 0){
       searchObj = {...searchObj, sdg_filter: chosenSDG}
     }
-    if(teamSearch.length > 1){
+    if(teamSearch.length >= 1){
       searchObj = {...searchObj, team_filter: teamSearch}
     }
     if(titleSearch.length > 3){
       searchObj = {...searchObj, title_filter: titleSearch}
     }
-    if(eventSearch.length > 1){
+    if(eventSearch.length >= 2){
       searchObj = {...searchObj, event_filter: eventSearch}
     }
-    console.log('search obj', searchObj)
-    // setSearchObj(searchObj)
     Object.keys(searchObj).length > 0 ?
     setSearchParams(searchObj)
     : setSearchParams({})
