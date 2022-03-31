@@ -21969,6 +21969,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }, [basename, navigator2, routePathnamesJson, locationPathname]);
     return navigate;
   }
+  function useParams() {
+    let {
+      matches
+    } = (0, import_react.useContext)(RouteContext);
+    let routeMatch = matches[matches.length - 1];
+    return routeMatch ? routeMatch.params : {};
+  }
   function useResolvedPath(to) {
     let {
       matches
@@ -22624,10 +22631,17 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // components/TeamSearch.jsx
   var import_react4 = __toESM(require_react());
-  var TeamSearch = ({ setTeamSearch, teamSearch }) => {
+  var TeamSearch = ({ searchObj, setSearchObj, setTeamSearch, teamSearch }) => {
     const onChange = (e) => {
-      const search = e.target.value;
+      const search = e.target.value.toLowerCase();
       setTeamSearch(search);
+      if (search.length > 0) {
+        setSearchObj(__spreadProps(__spreadValues({}, searchObj), { team_filter: search }));
+      } else {
+        const newSearchObj = Object.assign({}, searchObj);
+        delete newSearchObj.team_filter;
+        setSearchObj(newSearchObj);
+      }
     };
     return /* @__PURE__ */ import_react4.default.createElement("input", {
       type: "text",
@@ -22643,10 +22657,17 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // components/TitleSearch.jsx
   var import_react5 = __toESM(require_react());
-  var TitleSearch = ({ setTitleSearch, titleSearch }) => {
+  var TitleSearch = ({ searchObj, setSearchObj, setTitleSearch, titleSearch }) => {
     const onChange = (e) => {
       const search = e.target.value.toLowerCase();
       setTitleSearch(search);
+      if (search.length > 0) {
+        setSearchObj(__spreadProps(__spreadValues({}, searchObj), { title_filter: search }));
+      } else {
+        const newSearchObj = Object.assign({}, searchObj);
+        delete newSearchObj.title_filter;
+        setSearchObj(newSearchObj);
+      }
     };
     return /* @__PURE__ */ import_react5.default.createElement("input", {
       type: "text",
@@ -22662,10 +22683,17 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // components/EventSearch.jsx
   var import_react6 = __toESM(require_react());
-  var EventSearch = ({ setEventSearch, eventSearch }) => {
+  var EventSearch = ({ searchObj, setSearchObj, setEventSearch, eventSearch }) => {
     const onChange = (e) => {
       const search = e.target.value.toLowerCase();
       setEventSearch(search);
+      if (search.length > 0) {
+        setSearchObj(__spreadProps(__spreadValues({}, searchObj), { event_filter: search }));
+      } else if (search.length === 0) {
+        const newSearchObj = Object.assign({}, searchObj);
+        delete newSearchObj.event_filter;
+        setSearchObj(newSearchObj);
+      }
     };
     return /* @__PURE__ */ import_react6.default.createElement("input", {
       type: "text",
@@ -22682,14 +22710,20 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   // components/TagInput.jsx
   var import_react7 = __toESM(require_react());
   var import_react_tag_autocomplete = __toESM(require_ReactTags_umd());
-  var TagInput = ({ setTags, tags }) => {
+  var TagInput = ({ searchObj, setSearchObj, setTags, tags }) => {
     const reactTags = (0, import_react7.useRef)();
     const onDelete = (0, import_react7.useCallback)((tagIndex) => {
-      setTags(tags.filter((_, i) => i !== tagIndex));
+      const newTagsList = tags.filter((_, i) => i !== tagIndex);
+      setTags(newTagsList);
+      const newTagNames = newTagsList.map((tag) => tag.name);
+      setSearchObj(__spreadProps(__spreadValues({}, searchObj), { tags_filter: [...newTagNames] }));
     }, [setTags, tags]);
     const onAddition = (0, import_react7.useCallback)((newTag) => {
       setTags([...tags, newTag]);
-    }, [setTags, tags]);
+      const prevTagNames = tags.map((tag) => tag.name);
+      const newTagNames = [...prevTagNames, newTag.name];
+      setSearchObj(__spreadProps(__spreadValues({}, searchObj), { tags_filter: [...newTagNames] }));
+    }, [setTags, tags, setSearchObj, searchObj]);
     const tagComponent = ({ tag, removeButtonText, onDelete: onDelete2 }) => {
       return /* @__PURE__ */ import_react7.default.createElement("button", {
         type: "button",
@@ -22711,13 +22745,17 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // components/SDGlist.jsx
   var import_react8 = __toESM(require_react());
-  var SDG = ({ setChosenSDG, chosenSDG }) => {
+  var SDG = ({ searchObj, setSearchObj, setChosenSDG, chosenSDG }) => {
     const onDelete = (e) => {
       setChosenSDG("");
+      const newSearchObj = Object.assign({}, searchObj);
+      delete newSearchObj.sdg_filter;
+      setSearchObj(newSearchObj);
     };
     const onAddition = (e) => {
-      const newSDG = e.target.alt;
-      setChosenSDG(newSDG);
+      const search = e.target.alt;
+      setChosenSDG(search);
+      setSearchObj(__spreadProps(__spreadValues({}, searchObj), { sdg_filter: search }));
     };
     return /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "sdg-div"
@@ -22747,6 +22785,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var ProjectsPage = () => {
     const [isLoading, setIsLoading] = (0, import_react9.useState)(true);
     const [projectList, setProjectList] = (0, import_react9.useState)([]);
+    const [searchObj, setSearchObj] = (0, import_react9.useState)({});
     const [searchParams, setSearchParams] = useSearchParams({});
     const [tags, setTags] = (0, import_react9.useState)([]);
     const [chosenSDG, setChosenSDG] = (0, import_react9.useState)("");
@@ -22783,25 +22822,10 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       }
     }, []);
     (0, import_react9.useEffect)(() => {
-      let searchObj = {};
-      if (tags.length > 0) {
-        const tagNames = tags.map((tag) => tag.name);
-        searchObj = __spreadProps(__spreadValues({}, searchObj), { tags_filter: [...tagNames] });
-      }
-      if (chosenSDG.length > 0) {
-        searchObj = __spreadProps(__spreadValues({}, searchObj), { sdg_filter: chosenSDG });
-      }
-      if (teamSearch.length >= 1) {
-        searchObj = __spreadProps(__spreadValues({}, searchObj), { team_filter: teamSearch });
-      }
-      if (titleSearch.length > 3) {
-        searchObj = __spreadProps(__spreadValues({}, searchObj), { title_filter: titleSearch });
-      }
-      if (eventSearch.length >= 2) {
-        searchObj = __spreadProps(__spreadValues({}, searchObj), { event_filter: eventSearch });
-      }
       Object.keys(searchObj).length > 0 ? setSearchParams(searchObj) : setSearchParams({});
-    }, [tags, chosenSDG, teamSearch, titleSearch, eventSearch]);
+    }, [searchObj]);
+    const params = useParams("sdg_filter");
+    console.log("params", params);
     (0, import_react9.useEffect)(async () => {
       const projects = await fetchProjects();
       setProjectList(projects);
@@ -22816,18 +22840,25 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       setTeamSearch("");
       setTitleSearch("");
       setEventSearch("");
+      setSearchObj({});
     };
     return /* @__PURE__ */ import_react9.default.createElement("div", {
       className: "projects-and-filters"
     }, /* @__PURE__ */ import_react9.default.createElement("div", {
       className: "limit-search"
     }, /* @__PURE__ */ import_react9.default.createElement(TeamSearch_default, {
+      setSearchObj,
+      searchObj,
       setTeamSearch,
       teamSearch
     }), /* @__PURE__ */ import_react9.default.createElement(TitleSearch_default, {
+      setSearchObj,
+      searchObj,
       setTitleSearch,
       titleSearch
     }), /* @__PURE__ */ import_react9.default.createElement(EventSearch_default, {
+      setSearchObj,
+      searchObj,
       setEventSearch,
       eventSearch
     }), /* @__PURE__ */ import_react9.default.createElement("button", {
@@ -22857,20 +22888,28 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     })), /* @__PURE__ */ import_react9.default.createElement("div", {
       className: "offcanvas-body filters-section"
     }, /* @__PURE__ */ import_react9.default.createElement(TagInput_default, {
+      setSearchObj,
+      searchObj,
       tags,
       setTags,
       className: "single-filter-system"
     }), /* @__PURE__ */ import_react9.default.createElement(SDGlist_default, {
+      setSearchObj,
+      searchObj,
       chosenSDG,
       setChosenSDG,
       className: "single-filter-system"
     }))), /* @__PURE__ */ import_react9.default.createElement("div", {
       className: "filters-section big-screen-filters"
     }, /* @__PURE__ */ import_react9.default.createElement(TagInput_default, {
+      setSearchObj,
+      searchObj,
       tags,
       setTags,
       className: "single-filter-system"
     }), /* @__PURE__ */ import_react9.default.createElement(SDGlist_default, {
+      setSearchObj,
+      searchObj,
       chosenSDG,
       setChosenSDG,
       className: "single-filter-system"

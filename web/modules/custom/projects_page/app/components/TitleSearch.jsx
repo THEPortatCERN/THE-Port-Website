@@ -1,10 +1,19 @@
 import React from 'react';
 
-const TitleSearch = ({ setTitleSearch, titleSearch }) => {
+const TitleSearch = ({ searchObj, setSearchObj, setTitleSearch, titleSearch }) => {
 
   const onChange = (e) => {
     const search = e.target.value.toLowerCase()
     setTitleSearch(search)
+    
+    if(search.length > 0){
+      setSearchObj({...searchObj, title_filter: search})
+    }
+    else {
+      const newSearchObj = Object.assign({}, searchObj)
+      delete newSearchObj.title_filter;
+      setSearchObj(newSearchObj)
+    }
   }
 
   return (

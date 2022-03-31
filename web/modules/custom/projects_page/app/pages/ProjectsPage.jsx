@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useSearchParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import "../styles/main.scss";
 
 import { fetchProjects, doesProjectMatch } from "../helper-functions/fetchAndFilterProjects";
@@ -13,7 +13,9 @@ import SDGlist from "../components/SDGlist";
 const ProjectsPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [projectList, setProjectList] = useState([]); 
+  const [searchObj, setSearchObj] = useState({})
   const [searchParams, setSearchParams] = useSearchParams({})
+
 
   //------------- storing filters individually in state ------------//
   const [tags, setTags] = useState([])
@@ -54,29 +56,15 @@ const ProjectsPage = () => {
     }
   }, [])
 
-  // ----- listen for change in filters and update search params -----//
-  useEffect(() => {
-    let searchObj = {}
-    if(tags.length > 0){
-      const tagNames = tags.map(tag => tag.name)
-      searchObj = {...searchObj, tags_filter: [...tagNames]}
-    }
-    if(chosenSDG.length > 0){
-      searchObj = {...searchObj, sdg_filter: chosenSDG}
-    }
-    if(teamSearch.length >= 1){
-      searchObj = {...searchObj, team_filter: teamSearch}
-    }
-    if(titleSearch.length > 3){
-      searchObj = {...searchObj, title_filter: titleSearch}
-    }
-    if(eventSearch.length >= 2){
-      searchObj = {...searchObj, event_filter: eventSearch}
-    }
-    Object.keys(searchObj).length > 0 ?
-    setSearchParams(searchObj)
-    : setSearchParams({})
-  }, [tags, chosenSDG, teamSearch, titleSearch, eventSearch])
+// when tags are selected searchObj is created & used as query string
+ useEffect(() => {
+   Object.keys(searchObj).length > 0 ?
+   setSearchParams(searchObj)
+   : setSearchParams({})
+ }, [searchObj])
+
+ const params = useParams('sdg_filter')
+ console.log('params', params)
 
   // -------- fetch and set project list on page first load --------//
   useEffect(async () => {
@@ -99,14 +87,15 @@ const ProjectsPage = () => {
     setTeamSearch('')
     setTitleSearch('')
     setEventSearch('')
+    setSearchObj({})
   }
 
   return (
     <div className="projects-and-filters">
       <div className="limit-search">
-        <TeamSearch setTeamSearch={setTeamSearch} teamSearch={teamSearch}/>
-        <TitleSearch setTitleSearch={setTitleSearch} titleSearch={titleSearch}/>
-        <EventSearch setEventSearch={setEventSearch} eventSearch={eventSearch}/>
+        <TeamSearch setSearchObj={setSearchObj} searchObj={searchObj} setTeamSearch={setTeamSearch} teamSearch={teamSearch}/>
+        <TitleSearch setSearchObj={setSearchObj} searchObj={searchObj} setTitleSearch={setTitleSearch} titleSearch={titleSearch}/>
+        <EventSearch setSearchObj={setSearchObj} searchObj={searchObj} setEventSearch={setEventSearch} eventSearch={eventSearch}/>
         <button type="button" className="btn filter-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
            More filters
         </button>
@@ -125,14 +114,14 @@ const ProjectsPage = () => {
           <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div className="offcanvas-body filters-section">
-          <TagInput tags={tags} setTags={setTags} className='single-filter-system'/>
-          <SDGlist chosenSDG={chosenSDG} setChosenSDG={setChosenSDG} className='single-filter-system'/>
+          <TagInput setSearchObj={setSearchObj} searchObj={searchObj} tags={tags} setTags={setTags} className='single-filter-system'/>
+          <SDGlist setSearchObj={setSearchObj} searchObj={searchObj} chosenSDG={chosenSDG} setChosenSDG={setChosenSDG} className='single-filter-system'/>
         </div>
       </div>
       {/* --------------------------------------- filter section big screen view ------------------------------------------- */}
       <div className="filters-section big-screen-filters">
-        <TagInput tags={tags} setTags={setTags} className='single-filter-system'/>
-        <SDGlist chosenSDG={chosenSDG} setChosenSDG={setChosenSDG} className='single-filter-system'/>
+        <TagInput setSearchObj={setSearchObj} searchObj={searchObj} tags={tags} setTags={setTags} className='single-filter-system'/>
+        <SDGlist setSearchObj={setSearchObj} searchObj={searchObj} chosenSDG={chosenSDG} setChosenSDG={setChosenSDG} className='single-filter-system'/>
       </div>
       {/* --------------------------------------------------- project list ----------------------------------------------------------- */}
       <div className="projects">
