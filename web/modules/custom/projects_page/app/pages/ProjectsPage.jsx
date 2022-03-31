@@ -13,9 +13,8 @@ import SDGlist from "../components/SDGlist";
 const ProjectsPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [projectList, setProjectList] = useState([]); 
-  const [searchObj, setSearchObj] = useState({})
-  const [searchParams, setSearchParams] = useSearchParams({})
-
+  const [searchObj, setSearchObj] = useState({});
+  const [searchParams, setSearchParams] = useSearchParams(searchObj);
 
   //------------- storing filters individually in state ------------//
   const [tags, setTags] = useState([])
@@ -26,7 +25,10 @@ const ProjectsPage = () => {
 
   //- listen to search params on page load and set filters accordingly -//
   useEffect(() => {
+    let initialSearchObj = {}
+
     const tagsSearchParam = searchParams.getAll('tags_filter')
+    console.log('tags search param', tagsSearchParam)
     const objectsArrayFromTagsSearchParam = 
     tagsSearchParam.map((tag, index) => {
        return {
@@ -35,25 +37,31 @@ const ProjectsPage = () => {
        }
     })
     console.log('tags search params array', objectsArrayFromTagsSearchParam)
-    if(tagsSearchParam !== null){
+    if(tagsSearchParam.length > 0){
       setTags(objectsArrayFromTagsSearchParam)
+      initialSearchObj = {...initialSearchObj, tags_filter: [...tagsSearchParam]}
     }
     const sdgSearchParam = searchParams.get('sdg_filter')
     if(sdgSearchParam !== null){
       setChosenSDG(sdgSearchParam)
+      initialSearchObj = {...initialSearchObj, sdg_filter: sdgSearchParam}
     }
     const teamSearchParam = searchParams.get('team_filter')
     if(teamSearchParam !== null){
       setTeamSearch(teamSearchParam)
+      initialSearchObj = {...initialSearchObj, team_filter: teamSearchParam}
     }
     const titleSearchParam = searchParams.get('title_filter')
     if(titleSearchParam !== null){
       setTitleSearch(titleSearchParam)
+      initialSearchObj = {...initialSearchObj, title_filter: titleSearchParam}
     }
     const eventSearchParam = searchParams.get('event_filter')
     if(eventSearchParam !== null){
       setEventSearch(eventSearchParam)
+      initialSearchObj = {...initialSearchObj, event_filter: eventSearchParam}
     }
+    setSearchObj(initialSearchObj)
   }, [])
 
 // when tags are selected searchObj is created & used as query string
@@ -62,9 +70,6 @@ const ProjectsPage = () => {
    setSearchParams(searchObj)
    : setSearchParams({})
  }, [searchObj])
-
- const params = useParams('sdg_filter')
- console.log('params', params)
 
   // -------- fetch and set project list on page first load --------//
   useEffect(async () => {
