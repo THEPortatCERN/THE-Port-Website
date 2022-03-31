@@ -23,55 +23,75 @@ const ProjectsPage = () => {
   const [titleSearch, setTitleSearch] = useState('')
   const [eventSearch, setEventSearch] = useState('')
 
-  //- listen to search params on page load and set filters accordingly -//
+  // ON PAGE LOAD ONLY : READ URL -> set searchObj -> sets url //
   useEffect(() => {
     let initialSearchObj = {}
 
     const tagsSearchParam = searchParams.getAll('tags_filter')
-    console.log('tags search param', tagsSearchParam)
-    const objectsArrayFromTagsSearchParam = 
-    tagsSearchParam.map((tag, index) => {
-       return {
-        id: index,
-        name: tag
-       }
-    })
-    console.log('tags search params array', objectsArrayFromTagsSearchParam)
+    const sdgSearchParam = searchParams.get('sdg_filter')
+    const teamSearchParam = searchParams.get('team_filter')
+    const titleSearchParam = searchParams.get('title_filter')
+    const eventSearchParam = searchParams.get('event_filter')
+
     if(tagsSearchParam.length > 0){
-      setTags(objectsArrayFromTagsSearchParam)
       initialSearchObj = {...initialSearchObj, tags_filter: [...tagsSearchParam]}
     }
-    const sdgSearchParam = searchParams.get('sdg_filter')
     if(sdgSearchParam !== null){
-      setChosenSDG(sdgSearchParam)
       initialSearchObj = {...initialSearchObj, sdg_filter: sdgSearchParam}
     }
-    const teamSearchParam = searchParams.get('team_filter')
     if(teamSearchParam !== null){
-      setTeamSearch(teamSearchParam)
       initialSearchObj = {...initialSearchObj, team_filter: teamSearchParam}
     }
-    const titleSearchParam = searchParams.get('title_filter')
     if(titleSearchParam !== null){
-      setTitleSearch(titleSearchParam)
       initialSearchObj = {...initialSearchObj, title_filter: titleSearchParam}
     }
-    const eventSearchParam = searchParams.get('event_filter')
     if(eventSearchParam !== null){
-      setEventSearch(eventSearchParam)
       initialSearchObj = {...initialSearchObj, event_filter: eventSearchParam}
     }
     setSearchObj(initialSearchObj)
   }, [])
 
-// when tags are selected searchObj is created & used as query string
- useEffect(() => {
-   Object.keys(searchObj).length > 0 ?
-   setSearchParams(searchObj)
-   : setSearchParams({})
- }, [searchObj])
+  // ON PAGE LOAD AND WHEN SEARCH OBJ CHANGES -> SET SEARCH PARAMS (QUERY STRING)
+  useEffect(() => {
+    Object.keys(searchObj).length > 0 ?
+    setSearchParams(searchObj)
+    : setSearchParams({})
+  }, [searchObj])
 
-  // -------- fetch and set project list on page first load --------//
+
+  // WHEN SEARCH PARAMS (QUERY STRING) UPDATES -> SET INDIVIDUAL FILTERS 
+  useEffect(() => {
+    const tagsSearch = searchParams.getAll('tags_filter')
+    const sdg = searchParams.get('sdg_filter')
+    const team = searchParams.get('team_filter')
+    const title = searchParams.get('title_filter')
+    const event = searchParams.get('event_filter')
+
+    if(tagsSearch){
+      const objectsArrayFromTagsSearchParam = 
+      tagsSearch.map((tag, index) => {
+        return {
+        id: index,
+        name: tag
+      }
+    })
+      setTags(objectsArrayFromTagsSearchParam)
+    }
+    if(sdg){
+      setChosenSDG(searchObj.sdg_filter)
+    }
+    if(team){
+      setTeamSearch(team)
+    }
+    if(title){
+      setTitleSearch(title)
+    }
+    if(event){
+      setEventSearch(event)
+    }
+  }, [searchParams])
+
+  // ON PAGE LOAD ONLY -> FETCH FULL PROJECT LIST
   useEffect(async () => {
     const projects = await fetchProjects()
     setProjectList(projects)
