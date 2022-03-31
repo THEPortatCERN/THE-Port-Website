@@ -1,15 +1,19 @@
 import React from 'react';
 import settings from '../helper-functions/settings';
 
-const SDG = ({ setChosenSDG, chosenSDG }) => {
+const SDG = ({ searchObj, setSearchObj, setChosenSDG, chosenSDG }) => {
   
   const onDelete = (e) => {
     setChosenSDG('')
+    const newSearchObj = Object.assign({}, searchObj)
+    delete newSearchObj.sdg_filter;
+    setSearchObj(newSearchObj)
   }
 
   const onAddition = (e) => {
-    const newSDG = e.target.alt
-    setChosenSDG(newSDG)
+    const search = e.target.alt
+    setChosenSDG(search)
+    setSearchObj({...searchObj, sdg_filter: search})
   }
 
   return (

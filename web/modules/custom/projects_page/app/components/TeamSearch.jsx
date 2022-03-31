@@ -1,10 +1,18 @@
 import React from 'react';
 
-const TeamSearch = ({ setTeamSearch, teamSearch }) => {
+const TeamSearch = ({ searchObj, setSearchObj, setTeamSearch, teamSearch }) => {
 
   const onChange = (e) => {
-    const search = e.target.value
+    const search = e.target.value.toLowerCase()
     setTeamSearch(search)
+    
+    if(search.length > 0){
+      setSearchObj({...searchObj, team_filter: search})
+    } else {
+      const newSearchObj = Object.assign({}, searchObj)
+      delete newSearchObj.team_filter;
+      setSearchObj(newSearchObj)
+    }
   }
 
   return (

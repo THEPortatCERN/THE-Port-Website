@@ -2,16 +2,26 @@ import React, { useCallback, useRef } from 'react';
 import ReactTags from 'react-tag-autocomplete';
 import settings from '../helper-functions/settings';
 
-const TagInput = ({ setTags, tags }) => {
+const TagInput = ({ searchObj, setSearchObj, setTags, tags }) => {
   const reactTags = useRef()
 
   const onDelete = useCallback((tagIndex) => {
-    setTags(tags.filter((_, i) => i !== tagIndex))
+    // set the tags to filter from 
+    const newTagsList = tags.filter((_, i) => i !== tagIndex)
+    setTags(newTagsList)
+    // set the search object to build query string from
+    const newTagNames = newTagsList.map(tag => tag.name)
+    setSearchObj({...searchObj, tags_filter: [...newTagNames]})
   }, [setTags, tags])
 
   const onAddition = useCallback((newTag) => {
+    // set the tags to filter from
     setTags([...tags, newTag])
-  }, [setTags, tags])
+    // set the search object to build query string from
+    const prevTagNames = tags.map(tag => tag.name)
+    const newTagNames = [...prevTagNames, newTag.name]
+    setSearchObj({...searchObj, tags_filter: [...newTagNames]})
+  }, [setTags, tags, setSearchObj, searchObj])
 
   const tagComponent = ({ tag, removeButtonText, onDelete }) => {
     return (
