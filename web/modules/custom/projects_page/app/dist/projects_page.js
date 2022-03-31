@@ -21969,13 +21969,6 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }, [basename, navigator2, routePathnamesJson, locationPathname]);
     return navigate;
   }
-  function useParams() {
-    let {
-      matches
-    } = (0, import_react.useContext)(RouteContext);
-    let routeMatch = matches[matches.length - 1];
-    return routeMatch ? routeMatch.params : {};
-  }
   function useResolvedPath(to) {
     let {
       matches
@@ -22715,11 +22708,20 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     const onDelete = (0, import_react7.useCallback)((tagIndex) => {
       const newTagsList = tags.filter((_, i) => i !== tagIndex);
       setTags(newTagsList);
-      const newTagNames = newTagsList.map((tag) => tag.name);
-      setSearchObj(__spreadProps(__spreadValues({}, searchObj), { tags_filter: [...newTagNames] }));
-    }, [setTags, tags]);
+      if (newTagsList.length > 0) {
+        const newTagNames = newTagsList.map((tag) => tag.name);
+        console.log("new tag list", newTagNames);
+        setSearchObj(__spreadProps(__spreadValues({}, searchObj), { tags_filter: [...newTagNames] }));
+      } else {
+        const newSearchObj = Object.assign({}, searchObj);
+        delete newSearchObj.tags_filter;
+        console.log(newSearchObj);
+        setSearchObj(newSearchObj);
+      }
+    }, [setTags, tags, setSearchObj, searchObj]);
     const onAddition = (0, import_react7.useCallback)((newTag) => {
       setTags([...tags, newTag]);
+      console.log(newTag);
       const prevTagNames = tags.map((tag) => tag.name);
       const newTagNames = [...prevTagNames, newTag.name];
       setSearchObj(__spreadProps(__spreadValues({}, searchObj), { tags_filter: [...newTagNames] }));
@@ -22786,14 +22788,16 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     const [isLoading, setIsLoading] = (0, import_react9.useState)(true);
     const [projectList, setProjectList] = (0, import_react9.useState)([]);
     const [searchObj, setSearchObj] = (0, import_react9.useState)({});
-    const [searchParams, setSearchParams] = useSearchParams({});
+    const [searchParams, setSearchParams] = useSearchParams(searchObj);
     const [tags, setTags] = (0, import_react9.useState)([]);
     const [chosenSDG, setChosenSDG] = (0, import_react9.useState)("");
     const [teamSearch, setTeamSearch] = (0, import_react9.useState)("");
     const [titleSearch, setTitleSearch] = (0, import_react9.useState)("");
     const [eventSearch, setEventSearch] = (0, import_react9.useState)("");
     (0, import_react9.useEffect)(() => {
+      let initialSearchObj = {};
       const tagsSearchParam = searchParams.getAll("tags_filter");
+      console.log("tags search param", tagsSearchParam);
       const objectsArrayFromTagsSearchParam = tagsSearchParam.map((tag, index) => {
         return {
           id: index,
@@ -22801,31 +22805,35 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         };
       });
       console.log("tags search params array", objectsArrayFromTagsSearchParam);
-      if (tagsSearchParam !== null) {
+      if (tagsSearchParam.length > 0) {
         setTags(objectsArrayFromTagsSearchParam);
+        initialSearchObj = __spreadProps(__spreadValues({}, initialSearchObj), { tags_filter: [...tagsSearchParam] });
       }
       const sdgSearchParam = searchParams.get("sdg_filter");
       if (sdgSearchParam !== null) {
         setChosenSDG(sdgSearchParam);
+        initialSearchObj = __spreadProps(__spreadValues({}, initialSearchObj), { sdg_filter: sdgSearchParam });
       }
       const teamSearchParam = searchParams.get("team_filter");
       if (teamSearchParam !== null) {
         setTeamSearch(teamSearchParam);
+        initialSearchObj = __spreadProps(__spreadValues({}, initialSearchObj), { team_filter: teamSearchParam });
       }
       const titleSearchParam = searchParams.get("title_filter");
       if (titleSearchParam !== null) {
         setTitleSearch(titleSearchParam);
+        initialSearchObj = __spreadProps(__spreadValues({}, initialSearchObj), { title_filter: titleSearchParam });
       }
       const eventSearchParam = searchParams.get("event_filter");
       if (eventSearchParam !== null) {
         setEventSearch(eventSearchParam);
+        initialSearchObj = __spreadProps(__spreadValues({}, initialSearchObj), { event_filter: eventSearchParam });
       }
+      setSearchObj(initialSearchObj);
     }, []);
     (0, import_react9.useEffect)(() => {
       Object.keys(searchObj).length > 0 ? setSearchParams(searchObj) : setSearchParams({});
     }, [searchObj]);
-    const params = useParams("sdg_filter");
-    console.log("params", params);
     (0, import_react9.useEffect)(async () => {
       const projects = await fetchProjects();
       setProjectList(projects);
