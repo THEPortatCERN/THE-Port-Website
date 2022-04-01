@@ -12,12 +12,10 @@ const TagInput = ({ searchObj, setSearchObj, setTags, tags }) => {
     // set the search object to build query string from
     if(newTagsList.length > 0){
       const newTagNames = newTagsList.map(tag => tag.name)
-      console.log('new tag list', newTagNames)
       setSearchObj({...searchObj, tags_filter: [...newTagNames]})
     } else {
       const newSearchObj = Object.assign({}, searchObj)
       delete newSearchObj.tags_filter;
-      console.log(newSearchObj)
       setSearchObj(newSearchObj)
     }
   }, [setTags, tags, setSearchObj, searchObj])
@@ -25,7 +23,6 @@ const TagInput = ({ searchObj, setSearchObj, setTags, tags }) => {
   const onAddition = useCallback((newTag) => {
     // set the tags to filter from
     setTags([...tags, newTag])
-    console.log(newTag)
     // set the search object to build query string from
     const prevTagNames = tags.map(tag => tag.name)
     const newTagNames = [...prevTagNames, newTag.name]
