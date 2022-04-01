@@ -22824,7 +22824,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       const team = searchParams.get("team_filter");
       const title = searchParams.get("title_filter");
       const event = searchParams.get("event_filter");
-      if (tagsSearch) {
+      if (tagsSearch.length !== 0) {
         const objectsArrayFromTagsSearchParam = tagsSearch.map((tag, index) => {
           return {
             id: index,
@@ -22832,18 +22832,28 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           };
         });
         setTags(objectsArrayFromTagsSearchParam);
+      } else {
+        setTags([]);
       }
-      if (sdg) {
+      if (sdg !== null) {
         setChosenSDG(searchObj.sdg_filter);
+      } else {
+        setChosenSDG("");
       }
-      if (team) {
+      if (team !== null) {
         setTeamSearch(team);
+      } else {
+        setTeamSearch("");
       }
-      if (title) {
+      if (title !== null) {
         setTitleSearch(title);
+      } else {
+        setTitleSearch("");
       }
-      if (event) {
+      if (event !== null) {
         setEventSearch(event);
+      } else {
+        setEventSearch("");
       }
     }, [searchParams]);
     (0, import_react9.useEffect)(async () => {

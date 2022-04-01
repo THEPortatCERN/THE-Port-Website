@@ -58,8 +58,7 @@ const ProjectsPage = () => {
     : setSearchParams({})
   }, [searchObj])
 
-
-  // WHEN SEARCH PARAMS (QUERY STRING) UPDATES -> SET INDIVIDUAL FILTERS 
+ // WHEN SEARCH PARAMS (QUERY STRING) UPDATES -> SET INDIVIDUAL FILTERS 
   useEffect(() => {
     const tagsSearch = searchParams.getAll('tags_filter')
     const sdg = searchParams.get('sdg_filter')
@@ -67,7 +66,7 @@ const ProjectsPage = () => {
     const title = searchParams.get('title_filter')
     const event = searchParams.get('event_filter')
 
-    if(tagsSearch){
+    if(tagsSearch.length !== 0){
       const objectsArrayFromTagsSearchParam = 
       tagsSearch.map((tag, index) => {
         return {
@@ -76,18 +75,28 @@ const ProjectsPage = () => {
       }
     })
       setTags(objectsArrayFromTagsSearchParam)
+    } else {
+      setTags([])
     }
-    if(sdg){
+    if(sdg !== null){
       setChosenSDG(searchObj.sdg_filter)
+    } else {
+      setChosenSDG('')
     }
-    if(team){
+    if(team !== null){
       setTeamSearch(team)
+    } else {
+      setTeamSearch('')
     }
-    if(title){
+    if(title !== null){
       setTitleSearch(title)
+    } else {
+      setTitleSearch('')
     }
-    if(event){
+    if(event !== null){
       setEventSearch(event)
+    } else {
+      setEventSearch('')
     }
   }, [searchParams])
 
