@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/projects/list" element={<ProjectsPage />}/>
+        <Route path="/projects" element={<ProjectsPage />}/>
         {/* <Route index element={<ProjectsPage />}/> */}
       </Routes>
     </Router>
