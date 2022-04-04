@@ -18,7 +18,7 @@ const SDG = ({ searchObj, setSearchObj, setChosenSDG, chosenSDG }) => {
 
   return (
     <div className='sdg-div'>
-      <img className='sdg-logo' src={`${settings.baseUrl}images/sdg_logo.png`} alt='united nations sustainable development goals' />
+      <img className='sdg-logo' src={`${settings.routes.assets}images/sdg_logo.png`} alt='united nations sustainable development goals' />
       <div className='sdg-list'>
         {settings.sdgs.map(sdg => (
           sdg.name !== chosenSDG ?

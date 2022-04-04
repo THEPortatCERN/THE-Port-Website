@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useParams, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import "../styles/main.scss";
 
 
@@ -128,9 +128,10 @@ const ProjectsPage = () => {
   return (
     <div className="projects-and-filters">
       <div className="limit-search">
-        <TeamSearch setSearchObj={setSearchObj} searchObj={searchObj} setTeamSearch={setTeamSearch} teamSearch={teamSearch}/>
+        <strong>Filters</strong>
         <TitleSearch setSearchObj={setSearchObj} searchObj={searchObj} setTitleSearch={setTitleSearch} titleSearch={titleSearch}/>
-        <EventSearch setSearchObj={setSearchObj} searchObj={searchObj} setEventSearch={setEventSearch} eventSearch={eventSearch}/>
+        <TeamSearch setSearchObj={setSearchObj} searchObj={searchObj} setTeamSearch={setTeamSearch} teamSearch={teamSearch}/>
+        {/* <EventSearch setSearchObj={setSearchObj} searchObj={searchObj} setEventSearch={setEventSearch} eventSearch={eventSearch}/> */}
         <button type="button" className="btn filter-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
            More filters
         </button>
@@ -143,7 +144,7 @@ const ProjectsPage = () => {
         }
       </div>
       {/* ----------------------------------------- filter section small screens ------------------------------------------ */}
-      <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div className="offcanvas-header">
           <h5 id="offcanvasRightLabel">Choose Filters</h5>
           <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>

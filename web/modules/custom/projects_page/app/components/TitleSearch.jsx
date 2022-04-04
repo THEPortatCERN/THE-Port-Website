@@ -3,29 +3,31 @@ import React from 'react';
 const TitleSearch = ({ searchObj, setSearchObj, setTitleSearch, titleSearch }) => {
 
   const onChange = (e) => {
-    const search = e.target.value.toLowerCase()
-    setTitleSearch(search)
+    const search = e.target.value.toLowerCase();
+    setTitleSearch(search);
     
     if(search.length > 0){
-      setSearchObj({...searchObj, title_filter: search})
+      setSearchObj({...searchObj, title_filter: search});
     }
     else {
       const newSearchObj = Object.assign({}, searchObj)
       delete newSearchObj.title_filter;
-      setSearchObj(newSearchObj)
+      setSearchObj(newSearchObj);
     }
   }
 
   return (
-    <input 
-    type='text' 
-    name='project-title-search' 
-    placeholder="Enter a Project Name" 
-    value={titleSearch}
-    className='project-search-input'
-    onChange={onChange}
-    autoComplete='off'
-    />
+    <>
+      <label htmlFor="project-title-search">Project name:</label>
+      <input 
+      type='text' 
+      name='project-title-search' 
+      value={titleSearch}
+      className='project-search-input'
+      onChange={onChange}
+      autoComplete='off'
+      />
+    </>
   )
 }
 

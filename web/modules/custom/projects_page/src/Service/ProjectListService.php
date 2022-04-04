@@ -55,7 +55,10 @@ class ProjectListService {
       $teams = [];
       /** @var Drupal\taxonomy\Entity\Term $term */
       foreach ($field_teams->referencedEntities() as $term) {
-        $teams[] = $term->getName();
+        $teams[] = [
+          'id' => $term->id(),
+          'name' => $term->getName(),
+        ];
       }
 
       /** @var \Drupal\Core\Field\EntityReferenceFieldItemListInterface $field_attributes */
@@ -63,7 +66,10 @@ class ProjectListService {
       $attributes = [];
       /** @var Drupal\taxonomy\Entity\Term $term */
       foreach ($field_attributes->referencedEntities() as $term) {
-        $attributes[] = $term->getName();
+        $attributes[] = [
+          'id' => $term->id(),
+          'name' => $term->getName(),
+        ];
       }
 
       /** @var \Drupal\Core\Field\EntityReferenceFieldItemListInterface $field_events */
@@ -71,7 +77,10 @@ class ProjectListService {
       $events = [];
       /** @var Drupal\taxonomy\Entity\Term $term */
       foreach ($field_events->referencedEntities() as $term) {
-        $events[] = $term->getName();
+        $events[] = [
+          'id' => $term->id(),
+          'name' => $term->getName(),
+        ];
       }
 
       /** @var \Drupal\Core\Field\EntityReferenceFieldItemListInterface $field_events */
@@ -79,7 +88,10 @@ class ProjectListService {
       $sdgs = [];
       /** @var Drupal\taxonomy\Entity\Term $field_development_goals */
       foreach ($field_development_goals->referencedEntities() as $term) {
-        $sdgs[] = $term->getName();
+        $sdgs[] = [
+          'id' => $term->id(),
+          'name' => $term->getName(),
+        ];
       }
 
       $data[] = [

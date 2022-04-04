@@ -18,8 +18,32 @@
   justify-content: flex-start;
   align-items: flex-end;
   width: 100%;
-  gap: 1rem;
   margin: 0 0 1rem 0;
+
+  & > input {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .limit-search {
+    align-items: center;
+    flex-direction: row;
+
+    & > strong, & > input {
+      margin: 0 1rem 0 0;
+    }
+    
+    & > label {
+      margin-right: 0.3rem;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .limit-search {
+    flex-basis: 100%;
+  }
 }
 
 .project-search-input,
@@ -53,6 +77,10 @@
   margin: 0;
   border-radius: 6px;
   background-color: $port-red;
+
+  @media (min-width: 992px) {
+    margin: 0 0 0 auto;
+  }
 }
 .projects-and-filters .btn:hover {
   background-color: $dark-port-red;
@@ -112,7 +140,11 @@
       margin: 10px 0;
       gap: 5px;
       .badge {
-        background: $port-red;
+        background: $mid-dark-grey;
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
       img {
         width: 40px;
@@ -176,14 +208,7 @@
   }
 }
 
-@media (min-width: 1024px) {
-  .limit-search {
-    flex-direction: row;
-  }
-  .projects-and-filters .btn {
-    margin: 0 0 0 auto;
-  }
-}
+
 
 @media (max-width: 1199.99px) {
   .big-screen-filters {
@@ -207,9 +232,6 @@
     flex-wrap: wrap;
     .filter-button {
       display: none;
-    }
-    .limit-search {
-      flex-basis: 100%;
     }
     .offcanvas {
       display: none;
