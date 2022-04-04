@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams, useSearchParams } from 'react-router-dom';
 import "../styles/main.scss";
 
+
 import { fetchProjects, doesProjectMatch } from "../helper-functions/fetchAndFilterProjects";
 import ProjectCard from "../components/ProjectCard";
 import TeamSearch from "../components/TeamSearch";
