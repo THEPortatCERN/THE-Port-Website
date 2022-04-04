@@ -17,7 +17,7 @@ export const fetchProjects = async () => {
 
 //------------------------- functionality for filtering projects by team using TeamSearch component ----------------------------------//
 const matchesTeamSearch = (project, teamSearch) => {
-  const booleanArray = project.teams.map(team => team.includes(teamSearch))
+  const booleanArray = project.teams.map(team => team.name.includes(teamSearch))
   return booleanArray.includes(true)
 }
 
@@ -26,13 +26,13 @@ export const matchesTitleSearch = (project, titleSearch) => project.title.toLowe
 
 //-------------------------------- & for filtering projects by event using EventSearch component ---------------------------------------//
 const matchesEventSearch = (project, eventSearch) => {
-  const booleanArray = project.events.map(event => event.includes(eventSearch))
+  const booleanArray = project.events.map(event => event.name.includes(eventSearch))
   return booleanArray.includes(true) 
 }
 
 //------------------------------ & for for filtering projects by attributes using tag input component ---------------------------------//
  //checks if one project matches one tag
-export const matchesTag = (project, tag) => project.attributes.includes(tag.name)
+export const matchesTag = (project, tag) => project.attributes.name.includes(tag.name)
  //checks if one project matches multiple tags
 export const matchesTags = (project, tags) => tags.reduce((previousTag, currentTag) => previousTag && matchesTag(project, currentTag), true)
 
@@ -40,7 +40,7 @@ export const matchesTags = (project, tags) => tags.reduce((previousTag, currentT
 //checks if one project matches one sdg
 //export const matchesSDG = (project, chosenSdg) => project.sdgs.includes(chosenSdg)
 const matchesSDG = (project, chosenSDG) => {
-  const booleanArray = project.sdgs.map(sdg => sdg.includes(chosenSDG))
+  const booleanArray = project.sdgs.map(sdg => sdg.name.includes(chosenSDG))
   return booleanArray.includes(true)
 }
 
