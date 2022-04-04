@@ -28,9 +28,6 @@ const ProjectsPage = () => {
 
   // ON PAGE LOAD ONLY : READ URL -> set searchObj -> sets url //
   useEffect(() => {
-
-    console.log('settings attributes new structure;', settings)
-
     let initialSearchObj = {}
 
     const tagsSearchParam = searchParams.getAll('tags_filter')
@@ -136,7 +133,7 @@ const ProjectsPage = () => {
         <strong>Filters</strong>
         <TitleSearch setSearchObj={setSearchObj} searchObj={searchObj} setTitleSearch={setTitleSearch} titleSearch={titleSearch}/>
         <TeamSearch setSearchObj={setSearchObj} searchObj={searchObj} setTeamSearch={setTeamSearch} teamSearch={teamSearch}/>
-        {/* <EventSearch setSearchObj={setSearchObj} searchObj={searchObj} setEventSearch={setEventSearch} eventSearch={eventSearch}/> */}
+        <EventSearch setSearchObj={setSearchObj} searchObj={searchObj} setEventSearch={setEventSearch} eventSearch={eventSearch}/>
         <button type="button" className="btn filter-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
            More filters
         </button>
