@@ -22550,7 +22550,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   };
   var matchesTitleSearch = (project, titleSearch) => project.title.toLowerCase().includes(titleSearch);
   var matchesEventSearch = (project, eventSearch) => {
-    const booleanArray = project.events.map((event) => event.name.includes(eventSearch));
+    const booleanArray = project.events.map((event) => event.name.toLowerCase().includes(eventSearch));
     return booleanArray.includes(true);
   };
   var matchesTag = (project, tag) => {
@@ -22681,6 +22681,31 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
 
   // components/EventSearch.jsx
   var import_react6 = __toESM(require_react());
+  var EventSearch = ({ searchObj, setSearchObj, setEventSearch, eventSearch }) => {
+    const onClick = (e) => {
+      const search = e.target.value.toLowerCase();
+      console.log("event search", eventSearch);
+      setEventSearch(search);
+      if (search.length > 0) {
+        setSearchObj(__spreadProps(__spreadValues({}, searchObj), { event_filter: search }));
+      } else if (search.length === 0) {
+        const newSearchObj = Object.assign({}, searchObj);
+        delete newSearchObj.event_filter;
+        setSearchObj(newSearchObj);
+      }
+    };
+    return /* @__PURE__ */ import_react6.default.createElement(import_react6.default.Fragment, null, /* @__PURE__ */ import_react6.default.createElement("label", {
+      for: "event-select",
+      className: "form-label"
+    }, "Events:"), /* @__PURE__ */ import_react6.default.createElement("select", {
+      id: "event-select",
+      className: "form-select project-search-input"
+    }, settings_default.events.map((event) => /* @__PURE__ */ import_react6.default.createElement("option", {
+      key: event.id,
+      onClick
+    }, event.name))));
+  };
+  var EventSearch_default = EventSearch;
 
   // components/TagInput.jsx
   var import_react7 = __toESM(require_react());
@@ -22869,6 +22894,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       searchObj,
       setTeamSearch,
       teamSearch
+    }), /* @__PURE__ */ import_react9.default.createElement(EventSearch_default, {
+      setSearchObj,
+      searchObj,
+      setEventSearch,
+      eventSearch
     }), /* @__PURE__ */ import_react9.default.createElement("button", {
       type: "button",
       className: "btn filter-button",
