@@ -1,8 +1,10 @@
 import React from 'react';
 
+import settings from '../helper-functions/settings';
+
 const EventSearch = ({searchObj, setSearchObj, setEventSearch, eventSearch}) => {
 
-  const onChange = (e) => {
+  const onClick = (e) => {
     const search = e.target.value.toLowerCase()
     setEventSearch(search)
     
@@ -17,15 +19,16 @@ const EventSearch = ({searchObj, setSearchObj, setEventSearch, eventSearch}) => 
   }
 
   return (
-    <input 
-    type='text' 
-    name='event-search' 
-    placeholder="Enter a year" 
-    value={eventSearch}
-    className='project-search-input'
-    onChange={onChange}
-    autoComplete='off'
-    />
+    <>
+    <label for="event-select" className="form-label">Events:</label>
+      <select id="event-select" className="form-select project-search-input">
+        {settings.events.map(event => (
+          <option key={event.id} onClick={onClick}>
+            {event.name}
+          </option>
+        ))}
+      </select>
+    </>
   )
 }
 
