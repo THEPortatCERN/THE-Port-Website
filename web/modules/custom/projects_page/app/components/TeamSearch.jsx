@@ -16,7 +16,7 @@ const TeamSearch = ({ searchObj, setSearchObj, setTeamSearch, teamSearch }) => {
 
   return (
     <>
-      <label for="team-search">Team name:</label>
+      <label htmlFor="team-search">Team name:</label>
       <input
         type="text"
         name="team-search"

@@ -18,7 +18,7 @@ const TitleSearch = ({ searchObj, setSearchObj, setTitleSearch, titleSearch }) =
 
   return (
     <>
-      <label for="project-title-search">Project name:</label>
+      <label htmlFor="project-title-search">Project name:</label>
       <input 
       type='text' 
       name='project-title-search' 
