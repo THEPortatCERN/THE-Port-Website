@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom';
 import "../styles/main.scss";
 
+import settings from '../helper-functions/settings';
+
 
 import { fetchProjects, doesProjectMatch } from "../helper-functions/fetchAndFilterProjects";
 import ProjectCard from "../components/ProjectCard";
@@ -26,6 +28,9 @@ const ProjectsPage = () => {
 
   // ON PAGE LOAD ONLY : READ URL -> set searchObj -> sets url //
   useEffect(() => {
+
+    console.log('settings attributes new structure;', settings)
+
     let initialSearchObj = {}
 
     const tagsSearchParam = searchParams.getAll('tags_filter')
@@ -80,7 +85,7 @@ const ProjectsPage = () => {
       setTags([])
     }
     if(sdg !== null){
-      setChosenSDG(searchObj.sdg_filter)
+      setChosenSDG(sdg)
     } else {
       setChosenSDG('')
     }
