@@ -32,9 +32,14 @@ const matchesEventSearch = (project, eventSearch) => {
 
 //------------------------------ & for for filtering projects by attributes using tag input component ---------------------------------//
  //checks if one project matches one tag
-export const matchesTag = (project, tag) => project.attributes.name.includes(tag.name)
+ export const matchesTag = (project, tag) => {
+  for (let i = 0; i < project.attributes.length; i++) {
+    if(project.attributes[i].name === tag.name) return true;
+  }
+  return false;
+};
  //checks if one project matches multiple tags
-export const matchesTags = (project, tags) => tags.reduce((previousTag, currentTag) => previousTag && matchesTag(project, currentTag), true)
+export const matchesTags = (project, tags) => tags.reduce((previousTag, currentTag) => previousTag && matchesTag(project, currentTag), true);
 
 //-------------------------------------- & for filtering projects by SDGs using SDG component -----------------------------------------//
 //checks if one project matches one sdg
