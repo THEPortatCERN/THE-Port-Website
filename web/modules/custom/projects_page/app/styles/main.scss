@@ -140,7 +140,11 @@
       margin: 10px 0;
       gap: 5px;
       .badge {
-        background: $port-red;
+        background: $mid-dark-grey;
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
       img {
         width: 40px;
