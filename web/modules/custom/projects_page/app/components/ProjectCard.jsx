@@ -30,7 +30,7 @@ const ProjectCard = ({
             className="img-fluid"
             loading="lazy"
             alt="Empty"
-            src={`${settings.baseUrl}images/empty.svg`}
+            src={`${settings.routes.assets}images/empty.svg`}
           />
         )}
       </div>

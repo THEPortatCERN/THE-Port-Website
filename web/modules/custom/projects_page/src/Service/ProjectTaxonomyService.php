@@ -87,7 +87,7 @@ class ProjectTaxonomyService {
 
     /** @var \Drupal\taxonomy\TermInterface $term */
     $image_style = ImageStyle::load('extra_small');
-    $baseUrl = '/' . $this->moduleHandler->getModule('projects_page')->getPath() . '/app/images/';
+    $image_base_url = '/' . $this->moduleHandler->getModule('projects_page')->getPath() . '/app/images/';
 
     $data = [];
     $counter = 1;
@@ -110,7 +110,7 @@ class ProjectTaxonomyService {
         }
       } else {
         // Use the images present in the module
-        $image_src = $baseUrl . ('sdg' . str_pad($counter++, 2, "0", STR_PAD_LEFT) . '.png');
+        $image_src = $image_base_url . ('sdg' . str_pad($counter++, 2, "0", STR_PAD_LEFT) . '.png');
       }
 
       $data[] = [

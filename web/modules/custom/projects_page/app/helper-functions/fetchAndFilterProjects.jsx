@@ -3,7 +3,7 @@ export const fetchProjects = async () => {
   const fail = (error) => console.error(error);
   
   try {
-    const request = new Request(settings.endpoint);
+    const request = new Request(settings.routes.all);
 
     const response = await fetch(request);
     if (!response.ok) throw new Error(response.statusText);

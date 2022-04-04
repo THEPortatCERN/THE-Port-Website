@@ -37,21 +37,26 @@ class ProjectsListController extends ControllerBase {
     $page = [];
 
     // Preload the JSON and include it in the Drupal settings JavaScript object
-    $projectsAllRoute = Url::fromRoute('projects_page.projects.all')->toString();
+    $allRoute = Url::fromRoute('projects_page.projects.all')->toString();
+    $pageRoute = Url::fromRoute('projects_page.projects.page')->toString();
+    $assetsRoute = '/' . $this->moduleHandler->getModule('projects_page')->getPath() . '/app/';
 
     $preload_json = [
       '#tag' => 'link',
       '#attributes' => [
         'rel' => 'preload',
-        'href' => $projectsAllRoute,
+        'href' => $allRoute,
         'as' => 'fetch',
         'crossorigin' => '',
       ],
     ];
     $page['#attached']['html_head'][] = [$preload_json, 'preload_json'];
     $page['#attached']['drupalSettings']['projects_page'] = [
-      'baseUrl' => '/' . $this->moduleHandler->getModule('projects_page')->getPath() . '/app/',
-      'endpoint' => $projectsAllRoute,
+      'routes' => [
+        'assets' => $assetsRoute,
+        'all' => $allRoute,
+        'page' => $pageRoute,
+      ],
       'attributes' => $this->taxonomyService->getAttributes(),
       'events' => $this->taxonomyService->getEvents(),
       'sdgs' => $this->taxonomyService->getSDGs(),
