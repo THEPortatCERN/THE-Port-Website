@@ -22751,15 +22751,22 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         onClick: onDelete2
       }, tag.name);
     };
-    return /* @__PURE__ */ import_react7.default.createElement(import_react_tag_autocomplete.default, {
+    return /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "tag-input"
+    }, /* @__PURE__ */ import_react7.default.createElement("label", {
+      htmlFor: "tag-input",
+      className: "form-label"
+    }, "Tags:"), /* @__PURE__ */ import_react7.default.createElement(import_react_tag_autocomplete.default, {
       ref: reactTags,
       tags,
       suggestions: settings_default.attributes,
       onDelete,
       onAddition,
       tagComponent,
-      placeholderText: "Tags:"
-    });
+      placeholderText: "Tags:",
+      id: "tag-input",
+      classNames: "project-search-input-inner"
+    }));
   };
   var TagInput_default = TagInput;
 

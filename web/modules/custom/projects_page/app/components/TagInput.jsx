@@ -38,7 +38,9 @@ const TagInput = ({ searchObj, setSearchObj, setTags, tags }) => {
   }
   
   return (
-    <ReactTags
+    <div className='tag-input'>
+      <label htmlFor="tag-input" className="form-label">Tags:</label>
+      <ReactTags
       ref={reactTags}
       tags={tags}
       suggestions={settings.attributes}
@@ -46,7 +48,10 @@ const TagInput = ({ searchObj, setSearchObj, setTags, tags }) => {
       onAddition={onAddition}
       tagComponent={tagComponent}
       placeholderText='Tags:'
+      id='tag-input'
+      classNames='project-search-input-inner'
     />
+    </div>
   )
 }
 
