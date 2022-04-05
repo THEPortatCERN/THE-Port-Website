@@ -17,17 +17,18 @@ const TitleSearch = ({ searchObj, setSearchObj, setTitleSearch, titleSearch }) =
   }
 
   return (
-    <>
+    <div className='project-search-input'>
       <label htmlFor="project-title-search">Project name:</label>
       <input 
       type='text' 
       name='project-title-search' 
       value={titleSearch}
-      className='project-search-input'
+      placeholder="e.g. olana postcards"
+      className='project-search-input-inner'
       onChange={onChange}
       autoComplete='off'
       />
-    </>
+    </div>
   )
 }
 

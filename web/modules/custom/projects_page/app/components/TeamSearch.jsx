@@ -15,17 +15,18 @@ const TeamSearch = ({ searchObj, setSearchObj, setTeamSearch, teamSearch }) => {
   };
 
   return (
-    <>
+    <div className='project-search-input'>
       <label htmlFor="team-search">Team name:</label>
       <input
         type="text"
         name="team-search"
         value={teamSearch}
-        className="project-search-input"
+        placeholder="e.g. 01"
+        className="project-search-input-inner"
         onChange={onChange}
         autoComplete="off"
       />
-    </>
+    </div>
   );
 };
 
