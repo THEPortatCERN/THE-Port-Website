@@ -2,6 +2,7 @@
 
 /* styles/main.scss */
 .tag-input {
+  margin-top: 3px;
   min-height: 60px;
   max-width: 100%;
   padding: 1px;
@@ -10,13 +11,14 @@
   background-color: white;
 }
 .tag-input label {
+  height: 19.2px;
   font-size: 0.8rem;
   font-weight: bold;
-  margin: auto 0.8rem;
+  margin: auto 0.8rem auto 0.8rem;
 }
 .react-tags {
   position: relative;
-  padding: 6px 0 0 12px;
+  padding: 0 0 0 12px;
   border-radius: 10px;
   background-color: white;
   z-index: 1;
@@ -35,6 +37,8 @@
 }
 .react-tags__selected {
   display: inline;
+  font-size: 0.9rem;
+  font-weight: bold;
 }
 .react-tags__selected button {
   display: inline-block;
@@ -58,8 +62,7 @@
 }
 .react-tags__search {
   display: inline-block;
-  padding: 7px 2px;
-  margin-bottom: 6px;
+  padding: 7px 2px 0 2px;
   max-width: 100%;
 }
 @media screen and (min-width: 30em) {
@@ -122,15 +125,17 @@
 .sdg-div {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .sdg-logo {
   width: 100%;
 }
 .sdg-list {
   display: flex;
-  gap: 0.05rem;
   flex-wrap: wrap;
+  gap: 0.05rem;
   margin: 0.1rem auto;
+  max-width: 290px;
 }
 .sdg-icon {
   width: 33%;
@@ -161,24 +166,14 @@
   align-self: flex-end;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-end;
+  gap: 1rem;
   width: 100%;
   margin: 0 0 1rem 0;
-}
-.limit-search > input {
-  margin-bottom: 1rem;
 }
 @media (min-width: 992px) {
   .limit-search {
     align-items: center;
     flex-direction: row;
-  }
-  .limit-search > strong,
-  .limit-search > input {
-    margin: 0 1rem 0 0;
-  }
-  .limit-search > label {
-    margin-right: 0.3rem;
   }
 }
 @media (min-width: 1200px) {
@@ -264,7 +259,7 @@
 .filters-section {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding-right: 1rem;
   gap: 1rem;
   background-color: #fbf9fa;
 }

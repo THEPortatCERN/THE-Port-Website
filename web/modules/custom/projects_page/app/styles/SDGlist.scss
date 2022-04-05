@@ -1,6 +1,7 @@
 .sdg-div {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .sdg-logo {
@@ -9,9 +10,10 @@
 
 .sdg-list {
   display: flex;
-  gap: 0.05rem;
   flex-wrap: wrap;
+  gap: 0.05rem;
   margin: 0.1rem auto;
+  max-width: 290px;
 }
 
 .sdg-icon {
