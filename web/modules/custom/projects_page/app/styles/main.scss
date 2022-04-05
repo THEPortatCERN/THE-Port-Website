@@ -46,28 +46,70 @@
   }
 }
 
-.project-search-input,
-.clear-filters-button {
+.clear-filters-button{
   padding: 0 12px;
-  height: 47px;
-  max-width: 214px;
   border: 1px solid $mid-pale-grey;
   border-radius: 10px;
+  height: 47px;
   color: $dark-grey;
 }
-
-.project-search-input:hover,
 .clear-filters-button:hover {
   outline: none;
   border: 1px solid $dark-grey;
   color: $dark-grey;
 }
 
-.project-search-input:focus {
+.project-search-input {
+  // padding: 12px;
+  height: 60px;
+  max-width: 214px;
+  padding: 1px;
+  border: 1px solid $mid-pale-grey;
+  border-radius: 10px;
+  background-color: white;
+  //color: $dark-grey;
+  label{
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin: auto 0.8rem;
+  }
+  select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+  }
+  .project-search-input-inner{
+    padding: 0 12px;
+    max-width: 100%;
+    border-radius: 10px;
+    height: 55%;
+    border: none;
+    color: $dark-grey;
+  }
+  .project-search-input-inner:hover {
+    outline: none;
+    border: none;
+    color: $dark-grey;
+  }
+  .project-search-input-inner:focus {
+    outline: none;
+    border: none;
+    color: black;
+  }
+}
+
+.project-search-input:hover {
   outline: none;
   border: 1px solid $dark-grey;
-  color: black;
+  // color: $dark-grey;
 }
+
+// .project-search-input:focus {
+//   outline: none;
+//   border: 1px solid $dark-grey;
+//   color: black;
+// }
 
 // filters button style
 .projects-and-filters .btn {
