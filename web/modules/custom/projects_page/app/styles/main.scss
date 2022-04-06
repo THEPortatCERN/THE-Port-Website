@@ -8,6 +8,10 @@
 .projects-and-filters {
   display: flex;
   flex-direction: column;
+
+  ::placeholder {
+    color: $mid-pale-grey;
+  }
 }
 
 // -------------- filtering section styles ---------------- //
@@ -16,57 +20,98 @@
   align-self: flex-end;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-end;
+  gap: 1rem;
+  //align-items: flex-end;
   width: 100%;
   margin: 0 0 1rem 0;
 
-  & > input {
-    margin-bottom: 1rem;
-  }
+  // & > input {
+  //   margin: 1rem;
+  // }
+
 }
+
 
 @media (min-width: 992px) {
   .limit-search {
     align-items: center;
     flex-direction: row;
 
-    & > strong, & > input {
-      margin: 0 1rem 0 0;
-    }
+    // & > strong, & > input {
+    //   margin: 0 1rem 0 0;
+    // }
     
-    & > label {
-      margin-right: 0.3rem;
-    }
+    // & > label {
+    //   margin-right: 0.3rem;
+    // }
   }
 }
 
+// large screen limit search bar // 
 @media (min-width: 1200px) {
   .limit-search {
     flex-basis: 100%;
   }
 }
 
-.project-search-input,
-.clear-filters-button {
+//------- global style rules -------// 
+.clear-filters-button{
   padding: 0 12px;
-  height: 47px;
-  max-width: 214px;
   border: 1px solid $mid-pale-grey;
-  border-radius: 10px;
+  border-radius: .25rem;
+  height: 47px;
   color: $dark-grey;
 }
-
-.project-search-input:hover,
 .clear-filters-button:hover {
   outline: none;
   border: 1px solid $dark-grey;
   color: $dark-grey;
 }
 
-.project-search-input:focus {
+.project-search-input {
+  // padding: 12px;
+  height: 60px;
+  max-width: 214px;
+  padding: 1px;
+  border: 1px solid $mid-pale-grey;
+  border-radius: .25rem;
+  background-color: white;
+  //color: $dark-grey;
+  label{
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin: auto 0.8rem;
+  }
+  select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+  }
+  .project-search-input-inner{
+    padding: 0 12px;
+    max-width: 100%;
+    border-radius: .25rem;
+    height: 55%;
+    border: none;
+    color: $mid-pale-grey;
+  }
+  .project-search-input-inner:hover {
+    outline: none;
+    border: none;
+    color: $dark-grey;
+  }
+  .project-search-input-inner:focus {
+    outline: none;
+    border: none;
+    color: black;
+  }
+}
+
+.project-search-input:hover {
   outline: none;
   border: 1px solid $dark-grey;
-  color: black;
+  // color: $dark-grey;
 }
 
 // filters button style
@@ -75,9 +120,10 @@
   padding: 0 12px;
   height: 47px;
   margin: 0;
-  border-radius: 6px;
+  border-radius: .25rem;
   background-color: $port-red;
 
+  //------ larger screen filter section style rules ------//
   @media (min-width: 992px) {
     margin: 0 0 0 auto;
   }
@@ -96,7 +142,7 @@
 .filters-section {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding-right: 1rem;
   gap: 1rem;
   background-color: $pale-grey;
   .sdg-div {

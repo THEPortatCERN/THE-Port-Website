@@ -38,15 +38,20 @@ const TagInput = ({ searchObj, setSearchObj, setTags, tags }) => {
   }
   
   return (
-    <ReactTags
+    <div className='tag-input'>
+      <label htmlFor="tag-input" className="form-label">Tags:</label>
+      <ReactTags
       ref={reactTags}
       tags={tags}
       suggestions={settings.attributes}
       onDelete={onDelete}
       onAddition={onAddition}
       tagComponent={tagComponent}
-      placeholderText='Add tags'
+      placeholderText='e.g. Medical'
+      id='tag-input'
+      classNames='project-search-input-inner'
     />
+    </div>
   )
 }
 

@@ -1,16 +1,33 @@
 @import "colors"; // reusable colors.
 
+.tag-input {
+  margin-top: 3px;
+  min-height: 60px;
+  max-width: 100%;
+  padding: 1px;
+  border: 1px solid $mid-pale-grey;
+  border-radius: .25rem;
+  background-color: white;
+  label{
+    height: 19.2px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin: auto 0.8rem auto 0.8rem;
+  }
+}
+
 .react-tags {
   position: relative;
-  padding: 6px 0 0 12px;
-  border: 1px solid $mid-pale-grey;
+  padding: 0 0 0 12px;
+  //border: 1px solid $mid-pale-grey;
   border-radius: 10px;
   background-color: white;
   z-index: 1;
   color: $dark-grey;
 
+  height: 55%;
   /* shared font styles */
-  font-size: 1em;
+  //font-size: 1em;
   line-height: 1.2;
 
   /* clicking anywhere will focus the input */
@@ -29,6 +46,8 @@
 
 .react-tags__selected {
   display: inline;
+  font-size: 0.9rem;
+  font-weight: bold;
   button {
     display: inline-block;
     box-sizing: border-box;
@@ -57,9 +76,8 @@
   display: inline-block;
 
   /* match tag layout */
-  padding: 7px 2px;
-  margin-bottom: 6px;
-
+  padding: 7px 2px 0 2px;
+  //margin-bottom: 6px;
   /* prevent autoresize overflowing the container */
   max-width: 100%;
 }

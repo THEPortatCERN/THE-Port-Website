@@ -1058,7 +1058,7 @@
             }
             return dispatcher.useContext(Context, unstable_observedBits);
           }
-          function useState4(initialState) {
+          function useState5(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1646,7 +1646,7 @@
           exports.useMemo = useMemo3;
           exports.useReducer = useReducer;
           exports.useRef = useRef4;
-          exports.useState = useState4;
+          exports.useState = useState5;
           exports.version = ReactVersion;
         })();
       }
@@ -22639,13 +22639,16 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         setSearchObj(newSearchObj);
       }
     };
-    return /* @__PURE__ */ import_react4.default.createElement(import_react4.default.Fragment, null, /* @__PURE__ */ import_react4.default.createElement("label", {
+    return /* @__PURE__ */ import_react4.default.createElement("div", {
+      className: "project-search-input"
+    }, /* @__PURE__ */ import_react4.default.createElement("label", {
       htmlFor: "team-search"
     }, "Team name:"), /* @__PURE__ */ import_react4.default.createElement("input", {
       type: "text",
       name: "team-search",
       value: teamSearch,
-      className: "project-search-input",
+      placeholder: "e.g. 42",
+      className: "project-search-input-inner",
       onChange,
       autoComplete: "off"
     }));
@@ -22666,13 +22669,16 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         setSearchObj(newSearchObj);
       }
     };
-    return /* @__PURE__ */ import_react5.default.createElement(import_react5.default.Fragment, null, /* @__PURE__ */ import_react5.default.createElement("label", {
+    return /* @__PURE__ */ import_react5.default.createElement("div", {
+      className: "project-search-input"
+    }, /* @__PURE__ */ import_react5.default.createElement("label", {
       htmlFor: "project-title-search"
     }, "Project name:"), /* @__PURE__ */ import_react5.default.createElement("input", {
       type: "text",
       name: "project-title-search",
       value: titleSearch,
-      className: "project-search-input",
+      placeholder: "e.g. Refeet",
+      className: "project-search-input-inner",
       onChange,
       autoComplete: "off"
     }));
@@ -22684,7 +22690,6 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var EventSearch = ({ searchObj, setSearchObj, setEventSearch, eventSearch }) => {
     const onClick = (e) => {
       const search = e.target.value.toLowerCase();
-      console.log("event search", eventSearch);
       setEventSearch(search);
       if (search.length > 0) {
         setSearchObj(__spreadProps(__spreadValues({}, searchObj), { event_filter: search }));
@@ -22694,13 +22699,22 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         setSearchObj(newSearchObj);
       }
     };
-    return /* @__PURE__ */ import_react6.default.createElement(import_react6.default.Fragment, null, /* @__PURE__ */ import_react6.default.createElement("label", {
-      for: "event-select",
+    const options = settings_default.events;
+    const names = options.map((event) => event.name);
+    const nameLowerCase = names.map((name) => name.toLowerCase());
+    const selected = eventSearch.length > 0 ? names[nameLowerCase.indexOf(eventSearch)] : "e.g. Hackathon\u2026";
+    const notSelected = options.filter((event) => event.name !== selected);
+    return /* @__PURE__ */ import_react6.default.createElement("div", {
+      className: "project-search-input"
+    }, /* @__PURE__ */ import_react6.default.createElement("label", {
+      htmlFor: "event-select",
       className: "form-label"
     }, "Events:"), /* @__PURE__ */ import_react6.default.createElement("select", {
       id: "event-select",
-      className: "form-select project-search-input"
-    }, settings_default.events.map((event) => /* @__PURE__ */ import_react6.default.createElement("option", {
+      className: "form-select project-search-input-inner"
+    }, /* @__PURE__ */ import_react6.default.createElement("option", {
+      selected: true
+    }, selected), notSelected.map((event) => /* @__PURE__ */ import_react6.default.createElement("option", {
       key: event.id,
       onClick
     }, event.name))));
@@ -22737,15 +22751,22 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
         onClick: onDelete2
       }, tag.name);
     };
-    return /* @__PURE__ */ import_react7.default.createElement(import_react_tag_autocomplete.default, {
+    return /* @__PURE__ */ import_react7.default.createElement("div", {
+      className: "tag-input"
+    }, /* @__PURE__ */ import_react7.default.createElement("label", {
+      htmlFor: "tag-input",
+      className: "form-label"
+    }, "Tags:"), /* @__PURE__ */ import_react7.default.createElement(import_react_tag_autocomplete.default, {
       ref: reactTags,
       tags,
       suggestions: settings_default.attributes,
       onDelete,
       onAddition,
       tagComponent,
-      placeholderText: "Add tags"
-    });
+      placeholderText: "e.g. Medical",
+      id: "tag-input",
+      classNames: "project-search-input-inner"
+    }));
   };
   var TagInput_default = TagInput;
 
@@ -22799,7 +22820,6 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     const [titleSearch, setTitleSearch] = (0, import_react9.useState)("");
     const [eventSearch, setEventSearch] = (0, import_react9.useState)("");
     (0, import_react9.useEffect)(() => {
-      console.log("settings attributes new structure;", settings_default);
       let initialSearchObj = {};
       const tagsSearchParam = searchParams.getAll("tags_filter");
       const sdgSearchParam = searchParams.get("sdg_filter");
