@@ -1058,7 +1058,7 @@
             }
             return dispatcher.useContext(Context, unstable_observedBits);
           }
-          function useState5(initialState) {
+          function useState6(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1070,7 +1070,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
-          function useEffect3(create, deps) {
+          function useEffect4(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useEffect(create, deps);
           }
@@ -1640,13 +1640,13 @@
           exports.useCallback = useCallback4;
           exports.useContext = useContext2;
           exports.useDebugValue = useDebugValue;
-          exports.useEffect = useEffect3;
+          exports.useEffect = useEffect4;
           exports.useImperativeHandle = useImperativeHandle;
           exports.useLayoutEffect = useLayoutEffect3;
           exports.useMemo = useMemo3;
           exports.useReducer = useReducer;
           exports.useRef = useRef4;
-          exports.useState = useState5;
+          exports.useState = useState6;
           exports.version = ReactVersion;
         })();
       }
@@ -22725,6 +22725,10 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   var import_react7 = __toESM(require_react());
   var import_react_tag_autocomplete = __toESM(require_ReactTags_umd());
   var TagInput = ({ searchObj, setSearchObj, setTags, tags }) => {
+    const [placeholer, setPlaceholder] = (0, import_react7.useState)("");
+    (0, import_react7.useEffect)(() => {
+      tags.length > 3 ? setPlaceholder("MAX 5!") : setPlaceholder("e.g. Medical");
+    }, [tags]);
     const reactTags = (0, import_react7.useRef)();
     const onDelete = (0, import_react7.useCallback)((tagIndex) => {
       const newTagsList = tags.filter((_, i) => i !== tagIndex);
@@ -22739,10 +22743,12 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       }
     }, [setTags, tags, setSearchObj, searchObj]);
     const onAddition = (0, import_react7.useCallback)((newTag) => {
-      setTags([...tags, newTag]);
-      const prevTagNames = tags.map((tag) => tag.name);
-      const newTagNames = [...prevTagNames, newTag.name];
-      setSearchObj(__spreadProps(__spreadValues({}, searchObj), { tags_filter: [...newTagNames] }));
+      if (tags.length < 5) {
+        setTags([...tags, newTag]);
+        const prevTagNames = tags.map((tag) => tag.name);
+        const newTagNames = [...prevTagNames, newTag.name];
+        setSearchObj(__spreadProps(__spreadValues({}, searchObj), { tags_filter: [...newTagNames] }));
+      }
     }, [setTags, tags, setSearchObj, searchObj]);
     const tagComponent = ({ tag, removeButtonText, onDelete: onDelete2 }) => {
       return /* @__PURE__ */ import_react7.default.createElement("button", {
@@ -22763,9 +22769,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       onDelete,
       onAddition,
       tagComponent,
-      placeholderText: "e.g. Medical",
-      id: "tag-input",
-      classNames: "project-search-input-inner"
+      placeholderText: placeholer
     }));
   };
   var TagInput_default = TagInput;
@@ -22786,13 +22790,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     };
     return /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "sdg-div"
-    }, /* @__PURE__ */ import_react8.default.createElement("img", {
-      className: "sdg-logo",
-      src: `${settings_default.routes.assets}images/sdg_logo.png`,
-      alt: "united nations sustainable development goals"
-    }), /* @__PURE__ */ import_react8.default.createElement("div", {
+    }, /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "sdg-list"
-    }, settings_default.sdgs.map((sdg) => sdg.name !== chosenSDG ? /* @__PURE__ */ import_react8.default.createElement("img", {
+    }, /* @__PURE__ */ import_react8.default.createElement("div", {
+      className: "sdg-icon square-logo"
+    }), settings_default.sdgs.map((sdg) => sdg.name !== chosenSDG ? /* @__PURE__ */ import_react8.default.createElement("img", {
       src: sdg.image_src,
       alt: sdg.name,
       onClick: onAddition,

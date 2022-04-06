@@ -1,8 +1,14 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import ReactTags from 'react-tag-autocomplete';
 import settings from '../helper-functions/settings';
 
 const TagInput = ({ searchObj, setSearchObj, setTags, tags }) => {
+  const [placeholer, setPlaceholder] = useState('')
+
+  useEffect(() => {
+    tags.length > 3 ? setPlaceholder('MAX 5!') : setPlaceholder('e.g. Medical')
+  }, [tags])
+
   const reactTags = useRef()
   
   const onDelete = useCallback((tagIndex) => {
@@ -21,12 +27,15 @@ const TagInput = ({ searchObj, setSearchObj, setTags, tags }) => {
   }, [setTags, tags, setSearchObj, searchObj])
 
   const onAddition = useCallback((newTag) => {
-    // set the tags to filter from
-    setTags([...tags, newTag])
-    // set the search object to build query string from
-    const prevTagNames = tags.map(tag => tag.name)
-    const newTagNames = [...prevTagNames, newTag.name]
-    setSearchObj({...searchObj, tags_filter: [...newTagNames]})
+    if(tags.length < 5){
+      // set the tags to filter from
+      setTags([...tags, newTag])
+
+      // set the search object to build query string from
+      const prevTagNames = tags.map(tag => tag.name)
+      const newTagNames = [...prevTagNames, newTag.name]
+      setSearchObj({...searchObj, tags_filter: [...newTagNames]})
+    }
   }, [setTags, tags, setSearchObj, searchObj])
 
   const tagComponent = ({ tag, removeButtonText, onDelete }) => {
@@ -47,9 +56,7 @@ const TagInput = ({ searchObj, setSearchObj, setTags, tags }) => {
       onDelete={onDelete}
       onAddition={onAddition}
       tagComponent={tagComponent}
-      placeholderText='e.g. Medical'
-      id='tag-input'
-      classNames='project-search-input-inner'
+      placeholderText={placeholer}
     />
     </div>
   )
