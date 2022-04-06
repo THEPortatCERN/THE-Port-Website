@@ -2,8 +2,6 @@
 
 .tag-input {
   margin-top: 3px;
-  min-height: 60px;
-  max-width: 100%;
   padding: 1px;
   border: 1px solid $mid-pale-grey;
   border-radius: .25rem;
@@ -19,7 +17,6 @@
 .react-tags {
   position: relative;
   padding: 0 0 0 12px;
-  //border: 1px solid $mid-pale-grey;
   border-radius: 10px;
   background-color: white;
   z-index: 1;
@@ -27,7 +24,6 @@
 
   height: 55%;
   /* shared font styles */
-  //font-size: 1em;
   line-height: 1.2;
 
   /* clicking anywhere will focus the input */
@@ -76,7 +72,7 @@
   display: inline-block;
 
   /* match tag layout */
-  padding: 7px 2px 0 2px;
+  padding: 6px 2px 6.3px 2px;
   //margin-bottom: 6px;
   /* prevent autoresize overflowing the container */
   max-width: 100%;

@@ -3,8 +3,6 @@
 /* styles/main.scss */
 .tag-input {
   margin-top: 3px;
-  min-height: 60px;
-  max-width: 100%;
   padding: 1px;
   border: 1px solid #d1d1d1;
   border-radius: 0.25rem;
@@ -62,7 +60,7 @@
 }
 .react-tags__search {
   display: inline-block;
-  padding: 7px 2px 0 2px;
+  padding: 6px 2px 6.3px 2px;
   max-width: 100%;
 }
 @media screen and (min-width: 30em) {

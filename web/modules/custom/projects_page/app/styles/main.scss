@@ -24,11 +24,6 @@
   //align-items: flex-end;
   width: 100%;
   margin: 0 0 1rem 0;
-
-  // & > input {
-  //   margin: 1rem;
-  // }
-
 }
 
 
@@ -36,13 +31,6 @@
   .limit-search {
     align-items: center;
     flex-direction: row;
-    // & > strong, & > input {
-    //   margin: 0 1rem 0 0;
-    // }
-    
-    // & > label {
-    //   margin-right: 0.3rem;
-    // }
   }
 }
 
@@ -68,14 +56,12 @@
 }
 
 .project-search-input {
-  // padding: 12px;
   height: 60px;
   max-width: 214px;
   padding: 1px;
   border: 1px solid $mid-pale-grey;
   border-radius: .25rem;
   background-color: white;
-  //color: $dark-grey;
   label{
     font-size: 0.8rem;
     font-weight: bold;
@@ -110,7 +96,6 @@
 .project-search-input:hover {
   outline: none;
   border: 1px solid $dark-grey;
-  // color: $dark-grey;
 }
 
 // filters button style
@@ -274,9 +259,6 @@
 }
 
 @media (min-width: 1200px) {
-  // .view-content {
-  //   grid-template-columns: repeat(4, 1fr);
-  // }
   main .container {
     padding: 0 0 1rem 1rem;
     margin: 0px;
