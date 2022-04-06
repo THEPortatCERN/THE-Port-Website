@@ -22786,13 +22786,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     };
     return /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "sdg-div"
-    }, /* @__PURE__ */ import_react8.default.createElement("img", {
-      className: "sdg-logo",
-      src: `${settings_default.routes.assets}images/sdg_logo.png`,
-      alt: "united nations sustainable development goals"
-    }), /* @__PURE__ */ import_react8.default.createElement("div", {
+    }, /* @__PURE__ */ import_react8.default.createElement("div", {
       className: "sdg-list"
-    }, settings_default.sdgs.map((sdg) => sdg.name !== chosenSDG ? /* @__PURE__ */ import_react8.default.createElement("img", {
+    }, /* @__PURE__ */ import_react8.default.createElement("div", {
+      className: "sdg-icon square-logo"
+    }), settings_default.sdgs.map((sdg) => sdg.name !== chosenSDG ? /* @__PURE__ */ import_react8.default.createElement("img", {
       src: sdg.image_src,
       alt: sdg.name,
       onClick: onAddition,

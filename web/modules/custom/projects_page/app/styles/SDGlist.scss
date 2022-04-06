@@ -13,12 +13,19 @@
   flex-wrap: wrap;
   gap: 0.05rem;
   margin: 0.1rem auto;
-  max-width: 290px;
+  // max-width: 290px;
 }
 
 .sdg-icon {
   width: 33%;
   height: auto;
+}
+
+.square-logo {
+  background-image: url('https://i0.wp.com/www.un.org/sustainabledevelopment/wp-content/uploads/2019/08/E_SDG_logo_UN_emblem_square_trans_WEB.png?resize=400%2C343&ssl=1');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
 .sdg-icon.grey {
