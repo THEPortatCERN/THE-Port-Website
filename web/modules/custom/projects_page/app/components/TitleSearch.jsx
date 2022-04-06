@@ -23,7 +23,7 @@ const TitleSearch = ({ searchObj, setSearchObj, setTitleSearch, titleSearch }) =
       type='text' 
       name='project-title-search' 
       value={titleSearch}
-      placeholder="e.g. olana postcards"
+      placeholder="e.g. Refeet"
       className='project-search-input-inner'
       onChange={onChange}
       autoComplete='off'

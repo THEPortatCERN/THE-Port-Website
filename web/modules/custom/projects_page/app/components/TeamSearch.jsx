@@ -21,7 +21,7 @@ const TeamSearch = ({ searchObj, setSearchObj, setTeamSearch, teamSearch }) => {
         type="text"
         name="team-search"
         value={teamSearch}
-        placeholder="e.g. 01"
+        placeholder="e.g. 42"
         className="project-search-input-inner"
         onChange={onChange}
         autoComplete="off"

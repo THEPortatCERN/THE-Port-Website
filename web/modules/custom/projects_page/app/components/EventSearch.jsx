@@ -23,7 +23,7 @@ const EventSearch = ({searchObj, setSearchObj, setEventSearch, eventSearch}) => 
   const names = options.map(event => event.name)
   const nameLowerCase = names.map(name => name.toLowerCase())
 
-  const selected = eventSearch.length > 0 ? names[nameLowerCase.indexOf(eventSearch)] : 'e.g. humanitarian...'
+  const selected = eventSearch.length > 0 ? names[nameLowerCase.indexOf(eventSearch)] : 'e.g. Hackathon…'
 
   const notSelected = options.filter(event => event.name !== selected)
 

@@ -7,7 +7,7 @@
   max-width: 100%;
   padding: 1px;
   border: 1px solid #d1d1d1;
-  border-radius: 10px;
+  border-radius: 0.25rem;
   background-color: white;
 }
 .tag-input label {
@@ -161,6 +161,9 @@
   display: flex;
   flex-direction: column;
 }
+.projects-and-filters ::placeholder {
+  color: #d1d1d1;
+}
 .limit-search {
   display: flex;
   align-self: flex-end;
@@ -184,7 +187,7 @@
 .clear-filters-button {
   padding: 0 12px;
   border: 1px solid #d1d1d1;
-  border-radius: 10px;
+  border-radius: 0.25rem;
   height: 47px;
   color: #7f7f7f;
 }
@@ -198,7 +201,7 @@
   max-width: 214px;
   padding: 1px;
   border: 1px solid #d1d1d1;
-  border-radius: 10px;
+  border-radius: 0.25rem;
   background-color: white;
 }
 .project-search-input label {
@@ -215,10 +218,10 @@
 .project-search-input .project-search-input-inner {
   padding: 0 12px;
   max-width: 100%;
-  border-radius: 10px;
+  border-radius: 0.25rem;
   height: 55%;
   border: none;
-  color: #7f7f7f;
+  color: #d1d1d1;
 }
 .project-search-input .project-search-input-inner:hover {
   outline: none;
@@ -239,7 +242,7 @@
   padding: 0 12px;
   height: 47px;
   margin: 0;
-  border-radius: 6px;
+  border-radius: 0.25rem;
   background-color: #ff4200;
 }
 @media (min-width: 992px) {

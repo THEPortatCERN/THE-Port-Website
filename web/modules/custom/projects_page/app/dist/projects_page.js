@@ -22647,7 +22647,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       type: "text",
       name: "team-search",
       value: teamSearch,
-      placeholder: "e.g. 01",
+      placeholder: "e.g. 42",
       className: "project-search-input-inner",
       onChange,
       autoComplete: "off"
@@ -22677,7 +22677,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       type: "text",
       name: "project-title-search",
       value: titleSearch,
-      placeholder: "e.g. olana postcards",
+      placeholder: "e.g. Refeet",
       className: "project-search-input-inner",
       onChange,
       autoComplete: "off"
@@ -22702,7 +22702,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     const options = settings_default.events;
     const names = options.map((event) => event.name);
     const nameLowerCase = names.map((name) => name.toLowerCase());
-    const selected = eventSearch.length > 0 ? names[nameLowerCase.indexOf(eventSearch)] : "e.g. humanitarian...";
+    const selected = eventSearch.length > 0 ? names[nameLowerCase.indexOf(eventSearch)] : "e.g. Hackathon\u2026";
     const notSelected = options.filter((event) => event.name !== selected);
     return /* @__PURE__ */ import_react6.default.createElement("div", {
       className: "project-search-input"
@@ -22763,7 +22763,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       onDelete,
       onAddition,
       tagComponent,
-      placeholderText: "Tags:",
+      placeholderText: "e.g. Medical",
       id: "tag-input",
       classNames: "project-search-input-inner"
     }));

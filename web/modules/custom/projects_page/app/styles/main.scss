@@ -8,6 +8,10 @@
 .projects-and-filters {
   display: flex;
   flex-direction: column;
+
+  ::placeholder {
+    color: $mid-pale-grey;
+  }
 }
 
 // -------------- filtering section styles ---------------- //
@@ -24,7 +28,9 @@
   // & > input {
   //   margin: 1rem;
   // }
+
 }
+
 
 @media (min-width: 992px) {
   .limit-search {
@@ -52,7 +58,7 @@
 .clear-filters-button{
   padding: 0 12px;
   border: 1px solid $mid-pale-grey;
-  border-radius: 10px;
+  border-radius: .25rem;
   height: 47px;
   color: $dark-grey;
 }
@@ -68,7 +74,7 @@
   max-width: 214px;
   padding: 1px;
   border: 1px solid $mid-pale-grey;
-  border-radius: 10px;
+  border-radius: .25rem;
   background-color: white;
   //color: $dark-grey;
   label{
@@ -85,10 +91,10 @@
   .project-search-input-inner{
     padding: 0 12px;
     max-width: 100%;
-    border-radius: 10px;
+    border-radius: .25rem;
     height: 55%;
     border: none;
-    color: $dark-grey;
+    color: $mid-pale-grey;
   }
   .project-search-input-inner:hover {
     outline: none;
@@ -114,7 +120,7 @@
   padding: 0 12px;
   height: 47px;
   margin: 0;
-  border-radius: 6px;
+  border-radius: .25rem;
   background-color: $port-red;
 
   //------ larger screen filter section style rules ------//
