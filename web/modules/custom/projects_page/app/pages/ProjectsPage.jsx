@@ -129,12 +129,12 @@ const ProjectsPage = () => {
 
   return (
     <div className="projects-and-filters">
-      <div className="limit-search">
+      <div className="basic-filters-bar">
         <strong>Filters</strong>
         <TitleSearch setSearchObj={setSearchObj} searchObj={searchObj} setTitleSearch={setTitleSearch} titleSearch={titleSearch}/>
         <TeamSearch setSearchObj={setSearchObj} searchObj={searchObj} setTeamSearch={setTeamSearch} teamSearch={teamSearch}/>
         <EventSearch setSearchObj={setSearchObj} searchObj={searchObj} setEventSearch={setEventSearch} eventSearch={eventSearch}/>
-        <button type="button" className="btn filter-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+        <button type="button" className="more-filters-button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
            More filters
         </button>
         {
@@ -151,13 +151,13 @@ const ProjectsPage = () => {
           <h5 id="offcanvasRightLabel">Choose Filters</h5>
           <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div className="offcanvas-body filters-section">
+        <div className="offcanvas-body tags-and-sdgs-container">
           <TagInput setSearchObj={setSearchObj} searchObj={searchObj} tags={tags} setTags={setTags} className='single-filter-system'/>
           <SDGlist setSearchObj={setSearchObj} searchObj={searchObj} chosenSDG={chosenSDG} setChosenSDG={setChosenSDG} className='single-filter-system'/>
         </div>
       </div>
       {/* --------------------------------------- filter section big screen view ------------------------------------------- */}
-      <div className="filters-section big-screen-filters">
+      <div className="tags-and-sdgs-container big-screen-filters">
         <TagInput setSearchObj={setSearchObj} searchObj={searchObj} tags={tags} setTags={setTags} className='single-filter-system'/>
         <SDGlist setSearchObj={setSearchObj} searchObj={searchObj} chosenSDG={chosenSDG} setChosenSDG={setChosenSDG} className='single-filter-system'/>
       </div>
