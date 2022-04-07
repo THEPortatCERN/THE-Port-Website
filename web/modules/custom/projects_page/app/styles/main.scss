@@ -70,8 +70,14 @@
   select{
     -webkit-appearance: none;
     -moz-appearance: none;
-    text-indent: 1px;
+    //text-indent: 1px;
     text-overflow: '';
+    padding-left: 8px!important;
+    @media screen and (-webkit-min-device-pixel-ratio:0) {
+      padding-left: 12px!important;
+      text-overflow: ellipsis;
+      padding-right: 30px!important;
+    }
   }
   .project-search-input-inner{
     padding: 0 12px;
@@ -249,8 +255,6 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
-
 
 @media (max-width: 1199.99px) {
   .big-screen-filters {
