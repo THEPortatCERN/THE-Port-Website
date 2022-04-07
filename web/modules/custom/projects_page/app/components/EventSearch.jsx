@@ -4,7 +4,7 @@ import settings from '../helper-functions/settings';
 
 const EventSearch = ({searchObj, setSearchObj, setEventSearch, eventSearch}) => {
 
-  const onClick = (e) => {
+  const onChange = (e) => {
     const search = e.target.value.toLowerCase()
     setEventSearch(search)
 
@@ -30,10 +30,15 @@ const EventSearch = ({searchObj, setSearchObj, setEventSearch, eventSearch}) => 
   return (
     <div className='project-search-input'>
     <label htmlFor="event-select" className="form-label">Events:</label>
-      <select id="event-select" className="form-select project-search-input-inner">
-        <option selected>{selected}</option>
+      <select 
+      id="event-select" 
+      className="form-select project-search-input-inner" 
+      defaultValue={selected} 
+      onChange={onChange}
+      >
+        <option>{selected}</option>
         {notSelected.map(event => (
-          <option key={event.id} onClick={onClick}>
+          <option key={event.id}>
             {event.name}
           </option>
         ))}
