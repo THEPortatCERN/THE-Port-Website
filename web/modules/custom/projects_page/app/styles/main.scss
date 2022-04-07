@@ -4,7 +4,7 @@
 @import "Taginput";
 @import "SDGlist";
 
-// --------- universal styles (for projects page) --------- //
+// --------- UNIVERSAL STYLE RULES (PROJECTS PAGE) --------- //
 .projects-and-filters {
   display: flex;
   flex-direction: column;
@@ -14,8 +14,39 @@
   }
 }
 
-// -------------- filtering section styles ---------------- //
-.limit-search {
+// --- style buttons --- //
+button {
+  padding: 0 12px;
+  height: 47px;
+  margin: 0;
+  transition: 0.2s;
+  outline: none!important;
+  box-shadow: none !important;
+}
+.clear-filters-button{
+  border: 1px solid $mid-pale-grey;
+  border-radius: .25rem;
+  color: $dark-grey;
+}
+.clear-filters-button:hover {
+  border: 1px solid $dark-grey;
+  color: $dark-grey;
+}
+.more-filters-button {
+  color: white;
+  border: 1px solid $port-red;
+  border-radius: .25rem;
+  background-color: $port-red;
+}
+.more-filters-button:hover {
+  background-color: $dark-port-red;
+}
+//--- end of button styles ---//
+
+// ------------- filtering section styles --------------- //
+
+// change name to basic-filters
+.basic-filters-bar {
   display: flex;
   align-self: flex-end;
   flex-direction: column;
@@ -25,36 +56,33 @@
   width: 100%;
   margin: 0 0 1rem 0;
 }
-
-
 @media (min-width: 992px) {
-  .limit-search {
+  .basic-filters-bar {
     align-items: center;
     flex-direction: row;
   }
 }
-
-// large screen limit search bar // 
+// large screen limit search bar 
 @media (min-width: 1200px) {
-  .limit-search {
+  .basic-filters-bar {
     flex-basis: 100%;
   }
 }
+// -- end of basic-filters-bar-styles -- //
 
-//------- global style rules -------// 
-.clear-filters-button{
-  padding: 0 12px;
-  border: 1px solid $mid-pale-grey;
-  border-radius: .25rem;
-  height: 47px;
-  color: $dark-grey;
-}
-.clear-filters-button:hover {
-  outline: none;
-  border: 1px solid $dark-grey;
-  color: $dark-grey;
+.tags-and-sdgs-container {
+  display: flex;
+  flex-direction: column;
+  padding-right: 1rem;
+  gap: 1rem;
+  background-color: $pale-grey;
+  .sdg-div {
+    max-width: 90%;
+    align-self: center;
+  }
 }
 
+// -- style filter-input -- //
 .project-search-input {
   height: 60px;
   max-width: 214px;
@@ -67,10 +95,10 @@
     font-weight: bold;
     margin: auto 0.8rem;
   }
+  // select = events filter
   select{
     -webkit-appearance: none;
     -moz-appearance: none;
-    //text-indent: 1px;
     text-overflow: '';
     padding-left: 8px!important;
     @media screen and (-webkit-min-device-pixel-ratio:0) {
@@ -98,48 +126,11 @@
     color: black;
   }
 }
-
 .project-search-input:hover {
   outline: none;
   border: 1px solid $dark-grey;
 }
-
-// filters button style
-.projects-and-filters .btn {
-  color: white;
-  padding: 0 12px;
-  height: 47px;
-  margin: 0;
-  border-radius: .25rem;
-  background-color: $port-red;
-
-  //------ larger screen filter section style rules ------//
-  @media (min-width: 992px) {
-    margin: 0 0 0 auto;
-  }
-}
-.projects-and-filters .btn:hover {
-  background-color: $dark-port-red;
-  color: white;
-  transition: 0.2s;
-}
-// remove bootstraps box shadow on the filters button
-.projects-and-filters .btn:focus {
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-.filters-section {
-  display: flex;
-  flex-direction: column;
-  padding-right: 1rem;
-  gap: 1rem;
-  background-color: $pale-grey;
-  .sdg-div {
-    max-width: 90%;
-    align-self: center;
-  }
-}
+// -- end of filter-input styles -- //
 
 // ----------------- project list styles ------------------ //
 .projects {
@@ -167,6 +158,7 @@
       overflow: hidden;
       text-indent: -999px;
     }
+    //extra project info e.g tags, sdgs etc. 
     ul {
       display: flex;
       flex-wrap: wrap;
@@ -193,8 +185,9 @@
   }
 }
 
-// ------------- project list media queries --------------- //
+// ------- PROJECT PAGE MAIN MEDIA QUERIES -------- //
 @media (max-width: 575.98px) {
+  //tags and sdgs
   .offcanvas {
     overflow: scroll;
     .offcanvas-body{
@@ -218,6 +211,7 @@
 }
 
 @media (min-width: 576px) {
+  // tags and sdgs
   .offcanvas {
     overflow: scroll;
     .offcanvas-header {
@@ -225,6 +219,7 @@
     }
   }
 
+  //project rows 
   .view-content {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -250,18 +245,21 @@
   }
 }
 
+// projects rows
 @media (min-width: 768px) {
   .view-content {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
+// tags and sdgs
 @media (max-width: 1199.99px) {
   .big-screen-filters {
     display: none;
   }
 }
 
+// make space for tags and sdgs
 @media (min-width: 1200px) {
   main .container {
     padding: 0 0 1rem 1rem;
@@ -273,13 +271,13 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    .filter-button {
+    .more-filters-button {
       display: none;
     }
     .offcanvas {
       display: none;
     }
-    .filters-section {
+    .tags-and-sdgs-container {
       position: relative;
       top: -79px;
       flex-basis: 25%;

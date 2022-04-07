@@ -22905,7 +22905,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     return /* @__PURE__ */ import_react9.default.createElement("div", {
       className: "projects-and-filters"
     }, /* @__PURE__ */ import_react9.default.createElement("div", {
-      className: "limit-search"
+      className: "basic-filters-bar"
     }, /* @__PURE__ */ import_react9.default.createElement("strong", null, "Filters"), /* @__PURE__ */ import_react9.default.createElement(TitleSearch_default, {
       setSearchObj,
       searchObj,
@@ -22923,7 +22923,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       eventSearch
     }), /* @__PURE__ */ import_react9.default.createElement("button", {
       type: "button",
-      className: "btn filter-button",
+      className: "more-filters-button",
       "data-bs-toggle": "offcanvas",
       "data-bs-target": "#offcanvasRight",
       "aria-controls": "offcanvasRight"
@@ -22946,7 +22946,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       "data-bs-dismiss": "offcanvas",
       "aria-label": "Close"
     })), /* @__PURE__ */ import_react9.default.createElement("div", {
-      className: "offcanvas-body filters-section"
+      className: "offcanvas-body tags-and-sdgs-container"
     }, /* @__PURE__ */ import_react9.default.createElement(TagInput_default, {
       setSearchObj,
       searchObj,
@@ -22960,7 +22960,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       setChosenSDG,
       className: "single-filter-system"
     }))), /* @__PURE__ */ import_react9.default.createElement("div", {
-      className: "filters-section big-screen-filters"
+      className: "tags-and-sdgs-container big-screen-filters"
     }, /* @__PURE__ */ import_react9.default.createElement(TagInput_default, {
       setSearchObj,
       searchObj,
