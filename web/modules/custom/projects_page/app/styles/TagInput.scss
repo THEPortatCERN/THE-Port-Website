@@ -13,6 +13,9 @@
     margin: auto 0.8rem auto 0.8rem;
   }
 }
+.tag-input:hover {
+  border-color: $dark-grey;
+}
 
 .react-tags {
   position: relative;
@@ -30,13 +33,7 @@
   cursor: text;
 }
 
-.react-tags:hover {
-  border-color: $dark-grey;
-  color: $dark-grey;
-}
-
 .react-tags.is-focused {
-  border-color: $dark-grey;
   color: black;
 }
 

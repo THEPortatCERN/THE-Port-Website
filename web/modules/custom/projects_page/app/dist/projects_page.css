@@ -14,6 +14,9 @@
   font-weight: bold;
   margin: auto 0.8rem auto 0.8rem;
 }
+.tag-input:hover {
+  border-color: #7f7f7f;
+}
 .react-tags {
   position: relative;
   padding: 0 0 0 12px;
@@ -25,12 +28,7 @@
   line-height: 1.2;
   cursor: text;
 }
-.react-tags:hover {
-  border-color: #7f7f7f;
-  color: #7f7f7f;
-}
 .react-tags.is-focused {
-  border-color: #7f7f7f;
   color: black;
 }
 .react-tags__selected {
@@ -166,7 +164,8 @@
 .projects-and-filters ::placeholder {
   color: #d1d1d1;
 }
-button {
+.clear-filters-button,
+.more-filters-button {
   padding: 0 12px;
   height: 47px;
   margin: 0;
@@ -195,33 +194,26 @@ button {
 .basic-filters-bar {
   display: flex;
   align-self: flex-end;
-  flex-direction: column;
-  justify-content: flex-start;
   gap: 1rem;
+  justify-content: flex-start;
   width: 100%;
   margin: 0 0 1rem 0;
+}
+@media (max-width: 991.99px) {
+  .basic-filters-bar {
+    flex-direction: column;
+  }
+  .basic-filters-bar .project-search-input {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+  }
 }
 @media (min-width: 992px) {
   .basic-filters-bar {
     align-items: center;
     flex-direction: row;
   }
-}
-@media (min-width: 1200px) {
-  .basic-filters-bar {
-    flex-basis: 100%;
-  }
-}
-.tags-and-sdgs-container {
-  display: flex;
-  flex-direction: column;
-  padding-right: 1rem;
-  gap: 1rem;
-  background-color: #fbf9fa;
-}
-.tags-and-sdgs-container .sdg-div {
-  max-width: 90%;
-  align-self: center;
 }
 .project-search-input {
   height: 60px;
@@ -270,6 +262,17 @@ button {
 .project-search-input:hover {
   outline: none;
   border: 1px solid #7f7f7f;
+}
+.tags-and-sdgs-container {
+  display: flex;
+  flex-direction: column;
+  padding-right: 1rem;
+  gap: 1rem;
+  background-color: #fbf9fa;
+}
+.tags-and-sdgs-container .sdg-div {
+  max-width: 90%;
+  align-self: center;
 }
 .projects {
   margin-bottom: 24px;

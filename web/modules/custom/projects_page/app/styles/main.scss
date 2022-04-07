@@ -14,8 +14,10 @@
   }
 }
 
-// --- style buttons --- //
-button {
+// -------------------- filtering section styles --------------------- //
+
+// --- style buttons related to filters --- //
+.clear-filters-button, .more-filters-button {
   padding: 0 12px;
   height: 47px;
   margin: 0;
@@ -43,42 +45,31 @@ button {
 }
 //--- end of button styles ---//
 
-// ------------- filtering section styles --------------- //
-
-// change name to basic-filters
+// basic-filters-bar-styles
 .basic-filters-bar {
   display: flex;
   align-self: flex-end;
-  flex-direction: column;
+  gap:1rem;
   justify-content: flex-start;
-  gap: 1rem;
-  //align-items: flex-end;
   width: 100%;
   margin: 0 0 1rem 0;
 }
+// smaller screen basic-filters-bar 
+@media (max-width: 991.99px) {
+  .basic-filters-bar {
+    flex-direction: column;
+    .project-search-input {
+      display: flex;
+      flex-direction: column;
+      max-width: 100%;
+    }
+  }
+}
+// large screen basic-filters-bar 
 @media (min-width: 992px) {
   .basic-filters-bar {
     align-items: center;
     flex-direction: row;
-  }
-}
-// large screen limit search bar 
-@media (min-width: 1200px) {
-  .basic-filters-bar {
-    flex-basis: 100%;
-  }
-}
-// -- end of basic-filters-bar-styles -- //
-
-.tags-and-sdgs-container {
-  display: flex;
-  flex-direction: column;
-  padding-right: 1rem;
-  gap: 1rem;
-  background-color: $pale-grey;
-  .sdg-div {
-    max-width: 90%;
-    align-self: center;
   }
 }
 
@@ -101,6 +92,7 @@ button {
     -moz-appearance: none;
     text-overflow: '';
     padding-left: 8px!important;
+    // stop select text from overlapping the arrow inside it
     @media screen and (-webkit-min-device-pixel-ratio:0) {
       padding-left: 12px!important;
       text-overflow: ellipsis;
@@ -132,9 +124,23 @@ button {
 }
 // -- end of filter-input styles -- //
 
+// ---- end of basic-filters-bar-styles ---- //
+
+.tags-and-sdgs-container {
+  display: flex;
+  flex-direction: column;
+  padding-right: 1rem;
+  gap: 1rem;
+  background-color: $pale-grey;
+  .sdg-div {
+    max-width: 90%;
+    align-self: center;
+  }
+}
+// ------------------------ end of filter section styles ------------------//
+
 // ----------------- project list styles ------------------ //
 .projects {
-  // margin: 0 24px 24px 24px;
   margin-bottom: 24px;
   .card {
     display: flex;
@@ -211,7 +217,7 @@ button {
 }
 
 @media (min-width: 576px) {
-  // tags and sdgs
+  // on screens bigger than 576px, hide close-button for tags-and-sdgs-section
   .offcanvas {
     overflow: scroll;
     .offcanvas-header {
@@ -252,14 +258,14 @@ button {
   }
 }
 
-// tags and sdgs
+// hide tags and sdgs (only show offcanvas version) - see ProjectsPage.jsx
 @media (max-width: 1199.99px) {
   .big-screen-filters {
     display: none;
   }
 }
 
-// make space for tags and sdgs
+// make space in container for tags and sdgs section to be shown at all times
 @media (min-width: 1200px) {
   main .container {
     padding: 0 0 1rem 1rem;
