@@ -22688,7 +22688,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   // components/EventSearch.jsx
   var import_react6 = __toESM(require_react());
   var EventSearch = ({ searchObj, setSearchObj, setEventSearch, eventSearch }) => {
-    const onClick = (e) => {
+    const onChange = (e) => {
       const search = e.target.value.toLowerCase();
       setEventSearch(search);
       if (search.length > 0) {
@@ -22711,12 +22711,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       className: "form-label"
     }, "Events:"), /* @__PURE__ */ import_react6.default.createElement("select", {
       id: "event-select",
-      className: "form-select project-search-input-inner"
-    }, /* @__PURE__ */ import_react6.default.createElement("option", {
-      selected: true
-    }, selected), notSelected.map((event) => /* @__PURE__ */ import_react6.default.createElement("option", {
-      key: event.id,
-      onClick
+      className: "form-select project-search-input-inner",
+      defaultValue: selected,
+      onChange
+    }, /* @__PURE__ */ import_react6.default.createElement("option", null, selected), notSelected.map((event) => /* @__PURE__ */ import_react6.default.createElement("option", {
+      key: event.id
     }, event.name))));
   };
   var EventSearch_default = EventSearch;
