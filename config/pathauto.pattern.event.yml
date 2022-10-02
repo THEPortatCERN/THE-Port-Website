@@ -10,7 +10,7 @@ type: 'canonical_entities:node'
 pattern: 'events/[node:field_events:0:entity]'
 selection_criteria:
   a6f464f6-1de4-4831-b860-7d094ea09e6e:
-    id: node_type
+    id: 'entity_bundle:node'
     negate: false
     uuid: a6f464f6-1de4-4831-b860-7d094ea09e6e
     context_mapping:

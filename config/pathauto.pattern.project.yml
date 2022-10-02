@@ -10,7 +10,7 @@ type: 'canonical_entities:node'
 pattern: 'projects/[node:field_teams:entity]'
 selection_criteria:
   61e9b0c8-28af-4e7e-a60f-770511bccfd5:
-    id: node_type
+    id: 'entity_bundle:node'
     negate: false
     uuid: 61e9b0c8-28af-4e7e-a60f-770511bccfd5
     context_mapping:
